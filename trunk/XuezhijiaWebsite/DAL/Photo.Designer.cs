@@ -389,7 +389,7 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PhotoRow AddPhotoRow(byte[] PName, byte[] Data, byte[] Comment) {
+            public PhotoRow AddPhotoRow(string PName, byte[] Data, string Comment) {
                 PhotoRow rowPhotoRow = ((PhotoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -436,11 +436,11 @@ namespace DAL {
             private void InitClass() {
                 this.columnPID = new global::System.Data.DataColumn("PID", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPID);
-                this.columnPName = new global::System.Data.DataColumn("PName", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnPName = new global::System.Data.DataColumn("PName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPName);
                 this.columnData = new global::System.Data.DataColumn("Data", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnData);
-                this.columnComment = new global::System.Data.DataColumn("Comment", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnComment = new global::System.Data.DataColumn("Comment", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComment);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPID}, true));
@@ -450,6 +450,8 @@ namespace DAL {
                 this.columnPID.AllowDBNull = false;
                 this.columnPID.ReadOnly = true;
                 this.columnPID.Unique = true;
+                this.columnPName.MaxLength = 50;
+                this.columnComment.MaxLength = 400;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_Photo");
                 this.ExtendedProperties.Add("Generator_UserTableName", "Photo");
             }
@@ -605,10 +607,10 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] PName {
+            public string PName {
                 get {
                     try {
-                        return ((byte[])(this[this.tablePhoto.PNameColumn]));
+                        return ((string)(this[this.tablePhoto.PNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'PName\' in table \'Photo\' is DBNull.", e);
@@ -637,10 +639,10 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] Comment {
+            public string Comment {
                 get {
                     try {
-                        return ((byte[])(this[this.tablePhoto.CommentColumn]));
+                        return ((string)(this[this.tablePhoto.CommentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Comment\' in table \'Photo\' is DBNull.", e);
@@ -860,31 +862,31 @@ namespace DAL.PhotoTableAdapters {
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PName", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Comment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Comment", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Comment", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Photo] ([PName], [Data], [Comment]) VALUES (@PName, @Data, @Co" +
                 "mment);\r\nSELECT PID, PName, Data, Comment FROM Photo WHERE (PID = SCOPE_IDENTITY" +
                 "())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PName", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Photo] SET [PName] = @PName, [Data] = @Data, [Comment] = @Comment WHERE (([PID] = @Original_PID) AND ((@IsNull_PName = 1 AND [PName] IS NULL) OR ([PName] = @Original_PName)) AND ((@IsNull_Comment = 1 AND [Comment] IS NULL) OR ([Comment] = @Original_Comment)));
 SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PName", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PName", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Comment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Comment", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Comment", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PID", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "PID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -962,7 +964,7 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_PID, byte[] Original_PName, byte[] Original_Comment) {
+        public virtual int Delete(long Original_PID, string Original_PName, string Original_Comment) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_PID));
             if ((Original_PName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -970,7 +972,7 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((byte[])(Original_PName));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PName));
             }
             if ((Original_Comment == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
@@ -978,7 +980,7 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((byte[])(Original_Comment));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Comment));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1000,12 +1002,12 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(byte[] PName, byte[] Data, byte[] Comment) {
+        public virtual int Insert(string PName, byte[] Data, string Comment) {
             if ((PName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((byte[])(PName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PName));
             }
             if ((Data == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1017,7 +1019,7 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((byte[])(Comment));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Comment));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1039,12 +1041,12 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(byte[] PName, byte[] Data, byte[] Comment, long Original_PID, byte[] Original_PName, byte[] Original_Comment, long PID) {
+        public virtual int Update(string PName, byte[] Data, string Comment, long Original_PID, string Original_PName, string Original_Comment, long PID) {
             if ((PName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((byte[])(PName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(PName));
             }
             if ((Data == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1056,7 +1058,7 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((byte[])(Comment));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Comment));
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_PID));
             if ((Original_PName == null)) {
@@ -1065,7 +1067,7 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((byte[])(Original_PName));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_PName));
             }
             if ((Original_Comment == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
@@ -1073,7 +1075,7 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((byte[])(Original_Comment));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Comment));
             }
             this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(PID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -1096,7 +1098,7 @@ SELECT PID, PName, Data, Comment FROM Photo WHERE (PID = @PID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(byte[] PName, byte[] Data, byte[] Comment, long Original_PID, byte[] Original_PName, byte[] Original_Comment) {
+        public virtual int Update(string PName, byte[] Data, string Comment, long Original_PID, string Original_PName, string Original_Comment) {
             return this.Update(PName, Data, Comment, Original_PID, Original_PName, Original_Comment, Original_PID);
         }
     }

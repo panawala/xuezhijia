@@ -1,5 +1,9 @@
 D:\Xuezhijia\XuezhijiaWebsite\XuezhijiaWebsite\bin\XuezhijiaWebsite.dll
 D:\Xuezhijia\XuezhijiaWebsite\XuezhijiaWebsite\bin\XuezhijiaWebsite.pdb
+D:\Xuezhijia\XuezhijiaWebsite\XuezhijiaWebsite\bin\BLL.dll
+D:\Xuezhijia\XuezhijiaWebsite\XuezhijiaWebsite\bin\DAL.dll
+D:\Xuezhijia\XuezhijiaWebsite\XuezhijiaWebsite\bin\BLL.pdb
+D:\Xuezhijia\XuezhijiaWebsite\XuezhijiaWebsite\bin\DAL.pdb
 D:\Xuezhijia\XuezhijiaWebsite\XuezhijiaWebsite\obj\Debug\ResolveAssemblyReference.cache
 D:\Xuezhijia\XuezhijiaWebsite\XuezhijiaWebsite\obj\Debug\XuezhijiaWebsite.dll
 D:\Xuezhijia\XuezhijiaWebsite\XuezhijiaWebsite\obj\Debug\XuezhijiaWebsite.pdb
