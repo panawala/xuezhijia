@@ -40,10 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarWrapper.cs" />
-    <Compile Include="FileRecordWrapper.cs" />
+    <Compile Include="CarWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FileRecordWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInfoWrapper.cs" />
+    <Compile Include="UserInfoWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
