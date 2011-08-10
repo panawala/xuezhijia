@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MainPage.aspx.cs" Inherits="MainPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="XuezhijiaWebsite.MainPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -34,6 +34,7 @@
 				}else{
 			%>
 				用户名：
+
 				 <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
 				密码：
 				<asp:TextBox ID="Password" runat="server"></asp:TextBox>
@@ -130,4 +131,3 @@
 
 </body>
 </html>
-
