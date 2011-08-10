@@ -39,5 +39,10 @@ namespace BLL
             }
             return list;
         }
+
+        public void addARecord(Car.CarRow row)
+        {
+            Insert(row.Type, row.SeatsCounts, row.Price, row.HirePrice, row.AdditionalPerKM, row.AdditionalPerHour, row.Comment, row.PID);
+        }
     }
 }
