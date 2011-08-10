@@ -11,13 +11,7 @@
     <div>
     
     </div>
-    <asp:Image ID="Image1" runat="server" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Image ID="Image2" runat="server" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Image ID="Image3" runat="server" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Image ID="Image4" runat="server" />
+   
     <br />
     <br />
     <br />
