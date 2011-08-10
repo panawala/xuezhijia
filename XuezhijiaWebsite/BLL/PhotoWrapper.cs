@@ -42,7 +42,7 @@ namespace BLL
        public byte[] getDataByID(int id)
        {
            CommenHelper helper = CommenHelper.GetInstance();
-           string sql = "select * from Photo where PID = " + id.ToString();
+           string sql = "select Data from Photo where PID = " + id.ToString();
            DataTable table = new DataTable();
            table = helper.getResultBySql(sql);
            return (byte[]) table.Rows[0][0];
