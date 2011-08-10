@@ -1,24 +1,25 @@
 ﻿<div class="car">
 <ul>
+  {#foreach $T as CAR}
 <li>
 <div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
+<div class="cardes" align="left">
+<strong>{ $T.CAR.Type }</strong>
+<br />
+费用：{ $T.CAR.Price } 元/日
+<br />
+ 座位数：{ $T.CAR.SeatsCounts }
+ <br />
+ 团购价：{ $T.CAR.HirePrice }
+ <br />
+ 超小时： { $T.CAR.AdditionalPerHour }元/小时
+ <br />
+超公里：{ $T.CAR.AdditionalPerKM }元/公里 
+<br />
+ 评价： { $T.CAR.Comment }
+ </div>
 </li>
-<li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
-</li>
-<li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
-</li>
-<li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
-</li>
-<li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
-</li>
+  {#/for}
+
 </ul>
 </div>

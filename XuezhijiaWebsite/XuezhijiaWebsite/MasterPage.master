@@ -114,9 +114,7 @@
 	
 	<div class="pagebody">
 		<!-- 功能主体 -->
-			功能主体
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
         </asp:ContentPlaceHolder>
 		<!-- 功能主体 -->
 	</div>
