@@ -1,14 +1,17 @@
 ﻿.car
 {
-	width:1024px;
+	width:810px;
 	height:inherit;
-	background:#EAEAEA;
+	border: 1px solid #85AFEC;
+	background: #E4EDFA;
 	overflow:hidden;
 	min-height:600px;
+	float:left;
+	margin-bottom:20px;
 }
 .car ul
 {
-	padding: 25px 0;
+	padding: 15px 0;
     list-style :none;
     margin:0;
 /*ul在主流浏览器中幽默缩进问题！！！！！！！！！*/

@@ -11,7 +11,8 @@
 <div id="carcontent" class="car">
 
 </div>
-
+<div class="right_nav"></div>
+<div style="clear:both;"></div>
 <script type="text/javascript">
     
    /* var profile = { name: "小白", age: "24" };
