@@ -1,7 +1,0 @@
-D:\Xuezhijia\XuezhijiaWebsite\BLL\bin\Debug\BLL.dll
-D:\Xuezhijia\XuezhijiaWebsite\BLL\bin\Debug\BLL.pdb
-D:\Xuezhijia\XuezhijiaWebsite\BLL\bin\Debug\DAL.dll
-D:\Xuezhijia\XuezhijiaWebsite\BLL\bin\Debug\DAL.pdb
-D:\Xuezhijia\XuezhijiaWebsite\BLL\obj\Debug\ResolveAssemblyReference.cache
-D:\Xuezhijia\XuezhijiaWebsite\BLL\obj\Debug\BLL.dll
-D:\Xuezhijia\XuezhijiaWebsite\BLL\obj\Debug\BLL.pdb
