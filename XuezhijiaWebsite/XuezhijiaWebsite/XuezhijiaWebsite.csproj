@@ -89,6 +89,7 @@
     </Content>
     <Content Include="MainPage.aspx" />
     <Content Include="Load.aspx" />
+    <Content Include="WS\WebService1.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -182,6 +183,10 @@
     </Compile>
     <Compile Include="Load.aspx.designer.cs">
       <DependentUpon>Load.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WS\WebService1.asmx.cs">
+      <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
