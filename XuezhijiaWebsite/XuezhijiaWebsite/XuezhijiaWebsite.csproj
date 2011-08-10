@@ -62,9 +62,11 @@
     <Content Include="css\globalStyles.css" />
     <Content Include="css\home.css" />
     <Content Include="css\printStyles.css" />
+    <Content Include="Image\head_bg.jpg" />
     <Content Include="Image\menu.gif" />
     <Content Include="Image\menu.jpg" />
     <Content Include="Image\test.jpg" />
+    <Content Include="Image\topbg.gif" />
     <Content Include="js\print.js" />
     <Content Include="js\user_log.js" />
     <Content Include="PhotoReview.aspx" />
