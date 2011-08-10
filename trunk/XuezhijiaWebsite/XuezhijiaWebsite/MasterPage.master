@@ -14,12 +14,8 @@
 <body>
 <div class="pageframe">
     <form id="form1" runat="server">
-    <div class="pagehead">
-		<div class="headbox">
-			<div class="logo">
-				logo
-			</div>
-			<div class="logon-area">
+    <div class="nav_top">
+    <div class="logon-area">
 			<!-- if has session -->
 			<%
 				if(Session["Username"] != null){
@@ -43,6 +39,14 @@
 				}
 			%>
 			</div>
+            </div>
+    <div class="pagehead">
+    
+		<div class="headbox">
+			<div class="logo">
+				logo
+			</div>
+			
 			<div id="register-area" class="register-area">
 				<ul class="register-info">
 					<li>
