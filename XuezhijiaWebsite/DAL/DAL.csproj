@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6559BFCD-E05E-44DE-96C1-F9AC8F8B10EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Car.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Car.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CommenHelper.cs" />
+    <Compile Include="Commodity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Commodity.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Course.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Course.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FileRecords.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileRecords.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Photo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Photo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RentHourse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentHourse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Room.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Room.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SecondHandMarket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecondHandMarket.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Shop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Student.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Student.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Teacher.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ticket.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserInfo.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Car.xsc">
+      <DependentUpon>Car.xsd</DependentUpon>
+    </None>
+    <None Include="Car.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Car.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Car.xss">
+      <DependentUpon>Car.xsd</DependentUpon>
+    </None>
+    <None Include="Commodity.xsc">
+      <DependentUpon>Commodity.xsd</DependentUpon>
+    </None>
+    <None Include="Commodity.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Commodity.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Commodity.xss">
+      <DependentUpon>Commodity.xsd</DependentUpon>
+    </None>
+    <None Include="Course.xsc">
+      <DependentUpon>Course.xsd</DependentUpon>
+    </None>
+    <None Include="Course.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Course.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Course.xss">
+      <DependentUpon>Course.xsd</DependentUpon>
+    </None>
+    <None Include="FileRecords.xsc">
+      <DependentUpon>FileRecords.xsd</DependentUpon>
+    </None>
+    <None Include="FileRecords.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FileRecords.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="FileRecords.xss">
+      <DependentUpon>FileRecords.xsd</DependentUpon>
+    </None>
+    <None Include="Photo.xsc">
+      <DependentUpon>Photo.xsd</DependentUpon>
+    </None>
+    <None Include="Photo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Photo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Photo.xss">
+      <DependentUpon>Photo.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RentHourse.xsc">
+      <DependentUpon>RentHourse.xsd</DependentUpon>
+    </None>
+    <None Include="RentHourse.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RentHourse.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RentHourse.xss">
+      <DependentUpon>RentHourse.xsd</DependentUpon>
+    </None>
+    <None Include="Room.xsc">
+      <DependentUpon>Room.xsd</DependentUpon>
+    </None>
+    <None Include="Room.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Room.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Room.xss">
+      <DependentUpon>Room.xsd</DependentUpon>
+    </None>
+    <None Include="SecondHandMarket.xsc">
+      <DependentUpon>SecondHandMarket.xsd</DependentUpon>
+    </None>
+    <None Include="SecondHandMarket.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SecondHandMarket.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SecondHandMarket.xss">
+      <DependentUpon>SecondHandMarket.xsd</DependentUpon>
+    </None>
+    <None Include="Shop.xsc">
+      <DependentUpon>Shop.xsd</DependentUpon>
+    </None>
+    <None Include="Shop.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Shop.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Shop.xss">
+      <DependentUpon>Shop.xsd</DependentUpon>
+    </None>
+    <None Include="Student.xsc">
+      <DependentUpon>Student.xsd</DependentUpon>
+    </None>
+    <None Include="Student.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Student.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Student.xss">
+      <DependentUpon>Student.xsd</DependentUpon>
+    </None>
+    <None Include="Teacher.xsc">
+      <DependentUpon>Teacher.xsd</DependentUpon>
+    </None>
+    <None Include="Teacher.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Teacher.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Teacher.xss">
+      <DependentUpon>Teacher.xsd</DependentUpon>
+    </None>
+    <None Include="Ticket.xsc">
+      <DependentUpon>Ticket.xsd</DependentUpon>
+    </None>
+    <None Include="Ticket.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ticket.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Ticket.xss">
+      <DependentUpon>Ticket.xsd</DependentUpon>
+    </None>
+    <None Include="UserInfo.xsc">
+      <DependentUpon>UserInfo.xsd</DependentUpon>
+    </None>
+    <None Include="UserInfo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserInfo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UserInfo.xss">
+      <DependentUpon>UserInfo.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
