@@ -13,7 +13,9 @@ namespace XuezhijiaWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CarWrapper wrapper = new CarWrapper();
+            List<CAR> list = new List<CAR>();
+            list = wrapper.getAllFormatedResult();
         }
         protected void CommitLoad(object sender, EventArgs e)
         {

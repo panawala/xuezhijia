@@ -46,6 +46,9 @@
     <Compile Include="FileRecordWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PhotoWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfoWrapper.cs">
       <SubType>Component</SubType>

@@ -67,6 +67,7 @@
     <Content Include="Image\test.jpg" />
     <Content Include="js\print.js" />
     <Content Include="js\user_log.js" />
+    <Content Include="PhotoReview.aspx" />
     <Content Include="Print.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\jtemplates.js" />
@@ -89,7 +90,7 @@
     </Content>
     <Content Include="MainPage.aspx" />
     <Content Include="Load.aspx" />
-    <Content Include="WS\WebService1.asmx" />
+    <Content Include="WS\CommonService.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -148,6 +149,13 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="PhotoReview.aspx.cs">
+      <DependentUpon>PhotoReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhotoReview.aspx.designer.cs">
+      <DependentUpon>PhotoReview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Print.aspx.cs">
       <DependentUpon>Print.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,8 +192,8 @@
     <Compile Include="Load.aspx.designer.cs">
       <DependentUpon>Load.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WS\WebService1.asmx.cs">
-      <DependentUpon>WebService1.asmx</DependentUpon>
+    <Compile Include="WS\CommonService.asmx.cs">
+      <DependentUpon>CommonService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

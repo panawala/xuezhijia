@@ -113,6 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserInfo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="VO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
