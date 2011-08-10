@@ -38,5 +38,14 @@ namespace BLL
             }
             return list;
         }
+
+       public byte[] getDataByID(int id)
+       {
+           CommenHelper helper = CommenHelper.GetInstance();
+           string sql = "select * from Photo where PID = " + id.ToString();
+           DataTable table = new DataTable();
+           table = helper.getResultBySql(sql);
+           return (byte[]) table.Rows[0][0];
+       }
     }
 }
