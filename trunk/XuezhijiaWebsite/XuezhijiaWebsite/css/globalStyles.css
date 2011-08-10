@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* WHOLE PAGE */
+.pageframe {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+/* HEAD */
+.pagehead {
+	width: 100%;
+	height: 110px;
+	
+	border: 1px black solid; /*指示位置*/
+}
+
+.headbox {
+	padding: 5px;
+}
+
+.logo {
+	width: 200px;
+	height: 100px;
+	float:left;
+	
+	border: 1px black solid; /*指示位置*/
+}
+
+a {
+	text-decoration: none;
+}
+
+.logon-area {
+	width: auto;
+	float: right;
+	font-size: 12px;
+	
+	border: 1px black solid; /*指示位置*/
+}
+
+.logon-area a {
+	padding: 2px;
+	color: #333;
+}
+
+.logon-area a:hover {
+	color: #CCC;
+	background-color: #333;
+}
+
+.register-area {
+	display: none;
+	position: absolute;
+	z-index:1002;
+	left: 50%;
+	top: 30%;
+	width: 400px;
+	margin-left: -200px;
+	padding: 10px;
+	font-size: 14px;
+	background-color:#CCC;
+	
+	border: 1px black solid; /*指示位置*/
+}
+
+.register-info {
+	text-align: center;
+	list-style-type: none;
+}
+
+.register-info li {
+	margin-bottom: 5px;
+}
+
+.register-info li label {
+	width: 80px;
+	text-align: right;
+	float: left;
+}
+
+.register-info li input {
+	text-align: left;
+}
+
+/* NECK */
+/*.pageneck {
+	width: 100%;
+	
+	border: 1px black solid; 
+}
+
+.menu-list {
+	text-align: center;
+	list-style-type: none;
+}
+
+.menu-item {
+	display: inline;
+}*/
+
+/* BODY */
+.pagebody {
+	width: 100%;
+	text-align: center;
+	
+	border: 1px black solid; /*指示位置*/
+}
+
+/* FEET */
+.pagefeet {
+	width: 100%;
+	
+	border: 1px black solid; /*指示位置*/
+}
+
+/* MASK */
+.shade {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.60;
+	filter: alpha(opacity=80);
+}

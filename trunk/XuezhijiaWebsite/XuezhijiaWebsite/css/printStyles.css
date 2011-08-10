@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+.bodycontent {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	border: 1px black solid; /*指示位置*/
+}
+
+.print-intro {
+	width: 100%;
+	height: 300px;
+	
+	border: 1px black solid; /*指示位置*/
+}
+
+.print-loader {
+	display: none;
+	position: absolute;
+	z-index:1002;
+	left: 50%;
+	top: 30%;
+	width: 400px;
+	margin-left: -200px;
+	padding: 10px;
+	font-size: 14px;
+	background-color:#CCC;
+	
+	border: 1px black solid; /*指示位置*/
+}

@@ -1,0 +1,36 @@
+﻿.pageneck
+{
+	height:40px;
+	background:url('../Image/menu.gif') repeat-x;
+}
+#menubar 
+{
+	padding:5px 0 5px 0;
+	margin:0 auto;
+}
+#menubar  ul 
+{
+	list-style:none;
+	margin:0px;
+}
+#menubar  ul li 
+{
+	float:left;
+	display:block;
+	line-height:30px;
+	margin:0 10px;
+}
+#menubar  ul li a:link,#menubar ul li a:visited 
+{
+	font-weight:bold;
+	color:White;
+}
+/*#menubar ul li a:visited 
+{
+	font-weight:bold;
+	color:Fuchsia;
+}*/
+#menubar   ul li a:hover
+{
+	color:Gray;
+}
