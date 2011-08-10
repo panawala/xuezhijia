@@ -35,6 +35,7 @@ namespace BLL
                 car.AdditionalPerKM = Convert.ToDouble(table.Rows[i]["AdditionalPerKM"].ToString());
                 car.AdditionalPerHour = Convert.ToDouble(table.Rows[i]["AdditionalPerHour"].ToString());
                 car.Comment = table.Rows[i]["Comment"].ToString();
+                car.Type = table.Rows[i]["Type"].ToString();
                 list.Add(car);
             }
             return list;
