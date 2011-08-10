@@ -132,6 +132,9 @@
       <DependentUpon>Carrental.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Common\ShowPhoto.ashx.cs">
+      <DependentUpon>ShowPhoto.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,6 +211,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Common\ShowPhoto.ashx" />
     <None Include="css\_notes\globalStyles.css.mno" />
     <Content Include="MasterPage.Master" />
   </ItemGroup>

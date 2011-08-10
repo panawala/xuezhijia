@@ -18,18 +18,9 @@ namespace XuezhijiaWebsite
                 return;
             }
 
-            InitPage();
-
         }
 
-        void InitPage()
-        {
-            List<PHOTO> list = new List<PHOTO>();
-            PhotoWrapper wrapper = new PhotoWrapper();
-            list = wrapper.getAllFormatedResult();
-            Image1.
- 
-        }
+      
 
         protected void UploadClicked(object sender, EventArgs e)
         {
