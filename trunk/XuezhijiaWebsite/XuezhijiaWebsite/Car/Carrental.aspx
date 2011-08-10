@@ -10,28 +10,6 @@
     
 <div id="carcontent" class="car">
 
-<%--<ul>
-<li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
-</li>
-<li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
-</li>
-<li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
-</li>
-<li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
-</li>
-<li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
-<div class="cardes">sdfasfasfdasf</div>
-</li>
-</ul>--%>
 </div>
 
 <script type="text/javascript">
