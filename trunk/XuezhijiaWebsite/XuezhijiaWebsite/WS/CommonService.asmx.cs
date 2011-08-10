@@ -4,18 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Web.Script.Services;
+using BLL;
+using DAL;
 
 namespace XuezhijiaWebsite.WS
 {
     /// <summary>
-    /// Summary description for WebService1
+    /// Summary description for CommonService
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     [System.Web.Script.Services.ScriptService]
-    public class WebService1 : System.Web.Services.WebService
+    public class CommonService : System.Web.Services.WebService
     {
 
         [WebMethod]
@@ -26,9 +28,10 @@ namespace XuezhijiaWebsite.WS
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<DAL.Course> getAllPatientList()
+        public List<CAR> getAllCourseList()
         {
-            return null;
+            CarWrapper wrapper = new CarWrapper();
+            return wrapper.getAllFormatedResult();
         }
     }
 }
