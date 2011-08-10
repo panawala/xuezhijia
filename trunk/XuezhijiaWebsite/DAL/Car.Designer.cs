@@ -295,6 +295,8 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnComment;
             
+            private global::System.Data.DataColumn columnPID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CarDataTable() {
@@ -394,6 +396,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PIDColumn {
+                get {
+                    return this.columnPID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +439,7 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CarRow AddCarRow(string Type, int SeatsCounts, double Price, double HirePrice, double AdditionalPerKM, double AdditionalPerHour, string Comment) {
+            public CarRow AddCarRow(string Type, int SeatsCounts, double Price, double HirePrice, double AdditionalPerKM, double AdditionalPerHour, string Comment, int PID) {
                 CarRow rowCarRow = ((CarRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -439,7 +449,8 @@ namespace DAL {
                         HirePrice,
                         AdditionalPerKM,
                         AdditionalPerHour,
-                        Comment};
+                        Comment,
+                        PID};
                 rowCarRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCarRow);
                 return rowCarRow;
@@ -477,6 +488,7 @@ namespace DAL {
                 this.columnAdditionalPerKM = base.Columns["AdditionalPerKM"];
                 this.columnAdditionalPerHour = base.Columns["AdditionalPerHour"];
                 this.columnComment = base.Columns["Comment"];
+                this.columnPID = base.Columns["PID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -498,6 +510,8 @@ namespace DAL {
                 base.Columns.Add(this.columnAdditionalPerHour);
                 this.columnComment = new global::System.Data.DataColumn("Comment", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComment);
+                this.columnPID = new global::System.Data.DataColumn("PID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCarID}, true));
                 this.columnCarID.AutoIncrement = true;
@@ -775,6 +789,22 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PID {
+                get {
+                    try {
+                        return ((int)(this[this.tableCar.PIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PID\' in table \'Car\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCar.PIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTypeNull() {
                 return this.IsNull(this.tableCar.TypeColumn);
             }
@@ -855,6 +885,18 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCommentNull() {
                 this[this.tableCar.CommentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPIDNull() {
+                return this.IsNull(this.tableCar.PIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPIDNull() {
+                this[this.tableCar.PIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1025,10 +1067,11 @@ namespace DAL.CarTableAdapters {
             tableMapping.ColumnMappings.Add("AdditionalPerKM", "AdditionalPerKM");
             tableMapping.ColumnMappings.Add("AdditionalPerHour", "AdditionalPerHour");
             tableMapping.ColumnMappings.Add("Comment", "Comment");
+            tableMapping.ColumnMappings.Add("PID", "PID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Car] WHERE (([CarID] = @Original_CarID) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_SeatsCounts = 1 AND [SeatsCounts] IS NULL) OR ([SeatsCounts] = @Original_SeatsCounts)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_HirePrice = 1 AND [HirePrice] IS NULL) OR ([HirePrice] = @Original_HirePrice)) AND ((@IsNull_AdditionalPerKM = 1 AND [AdditionalPerKM] IS NULL) OR ([AdditionalPerKM] = @Original_AdditionalPerKM)) AND ((@IsNull_AdditionalPerHour = 1 AND [AdditionalPerHour] IS NULL) OR ([AdditionalPerHour] = @Original_AdditionalPerHour)) AND ((@IsNull_Comment = 1 AND [Comment] IS NULL) OR ([Comment] = @Original_Comment)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Car] WHERE (([CarID] = @Original_CarID) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_SeatsCounts = 1 AND [SeatsCounts] IS NULL) OR ([SeatsCounts] = @Original_SeatsCounts)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_HirePrice = 1 AND [HirePrice] IS NULL) OR ([HirePrice] = @Original_HirePrice)) AND ((@IsNull_AdditionalPerKM = 1 AND [AdditionalPerKM] IS NULL) OR ([AdditionalPerKM] = @Original_AdditionalPerKM)) AND ((@IsNull_AdditionalPerHour = 1 AND [AdditionalPerHour] IS NULL) OR ([AdditionalPerHour] = @Original_AdditionalPerHour)) AND ((@IsNull_Comment = 1 AND [Comment] IS NULL) OR ([Comment] = @Original_Comment)) AND ((@IsNull_PID = 1 AND [PID] IS NULL) OR ([PID] = @Original_PID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CarID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1045,10 +1088,12 @@ namespace DAL.CarTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AdditionalPerHour", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AdditionalPerHour", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Comment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Comment", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Car] ([Type], [SeatsCounts], [Price], [HirePrice], [AdditionalPerKM], [AdditionalPerHour], [Comment]) VALUES (@Type, @SeatsCounts, @Price, @HirePrice, @AdditionalPerKM, @AdditionalPerHour, @Comment);
-SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPerHour, Comment FROM Car WHERE (CarID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Car] ([Type], [SeatsCounts], [Price], [HirePrice], [AdditionalPerKM], [AdditionalPerHour], [Comment], [PID]) VALUES (@Type, @SeatsCounts, @Price, @HirePrice, @AdditionalPerKM, @AdditionalPerHour, @Comment, @PID);
+SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPerHour, Comment, PID FROM Car WHERE (CarID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeatsCounts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatsCounts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1057,10 +1102,11 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AdditionalPerKM", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AdditionalPerKM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AdditionalPerHour", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AdditionalPerHour", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Car] SET [Type] = @Type, [SeatsCounts] = @SeatsCounts, [Price] = @Price, [HirePrice] = @HirePrice, [AdditionalPerKM] = @AdditionalPerKM, [AdditionalPerHour] = @AdditionalPerHour, [Comment] = @Comment WHERE (([CarID] = @Original_CarID) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_SeatsCounts = 1 AND [SeatsCounts] IS NULL) OR ([SeatsCounts] = @Original_SeatsCounts)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_HirePrice = 1 AND [HirePrice] IS NULL) OR ([HirePrice] = @Original_HirePrice)) AND ((@IsNull_AdditionalPerKM = 1 AND [AdditionalPerKM] IS NULL) OR ([AdditionalPerKM] = @Original_AdditionalPerKM)) AND ((@IsNull_AdditionalPerHour = 1 AND [AdditionalPerHour] IS NULL) OR ([AdditionalPerHour] = @Original_AdditionalPerHour)) AND ((@IsNull_Comment = 1 AND [Comment] IS NULL) OR ([Comment] = @Original_Comment)));
-SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPerHour, Comment FROM Car WHERE (CarID = @CarID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Car] SET [Type] = @Type, [SeatsCounts] = @SeatsCounts, [Price] = @Price, [HirePrice] = @HirePrice, [AdditionalPerKM] = @AdditionalPerKM, [AdditionalPerHour] = @AdditionalPerHour, [Comment] = @Comment, [PID] = @PID WHERE (([CarID] = @Original_CarID) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_SeatsCounts = 1 AND [SeatsCounts] IS NULL) OR ([SeatsCounts] = @Original_SeatsCounts)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_HirePrice = 1 AND [HirePrice] IS NULL) OR ([HirePrice] = @Original_HirePrice)) AND ((@IsNull_AdditionalPerKM = 1 AND [AdditionalPerKM] IS NULL) OR ([AdditionalPerKM] = @Original_AdditionalPerKM)) AND ((@IsNull_AdditionalPerHour = 1 AND [AdditionalPerHour] IS NULL) OR ([AdditionalPerHour] = @Original_AdditionalPerHour)) AND ((@IsNull_Comment = 1 AND [Comment] IS NULL) OR ([Comment] = @Original_Comment)) AND ((@IsNull_PID = 1 AND [PID] IS NULL) OR ([PID] = @Original_PID)));
+SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPerHour, Comment, PID FROM Car WHERE (CarID = @CarID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeatsCounts", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatsCounts", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1069,6 +1115,7 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AdditionalPerKM", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AdditionalPerKM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AdditionalPerHour", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AdditionalPerHour", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CarID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1084,6 +1131,8 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AdditionalPerHour", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AdditionalPerHour", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Comment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Comment", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CarID", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CarID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1101,7 +1150,7 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPer" +
-                "Hour, Comment FROM dbo.Car";
+                "Hour, Comment, PID FROM dbo.Car";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1162,7 +1211,7 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_CarID, string Original_Type, global::System.Nullable<int> Original_SeatsCounts, global::System.Nullable<double> Original_Price, global::System.Nullable<double> Original_HirePrice, global::System.Nullable<double> Original_AdditionalPerKM, global::System.Nullable<double> Original_AdditionalPerHour, string Original_Comment) {
+        public virtual int Delete(long Original_CarID, string Original_Type, global::System.Nullable<int> Original_SeatsCounts, global::System.Nullable<double> Original_Price, global::System.Nullable<double> Original_HirePrice, global::System.Nullable<double> Original_AdditionalPerKM, global::System.Nullable<double> Original_AdditionalPerHour, string Original_Comment, global::System.Nullable<int> Original_PID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_CarID));
             if ((Original_Type == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1220,6 +1269,14 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Comment));
             }
+            if ((Original_PID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_PID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1240,7 +1297,7 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Type, global::System.Nullable<int> SeatsCounts, global::System.Nullable<double> Price, global::System.Nullable<double> HirePrice, global::System.Nullable<double> AdditionalPerKM, global::System.Nullable<double> AdditionalPerHour, string Comment) {
+        public virtual int Insert(string Type, global::System.Nullable<int> SeatsCounts, global::System.Nullable<double> Price, global::System.Nullable<double> HirePrice, global::System.Nullable<double> AdditionalPerKM, global::System.Nullable<double> AdditionalPerHour, string Comment, global::System.Nullable<int> PID) {
             if ((Type == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1283,6 +1340,12 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Comment));
             }
+            if ((PID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(PID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1311,6 +1374,7 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
                     global::System.Nullable<double> AdditionalPerKM, 
                     global::System.Nullable<double> AdditionalPerHour, 
                     string Comment, 
+                    global::System.Nullable<int> PID, 
                     long Original_CarID, 
                     string Original_Type, 
                     global::System.Nullable<int> Original_SeatsCounts, 
@@ -1319,6 +1383,7 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
                     global::System.Nullable<double> Original_AdditionalPerKM, 
                     global::System.Nullable<double> Original_AdditionalPerHour, 
                     string Original_Comment, 
+                    global::System.Nullable<int> Original_PID, 
                     long CarID) {
             if ((Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -1362,64 +1427,78 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Comment));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_CarID));
-            if ((Original_Type == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((PID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(PID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Type));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_CarID));
+            if ((Original_Type == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Type));
             }
             if ((Original_SeatsCounts.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_SeatsCounts.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_SeatsCounts.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_Price.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Original_Price.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Original_Price.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_HirePrice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Original_HirePrice.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Original_HirePrice.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((Original_AdditionalPerKM.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Original_AdditionalPerKM.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(Original_AdditionalPerKM.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_AdditionalPerHour.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(Original_AdditionalPerHour.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(Original_AdditionalPerHour.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_Comment == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Comment));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Comment));
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((long)(CarID));
+            if ((Original_PID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_PID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((long)(CarID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1440,8 +1519,25 @@ SELECT CarID, Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Type, global::System.Nullable<int> SeatsCounts, global::System.Nullable<double> Price, global::System.Nullable<double> HirePrice, global::System.Nullable<double> AdditionalPerKM, global::System.Nullable<double> AdditionalPerHour, string Comment, long Original_CarID, string Original_Type, global::System.Nullable<int> Original_SeatsCounts, global::System.Nullable<double> Original_Price, global::System.Nullable<double> Original_HirePrice, global::System.Nullable<double> Original_AdditionalPerKM, global::System.Nullable<double> Original_AdditionalPerHour, string Original_Comment) {
-            return this.Update(Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPerHour, Comment, Original_CarID, Original_Type, Original_SeatsCounts, Original_Price, Original_HirePrice, Original_AdditionalPerKM, Original_AdditionalPerHour, Original_Comment, Original_CarID);
+        public virtual int Update(
+                    string Type, 
+                    global::System.Nullable<int> SeatsCounts, 
+                    global::System.Nullable<double> Price, 
+                    global::System.Nullable<double> HirePrice, 
+                    global::System.Nullable<double> AdditionalPerKM, 
+                    global::System.Nullable<double> AdditionalPerHour, 
+                    string Comment, 
+                    global::System.Nullable<int> PID, 
+                    long Original_CarID, 
+                    string Original_Type, 
+                    global::System.Nullable<int> Original_SeatsCounts, 
+                    global::System.Nullable<double> Original_Price, 
+                    global::System.Nullable<double> Original_HirePrice, 
+                    global::System.Nullable<double> Original_AdditionalPerKM, 
+                    global::System.Nullable<double> Original_AdditionalPerHour, 
+                    string Original_Comment, 
+                    global::System.Nullable<int> Original_PID) {
+            return this.Update(Type, SeatsCounts, Price, HirePrice, AdditionalPerKM, AdditionalPerHour, Comment, PID, Original_CarID, Original_Type, Original_SeatsCounts, Original_Price, Original_HirePrice, Original_AdditionalPerKM, Original_AdditionalPerHour, Original_Comment, Original_PID, Original_CarID);
         }
     }
     
