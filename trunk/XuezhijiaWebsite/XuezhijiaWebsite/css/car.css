@@ -1,4 +1,14 @@
-﻿.car
+﻿.carnav
+{
+	width:1022px;
+	height:30px;
+	border: 1px solid #85AFEC;
+	background: #E4EDFA;
+	overflow:hidden;
+	margin-bottom:5px;
+	line-height:30px;
+}
+.car
 {
 	width:810px;
 	height:inherit;
@@ -40,7 +50,6 @@
 	height:110px;
 	color:Black;
 	background-color:#A9CBEE;
-	cursor:pointer;
 	margin:5px 0px;
 	padding-left:10px;
 	/*border: 1px dashed Purple;*/

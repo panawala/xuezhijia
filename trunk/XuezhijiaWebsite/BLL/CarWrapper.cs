@@ -27,7 +27,7 @@ namespace BLL
             for (int i = 0; i < table.Rows.Count; i++)
             { 
                 CAR car = new CAR();
-                car.CarID = Convert.ToInt16(table.Rows[i]["CarID"].ToString());
+                car.CarID = Convert.ToInt32(table.Rows[i]["CarID"].ToString());
                 car.Comment = table.Rows[i]["Comment"].ToString();
                 car.SeatsCounts = Convert.ToInt16(table.Rows[i]["SeatsCounts"].ToString());
                 car.Price = Convert.ToDouble(table.Rows[i]["Price"].ToString());
@@ -36,6 +36,7 @@ namespace BLL
                 car.AdditionalPerHour = Convert.ToDouble(table.Rows[i]["AdditionalPerHour"].ToString());
                 car.Comment = table.Rows[i]["Comment"].ToString();
                 car.Type = table.Rows[i]["Type"].ToString();
+                car.PID = Convert.ToInt32(table.Rows[i]["PID"].ToString());
                 list.Add(car);
             }
             return list;

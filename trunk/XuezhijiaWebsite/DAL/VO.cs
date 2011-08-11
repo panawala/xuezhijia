@@ -13,6 +13,7 @@ namespace DAL
     public class CAR
     {
         public int CarID;
+        public int PID;
         public string Type;
         public int SeatsCounts;
         public double Price;
