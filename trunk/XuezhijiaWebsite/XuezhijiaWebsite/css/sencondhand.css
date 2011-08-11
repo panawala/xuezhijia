@@ -142,8 +142,23 @@ margin-bottom: 10px;
 width: 100%;
 border-bottom: 1px dotted #CCC;
 }
+
+#metaTable td.short {
+width: 50%;
+}
+#metaTable td {
+padding: 2px 0px;
+}
+
+#metaTable td label {
+width: 85px;
+white-space: nowrap;
+}
+
+
 #content p {
 line-height: 28px;
+margin-left:0px;
 }
 
 #content  a:link, a:visited {

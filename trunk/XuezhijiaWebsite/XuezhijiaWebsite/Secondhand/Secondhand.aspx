@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <div class="secondhandnav">二手市场</div>
+<div class="secondhandnav">二手市场</div>
 <div id="secondhandcontent" class="secondhand">
 
 </div>
