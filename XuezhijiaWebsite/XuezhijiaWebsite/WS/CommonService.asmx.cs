@@ -34,11 +34,20 @@ namespace XuezhijiaWebsite.WS
             return wrapper.getAllFormatedResult();
         }
 
+        [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public List<SECONDHANDMARKET> getAllSecondHandMarketList()
         {
             SecondHMWrapper wrapper = new SecondHMWrapper();
             return wrapper.getAllFormatedResult();
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public SECONDHANDMARKET getSecondHandMarketByID(int id)
+        {
+            SecondHMWrapper wrapper = new SecondHMWrapper();
+            return wrapper.getRecordByID(id);
         }
     }
 }
