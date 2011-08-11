@@ -43,6 +43,15 @@
     <Compile Include="CarWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CommodityWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CourseWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DishWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FileRecordWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -50,6 +59,27 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentHourseWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoomWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SecondHMWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ShopWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StudentWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TeacherWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TicketWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserInfoWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
