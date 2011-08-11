@@ -49,5 +49,13 @@ namespace XuezhijiaWebsite.WS
             SecondHMWrapper wrapper = new SecondHMWrapper();
             return wrapper.getRecordByID(id);
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public ARTICLE getArticleByID(int id)
+        {
+            ArticalWrapper wrapper = new  ArticalWrapper();
+            return wrapper.getRecordByID(id);
+        }
     }
 }

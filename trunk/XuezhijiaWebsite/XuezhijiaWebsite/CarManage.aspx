@@ -68,6 +68,9 @@
     &nbsp;<br />
 &nbsp;&nbsp;&nbsp;
     <asp:TextBox ID="TextBox7" Visible="false" runat="server" TextMode="MultiLine" Height="170px" Width="699px"></asp:TextBox>
+    <br />
+    <asp:Button ID="Button1" runat="server" Text="提交" OnClick="CommitClick" />
+    <br />
     </form>
 </body>
 </html>
