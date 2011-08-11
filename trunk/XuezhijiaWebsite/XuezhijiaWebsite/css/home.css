@@ -27,17 +27,11 @@
 	color:Gray;
 	text-decoration:none;
 }
-.ncu a:link
+.ncu a:link, .ncu a:visited 
 {
 	font-weight:bold;
 	color:White;
     text-decoration:none;
-}
-.ncu a:visited 
-{
-	font-weight:bold;
-	color:White;
-	text-decoration:none;
 }
 .ncu a:hover
 {
