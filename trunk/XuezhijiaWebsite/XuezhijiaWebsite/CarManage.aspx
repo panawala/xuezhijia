@@ -32,7 +32,6 @@
                 <asp:BoundField DataField="AdditionalPerKM" HeaderText="超过里程每公里/元" SortExpression="AdditionalPerKM" />
                 <asp:BoundField DataField="AdditionalPerHour" HeaderText="超过时限每小时/元" SortExpression="AdditionalPerHour" />
                 <asp:BoundField DataField="Comment" HeaderText="备注" SortExpression="Comment" />
-                <asp:BoundField DataField="PID" HeaderText="图片信息" SortExpression="PID" />
             </Columns>
     </asp:GridView>
     <br />
@@ -67,9 +66,30 @@
     <asp:Label ID="Label8" Visible="false" runat="server" Text="备注"></asp:Label>
     &nbsp;<br />
 &nbsp;&nbsp;&nbsp;
-    <asp:TextBox ID="TextBox7" Visible="false" runat="server" TextMode="MultiLine" Height="170px" Width="699px"></asp:TextBox>
+    <asp:TextBox ID="TextBox7" Visible="false" runat="server" TextMode="MultiLine" 
+        Height="423px" Width="477px"></asp:TextBox>
+    &nbsp;&nbsp;&nbsp;
+    <asp:Label ID="Label9" runat="server" Visible="false" Text="汽车图片"></asp:Label>
+    <asp:Image ID="Image1" Visible="false" runat="server" />
     <br />
-    <asp:Button ID="Button1" runat="server" Text="提交" OnClick="CommitClick" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br />
+    <br />
+    <br />
+&nbsp;<asp:Label ID="Label10" Visible="false" runat="server"  Text="上传新图片"></asp:Label>
+    &nbsp;<br />
+    <asp:FileUpload ID="Upload" Visible="false" runat="server" />
+&nbsp;
+    <asp:Button ID="Commit" runat="server" Visible="false" Text="上传" OnClick="UploadClicked" />
+    <br />
+    <asp:Label ID="LabelComment" runat="server" Visible="false" Text="图片备注"></asp:Label>
+    <br />
+    <br />
+&nbsp;<asp:TextBox ID="Comment" runat="server" Visible="false" Height="100px" Width="315px"></asp:TextBox>
+    <br />
+    <br />
+    <asp:Button ID="Button1" runat="server" Visible="false" Text="提交" OnClick="CommitClick" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <br />
     </form>
 </body>

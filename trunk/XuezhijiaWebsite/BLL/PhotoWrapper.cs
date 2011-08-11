@@ -47,5 +47,12 @@ namespace BLL
            table = helper.getResultBySql(sql);
            return (byte[]) table.Rows[0][0];
        }
+
+       public void deleteARecord(int id)
+       {
+           string sql = "delete from Photo where PID = " + id.ToString();
+           CommenHelper helper = CommenHelper.GetInstance();
+           helper.delete(sql);
+       }
     }
 }
