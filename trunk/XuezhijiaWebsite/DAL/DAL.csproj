@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artical.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Artical.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Car.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -59,11 +64,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Course.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dish.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -132,6 +132,17 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Artical.xsc">
+      <DependentUpon>Artical.xsd</DependentUpon>
+    </None>
+    <None Include="Artical.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Artical.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Artical.xss">
+      <DependentUpon>Artical.xsd</DependentUpon>
+    </None>
     <None Include="Car.xsc">
       <DependentUpon>Car.xsd</DependentUpon>
     </None>
@@ -164,17 +175,6 @@
     </None>
     <None Include="Course.xss">
       <DependentUpon>Course.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="Dish.xsc">
       <DependentUpon>Dish.xsd</DependentUpon>

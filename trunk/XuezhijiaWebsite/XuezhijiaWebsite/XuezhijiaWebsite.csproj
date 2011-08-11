@@ -56,6 +56,8 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="BackManage.aspx" />
+    <Content Include="CarManage.aspx" />
     <Content Include="Car\Carrental.aspx" />
     <Content Include="Car\cartemplate.htm" />
     <Content Include="css\car.css" />
@@ -63,6 +65,9 @@
     <Content Include="css\home.css" />
     <Content Include="css\printStyles.css" />
     <Content Include="css\sencondhand.css" />
+    <Content Include="GREManage.aspx" />
+    <Content Include="HotelManage.aspx" />
+    <Content Include="HourseManage.aspx" />
     <Content Include="Image\head_bg.jpg" />
     <Content Include="Image\menu.gif" />
     <Content Include="Image\menu.jpg" />
@@ -72,18 +77,24 @@
     <Content Include="js\user_log.js" />
     <Content Include="PhotoReview.aspx" />
     <Content Include="Print.aspx" />
+    <Content Include="PrintManage.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\jtemplates.js" />
+    <Content Include="SecondHandMarketManage.aspx" />
     <Content Include="Secondhand\Secondhand.aspx" />
     <Content Include="Secondhand\secondhandtemplate.htm" />
     <Content Include="Secondhand\shcommodity.aspx" />
     <Content Include="Secondhand\shcommoditytemlate.htm" />
+    <Content Include="StudentMarketManage.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="TakeOutManage.aspx" />
+    <Content Include="TicketManage.aspx" />
+    <Content Include="TutorManage.aspx" />
     <Content Include="UploadFile\a5photo.sql" />
     <Content Include="UploadFile\a6shop.sql" />
     <Content Include="UploadFile\a7shop.sql" />
@@ -135,6 +146,20 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BackManage.aspx.cs">
+      <DependentUpon>BackManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackManage.aspx.designer.cs">
+      <DependentUpon>BackManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CarManage.aspx.cs">
+      <DependentUpon>CarManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CarManage.aspx.designer.cs">
+      <DependentUpon>CarManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Car\Carrental.aspx.cs">
       <DependentUpon>Carrental.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +176,27 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GREManage.aspx.cs">
+      <DependentUpon>GREManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GREManage.aspx.designer.cs">
+      <DependentUpon>GREManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelManage.aspx.cs">
+      <DependentUpon>HotelManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelManage.aspx.designer.cs">
+      <DependentUpon>HotelManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HourseManage.aspx.cs">
+      <DependentUpon>HourseManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HourseManage.aspx.designer.cs">
+      <DependentUpon>HourseManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -173,6 +219,13 @@
     <Compile Include="Print.aspx.designer.cs">
       <DependentUpon>Print.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PrintManage.aspx.cs">
+      <DependentUpon>PrintManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintManage.aspx.designer.cs">
+      <DependentUpon>PrintManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -180,6 +233,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecondHandMarketManage.aspx.cs">
+      <DependentUpon>SecondHandMarketManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecondHandMarketManage.aspx.designer.cs">
+      <DependentUpon>SecondHandMarketManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Secondhand\Secondhand.aspx.cs">
       <DependentUpon>Secondhand.aspx</DependentUpon>
@@ -215,6 +275,34 @@
     </Compile>
     <Compile Include="Load.aspx.designer.cs">
       <DependentUpon>Load.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentMarketManage.aspx.cs">
+      <DependentUpon>StudentMarketManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentMarketManage.aspx.designer.cs">
+      <DependentUpon>StudentMarketManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TakeOutManage.aspx.cs">
+      <DependentUpon>TakeOutManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TakeOutManage.aspx.designer.cs">
+      <DependentUpon>TakeOutManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TicketManage.aspx.cs">
+      <DependentUpon>TicketManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TicketManage.aspx.designer.cs">
+      <DependentUpon>TicketManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TutorManage.aspx.cs">
+      <DependentUpon>TutorManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TutorManage.aspx.designer.cs">
+      <DependentUpon>TutorManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="WS\CommonService.asmx.cs">
       <DependentUpon>CommonService.asmx</DependentUpon>
