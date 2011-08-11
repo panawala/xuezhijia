@@ -62,6 +62,7 @@
     <Content Include="css\globalStyles.css" />
     <Content Include="css\home.css" />
     <Content Include="css\printStyles.css" />
+    <Content Include="css\sencondhand.css" />
     <Content Include="Image\head_bg.jpg" />
     <Content Include="Image\menu.gif" />
     <Content Include="Image\menu.jpg" />
@@ -75,6 +76,8 @@
     <Content Include="Scripts\jtemplates.js" />
     <Content Include="Secondhand\Secondhand.aspx" />
     <Content Include="Secondhand\secondhandtemplate.htm" />
+    <Content Include="Secondhand\shcommodity.aspx" />
+    <Content Include="Secondhand\shcommoditytemlate.htm" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -184,6 +187,13 @@
     </Compile>
     <Compile Include="Secondhand\Secondhand.aspx.designer.cs">
       <DependentUpon>Secondhand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secondhand\shcommodity.aspx.cs">
+      <DependentUpon>shcommodity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secondhand\shcommodity.aspx.designer.cs">
+      <DependentUpon>shcommodity.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
