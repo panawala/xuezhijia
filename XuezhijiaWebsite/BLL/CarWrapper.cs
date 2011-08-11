@@ -46,5 +46,13 @@ namespace BLL
         {
             Insert(row.Type, row.SeatsCounts, row.Price, row.HirePrice, row.AdditionalPerKM, row.AdditionalPerHour, row.Comment, row.PID);
         }
+
+        public void deleteARecordByID(int id)
+        {
+            string sql = "delete from Car where CarID = " + id.ToString();
+            CommenHelper helper = CommenHelper.GetInstance();
+            helper.initOle();
+            helper.delete(sql);
+        }
     }
 }

@@ -13,9 +13,9 @@ namespace XuezhijiaWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarWrapper wrapper = new CarWrapper();
-            List<CAR> list = new List<CAR>();
-            list = wrapper.getAllFormatedResult();
+            //SecondHMWrapper wrapper = new SecondHMWrapper();
+            //SECONDHANDMARKET secondhandmarket = new SECONDHANDMARKET();
+            //secondhandmarket = wrapper.getRecordByID(1);
         }
         protected void CommitLoad(object sender, EventArgs e)
         {
