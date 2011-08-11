@@ -18,7 +18,7 @@ namespace BLL
 
        public void addARecord(Artical.ArticleRow row)
        {
-           Insert(row.ArticleID, row.AritcleArea, row.ArticleContent); 
+           Insert(row.ArticleID, row.ArticleArea, row.ArticleContent); 
        }
 
        public void deleteARecord(int id)
@@ -51,7 +51,7 @@ namespace BLL
                if (row.ArticleID == Convert.ToInt32(table.Rows[i]["ArticleID"]))
                {
                    table.Rows[i]["ArticleContent"] = row.ArticleContent;
-                   table.Rows[i]["AritcleArea"] = row.AritcleArea;
+                   table.Rows[i]["ArticleArea"] = row.ArticleArea;
                    break;
                }
            }
@@ -60,12 +60,16 @@ namespace BLL
 
        public ARTICLE getRecordByID(int id)
        {
-
            string sql = "select * from Article where ArticleID = " + id.ToString();
            DataTable table = new DataTable();
            CommenHelper helper = CommenHelper.GetInstance();
            table = helper.getResultBySql(sql);
            return _transfer(table).First();
+       }
+
+       public List<ARTICLE> getAllFormatedResult()
+       {
+           return _transfer(getAll());
        }
 
        private List<ARTICLE> _transfer(DataTable table)
