@@ -26,11 +26,22 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=Xuezhijia;Persist Security Info=True" +
-            ";User ID=sa;Password=tongji")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=Xuezhijia;Persist Security Info=True;User I" +
+            "D=sa;Password=tongji")]
         public string XuezhijiaConnectionString {
             get {
                 return ((string)(this["XuezhijiaConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=GY-PC\\SQLEXPRESS;Initial Catalog=Xuezhijia;Persist Security Info=True" +
+            ";User ID=sa;Password=123456")]
+        public string XuezhijiaConnectionString1 {
+            get {
+                return ((string)(this["XuezhijiaConnectionString1"]));
             }
         }
     }
