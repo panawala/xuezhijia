@@ -94,13 +94,13 @@ namespace DAL
 
     public class ROOM
     {
-        int RoomID;
-        string Location;
-        double Price;
-        string Type;
-        string DistanceFromTongji;
-        string LinkURL;
-        string Comment; 
+       public  int RoomID;
+       public  string Location;
+       public  double Price;
+       public  string Type;
+       public  string DistanceFromTongji;
+       public  string LinkURL;
+       public  string Comment; 
     }
 
     public class SECONDHANDMARKET
@@ -137,5 +137,12 @@ namespace DAL
         int Grade;
         string Requirment;
         string Comment; 
+    }
+
+    public class ARTICLE
+    {
+        public int ArticleID;
+        public string ArticleArea;
+        public string ArticleContent;
     }
 }
