@@ -279,9 +279,11 @@ namespace DAL {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ArticleDataTable : global::System.Data.TypedTableBase<ArticleRow> {
             
+            private global::System.Data.DataColumn columnID;
+            
             private global::System.Data.DataColumn columnArticleID;
             
-            private global::System.Data.DataColumn columnAritcleArea;
+            private global::System.Data.DataColumn columnArticleArea;
             
             private global::System.Data.DataColumn columnArticleContent;
             
@@ -320,6 +322,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn ArticleIDColumn {
                 get {
                     return this.columnArticleID;
@@ -328,9 +338,9 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AritcleAreaColumn {
+            public global::System.Data.DataColumn ArticleAreaColumn {
                 get {
-                    return this.columnAritcleArea;
+                    return this.columnArticleArea;
                 }
             }
             
@@ -379,11 +389,12 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArticleRow AddArticleRow(int ArticleID, string AritcleArea, string ArticleContent) {
+            public ArticleRow AddArticleRow(int ArticleID, string ArticleArea, string ArticleContent) {
                 ArticleRow rowArticleRow = ((ArticleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
                         ArticleID,
-                        AritcleArea,
+                        ArticleArea,
                         ArticleContent};
                 rowArticleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowArticleRow);
@@ -392,9 +403,9 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArticleRow FindByArticleID(int ArticleID) {
+            public ArticleRow FindByID(int ID) {
                 return ((ArticleRow)(this.Rows.Find(new object[] {
-                            ArticleID})));
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,25 +425,33 @@ namespace DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnID = base.Columns["ID"];
                 this.columnArticleID = base.Columns["ArticleID"];
-                this.columnAritcleArea = base.Columns["AritcleArea"];
+                this.columnArticleArea = base.Columns["ArticleArea"];
                 this.columnArticleContent = base.Columns["ArticleContent"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.columnArticleID = new global::System.Data.DataColumn("ArticleID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnArticleID);
-                this.columnAritcleArea = new global::System.Data.DataColumn("AritcleArea", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAritcleArea);
+                this.columnArticleArea = new global::System.Data.DataColumn("ArticleArea", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArticleArea);
                 this.columnArticleContent = new global::System.Data.DataColumn("ArticleContent", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnArticleContent);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnArticleID}, true));
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
                 this.columnArticleID.AllowDBNull = false;
-                this.columnArticleID.Unique = true;
-                this.columnAritcleArea.MaxLength = 100;
+                this.columnArticleArea.MaxLength = 100;
                 this.columnArticleContent.MaxLength = 2147483647;
             }
             
@@ -576,6 +595,17 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableArticle.IDColumn]));
+                }
+                set {
+                    this[this.tableArticle.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ArticleID {
                 get {
                     return ((int)(this[this.tableArticle.ArticleIDColumn]));
@@ -587,17 +617,17 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AritcleArea {
+            public string ArticleArea {
                 get {
                     try {
-                        return ((string)(this[this.tableArticle.AritcleAreaColumn]));
+                        return ((string)(this[this.tableArticle.ArticleAreaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AritcleArea\' in table \'Article\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ArticleArea\' in table \'Article\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArticle.AritcleAreaColumn] = value;
+                    this[this.tableArticle.ArticleAreaColumn] = value;
                 }
             }
             
@@ -619,14 +649,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAritcleAreaNull() {
-                return this.IsNull(this.tableArticle.AritcleAreaColumn);
+            public bool IsArticleAreaNull() {
+                return this.IsNull(this.tableArticle.ArticleAreaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAritcleAreaNull() {
-                this[this.tableArticle.AritcleAreaColumn] = global::System.Convert.DBNull;
+            public void SetArticleAreaNull() {
+                this[this.tableArticle.ArticleAreaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -801,39 +831,43 @@ namespace DAL.ArticalTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Article";
+            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("ArticleID", "ArticleID");
-            tableMapping.ColumnMappings.Add("AritcleArea", "AritcleArea");
+            tableMapping.ColumnMappings.Add("ArticleArea", "ArticleArea");
             tableMapping.ColumnMappings.Add("ArticleContent", "ArticleContent");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Article] WHERE (([ArticleID] = @Original_ArticleID) AND ((@IsN" +
-                "ull_AritcleArea = 1 AND [AritcleArea] IS NULL) OR ([AritcleArea] = @Original_Ari" +
-                "tcleArea)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Article] WHERE (([ID] = @Original_ID) AND ([ArticleID] = @Orig" +
+                "inal_ArticleID) AND ((@IsNull_ArticleArea = 1 AND [ArticleArea] IS NULL) OR ([Ar" +
+                "ticleArea] = @Original_ArticleArea)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ArticleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AritcleArea", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AritcleArea", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AritcleArea", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AritcleArea", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ArticleArea", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleArea", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ArticleArea", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleArea", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Article] ([ArticleID], [AritcleArea], [ArticleContent]) VALUES" +
-                " (@ArticleID, @AritcleArea, @ArticleContent);\r\nSELECT ArticleID, AritcleArea, Ar" +
-                "ticleContent FROM Article WHERE (ArticleID = @ArticleID)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Article] ([ArticleID], [ArticleArea], [ArticleContent]) VALUES" +
+                " (@ArticleID, @ArticleArea, @ArticleContent);\r\nSELECT ID, ArticleID, ArticleArea" +
+                ", ArticleContent FROM Article WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArticleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AritcleArea", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AritcleArea", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArticleArea", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleArea", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArticleContent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleContent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Article] SET [ArticleID] = @ArticleID, [AritcleArea] = @AritcleArea, [ArticleContent] = @ArticleContent WHERE (([ArticleID] = @Original_ArticleID) AND ((@IsNull_AritcleArea = 1 AND [AritcleArea] IS NULL) OR ([AritcleArea] = @Original_AritcleArea)));
-SELECT ArticleID, AritcleArea, ArticleContent FROM Article WHERE (ArticleID = @ArticleID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Article] SET [ArticleID] = @ArticleID, [ArticleArea] = @ArticleArea, [ArticleContent] = @ArticleContent WHERE (([ID] = @Original_ID) AND ([ArticleID] = @Original_ArticleID) AND ((@IsNull_ArticleArea = 1 AND [ArticleArea] IS NULL) OR ([ArticleArea] = @Original_ArticleArea)));
+SELECT ID, ArticleID, ArticleArea, ArticleContent FROM Article WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArticleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AritcleArea", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AritcleArea", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArticleArea", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleArea", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArticleContent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleContent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ArticleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AritcleArea", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AritcleArea", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AritcleArea", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AritcleArea", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ArticleArea", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleArea", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ArticleArea", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArticleArea", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -849,7 +883,7 @@ SELECT ArticleID, AritcleArea, ArticleContent FROM Article WHERE (ArticleID = @A
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ArticleID, AritcleArea, ArticleContent FROM dbo.Article";
+            this._commandCollection[0].CommandText = "SELECT ID, ArticleID, ArticleArea, ArticleContent FROM dbo.Article";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -910,15 +944,16 @@ SELECT ArticleID, AritcleArea, ArticleContent FROM Article WHERE (ArticleID = @A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ArticleID, string Original_AritcleArea) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ArticleID));
-            if ((Original_AritcleArea == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+        public virtual int Delete(int Original_ID, int Original_ArticleID, string Original_ArticleArea) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ArticleID));
+            if ((Original_ArticleArea == null)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_AritcleArea));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_ArticleArea));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -940,13 +975,13 @@ SELECT ArticleID, AritcleArea, ArticleContent FROM Article WHERE (ArticleID = @A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ArticleID, string AritcleArea, string ArticleContent) {
+        public virtual int Insert(int ArticleID, string ArticleArea, string ArticleContent) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ArticleID));
-            if ((AritcleArea == null)) {
+            if ((ArticleArea == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(AritcleArea));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ArticleArea));
             }
             if ((ArticleContent == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -974,13 +1009,13 @@ SELECT ArticleID, AritcleArea, ArticleContent FROM Article WHERE (ArticleID = @A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ArticleID, string AritcleArea, string ArticleContent, int Original_ArticleID, string Original_AritcleArea) {
+        public virtual int Update(int ArticleID, string ArticleArea, string ArticleContent, int Original_ID, int Original_ArticleID, string Original_ArticleArea, int ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ArticleID));
-            if ((AritcleArea == null)) {
+            if ((ArticleArea == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(AritcleArea));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ArticleArea));
             }
             if ((ArticleContent == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -988,15 +1023,17 @@ SELECT ArticleID, AritcleArea, ArticleContent FROM Article WHERE (ArticleID = @A
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(ArticleContent));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ArticleID));
-            if ((Original_AritcleArea == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ArticleID));
+            if ((Original_ArticleArea == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_AritcleArea));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_ArticleArea));
             }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1017,8 +1054,8 @@ SELECT ArticleID, AritcleArea, ArticleContent FROM Article WHERE (ArticleID = @A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string AritcleArea, string ArticleContent, int Original_ArticleID, string Original_AritcleArea) {
-            return this.Update(Original_ArticleID, AritcleArea, ArticleContent, Original_ArticleID, Original_AritcleArea);
+        public virtual int Update(int ArticleID, string ArticleArea, string ArticleContent, int Original_ID, int Original_ArticleID, string Original_ArticleArea) {
+            return this.Update(ArticleID, ArticleArea, ArticleContent, Original_ID, Original_ArticleID, Original_ArticleArea, Original_ID);
         }
     }
     
