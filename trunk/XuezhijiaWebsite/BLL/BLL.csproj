@@ -59,14 +59,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RentHourseWrapper.cs" />
+    <Compile Include="RentHourseWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RoomWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SecondHMWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ShopWrapper.cs" />
+    <Compile Include="ShopWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="StudentWrapper.cs">
       <SubType>Component</SubType>
     </Compile>

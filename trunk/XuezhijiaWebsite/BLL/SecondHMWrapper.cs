@@ -43,5 +43,19 @@ namespace BLL
             }
             return list;
         }
+
+        public SECONDHANDMARKET getRecordByID(int id)
+        {
+            SECONDHANDMARKET secondhandmarket = new SECONDHANDMARKET();
+            CommenHelper helper = CommenHelper.GetInstance();
+            DataTable table = new DataTable();
+            string sql = "select * from SecondHandMarket where SID = " + id.ToString();
+            table = helper.getResultBySql(sql);
+            if (table.Rows.Count > 0)
+            {
+                secondhandmarket = _transfer(table).First();
+            }
+            return secondhandmarket;       
+        }
     }
 }
