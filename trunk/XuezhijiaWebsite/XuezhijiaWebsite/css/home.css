@@ -13,37 +13,55 @@
 	list-style:none;
 	margin:0px;
 }
-#menubar  ul li 
+#menubar ul li 
 {
 	float:left;
 	display:block;
 	line-height:30px;
 	margin:0 10px;
 }
-.cu a:link
+.cu a:link,.cu a:visited
 {
 	font-weight:bold;
 	font-size:x-large;
-	color:Blue;
+	color:Gray;
+	text-decoration:none;
+}
+.ncu a:link
+{
+	font-weight:bold;
+	color:White;
+    text-decoration:none;
+}
+.ncu a:visited 
+{
+	font-weight:bold;
+	color:White;
+	text-decoration:none;
+}
+.ncu a:hover
+{
+	font-weight:bold;
+	color:Green;
+	text-decoration: underline;
 }
 /*#menubar  ul li a:link
 {
 	font-weight:bold;
 	color:White;
-}*/
+    text-decoration:none;
+}
 #menubar ul li a:visited 
 {
 	font-weight:bold;
 	color:White;
-}
+	text-decoration:none;
+}*/
 
-/*#menubar ul li a:visited 
+
+/*#menubar ul li a:hover
 {
 	font-weight:bold;
-	color:Fuchsia;
-}*/
-#menubar ul li a:hover
-{
 	color:Green;
 	text-decoration: underline;
-}
+}*/

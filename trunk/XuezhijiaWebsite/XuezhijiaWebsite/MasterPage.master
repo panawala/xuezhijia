@@ -101,17 +101,17 @@
 	<div class="pageneck">
 		<div id="menubar" name="menubar">
 			<ul class="menu-list">
-				<li class="<%=CurrentMenu=="index"?"cu":"" %>"><a href="">首页</a></li>
-				<li class="<%=CurrentMenu=="print"?"cu":"" %>"><a href="">免费打印</a></li>
-				<li class="<%=CurrentMenu=="car"?"cu":"" %>"><a href="/Car/Carrental.aspx">汽车租赁</a></li>
-				<li class="<%=CurrentMenu=="hotel"?"cu":"" %>"><a href="">宾馆预定</a></li>
-				<li class="<%=CurrentMenu=="sell"?"cu":"" %>"><a href="">外卖信息</a></li>
-				<li class="<%=CurrentMenu=="train"?"cu":"" %>"><a href="">考研培训</a></li>
-				<li class="<%=CurrentMenu=="shop"?"cu":"" %>"><a href="">学生商城</a></li>
-				<li class="<%=CurrentMenu=="ticket"?"cu":"" %>"><a href="">门票服务</a></li>
-				<li class="<%=CurrentMenu=="tutor"?"cu":"" %>"><a href="/Tutor/Tutor.aspx">家教服务</a></li>
-				<li class="<%=CurrentMenu=="house"?"cu":"" %>"><a href="">房屋租赁</a></li>
-				<li class="<%=CurrentMenu=="market"?"cu":"" %>"><a href="/Secondhand/Secondhand.aspx">二手市场</a></li>
+				<li class="<%=CurrentMenu=="index"?"cu":"ncu" %>"><a href="">首页</a></li>
+				<li class="<%=CurrentMenu=="print"?"cu":"ncu" %>"><a href="">免费打印</a></li>
+				<li class="<%=CurrentMenu=="car"?"cu":"ncu" %>"><a href="/Car/Carrental.aspx">汽车租赁</a></li>
+				<li class="<%=CurrentMenu=="hotel"?"cu":"ncu" %>"><a href="">宾馆预定</a></li>
+				<li class="<%=CurrentMenu=="sell"?"cu":"ncu" %>"><a href="">外卖信息</a></li>
+				<li class="<%=CurrentMenu=="train"?"cu":"ncu" %>"><a href="">考研培训</a></li>
+				<li class="<%=CurrentMenu=="shop"?"cu":"ncu" %>"><a href="">学生商城</a></li>
+				<li class="<%=CurrentMenu=="ticket"?"cu":"ncu" %>"><a href="">门票服务</a></li>
+				<li class="<%=CurrentMenu=="tutor"?"cu":"ncu" %>"><a href="/Tutor/Tutor.aspx">家教服务</a></li>
+				<li class="<%=CurrentMenu=="house"?"cu":"ncu" %>"><a href="">房屋租赁</a></li>
+				<li class="<%=CurrentMenu=="market"?"cu":"ncu" %>"><a href="/Secondhand/Secondhand.aspx">二手市场</a></li>
 			</ul>
 		</div>
 	</div>
