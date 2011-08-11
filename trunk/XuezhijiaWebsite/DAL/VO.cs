@@ -78,4 +78,64 @@ namespace DAL
         public byte[] Data;
         public string Comment;
     }
+
+    public class RENTHOURSE
+    {
+        int HourseID;
+        double Price;
+        string RentType;
+        string HourseType;
+        string HourseName;
+        double Area;
+        string Configuration;
+        int ClickCount;
+        DateTime DistributeTime;
+    }
+
+    public class ROOM
+    {
+        int RoomID;
+        string Location;
+        double Price;
+        string Type;
+        string DistanceFromTongji;
+        string LinkURL;
+        string Comment; 
+    }
+
+    public class SECONDHANDMARKET
+    {
+        public int SID;
+        public string Tipical;
+        public string Type;
+        public string Comment;
+        public int LookCount;
+        public double Price;
+        public DateTime PublishDate;
+        public string Brand;
+        public string Location;
+        public string ContactInformation;
+        public bool HasImage;
+    }
+
+    public class SHOP
+    {
+        int ShopId;
+        string ShopName;
+        string ShopContactWay;
+        string ShopAddress;
+        float ShopScore;
+        string ShopDistrictId;
+        int ShopClickedCount;
+    }
+
+    public class STUDENT
+    {
+        int SID;
+        string SName;
+        string Address;
+        int Grade;
+        string Requirment;
+        string Comment; 
+    }
 }

@@ -20,17 +20,17 @@ namespace DAL {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Room")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Dish")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Room : global::System.Data.DataSet {
+    public partial class Dish : global::System.Data.DataSet {
         
-        private RoomDataTable tableRoom;
+        private DishDataTable tableDish;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Room() {
+        public Dish() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace DAL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected Room(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Dish(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace DAL {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Room"] != null)) {
-                    base.Tables.Add(new RoomDataTable(ds.Tables["Room"]));
+                if ((ds.Tables["Dish"] != null)) {
+                    base.Tables.Add(new DishDataTable(ds.Tables["Dish"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace DAL {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public RoomDataTable _Room {
+        public DishDataTable _Dish {
             get {
-                return this.tableRoom;
+                return this.tableDish;
             }
         }
         
@@ -127,7 +127,7 @@ namespace DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Room cln = ((Room)(base.Clone()));
+            Dish cln = ((Dish)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace DAL {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Room"] != null)) {
-                    base.Tables.Add(new RoomDataTable(ds.Tables["Room"]));
+                if ((ds.Tables["Dish"] != null)) {
+                    base.Tables.Add(new DishDataTable(ds.Tables["Dish"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableRoom = ((RoomDataTable)(base.Tables["Room"]));
+            this.tableDish = ((DishDataTable)(base.Tables["Dish"]));
             if ((initTable == true)) {
-                if ((this.tableRoom != null)) {
-                    this.tableRoom.InitVars();
+                if ((this.tableDish != null)) {
+                    this.tableDish.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Room";
+            this.DataSetName = "Dish";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Room.xsd";
+            this.Namespace = "http://tempuri.org/Dish.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableRoom = new RoomDataTable();
-            base.Tables.Add(this.tableRoom);
+            this.tableDish = new DishDataTable();
+            base.Tables.Add(this.tableDish);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerialize_Room() {
+        private bool ShouldSerialize_Dish() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Room ds = new Room();
+            Dish ds = new Dish();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,35 @@ namespace DAL {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void RoomRowChangeEventHandler(object sender, RoomRowChangeEvent e);
+        public delegate void DishRowChangeEventHandler(object sender, DishRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RoomDataTable : global::System.Data.TypedTableBase<RoomRow> {
+        public partial class DishDataTable : global::System.Data.TypedTableBase<DishRow> {
             
-            private global::System.Data.DataColumn columnRoomID;
+            private global::System.Data.DataColumn columnDishId;
             
-            private global::System.Data.DataColumn columnLocation;
+            private global::System.Data.DataColumn columnDishName;
             
-            private global::System.Data.DataColumn columnPrice;
+            private global::System.Data.DataColumn columnDishOwnerId;
             
-            private global::System.Data.DataColumn columnType;
+            private global::System.Data.DataColumn columnDishScore;
             
-            private global::System.Data.DataColumn columnDistanceFromTongji;
+            private global::System.Data.DataColumn columnDishUpCount;
             
-            private global::System.Data.DataColumn columnLinkURL;
+            private global::System.Data.DataColumn columnDishDownCount;
             
-            private global::System.Data.DataColumn columnComment;
+            private global::System.Data.DataColumn columnDishCatalog;
+            
+            private global::System.Data.DataColumn columnDishClickedCount;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RoomDataTable() {
-                this.TableName = "Room";
+            public DishDataTable() {
+                this.TableName = "Dish";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +306,7 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal RoomDataTable(global::System.Data.DataTable table) {
+            internal DishDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,64 +323,72 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected RoomDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DishDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RoomIDColumn {
+            public global::System.Data.DataColumn DishIdColumn {
                 get {
-                    return this.columnRoomID;
+                    return this.columnDishId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LocationColumn {
+            public global::System.Data.DataColumn DishNameColumn {
                 get {
-                    return this.columnLocation;
+                    return this.columnDishName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PriceColumn {
+            public global::System.Data.DataColumn DishOwnerIdColumn {
                 get {
-                    return this.columnPrice;
+                    return this.columnDishOwnerId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TypeColumn {
+            public global::System.Data.DataColumn DishScoreColumn {
                 get {
-                    return this.columnType;
+                    return this.columnDishScore;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DistanceFromTongjiColumn {
+            public global::System.Data.DataColumn DishUpCountColumn {
                 get {
-                    return this.columnDistanceFromTongji;
+                    return this.columnDishUpCount;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LinkURLColumn {
+            public global::System.Data.DataColumn DishDownCountColumn {
                 get {
-                    return this.columnLinkURL;
+                    return this.columnDishDownCount;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CommentColumn {
+            public global::System.Data.DataColumn DishCatalogColumn {
                 get {
-                    return this.columnComment;
+                    return this.columnDishCatalog;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DishClickedCountColumn {
+                get {
+                    return this.columnDishClickedCount;
                 }
             }
             
@@ -393,58 +403,59 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RoomRow this[int index] {
+            public DishRow this[int index] {
                 get {
-                    return ((RoomRow)(this.Rows[index]));
+                    return ((DishRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RoomRowChangeEventHandler RoomRowChanging;
+            public event DishRowChangeEventHandler DishRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RoomRowChangeEventHandler RoomRowChanged;
+            public event DishRowChangeEventHandler DishRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RoomRowChangeEventHandler RoomRowDeleting;
+            public event DishRowChangeEventHandler DishRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RoomRowChangeEventHandler RoomRowDeleted;
+            public event DishRowChangeEventHandler DishRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddRoomRow(RoomRow row) {
+            public void AddDishRow(DishRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RoomRow AddRoomRow(string Location, double Price, byte[] Type, byte[] DistanceFromTongji, string LinkURL, string Comment) {
-                RoomRow rowRoomRow = ((RoomRow)(this.NewRow()));
+            public DishRow AddDishRow(string DishName, long DishOwnerId, double DishScore, int DishUpCount, int DishDownCount, string DishCatalog, long DishClickedCount) {
+                DishRow rowDishRow = ((DishRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Location,
-                        Price,
-                        Type,
-                        DistanceFromTongji,
-                        LinkURL,
-                        Comment};
-                rowRoomRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowRoomRow);
-                return rowRoomRow;
+                        DishName,
+                        DishOwnerId,
+                        DishScore,
+                        DishUpCount,
+                        DishDownCount,
+                        DishCatalog,
+                        DishClickedCount};
+                rowDishRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDishRow);
+                return rowDishRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RoomRow FindByRoomID(long RoomID) {
-                return ((RoomRow)(this.Rows.Find(new object[] {
-                            RoomID})));
+            public DishRow FindByDishId(long DishId) {
+                return ((DishRow)(this.Rows.Find(new object[] {
+                            DishId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                RoomDataTable cln = ((RoomDataTable)(base.Clone()));
+                DishDataTable cln = ((DishDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,77 +463,80 @@ namespace DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new RoomDataTable();
+                return new DishDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnRoomID = base.Columns["RoomID"];
-                this.columnLocation = base.Columns["Location"];
-                this.columnPrice = base.Columns["Price"];
-                this.columnType = base.Columns["Type"];
-                this.columnDistanceFromTongji = base.Columns["DistanceFromTongji"];
-                this.columnLinkURL = base.Columns["LinkURL"];
-                this.columnComment = base.Columns["Comment"];
+                this.columnDishId = base.Columns["DishId"];
+                this.columnDishName = base.Columns["DishName"];
+                this.columnDishOwnerId = base.Columns["DishOwnerId"];
+                this.columnDishScore = base.Columns["DishScore"];
+                this.columnDishUpCount = base.Columns["DishUpCount"];
+                this.columnDishDownCount = base.Columns["DishDownCount"];
+                this.columnDishCatalog = base.Columns["DishCatalog"];
+                this.columnDishClickedCount = base.Columns["DishClickedCount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnRoomID = new global::System.Data.DataColumn("RoomID", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRoomID);
-                this.columnLocation = new global::System.Data.DataColumn("Location", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLocation);
-                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice);
-                this.columnType = new global::System.Data.DataColumn("Type", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnType);
-                this.columnDistanceFromTongji = new global::System.Data.DataColumn("DistanceFromTongji", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDistanceFromTongji);
-                this.columnLinkURL = new global::System.Data.DataColumn("LinkURL", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLinkURL);
-                this.columnComment = new global::System.Data.DataColumn("Comment", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnComment);
+                this.columnDishId = new global::System.Data.DataColumn("DishId", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDishId);
+                this.columnDishName = new global::System.Data.DataColumn("DishName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDishName);
+                this.columnDishOwnerId = new global::System.Data.DataColumn("DishOwnerId", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDishOwnerId);
+                this.columnDishScore = new global::System.Data.DataColumn("DishScore", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDishScore);
+                this.columnDishUpCount = new global::System.Data.DataColumn("DishUpCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDishUpCount);
+                this.columnDishDownCount = new global::System.Data.DataColumn("DishDownCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDishDownCount);
+                this.columnDishCatalog = new global::System.Data.DataColumn("DishCatalog", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDishCatalog);
+                this.columnDishClickedCount = new global::System.Data.DataColumn("DishClickedCount", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDishClickedCount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnRoomID}, true));
-                this.columnRoomID.AutoIncrement = true;
-                this.columnRoomID.AutoIncrementSeed = -1;
-                this.columnRoomID.AutoIncrementStep = -1;
-                this.columnRoomID.AllowDBNull = false;
-                this.columnRoomID.ReadOnly = true;
-                this.columnRoomID.Unique = true;
-                this.columnLocation.MaxLength = 100;
-                this.columnLinkURL.MaxLength = 100;
-                this.columnComment.MaxLength = 500;
-                this.ExtendedProperties.Add("Generator_TablePropName", "_Room");
-                this.ExtendedProperties.Add("Generator_UserTableName", "Room");
+                                this.columnDishId}, true));
+                this.columnDishId.AutoIncrement = true;
+                this.columnDishId.AutoIncrementSeed = -1;
+                this.columnDishId.AutoIncrementStep = -1;
+                this.columnDishId.AllowDBNull = false;
+                this.columnDishId.ReadOnly = true;
+                this.columnDishId.Unique = true;
+                this.columnDishName.MaxLength = 50;
+                this.columnDishOwnerId.AllowDBNull = false;
+                this.columnDishCatalog.MaxLength = 50;
+                this.ExtendedProperties.Add("Generator_TablePropName", "_Dish");
+                this.ExtendedProperties.Add("Generator_UserTableName", "Dish");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RoomRow NewRoomRow() {
-                return ((RoomRow)(this.NewRow()));
+            public DishRow NewDishRow() {
+                return ((DishRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new RoomRow(builder);
+                return new DishRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(RoomRow);
+                return typeof(DishRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.RoomRowChanged != null)) {
-                    this.RoomRowChanged(this, new RoomRowChangeEvent(((RoomRow)(e.Row)), e.Action));
+                if ((this.DishRowChanged != null)) {
+                    this.DishRowChanged(this, new DishRowChangeEvent(((DishRow)(e.Row)), e.Action));
                 }
             }
             
@@ -530,8 +544,8 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.RoomRowChanging != null)) {
-                    this.RoomRowChanging(this, new RoomRowChangeEvent(((RoomRow)(e.Row)), e.Action));
+                if ((this.DishRowChanging != null)) {
+                    this.DishRowChanging(this, new DishRowChangeEvent(((DishRow)(e.Row)), e.Action));
                 }
             }
             
@@ -539,8 +553,8 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.RoomRowDeleted != null)) {
-                    this.RoomRowDeleted(this, new RoomRowChangeEvent(((RoomRow)(e.Row)), e.Action));
+                if ((this.DishRowDeleted != null)) {
+                    this.DishRowDeleted(this, new DishRowChangeEvent(((DishRow)(e.Row)), e.Action));
                 }
             }
             
@@ -548,14 +562,14 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.RoomRowDeleting != null)) {
-                    this.RoomRowDeleting(this, new RoomRowChangeEvent(((RoomRow)(e.Row)), e.Action));
+                if ((this.DishRowDeleting != null)) {
+                    this.DishRowDeleting(this, new DishRowChangeEvent(((DishRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveRoomRow(RoomRow row) {
+            public void RemoveDishRow(DishRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -564,7 +578,7 @@ namespace DAL {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Room ds = new Room();
+                Dish ds = new Dish();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -582,7 +596,7 @@ namespace DAL {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "RoomDataTable";
+                attribute2.FixedValue = "DishDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -626,194 +640,205 @@ namespace DAL {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class RoomRow : global::System.Data.DataRow {
+        public partial class DishRow : global::System.Data.DataRow {
             
-            private RoomDataTable tableRoom;
+            private DishDataTable tableDish;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal RoomRow(global::System.Data.DataRowBuilder rb) : 
+            internal DishRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableRoom = ((RoomDataTable)(this.Table));
+                this.tableDish = ((DishDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long RoomID {
+            public long DishId {
                 get {
-                    return ((long)(this[this.tableRoom.RoomIDColumn]));
+                    return ((long)(this[this.tableDish.DishIdColumn]));
                 }
                 set {
-                    this[this.tableRoom.RoomIDColumn] = value;
+                    this[this.tableDish.DishIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Location {
-                get {
-                    try {
-                        return ((string)(this[this.tableRoom.LocationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Location\' in table \'Room\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRoom.LocationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Price {
+            public string DishName {
                 get {
                     try {
-                        return ((double)(this[this.tableRoom.PriceColumn]));
+                        return ((string)(this[this.tableDish.DishNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'Room\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DishName\' in table \'Dish\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRoom.PriceColumn] = value;
+                    this[this.tableDish.DishNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] Type {
+            public long DishOwnerId {
+                get {
+                    return ((long)(this[this.tableDish.DishOwnerIdColumn]));
+                }
+                set {
+                    this[this.tableDish.DishOwnerIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double DishScore {
                 get {
                     try {
-                        return ((byte[])(this[this.tableRoom.TypeColumn]));
+                        return ((double)(this[this.tableDish.DishScoreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'Room\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DishScore\' in table \'Dish\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRoom.TypeColumn] = value;
+                    this[this.tableDish.DishScoreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] DistanceFromTongji {
+            public int DishUpCount {
                 get {
                     try {
-                        return ((byte[])(this[this.tableRoom.DistanceFromTongjiColumn]));
+                        return ((int)(this[this.tableDish.DishUpCountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DistanceFromTongji\' in table \'Room\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DishUpCount\' in table \'Dish\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRoom.DistanceFromTongjiColumn] = value;
+                    this[this.tableDish.DishUpCountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LinkURL {
+            public int DishDownCount {
                 get {
                     try {
-                        return ((string)(this[this.tableRoom.LinkURLColumn]));
+                        return ((int)(this[this.tableDish.DishDownCountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LinkURL\' in table \'Room\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DishDownCount\' in table \'Dish\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRoom.LinkURLColumn] = value;
+                    this[this.tableDish.DishDownCountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Comment {
+            public string DishCatalog {
                 get {
                     try {
-                        return ((string)(this[this.tableRoom.CommentColumn]));
+                        return ((string)(this[this.tableDish.DishCatalogColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Comment\' in table \'Room\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DishCatalog\' in table \'Dish\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRoom.CommentColumn] = value;
+                    this[this.tableDish.DishCatalogColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLocationNull() {
-                return this.IsNull(this.tableRoom.LocationColumn);
+            public long DishClickedCount {
+                get {
+                    try {
+                        return ((long)(this[this.tableDish.DishClickedCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DishClickedCount\' in table \'Dish\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDish.DishClickedCountColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLocationNull() {
-                this[this.tableRoom.LocationColumn] = global::System.Convert.DBNull;
+            public bool IsDishNameNull() {
+                return this.IsNull(this.tableDish.DishNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPriceNull() {
-                return this.IsNull(this.tableRoom.PriceColumn);
+            public void SetDishNameNull() {
+                this[this.tableDish.DishNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPriceNull() {
-                this[this.tableRoom.PriceColumn] = global::System.Convert.DBNull;
+            public bool IsDishScoreNull() {
+                return this.IsNull(this.tableDish.DishScoreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTypeNull() {
-                return this.IsNull(this.tableRoom.TypeColumn);
+            public void SetDishScoreNull() {
+                this[this.tableDish.DishScoreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTypeNull() {
-                this[this.tableRoom.TypeColumn] = global::System.Convert.DBNull;
+            public bool IsDishUpCountNull() {
+                return this.IsNull(this.tableDish.DishUpCountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDistanceFromTongjiNull() {
-                return this.IsNull(this.tableRoom.DistanceFromTongjiColumn);
+            public void SetDishUpCountNull() {
+                this[this.tableDish.DishUpCountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDistanceFromTongjiNull() {
-                this[this.tableRoom.DistanceFromTongjiColumn] = global::System.Convert.DBNull;
+            public bool IsDishDownCountNull() {
+                return this.IsNull(this.tableDish.DishDownCountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLinkURLNull() {
-                return this.IsNull(this.tableRoom.LinkURLColumn);
+            public void SetDishDownCountNull() {
+                this[this.tableDish.DishDownCountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLinkURLNull() {
-                this[this.tableRoom.LinkURLColumn] = global::System.Convert.DBNull;
+            public bool IsDishCatalogNull() {
+                return this.IsNull(this.tableDish.DishCatalogColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCommentNull() {
-                return this.IsNull(this.tableRoom.CommentColumn);
+            public void SetDishCatalogNull() {
+                this[this.tableDish.DishCatalogColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCommentNull() {
-                this[this.tableRoom.CommentColumn] = global::System.Convert.DBNull;
+            public bool IsDishClickedCountNull() {
+                return this.IsNull(this.tableDish.DishClickedCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDishClickedCountNull() {
+                this[this.tableDish.DishClickedCountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -821,22 +846,22 @@ namespace DAL {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class RoomRowChangeEvent : global::System.EventArgs {
+        public class DishRowChangeEvent : global::System.EventArgs {
             
-            private RoomRow eventRow;
+            private DishRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RoomRowChangeEvent(RoomRow row, global::System.Data.DataRowAction action) {
+            public DishRowChangeEvent(DishRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RoomRow Row {
+            public DishRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -852,7 +877,7 @@ namespace DAL {
         }
     }
 }
-namespace DAL.RoomTableAdapters {
+namespace DAL.DishTableAdapters {
     
     
     /// <summary>
@@ -864,7 +889,7 @@ namespace DAL.RoomTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class RoomTableAdapter : global::System.ComponentModel.Component {
+    public partial class DishTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -878,7 +903,7 @@ namespace DAL.RoomTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public RoomTableAdapter() {
+        public DishTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -975,68 +1000,73 @@ namespace DAL.RoomTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Room";
-            tableMapping.ColumnMappings.Add("RoomID", "RoomID");
-            tableMapping.ColumnMappings.Add("Location", "Location");
-            tableMapping.ColumnMappings.Add("Price", "Price");
-            tableMapping.ColumnMappings.Add("Type", "Type");
-            tableMapping.ColumnMappings.Add("DistanceFromTongji", "DistanceFromTongji");
-            tableMapping.ColumnMappings.Add("LinkURL", "LinkURL");
-            tableMapping.ColumnMappings.Add("Comment", "Comment");
+            tableMapping.DataSetTable = "Dish";
+            tableMapping.ColumnMappings.Add("DishId", "DishId");
+            tableMapping.ColumnMappings.Add("DishName", "DishName");
+            tableMapping.ColumnMappings.Add("DishOwnerId", "DishOwnerId");
+            tableMapping.ColumnMappings.Add("DishScore", "DishScore");
+            tableMapping.ColumnMappings.Add("DishUpCount", "DishUpCount");
+            tableMapping.ColumnMappings.Add("DishDownCount", "DishDownCount");
+            tableMapping.ColumnMappings.Add("DishCatalog", "DishCatalog");
+            tableMapping.ColumnMappings.Add("DishClickedCount", "DishClickedCount");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Room] WHERE (([RoomID] = @Original_RoomID) AND ((@IsNull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Original_Location)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_DistanceFromTongji = 1 AND [DistanceFromTongji] IS NULL) OR ([DistanceFromTongji] = @Original_DistanceFromTongji)) AND ((@IsNull_LinkURL = 1 AND [LinkURL] IS NULL) OR ([LinkURL] = @Original_LinkURL)) AND ((@IsNull_Comment = 1 AND [Comment] IS NULL) OR ([Comment] = @Original_Comment)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Dish] WHERE (([DishId] = @Original_DishId) AND ((@IsNull_DishName = 1 AND [DishName] IS NULL) OR ([DishName] = @Original_DishName)) AND ([DishOwnerId] = @Original_DishOwnerId) AND ((@IsNull_DishScore = 1 AND [DishScore] IS NULL) OR ([DishScore] = @Original_DishScore)) AND ((@IsNull_DishUpCount = 1 AND [DishUpCount] IS NULL) OR ([DishUpCount] = @Original_DishUpCount)) AND ((@IsNull_DishDownCount = 1 AND [DishDownCount] IS NULL) OR ([DishDownCount] = @Original_DishDownCount)) AND ((@IsNull_DishCatalog = 1 AND [DishCatalog] IS NULL) OR ([DishCatalog] = @Original_DishCatalog)) AND ((@IsNull_DishClickedCount = 1 AND [DishClickedCount] IS NULL) OR ([DishClickedCount] = @Original_DishClickedCount)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoomID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Location", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Location", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistanceFromTongji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistanceFromTongji", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistanceFromTongji", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistanceFromTongji", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LinkURL", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LinkURL", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LinkURL", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LinkURL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Comment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Comment", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishOwnerId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishOwnerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishScore", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishScore", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishScore", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishScore", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishUpCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishUpCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishUpCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishUpCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishDownCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishDownCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishDownCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishDownCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishCatalog", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishCatalog", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishCatalog", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishCatalog", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishClickedCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishClickedCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishClickedCount", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishClickedCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Room] ([Location], [Price], [Type], [DistanceFromTongji], [LinkURL], [Comment]) VALUES (@Location, @Price, @Type, @DistanceFromTongji, @LinkURL, @Comment);
-SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM Room WHERE (RoomID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Dish] ([DishName], [DishOwnerId], [DishScore], [DishUpCount], [DishDownCount], [DishCatalog], [DishClickedCount]) VALUES (@DishName, @DishOwnerId, @DishScore, @DishUpCount, @DishDownCount, @DishCatalog, @DishClickedCount);
+SELECT DishId, DishName, DishOwnerId, DishScore, DishUpCount, DishDownCount, DishCatalog, DishClickedCount FROM Dish WHERE (DishId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistanceFromTongji", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistanceFromTongji", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LinkURL", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LinkURL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishOwnerId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishOwnerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishScore", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishScore", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishUpCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishUpCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishDownCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishDownCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishCatalog", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishCatalog", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishClickedCount", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishClickedCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Room] SET [Location] = @Location, [Price] = @Price, [Type] = @Type, [DistanceFromTongji] = @DistanceFromTongji, [LinkURL] = @LinkURL, [Comment] = @Comment WHERE (([RoomID] = @Original_RoomID) AND ((@IsNull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Original_Location)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_DistanceFromTongji = 1 AND [DistanceFromTongji] IS NULL) OR ([DistanceFromTongji] = @Original_DistanceFromTongji)) AND ((@IsNull_LinkURL = 1 AND [LinkURL] IS NULL) OR ([LinkURL] = @Original_LinkURL)) AND ((@IsNull_Comment = 1 AND [Comment] IS NULL) OR ([Comment] = @Original_Comment)));
-SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM Room WHERE (RoomID = @RoomID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Dish] SET [DishName] = @DishName, [DishOwnerId] = @DishOwnerId, [DishScore] = @DishScore, [DishUpCount] = @DishUpCount, [DishDownCount] = @DishDownCount, [DishCatalog] = @DishCatalog, [DishClickedCount] = @DishClickedCount WHERE (([DishId] = @Original_DishId) AND ((@IsNull_DishName = 1 AND [DishName] IS NULL) OR ([DishName] = @Original_DishName)) AND ([DishOwnerId] = @Original_DishOwnerId) AND ((@IsNull_DishScore = 1 AND [DishScore] IS NULL) OR ([DishScore] = @Original_DishScore)) AND ((@IsNull_DishUpCount = 1 AND [DishUpCount] IS NULL) OR ([DishUpCount] = @Original_DishUpCount)) AND ((@IsNull_DishDownCount = 1 AND [DishDownCount] IS NULL) OR ([DishDownCount] = @Original_DishDownCount)) AND ((@IsNull_DishCatalog = 1 AND [DishCatalog] IS NULL) OR ([DishCatalog] = @Original_DishCatalog)) AND ((@IsNull_DishClickedCount = 1 AND [DishClickedCount] IS NULL) OR ([DishClickedCount] = @Original_DishClickedCount)));
+SELECT DishId, DishName, DishOwnerId, DishScore, DishUpCount, DishDownCount, DishCatalog, DishClickedCount FROM Dish WHERE (DishId = @DishId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistanceFromTongji", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistanceFromTongji", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LinkURL", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LinkURL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoomID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Location", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Location", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistanceFromTongji", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistanceFromTongji", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DistanceFromTongji", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistanceFromTongji", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LinkURL", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LinkURL", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LinkURL", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LinkURL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Comment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Comment", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoomID", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "RoomID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishOwnerId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishOwnerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishScore", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishScore", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishUpCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishUpCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishDownCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishDownCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishCatalog", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishCatalog", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishClickedCount", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishClickedCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishOwnerId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishOwnerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishScore", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishScore", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishScore", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishScore", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishUpCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishUpCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishUpCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishUpCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishDownCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishDownCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishDownCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishDownCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishCatalog", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishCatalog", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishCatalog", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishCatalog", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DishClickedCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishClickedCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DishClickedCount", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DishClickedCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DishId", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DishId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1052,8 +1082,8 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM d" +
-                "bo.Room";
+            this._commandCollection[0].CommandText = "SELECT DishId, DishName, DishOwnerId, DishScore, DishUpCount, DishDownCount, Dish" +
+                "Catalog, DishClickedCount FROM dbo.Dish";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1061,7 +1091,7 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Room.RoomDataTable dataTable) {
+        public virtual int Fill(Dish.DishDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1074,9 +1104,9 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Room.RoomDataTable GetData() {
+        public virtual Dish.DishDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Room.RoomDataTable dataTable = new Room.RoomDataTable();
+            Dish.DishDataTable dataTable = new Dish.DishDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1084,15 +1114,15 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Room.RoomDataTable dataTable) {
+        public virtual int Update(Dish.DishDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Room dataSet) {
-            return this.Adapter.Update(dataSet, "Room");
+        public virtual int Update(Dish dataSet) {
+            return this.Adapter.Update(dataSet, "Dish");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1114,55 +1144,56 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_RoomID, string Original_Location, global::System.Nullable<double> Original_Price, byte[] Original_Type, byte[] Original_DistanceFromTongji, string Original_LinkURL, string Original_Comment) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_RoomID));
-            if ((Original_Location == null)) {
+        public virtual int Delete(long Original_DishId, string Original_DishName, long Original_DishOwnerId, global::System.Nullable<double> Original_DishScore, global::System.Nullable<int> Original_DishUpCount, global::System.Nullable<int> Original_DishDownCount, string Original_DishCatalog, global::System.Nullable<long> Original_DishClickedCount) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_DishId));
+            if ((Original_DishName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Location));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_DishName));
             }
-            if ((Original_Price.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((double)(Original_Price.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Type == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((long)(Original_DishOwnerId));
+            if ((Original_DishScore.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((double)(Original_DishScore.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((byte[])(Original_Type));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Original_DistanceFromTongji == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((byte[])(Original_DistanceFromTongji));
-            }
-            if ((Original_LinkURL == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((Original_DishUpCount.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_DishUpCount.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_LinkURL));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_Comment == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            if ((Original_DishDownCount.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_DishDownCount.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Comment));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DishCatalog == null)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_DishCatalog));
+            }
+            if ((Original_DishClickedCount.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((long)(Original_DishClickedCount.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1184,42 +1215,43 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Location, global::System.Nullable<double> Price, byte[] Type, byte[] DistanceFromTongji, string LinkURL, string Comment) {
-            if ((Location == null)) {
+        public virtual int Insert(string DishName, long DishOwnerId, global::System.Nullable<double> DishScore, global::System.Nullable<int> DishUpCount, global::System.Nullable<int> DishDownCount, string DishCatalog, global::System.Nullable<long> DishClickedCount) {
+            if ((DishName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Location));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(DishName));
             }
-            if ((Price.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((double)(Price.Value));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((long)(DishOwnerId));
+            if ((DishScore.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((double)(DishScore.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Type == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((byte[])(Type));
+            if ((DishUpCount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(DishUpCount.Value));
             }
-            if ((DistanceFromTongji == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(DistanceFromTongji));
+            if ((DishDownCount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(DishDownCount.Value));
             }
-            if ((LinkURL == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(LinkURL));
-            }
-            if ((Comment == null)) {
+            if ((DishCatalog == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Comment));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DishCatalog));
+            }
+            if ((DishClickedCount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((long)(DishClickedCount.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1241,93 +1273,111 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Location, global::System.Nullable<double> Price, byte[] Type, byte[] DistanceFromTongji, string LinkURL, string Comment, long Original_RoomID, string Original_Location, global::System.Nullable<double> Original_Price, byte[] Original_Type, byte[] Original_DistanceFromTongji, string Original_LinkURL, string Original_Comment, long RoomID) {
-            if ((Location == null)) {
+        public virtual int Update(
+                    string DishName, 
+                    long DishOwnerId, 
+                    global::System.Nullable<double> DishScore, 
+                    global::System.Nullable<int> DishUpCount, 
+                    global::System.Nullable<int> DishDownCount, 
+                    string DishCatalog, 
+                    global::System.Nullable<long> DishClickedCount, 
+                    long Original_DishId, 
+                    string Original_DishName, 
+                    long Original_DishOwnerId, 
+                    global::System.Nullable<double> Original_DishScore, 
+                    global::System.Nullable<int> Original_DishUpCount, 
+                    global::System.Nullable<int> Original_DishDownCount, 
+                    string Original_DishCatalog, 
+                    global::System.Nullable<long> Original_DishClickedCount, 
+                    long DishId) {
+            if ((DishName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Location));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(DishName));
             }
-            if ((Price.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((double)(Price.Value));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(DishOwnerId));
+            if ((DishScore.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((double)(DishScore.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((byte[])(Type));
+            if ((DishUpCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(DishUpCount.Value));
             }
-            if ((DistanceFromTongji == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((byte[])(DistanceFromTongji));
+            if ((DishDownCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(DishDownCount.Value));
             }
-            if ((LinkURL == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(LinkURL));
-            }
-            if ((Comment == null)) {
+            if ((DishCatalog == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Comment));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DishCatalog));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_RoomID));
-            if ((Original_Location == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((DishClickedCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(DishClickedCount.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Location));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_Price.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_Price.Value));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_DishId));
+            if ((Original_DishName == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_DishName));
             }
-            if ((Original_Type == null)) {
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Original_DishOwnerId));
+            if ((Original_DishScore.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_DishScore.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((byte[])(Original_Type));
+            if ((Original_DishUpCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_DishUpCount.Value));
             }
-            if ((Original_DistanceFromTongji == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((byte[])(Original_DistanceFromTongji));
+            if ((Original_DishDownCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_DishDownCount.Value));
             }
-            if ((Original_LinkURL == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_LinkURL));
-            }
-            if ((Original_Comment == null)) {
+            if ((Original_DishCatalog == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Comment));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_DishCatalog));
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((long)(RoomID));
+            if ((Original_DishClickedCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((long)(Original_DishClickedCount.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((long)(DishId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1348,8 +1398,8 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Location, global::System.Nullable<double> Price, byte[] Type, byte[] DistanceFromTongji, string LinkURL, string Comment, long Original_RoomID, string Original_Location, global::System.Nullable<double> Original_Price, byte[] Original_Type, byte[] Original_DistanceFromTongji, string Original_LinkURL, string Original_Comment) {
-            return this.Update(Location, Price, Type, DistanceFromTongji, LinkURL, Comment, Original_RoomID, Original_Location, Original_Price, Original_Type, Original_DistanceFromTongji, Original_LinkURL, Original_Comment, Original_RoomID);
+        public virtual int Update(string DishName, long DishOwnerId, global::System.Nullable<double> DishScore, global::System.Nullable<int> DishUpCount, global::System.Nullable<int> DishDownCount, string DishCatalog, global::System.Nullable<long> DishClickedCount, long Original_DishId, string Original_DishName, long Original_DishOwnerId, global::System.Nullable<double> Original_DishScore, global::System.Nullable<int> Original_DishUpCount, global::System.Nullable<int> Original_DishDownCount, string Original_DishCatalog, global::System.Nullable<long> Original_DishClickedCount) {
+            return this.Update(DishName, DishOwnerId, DishScore, DishUpCount, DishDownCount, DishCatalog, DishClickedCount, Original_DishId, Original_DishName, Original_DishOwnerId, Original_DishScore, Original_DishUpCount, Original_DishDownCount, Original_DishCatalog, Original_DishClickedCount, Original_DishId);
         }
     }
     
@@ -1365,7 +1415,7 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         
         private UpdateOrderOption _updateOrder;
         
-        private RoomTableAdapter _roomTableAdapter;
+        private DishTableAdapter _dishTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1387,12 +1437,12 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public RoomTableAdapter RoomTableAdapter {
+        public DishTableAdapter DishTableAdapter {
             get {
-                return this._roomTableAdapter;
+                return this._dishTableAdapter;
             }
             set {
-                this._roomTableAdapter = value;
+                this._dishTableAdapter = value;
             }
         }
         
@@ -1415,9 +1465,9 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._roomTableAdapter != null) 
-                            && (this._roomTableAdapter.Connection != null))) {
-                    return this._roomTableAdapter.Connection;
+                if (((this._dishTableAdapter != null) 
+                            && (this._dishTableAdapter.Connection != null))) {
+                    return this._dishTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1432,7 +1482,7 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._roomTableAdapter != null)) {
+                if ((this._dishTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1444,14 +1494,14 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(Room dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Dish dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._roomTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet._Room.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._dishTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet._Dish.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._roomTableAdapter.Update(updatedRows));
+                    result = (result + this._dishTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1463,13 +1513,13 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(Room dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Dish dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._roomTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet._Room.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._dishTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet._Dish.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._roomTableAdapter.Update(addedRows));
+                    result = (result + this._dishTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1481,13 +1531,13 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(Room dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Dish dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._roomTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet._Room.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._dishTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet._Dish.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._roomTableAdapter.Update(deletedRows));
+                    result = (result + this._dishTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1523,15 +1573,15 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(Room dataSet) {
+        public virtual int UpdateAll(Dish dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._roomTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._roomTableAdapter.Connection) == false))) {
+            if (((this._dishTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._dishTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1567,13 +1617,13 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._roomTableAdapter != null)) {
-                    revertConnections.Add(this._roomTableAdapter, this._roomTableAdapter.Connection);
-                    this._roomTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._roomTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._roomTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._roomTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._roomTableAdapter.Adapter);
+                if ((this._dishTableAdapter != null)) {
+                    revertConnections.Add(this._dishTableAdapter, this._dishTableAdapter.Connection);
+                    this._dishTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._dishTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._dishTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._dishTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._dishTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1634,9 +1684,9 @@ SELECT RoomID, Location, Price, Type, DistanceFromTongji, LinkURL, Comment FROM 
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._roomTableAdapter != null)) {
-                    this._roomTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._roomTableAdapter]));
-                    this._roomTableAdapter.Transaction = null;
+                if ((this._dishTableAdapter != null)) {
+                    this._dishTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dishTableAdapter]));
+                    this._dishTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

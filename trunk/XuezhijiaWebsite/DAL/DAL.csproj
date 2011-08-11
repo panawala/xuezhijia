@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Data.Schema, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Data.Schema.UnitTesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -56,6 +59,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Course.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dish.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dish.xsd</DependentUpon>
     </Compile>
     <Compile Include="FileRecords.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -149,6 +157,17 @@
     </None>
     <None Include="Course.xss">
       <DependentUpon>Course.xsd</DependentUpon>
+    </None>
+    <None Include="Dish.xsc">
+      <DependentUpon>Dish.xsd</DependentUpon>
+    </None>
+    <None Include="Dish.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dish.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dish.xss">
+      <DependentUpon>Dish.xsd</DependentUpon>
     </None>
     <None Include="FileRecords.xsc">
       <DependentUpon>FileRecords.xsd</DependentUpon>
