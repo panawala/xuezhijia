@@ -68,7 +68,7 @@
         $.ajax({
             type: "POST",
             url: "/WS/CommonService.asmx/getArticleByID",
-            data: "{id:'"+request("id")+"'}",
+            data: "{id:'1'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             beforeSend: Loadingnav, //执行ajax前执行loading函数.直到success 
@@ -87,7 +87,7 @@
         function Successnav(data, status) {
             //在0s内将透明度设为0
             $("#right_nav").fadeTo(0.001, 0);
-            $("#right_nav").setTemplateURL('../Car/rightnav.htm');
+            $("#right_nav").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
             
             $("#right_nav").processTemplate(data.d);
             //在1s内将透明度设为1
