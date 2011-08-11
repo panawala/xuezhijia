@@ -138,7 +138,7 @@
        					</asp:TemplateField>
 						<asp:TemplateField HeaderText="取消打印" ShowHeader="False">
 							<ItemTemplate>   
-               					<asp:LinkButton ID="DeleteRecord" CausesValidation="False" CommandName="Delete"Text="删除" OnClientClick='<%#  "if (!confirm(\"你确定要删除" + Eval("FileName").ToString() + "吗?\")) return false;"%>'></asp:LinkButton>
+               					<asp:LinkButton ID="DeleteRecord" CausesValidation="False" CommandName="Delete" Text="删除" OnClientClick='<%#  "if (!confirm(\"你确定要删除" + Eval("FileName").ToString() + "吗?\")) return false;"%>'></asp:LinkButton>
 							</ItemTemplate>   
 						</asp:TemplateField>
                 		<asp:BoundField DataField="FileName" HeaderText="文件名" SortExpression="FileName" />

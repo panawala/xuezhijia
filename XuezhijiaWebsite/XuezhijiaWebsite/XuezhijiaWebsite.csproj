@@ -305,6 +305,7 @@
     <Content Include="js\print.js" />
     <Content Include="js\user_log.js" />
     <Content Include="PhotoReview.aspx" />
+    <Content Include="PhotoUpload.aspx" />
     <Content Include="Print.aspx" />
     <Content Include="PrintManage.aspx" />
     <Content Include="Register.aspx" />
@@ -452,6 +453,13 @@
     </Compile>
     <Compile Include="PhotoReview.aspx.designer.cs">
       <DependentUpon>PhotoReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoUpload.aspx.cs">
+      <DependentUpon>PhotoUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhotoUpload.aspx.designer.cs">
+      <DependentUpon>PhotoUpload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Print.aspx.cs">
       <DependentUpon>Print.aspx</DependentUpon>
