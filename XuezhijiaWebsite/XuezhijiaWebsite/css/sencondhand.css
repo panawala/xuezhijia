@@ -56,7 +56,7 @@ font-weight: normal;
 color: olive;
 }
 
-a:hover, a:hover {
+.ding a:hover , a:visited{
 color: red;
 text-decoration: underline;
 }
@@ -112,6 +112,7 @@ clear: both;
 
 #subheader {
 border-bottom: 1px solid #E1E1E1;
+margin:5px 0;
 }
 h1 {
 font-size: 20px;
@@ -148,6 +149,7 @@ width: 50%;
 }
 #metaTable td {
 padding: 2px 0px;
+text-align:left;
 }
 
 #metaTable td label {
@@ -158,7 +160,7 @@ white-space: nowrap;
 
 #content p {
 line-height: 28px;
-margin-left:0px;
+text-align:left;
 }
 
 #content  a:link, a:visited {

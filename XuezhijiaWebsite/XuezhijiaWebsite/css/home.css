@@ -20,17 +20,30 @@
 	line-height:30px;
 	margin:0 10px;
 }
-#menubar  ul li a:link,#menubar ul li a:visited 
+.cu a:link
+{
+	font-weight:bold;
+	font-size:x-large;
+	color:Blue;
+}
+/*#menubar  ul li a:link
+{
+	font-weight:bold;
+	color:White;
+}*/
+#menubar ul li a:visited 
 {
 	font-weight:bold;
 	color:White;
 }
+
 /*#menubar ul li a:visited 
 {
 	font-weight:bold;
 	color:Fuchsia;
 }*/
-#menubar   ul li a:hover
+#menubar ul li a:hover
 {
-	color:Gray;
+	color:Green;
+	text-decoration: underline;
 }

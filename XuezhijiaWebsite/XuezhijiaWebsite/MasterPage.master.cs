@@ -11,6 +11,7 @@ namespace XuezhijiaWebsite
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
+        public string CurrentMenu;
         protected void Page_Load(object sender, EventArgs e)
         {
 
