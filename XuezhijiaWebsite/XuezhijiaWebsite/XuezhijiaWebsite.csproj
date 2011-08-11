@@ -73,6 +73,8 @@
     <Content Include="Print.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\jtemplates.js" />
+    <Content Include="Secondhand\Secondhand.aspx" />
+    <Content Include="Secondhand\secondhandtemplate.htm" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -175,6 +177,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secondhand\Secondhand.aspx.cs">
+      <DependentUpon>Secondhand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secondhand\Secondhand.aspx.designer.cs">
+      <DependentUpon>Secondhand.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

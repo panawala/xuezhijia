@@ -7,17 +7,13 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
+    <div class="carnav">汽车租赁</div>
 <div id="carcontent" class="car">
 
 </div>
-<div class="right_nav"></div>
+<div class="right_nav"><textarea style="width:100px;height:500px;"></textarea></div>
 <div style="clear:both;"></div>
 <script type="text/javascript">
-    
-   /* var profile = { name: "小白", age: "24" };
-    $("#carcontent").setTemplateURL('../Car/cartemplate.htm');
-    $("#carcontent").processTemplate(profile);*/
 
     $.ajax({
         type: "POST",

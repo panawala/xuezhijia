@@ -2,7 +2,7 @@
 <ul>
   {#foreach $T as CAR}
 <li>
-<div class="carimage"><img src="../Image/test.jpg" /></div>
+<div class="carimage"><img src="/Common/ShowPhoto.ashx?id={ $T.CAR.PID }" alt="{ $T.CAR.Type }" /></div>
 <div class="cardes" align="left">
 <strong>{ $T.CAR.Type }</strong>
 <br />
