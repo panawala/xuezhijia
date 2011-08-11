@@ -33,5 +33,12 @@ namespace XuezhijiaWebsite.WS
             CarWrapper wrapper = new CarWrapper();
             return wrapper.getAllFormatedResult();
         }
+
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<SECONDHANDMARKET> getAllSecondHandMarketList()
+        {
+            SecondHMWrapper wrapper = new SecondHMWrapper();
+            return wrapper.getAllFormatedResult();
+        }
     }
 }
