@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Secondhand.aspx.cs" Inherits="XuezhijiaWebsite.Secondhand.Secondhand" %>
+<%@ MasterType VirtualPath="~/MasterPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../css/sencondhand.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
-
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -44,7 +45,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getAllCourseList",
+        url: "/WS/CommonService.asmx/getAllSecondHandMarketList",
         data: "{}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",

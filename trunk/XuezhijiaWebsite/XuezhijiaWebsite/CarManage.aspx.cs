@@ -36,10 +36,10 @@ namespace XuezhijiaWebsite
 
         protected void RowUpdate(object sender, GridViewCommandEventArgs e)
         {
-            string cmd = e.CommandName; //获得name
-            int Id = Convert.ToInt32(e.CommandArgument);
-            Car.CarDataTable table = new Car.CarDataTable();
-            Car.CarRow row = table.NewCarRow();
+            //string cmd = e.CommandName; //获得name
+            //int Id = Convert.ToInt32(e.CommandArgument);
+            //Car.CarDataTable table = new Car.CarDataTable();
+            //Car.CarRow row = table.NewCarRow();
             //row = 
         }
     }
