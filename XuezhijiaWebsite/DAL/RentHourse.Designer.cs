@@ -439,7 +439,7 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RentHourseRow AddRentHourseRow(double Price, byte[] RentType, byte[] HourseType, byte[] HourseName, double Area, byte[] Configuration, int ClickCount, System.DateTime DistributeTime) {
+            public RentHourseRow AddRentHourseRow(double Price, byte[] RentType, byte[] HourseType, byte[] HourseName, double Area, string Configuration, int ClickCount, System.DateTime DistributeTime) {
                 RentHourseRow rowRentHourseRow = ((RentHourseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -506,7 +506,7 @@ namespace DAL {
                 base.Columns.Add(this.columnHourseName);
                 this.columnArea = new global::System.Data.DataColumn("Area", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnArea);
-                this.columnConfiguration = new global::System.Data.DataColumn("Configuration", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnConfiguration = new global::System.Data.DataColumn("Configuration", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnConfiguration);
                 this.columnClickCount = new global::System.Data.DataColumn("ClickCount", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClickCount);
@@ -520,6 +520,7 @@ namespace DAL {
                 this.columnHourseID.AllowDBNull = false;
                 this.columnHourseID.ReadOnly = true;
                 this.columnHourseID.Unique = true;
+                this.columnConfiguration.MaxLength = 200;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_RentHourse");
                 this.ExtendedProperties.Add("Generator_UserTableName", "RentHourse");
             }
@@ -755,10 +756,10 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] Configuration {
+            public string Configuration {
                 get {
                     try {
-                        return ((byte[])(this[this.tableRentHourse.ConfigurationColumn]));
+                        return ((string)(this[this.tableRentHourse.ConfigurationColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Configuration\' in table \'RentHourse\' is DBNull.", e);
@@ -1083,7 +1084,7 @@ namespace DAL.RentHourseTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Area", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Area", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Area", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Area", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Configuration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Configuration", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Configuration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClickCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClickCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistributeTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistributeTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1098,7 +1099,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourseType", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourseType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourseName", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourseName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Area", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Area", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Configuration", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Configuration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClickCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistributeTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistributeTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -1111,7 +1112,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourseType", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourseType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourseName", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourseName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Area", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Area", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Configuration", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Configuration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClickCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DistributeTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistributeTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HourseID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourseID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1126,7 +1127,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Area", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Area", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Area", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Area", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Configuration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Configuration", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Configuration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Configuration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClickCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClickCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DistributeTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DistributeTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1138,7 +1139,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DAL.Properties.Settings.Default.XuezhijiaConnectionString;
+            this._connection.ConnectionString = global::DAL.Properties.Settings.Default.XuezhijiaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1209,7 +1210,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_HourseID, global::System.Nullable<double> Original_Price, byte[] Original_RentType, byte[] Original_HourseType, byte[] Original_HourseName, global::System.Nullable<double> Original_Area, byte[] Original_Configuration, global::System.Nullable<int> Original_ClickCount, global::System.Nullable<global::System.DateTime> Original_DistributeTime) {
+        public virtual int Delete(long Original_HourseID, global::System.Nullable<double> Original_Price, byte[] Original_RentType, byte[] Original_HourseType, byte[] Original_HourseName, global::System.Nullable<double> Original_Area, string Original_Configuration, global::System.Nullable<int> Original_ClickCount, global::System.Nullable<global::System.DateTime> Original_DistributeTime) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_HourseID));
             if ((Original_Price.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -1257,7 +1258,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((byte[])(Original_Configuration));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Configuration));
             }
             if ((Original_ClickCount.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
@@ -1295,7 +1296,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<double> Price, byte[] RentType, byte[] HourseType, byte[] HourseName, global::System.Nullable<double> Area, byte[] Configuration, global::System.Nullable<int> ClickCount, global::System.Nullable<global::System.DateTime> DistributeTime) {
+        public virtual int Insert(global::System.Nullable<double> Price, byte[] RentType, byte[] HourseType, byte[] HourseName, global::System.Nullable<double> Area, string Configuration, global::System.Nullable<int> ClickCount, global::System.Nullable<global::System.DateTime> DistributeTime) {
             if ((Price.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((double)(Price.Value));
             }
@@ -1330,7 +1331,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((byte[])(Configuration));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Configuration));
             }
             if ((ClickCount.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((int)(ClickCount.Value));
@@ -1370,7 +1371,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
                     byte[] HourseType, 
                     byte[] HourseName, 
                     global::System.Nullable<double> Area, 
-                    byte[] Configuration, 
+                    string Configuration, 
                     global::System.Nullable<int> ClickCount, 
                     global::System.Nullable<global::System.DateTime> DistributeTime, 
                     long Original_HourseID, 
@@ -1379,7 +1380,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
                     byte[] Original_HourseType, 
                     byte[] Original_HourseName, 
                     global::System.Nullable<double> Original_Area, 
-                    byte[] Original_Configuration, 
+                    string Original_Configuration, 
                     global::System.Nullable<int> Original_ClickCount, 
                     global::System.Nullable<global::System.DateTime> Original_DistributeTime, 
                     long HourseID) {
@@ -1417,7 +1418,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((byte[])(Configuration));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Configuration));
             }
             if ((ClickCount.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(ClickCount.Value));
@@ -1478,7 +1479,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((byte[])(Original_Configuration));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Configuration));
             }
             if ((Original_ClickCount.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
@@ -1523,7 +1524,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
                     byte[] HourseType, 
                     byte[] HourseName, 
                     global::System.Nullable<double> Area, 
-                    byte[] Configuration, 
+                    string Configuration, 
                     global::System.Nullable<int> ClickCount, 
                     global::System.Nullable<global::System.DateTime> DistributeTime, 
                     long Original_HourseID, 
@@ -1532,7 +1533,7 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
                     byte[] Original_HourseType, 
                     byte[] Original_HourseName, 
                     global::System.Nullable<double> Original_Area, 
-                    byte[] Original_Configuration, 
+                    string Original_Configuration, 
                     global::System.Nullable<int> Original_ClickCount, 
                     global::System.Nullable<global::System.DateTime> Original_DistributeTime) {
             return this.Update(Price, RentType, HourseType, HourseName, Area, Configuration, ClickCount, DistributeTime, Original_HourseID, Original_Price, Original_RentType, Original_HourseType, Original_HourseName, Original_Area, Original_Configuration, Original_ClickCount, Original_DistributeTime, Original_HourseID);

@@ -285,8 +285,6 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnShopContactWay;
             
-            private global::System.Data.DataColumn columnShopContact;
-            
             private global::System.Data.DataColumn columnShopAddress;
             
             private global::System.Data.DataColumn columnShopScore;
@@ -349,14 +347,6 @@ namespace DAL {
             public global::System.Data.DataColumn ShopContactWayColumn {
                 get {
                     return this.columnShopContactWay;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ShopContactColumn {
-                get {
-                    return this.columnShopContact;
                 }
             }
             
@@ -429,13 +419,12 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ShopRow AddShopRow(string ShopName, string ShopContactWay, string ShopContact, string ShopAddress, double ShopScore, long ShopDistrictId, long ShopClickedCount) {
+            public ShopRow AddShopRow(string ShopName, string ShopContactWay, string ShopAddress, double ShopScore, string ShopDistrictId, long ShopClickedCount) {
                 ShopRow rowShopRow = ((ShopRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         ShopName,
                         ShopContactWay,
-                        ShopContact,
                         ShopAddress,
                         ShopScore,
                         ShopDistrictId,
@@ -465,7 +454,6 @@ namespace DAL {
                 this.columnShopId = base.Columns["ShopId"];
                 this.columnShopName = base.Columns["ShopName"];
                 this.columnShopContactWay = base.Columns["ShopContactWay"];
-                this.columnShopContact = base.Columns["ShopContact"];
                 this.columnShopAddress = base.Columns["ShopAddress"];
                 this.columnShopScore = base.Columns["ShopScore"];
                 this.columnShopDistrictId = base.Columns["ShopDistrictId"];
@@ -481,13 +469,11 @@ namespace DAL {
                 base.Columns.Add(this.columnShopName);
                 this.columnShopContactWay = new global::System.Data.DataColumn("ShopContactWay", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnShopContactWay);
-                this.columnShopContact = new global::System.Data.DataColumn("ShopContact", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShopContact);
                 this.columnShopAddress = new global::System.Data.DataColumn("ShopAddress", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnShopAddress);
                 this.columnShopScore = new global::System.Data.DataColumn("ShopScore", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnShopScore);
-                this.columnShopDistrictId = new global::System.Data.DataColumn("ShopDistrictId", typeof(long), null, global::System.Data.MappingType.Element);
+                this.columnShopDistrictId = new global::System.Data.DataColumn("ShopDistrictId", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnShopDistrictId);
                 this.columnShopClickedCount = new global::System.Data.DataColumn("ShopClickedCount", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnShopClickedCount);
@@ -498,8 +484,8 @@ namespace DAL {
                 this.columnShopId.ReadOnly = true;
                 this.columnShopName.MaxLength = 50;
                 this.columnShopContactWay.MaxLength = 50;
-                this.columnShopContact.MaxLength = 50;
                 this.columnShopAddress.MaxLength = 200;
+                this.columnShopDistrictId.MaxLength = 50;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_Shop");
                 this.ExtendedProperties.Add("Generator_UserTableName", "Shop");
             }
@@ -687,22 +673,6 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ShopContact {
-                get {
-                    try {
-                        return ((string)(this[this.tableShop.ShopContactColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ShopContact\' in table \'Shop\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableShop.ShopContactColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ShopAddress {
                 get {
                     try {
@@ -735,10 +705,10 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long ShopDistrictId {
+            public string ShopDistrictId {
                 get {
                     try {
-                        return ((long)(this[this.tableShop.ShopDistrictIdColumn]));
+                        return ((string)(this[this.tableShop.ShopDistrictIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ShopDistrictId\' in table \'Shop\' is DBNull.", e);
@@ -787,18 +757,6 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetShopContactWayNull() {
                 this[this.tableShop.ShopContactWayColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsShopContactNull() {
-                return this.IsNull(this.tableShop.ShopContactColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetShopContactNull() {
-                this[this.tableShop.ShopContactColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1012,7 +970,6 @@ namespace DAL.ShopTableAdapters {
             tableMapping.ColumnMappings.Add("ShopId", "ShopId");
             tableMapping.ColumnMappings.Add("ShopName", "ShopName");
             tableMapping.ColumnMappings.Add("ShopContactWay", "ShopContactWay");
-            tableMapping.ColumnMappings.Add("ShopContact", "ShopContact");
             tableMapping.ColumnMappings.Add("ShopAddress", "ShopAddress");
             tableMapping.ColumnMappings.Add("ShopScore", "ShopScore");
             tableMapping.ColumnMappings.Add("ShopDistrictId", "ShopDistrictId");
@@ -1020,17 +977,15 @@ namespace DAL.ShopTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Shop] ([ShopName], [ShopContactWay], [ShopContact], [ShopAddre" +
-                "ss], [ShopScore], [ShopDistrictId], [ShopClickedCount]) VALUES (@ShopName, @Shop" +
-                "ContactWay, @ShopContact, @ShopAddress, @ShopScore, @ShopDistrictId, @ShopClicke" +
-                "dCount)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Shop] ([ShopName], [ShopContactWay], [ShopAddress], [ShopScore" +
+                "], [ShopDistrictId], [ShopClickedCount]) VALUES (@ShopName, @ShopContactWay, @Sh" +
+                "opAddress, @ShopScore, @ShopDistrictId, @ShopClickedCount)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShopName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShopName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShopContactWay", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShopContactWay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShopContact", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShopContact", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShopAddress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShopAddress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShopScore", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShopScore", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShopDistrictId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShopDistrictId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShopDistrictId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShopDistrictId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShopClickedCount", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShopClickedCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1038,7 +993,7 @@ namespace DAL.ShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::DAL.Properties.Settings.Default.XuezhijiaConnectionString;
+            this._connection.ConnectionString = global::DAL.Properties.Settings.Default.XuezhijiaConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1047,8 +1002,8 @@ namespace DAL.ShopTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ShopId, ShopName, ShopContactWay, ShopContact, ShopAddress, ShopScore, Sho" +
-                "pDistrictId, ShopClickedCount FROM dbo.Shop";
+            this._commandCollection[0].CommandText = "SELECT ShopId, ShopName, ShopContactWay, ShopAddress, ShopScore, ShopDistrictId, " +
+                "ShopClickedCount FROM dbo.Shop";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1109,7 +1064,7 @@ namespace DAL.ShopTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ShopName, string ShopContactWay, string ShopContact, string ShopAddress, global::System.Nullable<double> ShopScore, global::System.Nullable<long> ShopDistrictId, global::System.Nullable<long> ShopClickedCount) {
+        public virtual int Insert(string ShopName, string ShopContactWay, string ShopAddress, global::System.Nullable<double> ShopScore, string ShopDistrictId, global::System.Nullable<long> ShopClickedCount) {
             if ((ShopName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1122,35 +1077,29 @@ namespace DAL.ShopTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ShopContactWay));
             }
-            if ((ShopContact == null)) {
+            if ((ShopAddress == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(ShopContact));
-            }
-            if ((ShopAddress == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ShopAddress));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(ShopAddress));
             }
             if ((ShopScore.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(ShopScore.Value));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(ShopScore.Value));
             }
             else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((ShopDistrictId == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((ShopDistrictId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((long)(ShopDistrictId.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ShopDistrictId));
+            }
+            if ((ShopClickedCount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((long)(ShopClickedCount.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((ShopClickedCount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((long)(ShopClickedCount.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
