@@ -40,8 +40,20 @@ namespace XuezhijiaWebsite
 
         }
 
+        protected void DeleteClick(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(Cars.DataKeys[Cars.SelectedIndex + 1].Value);
+            CarWrapper wrapper = new CarWrapper();
+            wrapper.deleteARecordByID(id);
+            InitPage();
+        }
+
         protected void RowUpdate(object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandArgument.ToString().Length < 1)
+            {
+                return;
+            }
             string cmd = e.CommandName; //获得name
             int Id = Convert.ToInt32(e.CommandArgument);
             CAR car = new CAR();
