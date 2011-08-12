@@ -10,7 +10,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:DropDownList ID="DropDownList_Area" runat="server">
+        <asp:DropDownList ID="DropDownList_Area" runat="server" AutoPostBack="True" 
+            onselectedindexchanged="DropDownList_Area_SelectedIndexChanged">
         </asp:DropDownList>
 		<CKEditor:CKEditorControl ID="CKEditor1" runat="server" Height="400">
 </CKEditor:CKEditorControl>

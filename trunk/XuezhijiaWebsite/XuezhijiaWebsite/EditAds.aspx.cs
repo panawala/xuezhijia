@@ -24,6 +24,8 @@ namespace XuezhijiaWebsite
                 DropDownList_Area.DataTextField = "ArticleArea";
                 DropDownList_Area.DataValueField = "ArticleID";
                 DropDownList_Area.DataBind();
+
+                CKEditor1.Text = (new ArticalWrapper()).getRecordByID(Convert.ToInt32(DropDownList_Area.SelectedValue)).ArticleContent;
             }
         }
 
@@ -37,6 +39,11 @@ namespace XuezhijiaWebsite
             wrapper.addARecord(row);
             //preCKEditorData.InnerText = CKEditor1.Text;
             //Response.Write(CKEditor1.Text);
+        }
+
+        protected void DropDownList_Area_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CKEditor1.Text = (new ArticalWrapper()).getRecordByID(Convert.ToInt32(DropDownList_Area.SelectedValue)).ArticleContent;
         }
     }
 }
