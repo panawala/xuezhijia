@@ -45,7 +45,11 @@ namespace XuezhijiaWebsite
             int id = Convert.ToInt32(Cars.DataKeys[Cars.SelectedIndex + 1].Value);
             CarWrapper wrapper = new CarWrapper();
             wrapper.deleteARecordByID(id);
-            InitPage();
+            CAR car = new CAR();
+            car = wrapper.getResultByID(id);
+            PhotoWrapper photowrpper = new PhotoWrapper();
+            wrapper.deleteARecordByID(car.PID);
+            InitPage(); 
         }
 
         protected void RowUpdate(object sender, GridViewCommandEventArgs e)

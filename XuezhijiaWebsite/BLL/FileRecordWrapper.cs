@@ -17,7 +17,7 @@ namespace BLL
 
         public void addARecord(FileRecords.FileRecordsRow row)
         {
-            Insert(row.UserID, row.Size, row.FileName, row.PageCount, row.Pseudonym, row.DateTimee, row.State, row.Comment);
+            Insert(row.UserID, row.Size, row.FileName, row.PageCount, row.Pseudonym, row.DateTime, row.State, row.Comment);
         }
 
         public void deleteARecord(int id)
@@ -48,7 +48,7 @@ namespace BLL
                     table.Rows[i]["State"] = row.State;
                     table.Rows[i]["Size"] = row.Size;
                     table.Rows[i]["FileName"] = row.FileName;
-                    table.Rows[i]["DateTimee"] = row.DateTimee;
+                    table.Rows[i]["DateTimee"] = row;
                     table.Rows[i]["Comment"] = row.Comment;
                     break;
                 }
