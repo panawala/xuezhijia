@@ -36,48 +36,71 @@ width: 85px;
 white-space: nowrap;
 }
 
+.infoinput
+{
+	width:200px;
+	border:1px solid #85AFEC;
+}
+
+.errinfoput
+{
+	width:200px;
+	border:1px solid Red;
+	background:#C5EC83;
+}
+
+.des
+{
+   width:100%;
+   height:100px;
+   border:1px solid #85AFEC;
+   overflow:auto;
+}
+
 #MyFile
 {
-	/*width:700px;*/
+	width:100%;
 	border: 1px solid #85AFEC;
     background: White;
 	overflow:auto;
-	min-height:200px;
+	height:200px;
 	margin-bottom:20px;
-	
 }
-#MyFile div
+#MyFile .fileframe
 {
-	width:300px;
-	border: 1px solid #85AFEC;
-	background: #E4EDFA;
+	width:90%;
+	border: 1px solid #D0DBB8;
+	background: #C5EC83;
 	margin:10px;
-	padding-right:20px;
 }
 
-#MyFile input
-{
-	width:250px;
+
+.fileframe a:hover{
+
 }
-#MyFile div a
+.fileframe a:link, .fileframe a:visited
 {
-	float:right;
-	border:1px dashed red;
+			background-attachment: scroll;
+            background-color: transparent;
+            background-image: url(../Image/home_icon.png);
+            background-position: -63px -434px;
+            border-width: 0px;
+            cursor: pointer;
+            display: inline-block;
+            height: 12px;
+            margin: auto 0px;
+            padding: 0px;
+            text-decoration: none;
+            vertical-align:baseline;
+            width: 14px;
+            float:right;
+            line-height:12px;
 }
 
-#MyFile div a:hover{
-width: 20px;
-height: 20px;
-/*background: #99DAFF;*/
-
-color: Black;
-text-align: center;
-text-decoration: none;
-font-size: 20px;
-font-weight: bold;
-line-height: 20px;
-}
-#MyFile div a:link, #MyFile div a:visited
+.filediv
 {
-color: Black;
+	width:500px;
+	margin:0px;
+	padding:0px;
 }
+

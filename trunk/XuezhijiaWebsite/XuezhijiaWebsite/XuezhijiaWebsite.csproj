@@ -299,6 +299,7 @@
     <Content Include="HotelManage.aspx" />
     <Content Include="HourseManage.aspx" />
     <Content Include="Image\head_bg.jpg" />
+    <Content Include="Image\home_icon.png" />
     <Content Include="Image\menu.gif" />
     <Content Include="Image\menu.jpg" />
     <Content Include="Image\test.jpg" />

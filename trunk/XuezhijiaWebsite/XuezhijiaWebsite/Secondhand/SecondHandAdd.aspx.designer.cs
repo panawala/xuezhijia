@@ -22,57 +22,57 @@ namespace XuezhijiaWebsite.Secondhand {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Catalog;
         
         /// <summary>
-        /// TextBox4 control.
+        /// TextBox_Contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Contact;
         
         /// <summary>
-        /// TextBox2 control.
+        /// TextBox_Price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Price;
         
         /// <summary>
-        /// TextBox3 control.
+        /// TextBox_Address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Address;
         
         /// <summary>
-        /// TextBox1 control.
+        /// TextBox_Brand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Brand;
         
         /// <summary>
-        /// TextBox5 control.
+        /// TextBox_Des control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Des;
         
         /// <summary>
-        /// Button1 control.
+        /// Btn_Submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Btn_Submit;
     }
 }

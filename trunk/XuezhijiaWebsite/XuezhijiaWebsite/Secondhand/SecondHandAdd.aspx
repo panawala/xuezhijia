@@ -7,7 +7,30 @@
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jquery.livequery.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript">
-        
+
+        var formcheck = false;
+        var checkcount = 4;
+        function CheckForm() {
+            $("input").each(function () {
+                if ($(this).val() == undefined || $(this).val() == "") {
+                    $(this).removeClass("infoput");
+                    $(this).addClass("errinfoput");
+                    checkcount ++;
+                }
+                else {
+                    $(this).removeClass("errinfoput");
+                    $(this).addClass("infoput");
+                    checkcount--;
+                }
+            });
+            if (checkcount == 0)
+                return true;
+            else
+                return false;
+        }
+
+
+
         function CheckImgCss(o, img) {
             if (!/\.((jpg)|(bmp)|(gif)|(png))$/ig.test(o.value)) {
                 alert('只能上传jpg,bmp,gif,png格式图片!');
@@ -22,7 +45,7 @@
 
 
         function addFile() {
-            var str = $('<div><input type="file" name="File"><a class="aclose">x</a></div>');
+            var str = $('<div class="fileframe"><input type="file" class="filediv" name="File" /><a class="aclose" href="javascript:void(0);" /></div>');
             $("#MyFile").append(str);
         }
 
@@ -30,12 +53,43 @@
 
             //绑定事件
             /*$(".aclose").click(function () {
-                $(this).parent().remove();
+            $(this).parent().remove();
             });*/
 
             $('.aclose').livequery('click', function () {
                 $(this).parent().remove();
             });
+
+
+            $("input:not('file')").change(function () {
+                if ($(this).val() == undefined || $(this).val() == "") {
+                    $(this).removeClass("infoput");
+                    $(this).addClass("errinfoput");
+                    formcheck = false;
+                }
+                else {
+                    $(this).removeClass("errinfoput");
+                    $(this).addClass("infoput");
+                    formcheck = true;
+                }
+            });
+
+            $("input:not('file')").blur(function () {
+                if ($(this).val() == undefined || $(this).val() == "") {
+                    $(this).removeClass("infoput");
+                    $(this).addClass("errinfoput");
+                    formcheck = false;
+                }
+                else {
+                    $(this).removeClass("errinfoput");
+                    $(this).addClass("infoput");
+                    formcheck = true;
+                }
+            });
+
+
+
+
 
         })
     </script>
@@ -51,56 +105,53 @@
                 <td>
                     <label>
                         类目：</label>
-                    <asp:DropDownList ID="DropDownList_Catalog" runat="server">
+                    <asp:DropDownList ID="DropDownList_Catalog" runat="server" CssClass="infoinput" Width="202px">
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <label>
-                        联系方式：</label>
-                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                    <label>联系方式：</label>
+                    <asp:TextBox ID="TextBox_Contact" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>
-                        价格：</label>
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <label>价格：</label>
+                    <asp:TextBox ID="TextBox_Price" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
                 <td>
                     <label>
                         具体地点：</label>
-                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox_Address" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>
                         品牌：</label>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox_Brand" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>
-                    <label>
-                        描述：</label>
-                    <asp:TextBox ID="TextBox5" runat="server" TextMode="MultiLine" Width="500px" Height="100px"></asp:TextBox>
+                <td colspan="2">
+                    <label>描述：</label>
+                    <asp:TextBox ID="TextBox_Des" runat="server" TextMode="MultiLine" Height="100px" Width="100%" CssClass="des"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <label>
                         文件上传:</label>
                     <div id="MyFile">
-                        <div><input type="file" name="File" /><a class="aclose">x</a></div>
+                        <div class="fileframe"><input type="file" class="filediv" name="File" /><a class="aclose" href="javascript:void(0);" /></div>
                     </div>
                 </td>
             </tr>
         </table>
         <div style="clear: both;">
         </div>
-        <input type="button" value="增加(Add)" onclick="addFile()" />
+        <input type="button" value="增加(Add)" onclick="javascript:addFile();" />
         <input onclick="this.form.reset()" type="button" value="重置(ReSet)" />
-        <asp:Button runat="server" Text="开始上传" ID="Button1"></asp:Button>
+        <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" OnClientClick="javascript:return CheckForm();"></asp:Button>
     </div>
     <div id="right_nav" class="right_nav">
     </div>

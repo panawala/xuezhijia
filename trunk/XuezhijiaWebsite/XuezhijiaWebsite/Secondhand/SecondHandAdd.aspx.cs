@@ -17,7 +17,7 @@ namespace XuezhijiaWebsite.Secondhand
             if (!IsPostBack)
             {
 
-
+                
                 DropDownList_Catalog.DataSource = (new SecondHMWrapper()).getAllType();
                 DropDownList_Catalog.DataTextField = "Type";
                 DropDownList_Catalog.DataValueField = "Type";
