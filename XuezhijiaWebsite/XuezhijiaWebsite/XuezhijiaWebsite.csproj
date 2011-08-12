@@ -292,6 +292,7 @@
     <Content Include="css\home.css" />
     <Content Include="css\printStyles.css" />
     <Content Include="css\sample.css" />
+    <Content Include="css\secondhandadd.css" />
     <Content Include="css\sencondhand.css" />
     <Content Include="EditAds.aspx" />
     <Content Include="GREManage.aspx" />
@@ -312,6 +313,7 @@
     <Content Include="Scripts\jtemplates.js" />
     <Content Include="SecondHandMarketManage.aspx" />
     <Content Include="Secondhand\Secondhand.aspx" />
+    <Content Include="Secondhand\SecondHandAdd.aspx" />
     <Content Include="Secondhand\secondhandtemplate.htm" />
     <Content Include="Secondhand\shcommodity.aspx" />
     <Content Include="Secondhand\shcommoditytemlate.htm" />
@@ -496,6 +498,13 @@
     </Compile>
     <Compile Include="Secondhand\Secondhand.aspx.designer.cs">
       <DependentUpon>Secondhand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secondhand\SecondHandAdd.aspx.cs">
+      <DependentUpon>SecondHandAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secondhand\SecondHandAdd.aspx.designer.cs">
+      <DependentUpon>SecondHandAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Secondhand\shcommodity.aspx.cs">
       <DependentUpon>shcommodity.aspx</DependentUpon>

@@ -1,0 +1,37 @@
+﻿.shadd
+{
+    width:770px;
+	height:inherit;
+	border: 0px solid #85AFEC;
+	background: White;
+	overflow:hidden;
+	min-height:600px;
+	float:left;
+	margin-bottom:20px;
+	padding:20px;
+}
+.shadd table
+{
+	margin:0;
+	padding:0;
+	width:760px;
+	height:inherit;
+}
+
+.shadd table tr
+{
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+.shadd table tr td
+{
+	width:50%;
+	text-align:left;
+	padding: 2px 0px;
+}
+.shadd table tr td label {
+width: 85px;
+white-space: nowrap;
+}
