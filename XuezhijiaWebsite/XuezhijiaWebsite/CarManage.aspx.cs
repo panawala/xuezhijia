@@ -66,7 +66,6 @@ namespace XuezhijiaWebsite
             TextBox7.Visible = true;
 
             Upload.Visible = true;
-            Commit.Visible = true;
             LabelComment.Visible = true;
             Comment.Visible = true;
             Button1.Visible = true;
@@ -182,7 +181,6 @@ namespace XuezhijiaWebsite
 
             Image1.Visible = false;
             Upload.Visible = false;
-            Commit.Visible = false;
             LabelComment.Visible = false;
             Comment.Visible = false;
             Button1.Visible = false;
@@ -220,7 +218,6 @@ namespace XuezhijiaWebsite
             TextBox7.Visible = true;
 
             Upload.Visible = true;
-            Commit.Visible = true;
             LabelComment.Visible = true;
             Comment.Visible = true;
             Button1.Visible = true;
