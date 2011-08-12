@@ -82,7 +82,6 @@
     &nbsp;<br />
     <asp:FileUpload ID="Upload" Visible="false" runat="server" />
 &nbsp;
-    <asp:Button ID="Commit" runat="server" Visible="false" Text="上传" OnClick="UploadClicked" />
     <br />
     <asp:Label ID="LabelComment" runat="server" Visible="false" Text="图片备注"></asp:Label>
     <br />
