@@ -80,13 +80,13 @@ namespace XuezhijiaWebsite
             int uid = Convert.ToInt16(Session["UserID"].ToString());
             CommenHelper helper = CommenHelper.GetInstance();
             DateTime time = DateTime.Now;
-            int state = 0;
+            string state = "未打印" ;
             FileRecords.FileRecordsRow row;
             FileRecords.FileRecordsDataTable table = new FileRecords.FileRecordsDataTable();
             row = table.NewFileRecordsRow();
             row.Comment = comment;
             row.UserID = uid;
-            row.DateTimee = time;
+            row.DateTime = time.ToString();
             row.State = state;
             row.FileName = filename;
             row.Size = "";

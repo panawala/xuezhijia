@@ -66,7 +66,7 @@ namespace DAL
         public string FileName;
         public int PageCount;
         public Guid Pseudonym;
-        public DateTime DateTime;
+        public string DateTime;
         public string state;
         public string Comment;
     }
@@ -116,6 +116,7 @@ namespace DAL
         public string Location;
         public string ContactInformation;
         public bool HasImage;
+        public List<int> PIDList;
     }
 
     public class SHOP
