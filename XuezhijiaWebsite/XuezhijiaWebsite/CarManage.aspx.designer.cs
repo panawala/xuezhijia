@@ -211,15 +211,6 @@ namespace XuezhijiaWebsite {
         protected global::System.Web.UI.WebControls.FileUpload Upload;
         
         /// <summary>
-        /// Commit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Commit;
-        
-        /// <summary>
         /// LabelComment control.
         /// </summary>
         /// <remarks>
