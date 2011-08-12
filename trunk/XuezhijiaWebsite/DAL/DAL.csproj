@@ -75,11 +75,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FileRecords.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Hotel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Hotel.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Photo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,17 +197,6 @@
     </None>
     <None Include="FileRecords.xss">
       <DependentUpon>FileRecords.xsd</DependentUpon>
-    </None>
-    <None Include="Hotel.xsc">
-      <DependentUpon>Hotel.xsd</DependentUpon>
-    </None>
-    <None Include="Hotel.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Hotel.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Hotel.xss">
-      <DependentUpon>Hotel.xsd</DependentUpon>
     </None>
     <None Include="Photo.xsc">
       <DependentUpon>Photo.xsd</DependentUpon>
