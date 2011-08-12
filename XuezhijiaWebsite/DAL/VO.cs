@@ -23,6 +23,18 @@ namespace DAL
         public string Comment;
     }
 
+    public class HOTEL
+    {
+        public int HotelID;
+        public string HotelName;
+        public string Location;
+        public string ContactWay;
+        public string Type;
+        public string Price;
+        public string PIDList;
+        public string Comment;
+    }
+
     public class COMMODITY
     {
         public int ComID;
