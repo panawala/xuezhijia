@@ -52,6 +52,7 @@ namespace BLL
        {
            string sql = "delete from Photo where PID = " + id.ToString();
            CommenHelper helper = CommenHelper.GetInstance();
+           helper.initOle();
            helper.delete(sql);
        }
     }
