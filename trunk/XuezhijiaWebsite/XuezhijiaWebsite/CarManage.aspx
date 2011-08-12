@@ -12,7 +12,9 @@
     
     </div>
     <asp:Label ID="Label1" runat="server" Text="车辆管理"></asp:Label>
-        <asp:GridView ID="Cars" runat="server" AutoGenerateColumns="False" DataKeyNames="CarID" OnRowDeleting="RowDeleting" OnRowCommand="RowUpdate">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:LinkButton ID="LinkButton2" runat="server" OnClick="AddClick">增加新纪录</asp:LinkButton>
+&nbsp;<asp:GridView ID="Cars" runat="server" AutoGenerateColumns="False" DataKeyNames="CarID" OnRowDeleting="RowDeleting" OnRowCommand="RowUpdate">
       <Columns>
             <asp:TemplateField HeaderText="删除" ShowHeader="False">   
             <ItemTemplate>   

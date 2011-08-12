@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using BLL;
 using System.Data;
 using DAL;
+using DAL.CarTableAdapters;
 
 namespace XuezhijiaWebsite
 {
@@ -98,30 +99,65 @@ namespace XuezhijiaWebsite
         }
 
         protected void CommitClick(object sender, EventArgs e)
-        { /*
-            int id = Convert.ToInt32(Session["CarID"].ToString());
-            CAR tmp = new CAR();
-            CarWrapper wrapper  = new CarWrapper();
-            tmp = wrapper.getResultByID(id);
-            CAR car = new CAR();
-            car.Type = TextBox1.Text ;
-            car.SeatsCounts = Convert.ToInt32(TextBox2.Text);
-            car.Price = Convert.ToDouble(TextBox3.Text);
-            car.HirePrice = Convert.ToDouble(TextBox4.Text);
-            car.AdditionalPerKM = Convert.ToDouble(TextBox5.Text);
-            car.AdditionalPerHour = Convert.ToDouble(TextBox6.Text);
-            car.Comment = TextBox7.Text;
-            car.CarID = id;
-            car.PID = tmp.PID;
-            if (Upload.FileName.Length > 0)
+        {
+            if (Session["CarID"] != null && Session["CarID"].ToString() != "")
             {
-                PhotoWrapper photowrapper = new PhotoWrapper();
-                photowrapper.deleteARecord(tmp.PID);
+               
+                int id = Convert.ToInt32(Session["CarID"].ToString());
+                CAR tmp = new CAR();
+                CarWrapper wrapper  = new CarWrapper();
+                tmp = wrapper.getResultByID(id);
+                CAR car = new CAR();
+                car.Type = TextBox1.Text ;
+                car.SeatsCounts = Convert.ToInt32(TextBox2.Text);
+                car.Price = Convert.ToDouble(TextBox3.Text);
+                car.HirePrice = Convert.ToDouble(TextBox4.Text);
+                car.AdditionalPerKM = Convert.ToDouble(TextBox5.Text);
+                car.AdditionalPerHour = Convert.ToDouble(TextBox6.Text);
+                car.Comment = TextBox7.Text;
+                car.CarID = id;
+                car.PID = tmp.PID;
+                if (Upload.FileName.Length > 0)
+                {
+                    PhotoWrapper photowrapper = new PhotoWrapper();
+                    photowrapper.deleteARecord(tmp.PID);
+                    CommenHelper helper = CommenHelper.GetInstance();
+                    car.PID = helper.getIdent("Photo");
+                }
+                
+                wrapper.updateARecord(car);
+                Session.Remove("CarID");
+            }
+
+            else
+            {
+                CAR tmp = new CAR();
+                CarWrapper wrapper = new CarWrapper();
+                CAR car = new CAR();
+                addAPhoto();
                 CommenHelper helper = CommenHelper.GetInstance();
                 car.PID = helper.getIdent("Photo");
+                car.Type = TextBox1.Text;
+                car.SeatsCounts = Convert.ToInt32(TextBox2.Text);
+                car.Price = Convert.ToDouble(TextBox3.Text);
+                car.HirePrice = Convert.ToDouble(TextBox4.Text);
+                car.AdditionalPerKM = Convert.ToDouble(TextBox5.Text);
+                car.AdditionalPerHour = Convert.ToDouble(TextBox6.Text);
+                car.Comment = TextBox7.Text;
+                wrapper.addAClassRecord(car);
             }
-            wrapper.updateARecord(car);*/
             PostInit();
+            InitPage();
+        }
+
+        public void addAPhoto()
+        {
+            PhotoWrapper photowrapper = new PhotoWrapper();
+            Photo.PhotoRow row = new Photo.PhotoDataTable().NewPhotoRow(); ;
+            row.Comment = Comment.Text;
+            row.Data = Upload.FileBytes;
+            row.PName = Upload.FileName;
+            photowrapper.addARecord(row);
         }
 
         protected void PostInit()
@@ -158,6 +194,37 @@ namespace XuezhijiaWebsite
             TextBox5.Text = "";
             TextBox6.Text = "";
             TextBox7.Text = "";
+        }
+
+        protected void AddClick(object sender, EventArgs e)
+        { /*
+            int id = Convert.ToInt32(Session["CarID"].ToString());
+            CAR tmp = new CAR();
+            CarWrap
+           */
+            Label2.Visible = true;
+            Label3.Visible = true;
+            Label4.Visible = true;
+            Label5.Visible = true;
+            Label6.Visible = true;
+            Label7.Visible = true;
+            Label8.Visible = true;
+            Label10.Visible = true;
+
+            TextBox1.Visible = true;
+            TextBox2.Visible = true;
+            TextBox3.Visible = true;
+            TextBox4.Visible = true;
+            TextBox5.Visible = true;
+            TextBox6.Visible = true;
+            TextBox7.Visible = true;
+
+            Upload.Visible = true;
+            Commit.Visible = true;
+            LabelComment.Visible = true;
+            Comment.Visible = true;
+            Button1.Visible = true;
+
         }
 
     }
