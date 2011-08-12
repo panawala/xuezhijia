@@ -35,3 +35,8 @@
 width: 85px;
 white-space: nowrap;
 }
+
+#MyFile
+{
+	float:left;
+}

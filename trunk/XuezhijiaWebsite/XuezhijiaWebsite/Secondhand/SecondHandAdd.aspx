@@ -73,9 +73,10 @@
         </table>
         <h3>
             多文件上传</h3>
-        <div id="Div1">
+        <div id="MyFile">
             <input type="file" size="50" name="File" />
         </div>
+        <div style="clear:both;"></div>
         <input type="button" value="增加(Add)" onclick="addFile()" />
         <input onclick="this.form.reset()" type="button" value="重置(ReSet)" />
         <asp:Button runat="server" Text="开始上传" ID="Button1"></asp:Button>
