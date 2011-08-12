@@ -39,6 +39,14 @@ namespace BLL
                 seconhandmarket.Location = table.Rows[i]["Location"].ToString();
                 seconhandmarket.ContactInformation = table.Rows[i]["ContactInformation"].ToString();
                 seconhandmarket.HasImage = Convert.ToBoolean(table.Rows[i]["HasImage"].ToString());
+                string PhotoList = table.Rows[i]["PhotoList"].ToString();
+                List<int> plist = new List<int>();
+                string[] sArray = PhotoList.Split(new char[1] { ',' });
+                foreach (string id in sArray)
+                {
+                    plist.Add(Convert.ToInt32(id.ToArray()));
+                }
+                seconhandmarket.PIDList = plist;
                 list.Add(seconhandmarket);
             }
             return list;
