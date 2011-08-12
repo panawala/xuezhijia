@@ -15,6 +15,11 @@ namespace BLL
             return GetData();
         }
 
+        public DataTable getAllType()
+        {
+            string sql = "select Type from SecondHandMarket";
+            return CommenHelper.GetInstance().getResultBySql(sql);
+        }
       
         public List<SECONDHANDMARKET> getAllFormatedResult()
         {
@@ -44,7 +49,7 @@ namespace BLL
                 string[] sArray = PhotoList.Split(new char[1] { ',' });
                 foreach (string id in sArray)
                 {
-                    plist.Add(Convert.ToInt32(id.ToArray()));
+                    plist.Add(Convert.ToInt32(id.ToString()));
                 }
                 seconhandmarket.PIDList = plist;
                 list.Add(seconhandmarket);

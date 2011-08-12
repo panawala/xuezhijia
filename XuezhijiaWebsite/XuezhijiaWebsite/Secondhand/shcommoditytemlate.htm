@@ -18,7 +18,8 @@
 <td class="short"><label>查看次数：</label><span id="counter">  { $T.LookCount }</span></td>
 </tr>
 <tr>
-<td class="short"><label>类目：</label><a target="_blank" href="http://xuchang.baixing.com/ershouqiche/">{ $T.Type }</a></td><td class="short"><label>价格：</label>{ $T.Price }万元<div id="barginBtn" style="display:inline"><label id="expsFollow" class="actBtn Off" style="font-size:14px;padding: 2px 6px;border: none;"></label></div></td>
+<td class="short"><label>类目：</label><a target="_blank" href="http://xuchang.baixing.com/ershouqiche/">{ $T.Type }</a></td>
+<td class="short"><label>价格：</label>{ $T.Price }万元<div id="barginBtn" style="display:inline"><label id="expsFollow" class="actBtn Off" style="font-size:14px;padding: 2px 6px;border: none;"></label></div></td>
 </tr>
 <tr>
 <td class="short"><label>品牌：</label>{ $T.Brand }</td>
@@ -34,8 +35,9 @@
 联系方式：<span id="callmeBtn" class="followMob">{ $T.ContactInformation }</span><br>
 打电话给我时，请一定说明在百姓网看到的，谢谢！</p>
 
- <a href="/tu/122784970/0" rel="nofollow" target="_blank" title="点击查看大图"><img src="http://img2.baixing.net/m/7e9e23da97104e4908113d77e321b316_sm.jpg" alt="转让单位99年黑色普桑 - 1.8万元的图片" class="img"></a> <a href="/tu/122784970/1" rel="nofollow" target="_blank" title="点击查看大图"><img src="http://img2.baixing.net/m/4457398daedb277d1ba0c6812d1c3906_sm.jpg" alt="转让单位99年黑色普桑 - 1.8万元的图片" class="img"></a><div style="clear:both;"></div>
 
-
-
+{#foreach $T.PIDList as int}
+ <a href="/tu/122784970/1" rel="nofollow" target="_blank" title="点击查看大图"><img src="/Common/ShowPhoto.ashx?id={$T.int}" alt="转让单位99年黑色普桑 - 1.8万元的图片" class="img" /></a>
+   {#/for}
+   <div style="clear:both;"></div>
 </div>

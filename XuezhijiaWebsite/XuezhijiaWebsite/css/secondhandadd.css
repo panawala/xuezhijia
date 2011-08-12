@@ -2,8 +2,8 @@
 {
     width:770px;
 	height:inherit;
-	border: 0px solid #85AFEC;
-	background: White;
+	border: 1px solid #85AFEC;
+    background: #E4EDFA;
 	overflow:hidden;
 	min-height:600px;
 	float:left;
@@ -38,5 +38,46 @@ white-space: nowrap;
 
 #MyFile
 {
-	float:left;
+	/*width:700px;*/
+	border: 1px solid #85AFEC;
+    background: White;
+	overflow:auto;
+	min-height:200px;
+	margin-bottom:20px;
+	
+}
+#MyFile div
+{
+	width:300px;
+	border: 1px solid #85AFEC;
+	background: #E4EDFA;
+	margin:10px;
+	padding-right:20px;
+}
+
+#MyFile input
+{
+	width:250px;
+}
+#MyFile div a
+{
+	float:right;
+	border:1px dashed red;
+}
+
+#MyFile div a:hover{
+width: 20px;
+height: 20px;
+/*background: #99DAFF;*/
+
+color: Black;
+text-align: center;
+text-decoration: none;
+font-size: 20px;
+font-weight: bold;
+line-height: 20px;
+}
+#MyFile div a:link, #MyFile div a:visited
+{
+color: Black;
 }

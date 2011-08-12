@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL;
 
 namespace XuezhijiaWebsite.Secondhand
 {
@@ -13,6 +14,16 @@ namespace XuezhijiaWebsite.Secondhand
         public string pic = "/Common/ShowPhoto.ashx?id=2";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+
+
+                DropDownList_Catalog.DataSource = (new SecondHMWrapper()).getAllType();
+                DropDownList_Catalog.DataTextField = "Type";
+                DropDownList_Catalog.DataValueField = "Type";
+                DropDownList_Catalog.DataBind();
+            }
+
             /// 在此处放置用户代码以初始化页面
             if (this.IsPostBack) this.SaveImages();
         }

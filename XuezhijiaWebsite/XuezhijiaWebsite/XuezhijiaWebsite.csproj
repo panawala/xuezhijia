@@ -310,6 +310,7 @@
     <Content Include="Print.aspx" />
     <Content Include="PrintManage.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="Scripts\jquery.livequery.js" />
     <Content Include="Scripts\jtemplates.js" />
     <Content Include="SecondHandMarketManage.aspx" />
     <Content Include="Secondhand\Secondhand.aspx" />

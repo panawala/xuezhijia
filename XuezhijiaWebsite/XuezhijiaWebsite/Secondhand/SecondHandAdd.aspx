@@ -4,8 +4,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../css/secondhandadd.css" rel="stylesheet" type="text/css" />
     <link href="../css/car.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.livequery.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript">
-        function $(o) { return document.getElementById(o); }
+        
         function CheckImgCss(o, img) {
             if (!/\.((jpg)|(bmp)|(gif)|(png))$/ig.test(o.value)) {
                 alert('只能上传jpg,bmp,gif,png格式图片!');
@@ -18,16 +20,30 @@
         }
 
 
+
         function addFile() {
-            var str = '<input type="file" size="50" name="File">';
-            document.getElementById("MyFile").insertAdjacentHTML("beforeEnd", str);
+            var str = $('<div><input type="file" name="File"><a class="aclose">x</a></div>');
+            $("#MyFile").append(str);
         }
+
+        $(document).ready(function () {
+
+            //绑定事件
+            /*$(".aclose").click(function () {
+                $(this).parent().remove();
+            });*/
+
+            $('.aclose').livequery('click', function () {
+                $(this).parent().remove();
+            });
+
+        })
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="carnav">
-        <h1 id="H1">
-            <span class="freeT">免费</span>发布信息</h1>
+        <h2 id="H1">
+            免费发布信息</h2>
     </div>
     <div id="shcontent" class="shadd">
         <table>
@@ -35,7 +51,7 @@
                 <td>
                     <label>
                         类目：</label>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="DropDownList_Catalog" runat="server">
                     </asp:DropDownList>
                 </td>
                 <td>
@@ -70,13 +86,18 @@
                     <asp:TextBox ID="TextBox5" runat="server" TextMode="MultiLine" Width="500px" Height="100px"></asp:TextBox>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <label>
+                        文件上传:</label>
+                    <div id="MyFile">
+                        <div><input type="file" name="File" /><a class="aclose">x</a></div>
+                    </div>
+                </td>
+            </tr>
         </table>
-        <h3>
-            多文件上传</h3>
-        <div id="MyFile">
-            <input type="file" size="50" name="File" />
+        <div style="clear: both;">
         </div>
-        <div style="clear:both;"></div>
         <input type="button" value="增加(Add)" onclick="addFile()" />
         <input onclick="this.form.reset()" type="button" value="重置(ReSet)" />
         <asp:Button runat="server" Text="开始上传" ID="Button1"></asp:Button>
