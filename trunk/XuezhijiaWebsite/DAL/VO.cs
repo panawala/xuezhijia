@@ -39,12 +39,12 @@ namespace DAL
     public class COMMODITY
     {
         public int ComID;
-        public string ComNae;
+        public string ComName;
         public string Type;
-        public float Price;
+        public double Price;
         public string Detail;
         public string Comment;
-        public int PhotoID;
+        public int PID;
     }
 
     public class COURSE
