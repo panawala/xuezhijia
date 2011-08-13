@@ -112,10 +112,6 @@ namespace XuezhijiaWebsite.Secondhand
             //if()
             HttpFileCollection files = Request.Files;
             int count = files.Count;
-            
-
         }
-
-
     }
 }
