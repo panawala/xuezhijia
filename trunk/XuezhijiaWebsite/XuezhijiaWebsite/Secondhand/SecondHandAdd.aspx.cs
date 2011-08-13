@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
+using DAL;
+using System.IO;
 
 namespace XuezhijiaWebsite.Secondhand
 {
@@ -16,7 +18,7 @@ namespace XuezhijiaWebsite.Secondhand
         {
             if (!IsPostBack)
             {
-                ((MasterPage)Master).CurrentMenu = "market";
+                ((Uploadfile)Master).CurrentMenu = "market";
                 DropDownList_Catalog.DataSource = (new SecondHMWrapper()).getAllType();
                 DropDownList_Catalog.DataTextField = "Type";
                 DropDownList_Catalog.DataValueField = "Type";
@@ -96,7 +98,7 @@ namespace XuezhijiaWebsite.Secondhand
 
         protected void Btn_Submit_Click(object sender, EventArgs e)
         {
-
+            HttpFileCollection files = HttpContext.Current.Request.Files;
         }
 
 

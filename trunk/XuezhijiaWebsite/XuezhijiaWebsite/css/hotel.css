@@ -1,0 +1,60 @@
+﻿.hotelnav
+{
+	width:1022px;
+	height:30px;
+	border: 1px solid #85AFEC;
+	background: #E4EDFA;
+	overflow:hidden;
+	margin-bottom:5px;
+	line-height:30px;
+}
+.hotel
+{
+	width:810px;
+	height:inherit;
+	border: 1px solid #85AFEC;
+	background: #E4EDFA;
+	overflow:hidden;
+	min-height:600px;
+	float:left;
+	margin-bottom:20px;
+}
+.hotel ul
+{
+	padding: 15px 0;
+    list-style :none;
+    margin:0;
+/*ul在主流浏览器中幽默缩进问题！！！！！！！！！*/
+}
+.hotel ul li
+{
+	margin:10px 0px 10px 10px;
+	padding: 0px 5px 0px 5px;
+    border-right : 1px dashed #E5E5E5;
+    float : left;
+    /*width:25%;*/
+}
+.hotelimage
+{
+	width:180px;
+	height:120px;
+	background-color:Aqua;
+	overflow:hidden;
+	/*border: 1px dashed Purple;*/
+}
+.hoteldes
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	width:170px;
+	height:110px;
+	color:Black;
+	background-color:#A9CBEE;
+	margin:5px 0px;
+	padding-left:10px;
+	/*border: 1px dashed Purple;*/
+}
+
+strong, b {
+font-weight: bolder;
+}

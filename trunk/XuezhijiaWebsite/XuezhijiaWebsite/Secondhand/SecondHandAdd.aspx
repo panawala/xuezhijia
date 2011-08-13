@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Uploadfile.Master" AutoEventWireup="true"
     CodeBehind="SecondHandAdd.aspx.cs" Inherits="XuezhijiaWebsite.Secondhand.SecondHandAdd" %>
-
+    <%@ MasterType VirtualPath="~/Uploadfile.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../css/secondhandadd.css" rel="stylesheet" type="text/css" />
     <link href="../css/car.css" rel="stylesheet" type="text/css" />
@@ -11,19 +11,19 @@
         var formcheck = false;
         var checkcount = true;
         function CheckForm() {
-            $("table input:not(.filediv)").each(function () {
-                    if ($(this).val() == undefined || $(this).val() == "") {
-                        $(this).removeClass("infoinput");
-                        $(this).addClass("errinfoput");
-                        checkcount = false;
-                        return false;
-                    }
-                    else {
-                        $(this).removeClass("errinfoput");
-                        $(this).addClass("infoinput");
-                        checkcount = true;
-                        return true;
-                    }
+            $("table input:not(:file)").each(function () {
+                if ($(this).val() == undefined || $(this).val() == "") {
+                    $(this).removeClass("infoinput");
+                    $(this).addClass("errinfoput");
+                    checkcount = false;
+                    return false;
+                }
+                else {
+                    $(this).removeClass("errinfoput");
+                    $(this).addClass("infoinput");
+                    checkcount = true;
+                    return true;
+                }
 
             });
             return checkcount;
@@ -61,7 +61,7 @@
             });
 
 
-            $("table input:not('file')").blur(function () {
+            $("table input:not(:file)").blur(function () {
                 if ($(this).val() == undefined || $(this).val() == "") {
                     $(this).removeClass("infoinput");
                     $(this).addClass("errinfoput");
@@ -74,7 +74,7 @@
                 }
             });
 
-            $("table input:not('file')").change(function () {
+            $("table input:not(:file)").change(function () {
                 if ($(this).val() == undefined || $(this).val() == "") {
                     $(this).removeClass("infoinput");
                     $(this).addClass("errinfoput");
@@ -86,13 +86,11 @@
                     formcheck = true;
                 }
             });
-
-
-
 
 
         })
     </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="carnav">
@@ -109,13 +107,15 @@
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <label>联系方式：</label>
+                    <label>
+                        联系方式：</label>
                     <asp:TextBox ID="TextBox_Contact" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>价格：</label>
+                    <label>
+                        价格：</label>
                     <asp:TextBox ID="TextBox_Price" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
                 <td>
@@ -133,8 +133,10 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <label>描述：</label>
-                    <asp:TextBox ID="TextBox_Des" runat="server" TextMode="MultiLine" Height="100px" Width="100%" CssClass="des"></asp:TextBox>
+                    <label>
+                        描述：</label>
+                    <asp:TextBox ID="TextBox_Des" runat="server" TextMode="MultiLine" Height="100px"
+                        Width="100%" CssClass="des"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -151,8 +153,8 @@
         </div>
         <input type="button" value="增加(Add)" onclick="javascript:addFile();" />
         <input onclick="this.form.reset()" type="button" value="重置(ReSet)" />
-        <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" 
-            OnClientClick="javascript:return CheckForm();" onclick="Btn_Submit_Click"></asp:Button>
+        <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" OnClientClick="javascript:return CheckForm();"
+            OnClick="Btn_Submit_Click"></asp:Button>
     </div>
     <div id="right_nav" class="right_nav">
     </div>

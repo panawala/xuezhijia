@@ -11,7 +11,7 @@
 <div id="carcontent" class="car">
 
 </div>
-<div class="right_nav"></div>
+<div class="right_nav" id="rightnav"></div>
 <div style="clear:both;"></div>
 <script type="text/javascript">
 
@@ -48,7 +48,7 @@
         $.ajax({
             type: "POST",
             url: "/WS/CommonService.asmx/getAllCourseList",
-            data: "{id:1}",
+            data: "{id:'9'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             beforeSend: Loadingnav, //执行ajax前执行loading函数.直到success 
@@ -58,16 +58,16 @@
 
         //加载中的状态
         function Loadingnav() {
-            $('#right_nav').html('<img src="/Image/loader.gif"/>');
+            $('#rightnav').html('<img src="/Image/loader.gif"/>');
         }
         //加载成功
         function Successnav(data, status) {
             //在0s内将透明度设为0
-            $("#right_nav").fadeTo(0.001, 0);
-            $("#right_nav").setTemplateURL('../Car/rightnav.htm');
-            $('#right_nav').processTemplate(data.d);
+            $("#rightnav").fadeTo(0.001, 0);
+            $("#rightnav").setTemplateURL('../Car/rightnav.htm');
+            $('#rightnav').processTemplate(data.d);
             //在1s内将透明度设为1
-            $("#right_nav").fadeTo(1000, 1);
+            $("#rightnav").fadeTo(1000, 1);
 
         }
     </script>
