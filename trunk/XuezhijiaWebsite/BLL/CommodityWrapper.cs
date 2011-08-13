@@ -34,7 +34,7 @@ namespace BLL
                 commodity.Price = Convert.ToDouble(table.Rows[i]["Price"].ToString());
                 commodity.Detail = table.Rows[i]["Detail"].ToString();
                 commodity.Comment = table.Rows[i]["Comment"].ToString();
-                commodity.PID = Convert.ToInt32(table.Rows[i]["PhotoID"].ToString());
+                commodity.PhotoID = Convert.ToInt32(table.Rows[i]["PhotoID"].ToString());
                 list.Add(commodity);
             }
             return list;
@@ -42,12 +42,12 @@ namespace BLL
 
         public void addARecord(Commodity.CommodityRow row)
         {
-            Insert(row.ComName, row.Type, row.Price, row.Detail, row.Comment);
+            Insert(row.ComName, row.Type, row.Price, row.Detail, row.Comment, row.PhotoID);
         }
 
         public void addAClassRecord(COMMODITY row)
         {
-            Insert(row.ComName, row.Type, row.Price, row.Detail, row.Comment);
+            Insert(row.ComName, row.Type, row.Price, row.Detail, row.Comment, row.PhotoID);
         }
 
         public void deleteARecordByID(int id)
@@ -81,7 +81,7 @@ namespace BLL
                     table.Rows[i]["Price"] = commodity.Price;
                     table.Rows[i]["Detail"] = commodity.Detail;
                     table.Rows[i]["Comment"] = commodity.Comment;
-                    table.Rows[i]["PhotoID"] = commodity.PID;
+                    table.Rows[i]["PhotoID"] = commodity.PhotoID;
                     break;
                 }
             }
