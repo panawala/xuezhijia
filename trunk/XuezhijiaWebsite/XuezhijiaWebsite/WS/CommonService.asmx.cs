@@ -60,7 +60,7 @@ namespace XuezhijiaWebsite.WS
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<HOTEL> getALLFormated()
+        public List<HOTEL> getALLFormatedHotels()
         {
             HotelWrapper wrapper = new HotelWrapper();
             return wrapper.getAllFormatedResult();
