@@ -125,7 +125,7 @@ namespace DAL
         public string Comment;
         public int LookCount;
         public double Price;
-        public DateTime PublishDate;
+        public string PublishDate;
         public string Brand;
         public string Location;
         public string ContactInformation;

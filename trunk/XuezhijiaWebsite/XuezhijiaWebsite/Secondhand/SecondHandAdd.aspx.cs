@@ -44,7 +44,7 @@ namespace XuezhijiaWebsite.Secondhand
             secondhandmarket.Comment = TextBox_Des.Text;
             secondhandmarket.LookCount = 0;
             secondhandmarket.Tipical = TextBox_Title.Text;
-            secondhandmarket.PublishDate = DateTime.Now;
+            secondhandmarket.PublishDate = DateTime.Now.ToString();
             secondhandmarket.HasImage = false;
             HttpFileCollection files = Request.Files;
             int count = files.Count;

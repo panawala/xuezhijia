@@ -101,6 +101,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Room.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SecondHandMarket.cs">
+      <DependentUpon>SecondHandMarket.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SecondHandMarket.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
