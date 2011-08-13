@@ -91,9 +91,15 @@ namespace BLL
             Update(table);
         }
 
+        public DataTable getHoleInformation()
+        {
+            string sql = "select * from Course left join Teacher on Course.TID = Teacher.TID";
+            return CommenHelper.GetInstance().getResultBySql(sql);
+        }
+
         public string getTeacherNameByID(int id)
         {
-            string sql = "select TName from Teacher where TID = " + id.ToString();
+            string sql = "select TName from Course left join Teacher on Course.TID = Teacher.TID  where Course.CourseID =  " + id.ToString();
             return CommenHelper.GetInstance().getResultBySql(sql).Rows[0][0].ToString();
         }
     }

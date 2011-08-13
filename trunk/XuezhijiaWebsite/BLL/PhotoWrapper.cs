@@ -19,6 +19,11 @@ namespace BLL
             Insert(row.PName, row.Data, row.Comment);
         }
 
+        public void addAClassRecord(PHOTO row)
+        {
+            Insert(row.PName, row.Data, row.Comment);
+        }
+
         public List<PHOTO> getAllFormatedResult()
         {
             return _transfer(getAll());

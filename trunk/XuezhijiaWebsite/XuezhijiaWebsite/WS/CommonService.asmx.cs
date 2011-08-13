@@ -72,6 +72,5 @@ namespace XuezhijiaWebsite.WS
             ShopWrapper wrapper = new ShopWrapper();
             return wrapper.getAllFormatedResult();
         }
-
     }
 }

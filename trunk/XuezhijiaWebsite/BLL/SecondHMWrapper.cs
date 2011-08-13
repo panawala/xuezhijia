@@ -77,7 +77,12 @@ namespace BLL
 
         public void addAClassRecord(SECONDHANDMARKET row)
         {
-            //Insert(row.Tipical, row.Type, row.Comment, row.LookCount, row.Price, row.PublishDate, row.Brand, row.Location, row.ContactInformation, row.HasImage, row.PIDList.ToString());
+            string idLit = "";
+            for (int i = 0; i < row.PIDList.Count; i++)
+            {
+                idLit = (row.PIDList[i]).ToString() + ",";
+            }
+            Insert(row.Tipical, row.Type, row.Comment, row.LookCount, row.Price, row.PublishDate, row.Brand, row.Location, row.ContactInformation, row.HasImage, idLit);
         }
     }
 }
