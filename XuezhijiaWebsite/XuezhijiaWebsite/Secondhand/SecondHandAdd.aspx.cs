@@ -45,6 +45,7 @@ namespace XuezhijiaWebsite.Secondhand
             secondhandmarket.LookCount = 0;
             secondhandmarket.Tipical = TextBox_Title.Text;
             secondhandmarket.PublishDate = DateTime.Now;
+            secondhandmarket.HasImage = false;
             HttpFileCollection files = Request.Files;
             int count = files.Count;
             List<int> pidlist = new List<int>();
@@ -63,6 +64,7 @@ namespace XuezhijiaWebsite.Secondhand
                     photowrapper.addAClassRecord(photo);
                     int pid = helper.getIdent("Photo");
                     pidlist.Add(pid);
+                    secondhandmarket.HasImage = true;
                 }
             }
             secondhandmarket.PIDList = pidlist;

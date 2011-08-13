@@ -97,7 +97,7 @@ namespace XuezhijiaWebsite
             TextBox3.Text = course.Location.ToString();
             TextBox4.Text = course.Time.ToString();
             TextBox5.Text = course.MaxNumber.ToString();
-            TextBox6.Text = course.TID.ToString();
+            //TextBox6.SelectedIndex = teacher ;
             TextBox7.Text = course.Comment;
 
             Image1.ImageUrl = "/Common/ShowPhoto.ashx?id=" + course.PID.ToString();
