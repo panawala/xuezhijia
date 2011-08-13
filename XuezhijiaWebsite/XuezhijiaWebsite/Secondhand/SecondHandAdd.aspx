@@ -87,6 +87,7 @@
                 }
             });
 
+            addFile();
 
         })
     </script>
