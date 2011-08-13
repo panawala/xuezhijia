@@ -328,7 +328,6 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Test.aspx" />
     <Content Include="Tutor\Tutor.aspx" />
     <Content Include="Tutor\tutortemplate.htm" />
     <Content Include="TakeOutManage.aspx" />
@@ -541,13 +540,6 @@
     <Compile Include="Load.aspx.designer.cs">
       <DependentUpon>Load.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Tutor\Tutor.aspx.cs">
       <DependentUpon>Tutor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -598,7 +590,6 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="upload\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
