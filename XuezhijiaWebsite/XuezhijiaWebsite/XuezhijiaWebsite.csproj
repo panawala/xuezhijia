@@ -292,6 +292,7 @@
     <Content Include="css\home.css" />
     <Content Include="css\hotel.css" />
     <Content Include="css\house.css" />
+    <Content Include="css\houseadd.css" />
     <Content Include="css\printStyles.css" />
     <Content Include="css\sample.css" />
     <Content Include="css\secondhandadd.css" />
@@ -300,6 +301,8 @@
     <Content Include="css\takeout.css" />
     <Content Include="css\takeoutdish.css" />
     <Content Include="css\ticket.css" />
+    <Content Include="css\train.css" />
+    <Content Include="css\tutor.css" />
     <Content Include="EditAds.aspx" />
     <Content Include="GREManage.aspx" />
     <Content Include="HotelManage.aspx" />
@@ -307,6 +310,7 @@
     <Content Include="Hotel\hotelordertemplate.htm" />
     <Content Include="HourseManage.aspx" />
     <Content Include="House\House.aspx" />
+    <Content Include="House\HouseAdd.aspx" />
     <Content Include="House\housetemplate.htm" />
     <Content Include="Image\head_bg.jpg" />
     <Content Include="Image\home_icon.png" />
@@ -343,6 +347,8 @@
     <Content Include="Takeout\takeouttemplate.htm" />
     <Content Include="Ticket\Ticket.aspx" />
     <Content Include="Ticket\tickettemplate.htm" />
+    <Content Include="Train\Train.aspx" />
+    <Content Include="Train\traintemplate.htm" />
     <Content Include="Tutor\Tutor.aspx" />
     <Content Include="Tutor\tutortemplate.htm" />
     <Content Include="TakeOutManage.aspx" />
@@ -470,6 +476,13 @@
     <Compile Include="House\House.aspx.designer.cs">
       <DependentUpon>House.aspx</DependentUpon>
     </Compile>
+    <Compile Include="House\HouseAdd.aspx.cs">
+      <DependentUpon>HouseAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="House\HouseAdd.aspx.designer.cs">
+      <DependentUpon>HouseAdd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -589,6 +602,13 @@
     </Compile>
     <Compile Include="Ticket\Ticket.aspx.designer.cs">
       <DependentUpon>Ticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Train\Train.aspx.cs">
+      <DependentUpon>Train.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Train\Train.aspx.designer.cs">
+      <DependentUpon>Train.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tutor\Tutor.aspx.cs">
       <DependentUpon>Tutor.aspx</DependentUpon>

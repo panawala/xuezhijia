@@ -1,4 +1,4 @@
-﻿.shopnav
+﻿.trainnav
 {
 	width:1022px;
 	height:30px;
@@ -8,7 +8,7 @@
 	margin-bottom:5px;
 	line-height:30px;
 }
-.shop
+.train
 {
 	width:810px;
 	height:inherit;
@@ -19,14 +19,14 @@
 	float:left;
 	margin-bottom:20px;
 }
-.shop ul
+.train ul
 {
 	padding: 15px 0;
     list-style :none;
     margin:0;
 /*ul在主流浏览器中幽默缩进问题！！！！！！！！！*/
 }
-.shop ul li
+.train ul li
 {
 	margin:10px 0px 10px 10px;
 	padding: 0px 5px 0px 5px;
@@ -34,7 +34,7 @@
     float : left;
     /*width:25%;*/
 }
-.shopimage
+.trainimage
 {
 	width:230px;
 	height:220px;
@@ -42,7 +42,7 @@
 	overflow:hidden;
 	/*border: 1px dashed Purple;*/
 }
-.shopdes
+.traindes
 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 15px;

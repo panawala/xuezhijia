@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Uploadfile.Master" AutoEventWireup="true"
-    CodeBehind="SecondHandAdd.aspx.cs" Inherits="XuezhijiaWebsite.Secondhand.SecondHandAdd" %>
-    <%@ MasterType VirtualPath="~/Uploadfile.master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Uploadfile.Master" AutoEventWireup="true" CodeBehind="HouseAdd.aspx.cs" Inherits="XuezhijiaWebsite.House.HouseAdd" %>
+<%@ MasterType VirtualPath="~/Uploadfile.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../css/secondhandadd.css" rel="stylesheet" type="text/css" />
+    <link href="../css/houseadd.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jquery.livequery.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript">
@@ -100,18 +99,17 @@
     <div id="shcontent" class="shadd">
         <table>
             <tr>
-            <td>
-                    <label>
-                        标题：</label>
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="infoinput"></asp:TextBox>
-                </td>
                 <td>
                     <label>
-                        商品分类：</label>
+                        类目：</label>
                     <asp:DropDownList ID="DropDownList_Catalog" runat="server" CssClass="infoinput" Width="202px">
                     </asp:DropDownList>
                 </td>
-                
+                <td>
+                    <label>
+                        联系方式：</label>
+                    <asp:TextBox ID="TextBox_Contact" runat="server" CssClass="infoinput"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -121,11 +119,11 @@
                 </td>
                 <td>
                     <label>
-                        联系方式：</label>
-                    <asp:TextBox ID="TextBox_Contact" runat="server" CssClass="infoinput"></asp:TextBox>
+                        具体地点：</label>
+                    <asp:TextBox ID="TextBox_Address" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
             </tr>
-           <%-- <tr>
+            <tr>
                 <td>
                     <label>
                         品牌：</label>
@@ -136,7 +134,7 @@
                         醒目标题：</label>
                     <asp:TextBox ID="TextBox_Title" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
-            </tr>--%>
+            </tr>
             <tr>
                 <td colspan="2">
                     <label>

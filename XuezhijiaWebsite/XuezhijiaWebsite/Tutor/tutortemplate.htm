@@ -1,24 +1,38 @@
-﻿<ul>
-  {#foreach $T as CAR}
-<li>
-<div class="carimage"><img src="/Common/ShowPhoto.ashx?id={ $T.CAR.PID }" alt="{ $T.CAR.Type }"/></div>
-<div class="cardes" align="left">
-<strong>{ $T.CAR.Type }</strong>
-<br />
-费用：{ $T.CAR.Price } 元/日
-<br />
- 座位数：{ $T.CAR.SeatsCounts }
- <br />
- 团购价：{ $T.CAR.HirePrice }
- <br />
- 超小时： { $T.CAR.AdditionalPerHour }元/小时
- <br />
-超公里：{ $T.CAR.AdditionalPerKM }元/公里 
-<br />
- 评价： { $T.CAR.Comment }
- </div>
-</li>
-  {#/for}
-
-</ul>
-
+﻿{#if $T.length==0}
+<div>No Data.</div>
+{#else}
+<table style="width: 100%; border-collapse: collapse;" class="shlist">
+        <tr class="head">
+            <td style="width: 65px; text-align: left;">
+                发布时间
+            </td>
+            <td style="width: 90px;">
+                价格
+            </td>
+            <td style="width: 90px;">
+                查看次数
+            </td>
+            <td style="text-align: left;">
+                二手出售
+            </td>
+        </tr>
+         {#foreach $T as SECONDHANDMARKET}
+        <tr class="ding">
+            <td style="text-align: left; width: 80px;">
+                {$T.SECONDHANDMARKET.PublishDate}
+                
+            </td>
+            <td>
+               { $T.SECONDHANDMARKET.Price }  万元
+            </td>
+            <td>
+                { $T.SECONDHANDMARKET.LookCount }
+            </td>
+            <td style="text-align: left; white-space: normal;">
+                <a href="/Secondhand/shcommodity.aspx?id={ $T.SECONDHANDMARKET.SID }"> { $T.SECONDHANDMARKET.Tipical }</a>
+                {#if $T.SECONDHANDMARKET.HasImage}<i>图</i> {#/if}
+            </td>
+        </tr>
+          {#/for}
+</table>
+{#/if}
