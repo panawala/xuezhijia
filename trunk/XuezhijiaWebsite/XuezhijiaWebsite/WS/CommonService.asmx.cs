@@ -64,5 +64,14 @@ namespace XuezhijiaWebsite.WS
             HotelWrapper wrapper = new HotelWrapper();
             return wrapper.getAllFormatedResult();
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<SHOP> getALLFormatedShop()
+        {
+            ShopWrapper wrapper = new ShopWrapper();
+            return wrapper.getAllFormatedResult();
+        }
+
     }
 }
