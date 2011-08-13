@@ -44,7 +44,7 @@ namespace DAL
         public double Price;
         public string Detail;
         public string Comment;
-        public int PID;
+        public int PhotoID;
     }
 
     public class COURSE
