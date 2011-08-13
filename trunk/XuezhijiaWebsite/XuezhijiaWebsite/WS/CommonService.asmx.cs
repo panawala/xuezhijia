@@ -72,5 +72,13 @@ namespace XuezhijiaWebsite.WS
             ShopWrapper wrapper = new ShopWrapper();
             return wrapper.getAllFormatedResult();
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<COMMODITY> getALLFormatedCommodity()
+        {
+            CommodityWrapper wrapper = new CommodityWrapper();
+            return wrapper.getAllFormatedResult();
+        }
     }
 }
