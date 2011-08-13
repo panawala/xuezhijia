@@ -1,15 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Secondhand.aspx.cs" Inherits="XuezhijiaWebsite.Secondhand.Secondhand" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Shop.aspx.cs" Inherits="XuezhijiaWebsite.Shop.Shop" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../css/sencondhand.css" rel="stylesheet" type="text/css" />
+    <link href="../css/shop.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="secondhandnav">二手市场</div>
-<div id="secondhandcontent" class="secondhand">
+<div class="shopnav">学生商城</div>
+<div id="shopcontent" class="shop">
 
 </div>
 <div class="second_right_nav">
@@ -48,16 +48,16 @@
 
     //加载中的状态
     function Loading() {
-        $('#secondhandcontent').html('<img src="/Image/loader.gif"/>');
+        $('#shopcontent').html('<img src="/Image/loader.gif"/>');
     }
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#secondhandcontent").fadeTo(0.001, 0);
-        $("#secondhandcontent").setTemplateURL('../secondhand/secondhandtemplate.htm');
-        $('#secondhandcontent').processTemplate(data.d);
+        $("#shopcontent").fadeTo(0.001, 0);
+        $("#shopcontent").setTemplateURL('../shop/shoptemplate.htm');
+        $('#shopcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#secondhandcontent").fadeTo(1000, 1);
+        $("#shopcontent").fadeTo(1000, 1);
 
     }
     </script>

@@ -1,22 +1,22 @@
 ﻿
 <ul>
-  {#foreach $T as CAR}
+  {#foreach $T as HOTEL}
 <li>
-<div class="carimage"><img src="/Common/ShowPhoto.ashx?id={ $T.CAR.PID }" alt="{ $T.CAR.Type }"/></div>
-<div class="cardes" align="left">
-<strong>{ $T.CAR.Type }</strong>
+<div class="hotelimage"><img src="/Common/ShowPhoto.ashx?id={ $T.HOTEL.PID }" alt="{ $T.HOTEL.HotelName }"/></div>
+<div class="hoteldes" align="left">
+<strong>{ $T.HOTEL.HotelName }</strong>
 <br />
-费用：{ $T.CAR.Price } 元/日
+费用：{ $T.HOTEL.Price } 元/日
 <br />
- 座位数：{ $T.CAR.SeatsCounts }
+ 房间类型：{ $T.HOTEL.Type }
  <br />
- 团购价：{ $T.CAR.HirePrice }
+联系方式：{ $T.HOTEL.ContactWay }
  <br />
- 超小时： { $T.CAR.AdditionalPerHour }元/小时
- <br />
-超公里：{ $T.CAR.AdditionalPerKM }元/公里 
+地点：{ $T.HOTEL.Location }
 <br />
- 评价： { $T.CAR.Comment }
+ 评价： { $T.HOTEL.Comment }
+ <br />
+ <a href="" class="order">我要预订</a>
  </div>
 </li>
   {#/for}

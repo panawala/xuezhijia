@@ -126,7 +126,7 @@ padding-left: 3px;
 /* BODY */
 .pagebody {
 	width: 100%;
-	text-align: center;
+	/*text-align: center;*/
 	margin-top:2px;
 	/*border: 1px black solid; 指示位置*/
 }

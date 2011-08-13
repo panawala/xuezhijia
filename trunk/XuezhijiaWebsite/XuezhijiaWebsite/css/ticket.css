@@ -1,0 +1,171 @@
+﻿.ticketnav
+{
+	width:1022px;
+	height:80px;
+	border: 1px solid #D0DBB8;
+	background: #F5FFF1;
+	overflow:hidden;
+	margin-bottom:5px;
+	line-height:80px;
+}
+.ticket
+{
+	width:810px;
+	height:inherit;
+	border: 0px solid #85AFEC;
+	background: White;
+	overflow:hidden;
+	min-height:600px;
+	float:left;
+	margin-bottom:20px;
+}
+
+strong, b {
+font-weight: bolder;
+}
+
+
+tbody {
+display: table-row-group;
+vertical-align: middle;
+border-color: inherit;
+}
+
+.head {
+background: #C5EC83;
+font-weight: bold;
+padding: 0 0 0 5px;
+}
+
+tr.head td {
+padding: 0 0 0 10px;
+}
+
+.shlist td {
+line-height: 35px;
+white-space: nowrap;
+border-bottom: 1px solid #EBEBEB;
+padding: 5px 0 5px 5px;
+}
+
+
+i {
+padding-left: 5px;
+font-style: normal;
+font-weight: normal;
+color: olive;
+}
+
+.ding a:hover , a:visited{
+color: red;
+text-decoration: underline;
+}
+
+ .ticket a {
+padding-left: 5px;
+font-style: normal;
+font-weight: normal;
+}
+
+.second_right_nav 
+{
+border: 0px solid #85AFEC;
+background: White;
+padding: 2px;
+overflow: hidden;
+width: 200px;
+float:right;
+min-height:600px;
+}
+
+.block {
+background: #F5FFF1;
+border: 1px solid #D0DBB8;
+}
+.block .title {
+border-bottom: 1px solid #D0DBB8;
+padding: 5px 10px;
+font-weight: bold;
+}
+.block .b {
+border: 1px solid white;
+padding: 5px 10px;
+}
+
+.block .b p  a:link, a:visited {
+color: #06C;
+text-decoration: none;
+}
+
+.block .b p {
+line-height: 28px;
+}
+
+.blank, .blank5, .blank10 {
+height: 10px;
+clear: both;
+overflow: hidden;
+clear: both;
+}
+
+
+
+#subheader {
+border-bottom: 1px solid #E1E1E1;
+margin:5px 0;
+}
+h1 {
+font-size: 20px;
+font-family: Arial,微软雅黑,黑体;
+font-weight: normal;
+margin: 0;
+padding: 0;
+}
+#content {
+width: 770px;
+padding: 10px 20px;
+border-top: none;
+border-bottom: none;
+border-right: 1px solid #E1E1E1;
+}
+
+#left {
+float: left;
+width: 810px;
+
+border-right: 1px solid #E1E1E1;
+overflow: hidden;
+}
+#metaTable {
+border-collapse: collapse;
+padding-bottom: 10px;
+margin-bottom: 10px;
+width: 100%;
+border-bottom: 1px dotted #CCC;
+}
+
+#metaTable td.short {
+width: 50%;
+}
+#metaTable td {
+padding: 2px 0px;
+text-align:left;
+}
+
+#metaTable td label {
+width: 85px;
+white-space: nowrap;
+}
+
+
+#content p {
+line-height: 28px;
+text-align:left;
+}
+
+#content  a:link, a:visited {
+color: #06C;
+text-decoration: none;
+}
+
+

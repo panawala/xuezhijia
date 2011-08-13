@@ -1,15 +1,32 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Secondhand.aspx.cs" Inherits="XuezhijiaWebsite.Secondhand.Secondhand" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Takeoutdish.aspx.cs" Inherits="XuezhijiaWebsite.Takeout.Takeoutdish" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../css/sencondhand.css" rel="stylesheet" type="text/css" />
+    <link href="../css/takeoutdish.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
-  
+  <script type="text/javascript">
+      /*--获取网页传递的参数--*/
+      function request(paras) {
+          var url = location.href;
+          var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+          var paraObj = {}
+          for (i = 0; j = paraString[i]; i++) {
+              paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+          }
+          var returnValue = paraObj[paras.toLowerCase()];
+          if (typeof (returnValue) == "undefined") {
+              return "";
+          } else {
+              return returnValue;
+          }
+      }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="secondhandnav">二手市场</div>
-<div id="secondhandcontent" class="secondhand">
+
+<div class="dishnav">菜单列表</div>
+<div id="dishcontent" class="dish">
 
 </div>
 <div class="second_right_nav">
@@ -38,7 +55,7 @@
     $.ajax({
         type: "POST",
         url: "/WS/CommonService.asmx/getAllSecondHandMarketList",
-        data: "{}",
+        data: "{id:" + request("id") + "}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         beforeSend: Loading, //执行ajax前执行loading函数.直到success 
@@ -48,16 +65,16 @@
 
     //加载中的状态
     function Loading() {
-        $('#secondhandcontent').html('<img src="/Image/loader.gif"/>');
+        $('#dishcontent').html('<img src="/Image/loader.gif"/>');
     }
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#secondhandcontent").fadeTo(0.001, 0);
-        $("#secondhandcontent").setTemplateURL('../secondhand/secondhandtemplate.htm');
-        $('#secondhandcontent').processTemplate(data.d);
+        $("#dishcontent").fadeTo(0.001, 0);
+        $("#dishcontent").setTemplateURL('../Takeout/takeoutdishtemplate.htm');
+        $('#dishcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#secondhandcontent").fadeTo(1000, 1);
+        $("#dishcontent").fadeTo(1000, 1);
 
     }
     </script>
@@ -94,5 +111,7 @@
 
          }
     </script>
+
+
 
 </asp:Content>
