@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Hotelorder.aspx.cs" Inherits="XuezhijiaWebsite.Hotel.Hotelorder" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Takeout.aspx.cs" Inherits="XuezhijiaWebsite.Takeout.Takeout" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../css/hotel.css" rel="stylesheet" type="text/css" />
+    <link href="../css/takeout.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
- <div class="hotelnav">宾馆预订</div>
-<div id="hotelcontent" class="hotel">
+ <div class="takeoutnav">外卖信息</div>
+<div id="takeoutcontent" class="takeout">
 
 </div>
 <div id="right_nav" class="right_nav"></div>
@@ -19,7 +19,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getALLFormatedHotels",
+        url: "/WS/CommonService.asmx/getALLFormatedShop",
         data: "{}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -30,16 +30,16 @@
 
     //加载中的状态
     function Loading() {
-        $('#hotelcontent').html('<img src="/Image/loader.gif"/>');
+        $('#takeoutcontent').html('<img src="/Image/loader.gif"/>');
     }
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#hotelcontent").fadeTo(0.001, 0);
-        $("#hotelcontent").setTemplateURL('../Hotel/hotelordertemplate.htm');
-        $('#hotelcontent').processTemplate(data.d);
+        $("#takeoutcontent").fadeTo(0.001, 0);
+        $("#takeoutcontent").setTemplateURL('../Takeout/takeouttemplate.htm');
+        $('#takeoutcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#hotelcontent").fadeTo(1000, 1);
+        $("#takeoutcontent").fadeTo(1000, 1);
 
     }
     </script>
@@ -50,7 +50,7 @@
         $.ajax({
             type: "POST",
             url: "/WS/CommonService.asmx/getArticleByID",
-            data: "{id:'4'}",
+            data: "{id:'5'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             beforeSend: Loadingnav, //执行ajax前执行loading函数.直到success 

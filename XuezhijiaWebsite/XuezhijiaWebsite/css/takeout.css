@@ -1,4 +1,4 @@
-﻿.hotelnav
+﻿.takeoutnav
 {
 	width:1022px;
 	height:30px;
@@ -8,7 +8,7 @@
 	margin-bottom:5px;
 	line-height:30px;
 }
-.hotel
+.takeout
 {
 	width:810px;
 	height:inherit;
@@ -19,34 +19,34 @@
 	float:left;
 	margin-bottom:20px;
 }
-.hotel ul
+.takeout ul
 {
 	padding: 15px 0;
     list-style :none;
     margin:0;
 /*ul在主流浏览器中幽默缩进问题！！！！！！！！！*/
 }
-.hotel ul li
+.takeout ul li
 {
 	margin:10px 0px 10px 10px;
 	padding: 0px 5px 0px 5px;
-    border-right : 1px dashed #E5E5E5;
+    /*border-right : 1px dashed #E5E5E5;*/
     float : left;
     /*width:25%;*/
 }
-.hotelimage
+.takeoutimage
 {
-	width:260px;
+	width:230px;
 	height:220px;
 	background-color:Aqua;
 	overflow:hidden;
 	/*border: 1px dashed Purple;*/
 }
-.hoteldes
+.takeoutdes
 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 15px;
-	width:250px;
+	width:220px;
 	height:150px;
 	color:Black;
 	background-color:#A9CBEE;
@@ -62,7 +62,7 @@ margin:20px 0;
 
 
 
-a.order {
+a.pub_btn {
 font-size: 14px;
 font-weight: bold;
 text-align: center;
@@ -76,7 +76,7 @@ margin-top:5px;
 margin-bottom: 5px;
 border: 1px solid #EBEBEB;
 }
-a.order:hover
+a.pub_btn:hover
 {
 	text-decoration:underline;
 	color:Red;

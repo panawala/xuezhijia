@@ -130,6 +130,11 @@
                         品牌：</label>
                     <asp:TextBox ID="TextBox_Brand" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
+                <td>
+                    <label>
+                        醒目标题：</label>
+                    <asp:TextBox ID="TextBox_Title" runat="server" CssClass="infoinput"></asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <td colspan="2">
