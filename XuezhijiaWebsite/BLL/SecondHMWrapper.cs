@@ -38,7 +38,7 @@ namespace BLL
                 seconhandmarket.Comment = table.Rows[i]["Comment"].ToString();
                 seconhandmarket.LookCount = Convert.ToInt32(table.Rows[i]["LookCount"].ToString());
                 seconhandmarket.Price = Convert.ToDouble(table.Rows[i]["Price"].ToString());
-                seconhandmarket.PublishDate = Convert.ToDateTime(table.Rows[i]["PublishDate"].ToString());
+                seconhandmarket.PublishDate = table.Rows[i]["PublishDate"].ToString();
                 seconhandmarket.Brand = table.Rows[i]["Brand"].ToString();
                 seconhandmarket.Location = table.Rows[i]["Location"].ToString();
                 seconhandmarket.ContactInformation = table.Rows[i]["ContactInformation"].ToString();
@@ -85,7 +85,7 @@ namespace BLL
             {
                 idLit = idLit + (row.PIDList[i]).ToString() + ",";
             }
-            Insert(row.Tipical, row.Type, row.Comment, row.LookCount, row.Price, row.PublishDate, row.Brand, row.Location, row.ContactInformation, row.HasImage, idLit);
+            Insert(row.Tipical, row.Type, row.Comment, row.LookCount, row.Price, Convert.ToDateTime(row.PublishDate), row.Brand, row.Location, row.ContactInformation, row.HasImage, idLit);
         }
     }
 }
