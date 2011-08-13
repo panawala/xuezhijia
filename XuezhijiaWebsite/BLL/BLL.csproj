@@ -58,6 +58,9 @@
     <Compile Include="FileRecordWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="HotelWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PhotoWrapper.cs">
       <SubType>Component</SubType>
     </Compile>

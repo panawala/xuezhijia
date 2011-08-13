@@ -31,8 +31,9 @@ namespace DAL
         public string ContactWay;
         public string Type;
         public string Price;
-        public string PIDList;
+        public List<int> PIDList = new List<int>();
         public string Comment;
+        public int PID;
     }
 
     public class COMMODITY

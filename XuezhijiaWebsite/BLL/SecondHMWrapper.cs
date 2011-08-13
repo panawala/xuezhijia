@@ -15,16 +15,15 @@ namespace BLL
             return GetData();
         }
 
+
         public DataTable getAllType()
         {
             string sql = "select Type from SecondHandMarket";
             return CommenHelper.GetInstance().getResultBySql(sql);
         }
-      
         public List<SECONDHANDMARKET> getAllFormatedResult()
         {
             return _transfer(getAll());
- 
         }
 
         private  List<SECONDHANDMARKET> _transfer(DataTable table)
@@ -69,6 +68,16 @@ namespace BLL
                 secondhandmarket = _transfer(table).First();
             }
             return secondhandmarket;       
+        }
+
+        public void addARecord(SecondHandMarket.SecondHandMarketRow row)
+        {
+            Insert(row.Tipical, row.Type, row.Comment, row.LookCount, row.Price, row.PublishDate, row.Brand, row.Location, row.ContactInformation, row.HasImage, row.PhotoList);
+        }
+
+        public void addAClassRecord(SECONDHANDMARKET row)
+        {
+            //Insert(row.Tipical, row.Type, row.Comment, row.LookCount, row.Price, row.PublishDate, row.Brand, row.Location, row.ContactInformation, row.HasImage, row.PIDList.ToString());
         }
     }
 }

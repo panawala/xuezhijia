@@ -44,11 +44,11 @@ namespace XuezhijiaWebsite
         {
             int id = Convert.ToInt32(Cars.DataKeys[Cars.SelectedIndex + 1].Value);
             CarWrapper wrapper = new CarWrapper();
-            wrapper.deleteARecordByID(id);
             CAR car = new CAR();
             car = wrapper.getResultByID(id);
             PhotoWrapper photowrpper = new PhotoWrapper();
-            wrapper.deleteARecordByID(car.PID);
+            photowrpper.deleteARecord(car.PID);
+            wrapper.deleteARecordByID(id);
             InitPage(); 
         }
 
@@ -136,6 +136,7 @@ namespace XuezhijiaWebsite
                 {
                     PhotoWrapper photowrapper = new PhotoWrapper();
                     photowrapper.deleteARecord(tmp.PID);
+                    addAPhoto();
                     CommenHelper helper = CommenHelper.GetInstance();
                     car.PID = helper.getIdent("Photo");
                 }
@@ -211,11 +212,7 @@ namespace XuezhijiaWebsite
         }
 
         protected void AddClick(object sender, EventArgs e)
-        { /*
-            int id = Convert.ToInt32(Session["CarID"].ToString());
-            CAR tmp = new CAR();
-            CarWrap
-           */
+        { 
             Label2.Visible = true;
             Label3.Visible = true;
             Label4.Visible = true;
