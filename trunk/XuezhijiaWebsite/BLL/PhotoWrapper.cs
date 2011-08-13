@@ -23,6 +23,7 @@ namespace BLL
         {
             return _transfer(getAll());
         }
+       
 
         private List<PHOTO> _transfer(DataTable table)
         {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DAL;
 using BLL;
 using DAL;
 using System.IO;
@@ -98,7 +99,21 @@ namespace XuezhijiaWebsite.Secondhand
 
         protected void Btn_Submit_Click(object sender, EventArgs e)
         {
+            SecondHMWrapper wrapper = new SecondHMWrapper();
+            SECONDHANDMARKET secondhandmarket = new SECONDHANDMARKET();
+            secondhandmarket.Type = DropDownList_Catalog.SelectedValue;
+            secondhandmarket.ContactInformation = TextBox_Contact.Text;
+            secondhandmarket.Price = Convert.ToDouble(TextBox_Price.Text);
+            secondhandmarket.Location = TextBox_Address.Text;
+            secondhandmarket.Brand = TextBox_Brand.Text;
+            secondhandmarket.Comment = TextBox_Des.Text;
+            secondhandmarket.LookCount = 0;
+            secondhandmarket.PublishDate = DateTime.Now;
+            //if()
+            HttpFileCollection files = Request.Files;
+            int count = files.Count;
             HttpFileCollection files = HttpContext.Current.Request.Files;
+
         }
 
 
