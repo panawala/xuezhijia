@@ -26,7 +26,7 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=101.44.208.28;Initial Catalog=Xuezhijia;Persist Security Info=True;Us" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.104;;Initial Catalog=Xuezhijia;Persist Security Info=True;Us" +
             "er ID=sa;Password=tongji")]
         public string XuezhijiaConnectionString {
             get {

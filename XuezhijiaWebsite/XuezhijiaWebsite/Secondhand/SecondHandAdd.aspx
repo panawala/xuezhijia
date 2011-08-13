@@ -15,18 +15,18 @@
                 if ($(this).val() == undefined || $(this).val() == "") {
                     $(this).removeClass("infoput");
                     $(this).addClass("errinfoput");
-                    checkcount ++;
+                    alert("beforefalse");
+                    return false;
+                    alert("false");
                 }
                 else {
                     $(this).removeClass("errinfoput");
                     $(this).addClass("infoput");
-                    checkcount--;
+                    alert("beforetrue");
+                    return true;
+                    alert("true");
                 }
             });
-            if (checkcount == 0)
-                return true;
-            else
-                return false;
         }
 
 
