@@ -20,7 +20,7 @@
 选择百姓网付费推广，投入少
 效果好。超过50万商家已使用
 付费推广。
-<p style="text-align:right;margin-right:2px;"><a href="http://www.baixing.com/pay/entrance/?src=listing">我要推广</a></p>
+<p style="text-align:right;margin-right:2px;"><a href="/Secondhand/SecondHandAdd.aspx">我要发布</a></p>
 </div>
 </div>
 
