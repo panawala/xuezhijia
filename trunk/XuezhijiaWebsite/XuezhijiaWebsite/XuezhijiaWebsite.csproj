@@ -588,7 +588,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
+    <Folder Include="Account\App_Code\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

@@ -57,5 +57,13 @@ namespace XuezhijiaWebsite.WS
             ArticalWrapper wrapper = new  ArticalWrapper();
             return wrapper.getRecordByID(id);
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<HOTEL> getALLFormated()
+        {
+            HotelWrapper wrapper = new HotelWrapper();
+            return wrapper.getAllFormatedResult();
+        }
     }
 }
