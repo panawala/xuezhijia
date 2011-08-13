@@ -48,7 +48,10 @@ namespace BLL
                 string[] sArray = PhotoList.Split(new char[1] { ',' });
                 foreach (string id in sArray)
                 {
-                    plist.Add(Convert.ToInt32(id.ToString()));
+                    if (id.Length > 0)
+                    {
+                        plist.Add(Convert.ToInt32(id.ToString()));
+                    }
                 }
                 seconhandmarket.PIDList = plist;
                 list.Add(seconhandmarket);
@@ -80,7 +83,7 @@ namespace BLL
             string idLit = "";
             for (int i = 0; i < row.PIDList.Count; i++)
             {
-                idLit = (row.PIDList[i]).ToString() + ",";
+                idLit = idLit + (row.PIDList[i]).ToString() + ",";
             }
             Insert(row.Tipical, row.Type, row.Comment, row.LookCount, row.Price, row.PublishDate, row.Brand, row.Location, row.ContactInformation, row.HasImage, idLit);
         }
