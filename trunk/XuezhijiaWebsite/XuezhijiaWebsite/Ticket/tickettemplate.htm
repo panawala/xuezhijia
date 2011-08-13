@@ -1,38 +1,24 @@
-﻿{#if $T.length==0}
-<div>No Data.</div>
-{#else}
-<table style="width: 100%; border-collapse: collapse;" class="shlist">
-        <tr class="head">
-            <td style="width: 65px; text-align: left;">
-                发布时间
-            </td>
-            <td style="width: 90px;">
-                价格
-            </td>
-            <td style="width: 90px;">
-                查看次数
-            </td>
-            <td style="text-align: left;">
-                二手出售
-            </td>
-        </tr>
-         {#foreach $T as SECONDHANDMARKET}
-        <tr class="ding">
-            <td style="text-align: left; width: 80px;">
-                {$T.SECONDHANDMARKET.PublishDate}
-                
-            </td>
-            <td>
-               { $T.SECONDHANDMARKET.Price }  万元
-            </td>
-            <td>
-                { $T.SECONDHANDMARKET.LookCount }
-            </td>
-            <td style="text-align: left; white-space: normal;">
-                <a href="/Secondhand/shcommodity.aspx?id={ $T.SECONDHANDMARKET.SID }"> { $T.SECONDHANDMARKET.Tipical }</a>
-                {#if $T.SECONDHANDMARKET.HasImage}<i>图</i> {#/if}
-            </td>
-        </tr>
-          {#/for}
-</table>
-{#/if}
+﻿
+<ul>
+  {#foreach $T as SHOP}
+<li>
+<div class="ticketimage"><img src="/Common/ShowPhoto.ashx?id={ $T.SHOP.PID }" alt="{ $T.SHOP.ShopName }"/></div>
+<div class="ticketdes" align="left">
+<strong>{ $T.SHOP.ShopName }</strong>
+<br />
+费用：{ $T.SHOP.ShopContactWay } 元/日
+<br />
+ 房间类型：{ $T.SHOP.ShopClickedCount }
+ <br />
+联系方式：{ $T.SHOP.ShopContactWay }
+ <br />
+地点：{ $T.SHOP.ShopAddress }
+<br />
+ 评价： { $T.SHOP.Comment }
+ <br />
+ <a href="" class="pub_btn">进入店面</a>
+ </div>
+</li>
+  {#/for}
+
+</ul>

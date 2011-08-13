@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="House.aspx.cs" Inherits="XuezhijiaWebsite.House.House" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../css/sencondhand.css" rel="stylesheet" type="text/css" />
+    <link href="../css/house.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
   
@@ -19,7 +19,7 @@
 选择百姓网付费推广，投入少
 效果好。超过50万商家已使用
 付费推广。
-<p style="text-align:right;margin-right:2px;"><a href="/Secondhand/SecondHandAdd.aspx">我要发布</a></p>
+<p style="text-align:right;margin-right:2px;"><a href="/House/HouseAdd.aspx">我要发布</a></p>
 </div>
 </div>
 

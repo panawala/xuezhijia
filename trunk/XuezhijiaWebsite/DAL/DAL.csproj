@@ -106,9 +106,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SecondHandMarket.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>SecondHandMarket.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Shop.Designer.cs">
       <AutoGen>True</AutoGen>

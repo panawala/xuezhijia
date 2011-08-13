@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Ticket.aspx.cs" Inherits="XuezhijiaWebsite.Ticket.Ticket" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Train.aspx.cs" Inherits="XuezhijiaWebsite.Train.Train" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../css/ticket.css" rel="stylesheet" type="text/css" />
+    <link href="../css/train.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
- <div class="ticketnav">考研培训</div>
-<div id="ticketcontent" class="ticket">
+ <div class="trainnav">考研培训</div>
+<div id="traincontent" class="train">
 
 </div>
 <div id="right_nav" class="right_nav"></div>
@@ -30,16 +30,16 @@
 
     //加载中的状态
     function Loading() {
-        $('#ticketcontent').html('<img src="/Image/loader.gif"/>');
+        $('#traincontent').html('<img src="/Image/loader.gif"/>');
     }
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#ticketcontent").fadeTo(0.001, 0);
-        $("#ticketcontent").setTemplateURL('../Ticket/tickettemplate.htm');
-        $('#ticketcontent').processTemplate(data.d);
+        $("#traincontent").fadeTo(0.001, 0);
+        $("#traincontent").setTemplateURL('../Train/traintemplate.htm');
+        $('#traincontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#ticketcontent").fadeTo(1000, 1);
+        $("#traincontent").fadeTo(1000, 1);
 
     }
     </script>
