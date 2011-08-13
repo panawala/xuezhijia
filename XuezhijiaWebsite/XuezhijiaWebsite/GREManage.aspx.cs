@@ -26,9 +26,14 @@ namespace XuezhijiaWebsite
         {
             CourseWrapper wrapper = new CourseWrapper();
             DataTable table = new DataTable();
-            table = wrapper.getall();
+            table = wrapper.getHoleInformation();
             Courses.DataSource = table;
             Courses.DataBind();
+            TeacherWrapper teacherwrapper = new TeacherWrapper();
+            TextBox6.DataSource = teacherwrapper.getAll();
+            TextBox6.DataTextField = "TName";
+            TextBox6.DataValueField = "TID";
+            TextBox6.DataBind();
         }
 
         protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -115,7 +120,7 @@ namespace XuezhijiaWebsite
         }
 
         protected void CommitClick(object sender, EventArgs e)
-        {/*
+        {
             if (Session["CourseID"] != null && Session["CourseID"].ToString() != "")
             {
                
@@ -154,15 +159,15 @@ namespace XuezhijiaWebsite
                 addAPhoto();
                 CommenHelper helper = CommenHelper.GetInstance();
                 course.PID = helper.getIdent("Photo");
-                course.Type = TextBox1.Text;
-                course.SeatsCounts = Convert.ToInt32(TextBox2.Text);
-                course.Price = Convert.ToDouble(TextBox3.Text);
-                course.HirePrice = Convert.ToDouble(TextBox4.Text);
-                course.AdditionalPerKM = Convert.ToDouble(TextBox5.Text);
-                course.AdditionalPerHour = Convert.ToDouble(TextBox6.Text);
+                course.CourseName = TextBox1.Text;
+                course.Lessons = Convert.ToInt32(TextBox2.Text);
+                course.Location = TextBox3.Text;
+                course.Time = TextBox4.Text;
+                course.MaxNumber = Convert.ToInt32(TextBox5.Text);
+                course.TID = Convert.ToInt32(TextBox6.SelectedValue);
                 course.Comment = TextBox7.Text;
                 wrapper.addAClassRecord(course);
-            }*/
+            }
             PostInit();
             InitPage();
         }
@@ -208,7 +213,6 @@ namespace XuezhijiaWebsite
             TextBox3.Text = "";
             TextBox4.Text = "";
             TextBox5.Text = "";
-            TextBox6.Text = "";
             TextBox7.Text = "";
         }
 
@@ -222,6 +226,7 @@ namespace XuezhijiaWebsite
             Label7.Visible = true;
             Label8.Visible = true;
             Label10.Visible = true;
+            Label9.Visible = false;
 
             TextBox1.Visible = true;
             TextBox2.Visible = true;
@@ -235,7 +240,14 @@ namespace XuezhijiaWebsite
             LabelComment.Visible = true;
             Comment.Visible = true;
             Button1.Visible = true;
+            Image1.Visible = false;
 
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox5.Text = "";
+            TextBox7.Text = "";
         }
     }
 }

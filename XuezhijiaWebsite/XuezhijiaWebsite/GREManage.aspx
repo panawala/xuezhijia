@@ -14,17 +14,17 @@
     <asp:Label ID="Label1" runat="server" Text="课程管理"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;
     <asp:LinkButton ID="LinkButton2" runat="server" OnClick="AddClick">增加新纪录</asp:LinkButton>
-&nbsp;<asp:GridView ID="Courses" runat="server" AutoGenerateColumns="False" DataKeyNames="CarID" OnRowDeleting="RowDeleting" OnRowCommand="RowUpdate">
+&nbsp;<asp:GridView ID="Courses" runat="server" AutoGenerateColumns="False" DataKeyNames="CourseID" OnRowDeleting="RowDeleting" OnRowCommand="RowUpdate">
       <Columns>
             <asp:TemplateField HeaderText="删除" ShowHeader="False">   
             <ItemTemplate>   
-                <asp:LinkButton ID="LinkButton1" OnClick="DeleteClick" CommandName="del" runat="server" CausesValidation="False" CommandArgument='<%# Eval("CarID") %>'
-                    Text="删除" OnClientClick='<%#  "if (!confirm(\"你确定要删除" + Eval("Type").ToString() + "吗?\")) return false;"%>'></asp:LinkButton>   
+                <asp:LinkButton ID="LinkButton1" OnClick="DeleteClick" CommandName="del" runat="server" CausesValidation="False" CommandArgument='<%# Eval("CourseID") %>'
+                    Text="删除" OnClientClick='<%#  "if (!confirm(\"你确定要删除" + Eval("CourseName").ToString() + "吗?\")) return false;"%>'></asp:LinkButton>   
             </ItemTemplate>   
           </asp:TemplateField>
            <asp:TemplateField HeaderText="修改" ShowHeader="False">   
             <ItemTemplate>   
-               <asp:LinkButton ID="linkbtnName" runat="server" CommandName="Show" CommandArgument='<%# Eval("CarID") %>' Text="修改记录"></asp:LinkButton>
+               <asp:LinkButton ID="linkbtnName" runat="server" CommandName="Show" CommandArgument='<%# Eval("CourseID") %>' Text="修改记录"></asp:LinkButton>
             </ItemTemplate>   
           </asp:TemplateField>
                 <asp:BoundField DataField="CourseName" HeaderText="课程名" SortExpression="CourseName" />

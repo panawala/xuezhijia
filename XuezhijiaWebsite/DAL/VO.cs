@@ -95,15 +95,15 @@ namespace DAL
 
     public class RENTHOURSE
     {
-        int HourseID;
-        double Price;
-        string RentType;
-        string HourseType;
-        string HourseName;
-        double Area;
-        string Configuration;
-        int ClickCount;
-        DateTime DistributeTime;
+        public int HourseID;
+        public double Price;
+        public string RentType;
+        public string HourseType;
+        public string HourseName;
+        public double Area;
+        public string Configuration;
+        public int ClickCount;
+        public DateTime DistributeTime;
     }
 
     public class ROOM
@@ -148,12 +148,12 @@ namespace DAL
 
     public class STUDENT
     {
-        int SID;
-        string SName;
-        string Address;
-        int Grade;
-        string Requirment;
-        string Comment; 
+        public int SID;
+        public string SName;
+        public string Address;
+        public int Grade;
+        public string Requirment;
+        public string Comment; 
     }
 
     public class ARTICLE
