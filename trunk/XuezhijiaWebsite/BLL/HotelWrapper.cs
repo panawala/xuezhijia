@@ -39,7 +39,6 @@ namespace BLL
                 hotel.Type = table.Rows[i]["Type"].ToString();
                 hotel.Location = table.Rows[i]["Location"].ToString();
                 hotel.Price = table.Rows[i]["Price"].ToString();
-                //hotel.PIDList = table.Rows[i]["PIDList"].ToString();
                 hotel.Comment = table.Rows[i]["Comment"].ToString();
                 hotel.PID = Convert.ToInt32(table.Rows[i]["PID"].ToString());
                 string pidlist = table.Rows[i]["PIDList"].ToString();

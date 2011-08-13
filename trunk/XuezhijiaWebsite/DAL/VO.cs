@@ -56,7 +56,8 @@ namespace DAL
         public string Location;
         public string Time;
         public int MaxNumber;
-        public string ImgURL;
+        public int PID;
+        public string Comment;
     }
 
     public class DISH
@@ -134,13 +135,15 @@ namespace DAL
 
     public class SHOP
     {
-        int ShopId;
-        string ShopName;
-        string ShopContactWay;
-        string ShopAddress;
-        float ShopScore;
-        string ShopDistrictId;
-        int ShopClickedCount;
+        public int ShopId;
+        public string ShopName;
+        public string ShopContactWay;
+        public string ShopAddress;
+        public double ShopScore;
+        public string ShopDistrictId;
+        public int ShopClickedCount;
+        public int PID;
+        public string Comment;
     }
 
     public class STUDENT
