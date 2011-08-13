@@ -9,24 +9,24 @@
     <script language="javascript" type="text/javascript">
 
         var formcheck = false;
-        var checkcount = 4;
+        var checkcount = true;
         function CheckForm() {
-            $("input").each(function () {
-                if ($(this).val() == undefined || $(this).val() == "") {
-                    $(this).removeClass("infoput");
-                    $(this).addClass("errinfoput");
-                    alert($(this).parent().html());
-                    return false;
-                    alert("false");
-                }
-                else {
-                    $(this).removeClass("errinfoput");
-                    $(this).addClass("infoput");
-                    alert($(this).parent().html());
-                    return true;
-                    alert("true");
-                }
+            $("table input:not(.filediv)").each(function () {
+                    if ($(this).val() == undefined || $(this).val() == "") {
+                        $(this).removeClass("infoinput");
+                        $(this).addClass("errinfoput");
+                        checkcount = false;
+                        return false;
+                    }
+                    else {
+                        $(this).removeClass("errinfoput");
+                        $(this).addClass("infoinput");
+                        checkcount = true;
+                        return true;
+                    }
+
             });
+            return checkcount;
         }
 
 
@@ -61,28 +61,28 @@
             });
 
 
-            $("input:not('file')").blur(function () {
+            $("table input:not('file')").blur(function () {
                 if ($(this).val() == undefined || $(this).val() == "") {
-                    $(this).removeClass("infoput");
+                    $(this).removeClass("infoinput");
                     $(this).addClass("errinfoput");
                     formcheck = false;
                 }
                 else {
                     $(this).removeClass("errinfoput");
-                    $(this).addClass("infoput");
+                    $(this).addClass("infoinput");
                     formcheck = true;
                 }
             });
 
-            $("input:not('file')").change(function () {
+            $("table input:not('file')").change(function () {
                 if ($(this).val() == undefined || $(this).val() == "") {
-                    $(this).removeClass("infoput");
+                    $(this).removeClass("infoinput");
                     $(this).addClass("errinfoput");
                     formcheck = false;
                 }
                 else {
                     $(this).removeClass("errinfoput");
-                    $(this).addClass("infoput");
+                    $(this).addClass("infoinput");
                     formcheck = true;
                 }
             });
@@ -151,7 +151,8 @@
         </div>
         <input type="button" value="增加(Add)" onclick="javascript:addFile();" />
         <input onclick="this.form.reset()" type="button" value="重置(ReSet)" />
-        <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" OnClientClick="javascript:return CheckForm();"></asp:Button>
+        <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" 
+            OnClientClick="javascript:return CheckForm();" onclick="Btn_Submit_Click"></asp:Button>
     </div>
     <div id="right_nav" class="right_nav">
     </div>

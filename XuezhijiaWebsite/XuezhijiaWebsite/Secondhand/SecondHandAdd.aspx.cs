@@ -16,8 +16,7 @@ namespace XuezhijiaWebsite.Secondhand
         {
             if (!IsPostBack)
             {
-
-                
+                ((MasterPage)Master).CurrentMenu = "market";
                 DropDownList_Catalog.DataSource = (new SecondHMWrapper()).getAllType();
                 DropDownList_Catalog.DataTextField = "Type";
                 DropDownList_Catalog.DataValueField = "Type";
@@ -25,7 +24,7 @@ namespace XuezhijiaWebsite.Secondhand
             }
 
             /// 在此处放置用户代码以初始化页面
-            if (this.IsPostBack) this.SaveImages();
+           
         }
 
 
@@ -93,6 +92,11 @@ namespace XuezhijiaWebsite.Secondhand
             {
                 return false;
             }
+        }
+
+        protected void Btn_Submit_Click(object sender, EventArgs e)
+        {
+
         }
 
 
