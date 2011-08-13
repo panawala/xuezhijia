@@ -14,7 +14,7 @@ namespace XuezhijiaWebsite.Secondhand
     public partial class SecondHandAdd : System.Web.UI.Page
     {
         //该变量用来修改的的时候的默认值。例如上传自己的头像，如果用户修改头像，这里可以显示他原来的头像。
-        public string pic = "/Common/ShowPhoto.ashx?id=2";
+        //public string pic = "/Common/ShowPhoto.ashx?id=2";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
