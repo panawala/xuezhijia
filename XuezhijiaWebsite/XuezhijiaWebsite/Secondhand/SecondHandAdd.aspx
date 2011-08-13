@@ -149,14 +149,14 @@
                     <label>
                         文件上传:</label>
                     <div id="MyFile">
-                        <div class="fileframe"><input type="file" class="filediv" name="File" /><a class="aclose" href="javascript:void(0);" /></div>
+                        <%--<div class="fileframe"><input type="file" class="filediv" name="File" /><a class="aclose" href="javascript:void(0);" /></div>--%>
                     </div>
                 </td>
             </tr>
         </table>
         <div style="clear: both;">
         </div>
-        <input type="button" value="增加(Add)" onclick="javascript:addFile();" />
+        <input type="button" value="增加文件" onclick="javascript:addFile();" />
         <input onclick="this.form.reset()" type="button" value="重置(ReSet)" />
         <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" OnClientClick="javascript:return CheckForm();"
             OnClick="Btn_Submit_Click"></asp:Button>
