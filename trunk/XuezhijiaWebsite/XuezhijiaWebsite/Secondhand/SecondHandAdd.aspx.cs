@@ -50,17 +50,20 @@ namespace XuezhijiaWebsite.Secondhand
             List<int> pidlist = new List<int>();
             for (int i = 0; i < files.Count; i++)
             {
-                CommenHelper helper = CommenHelper.GetInstance();
-                PHOTO photo = new PHOTO();
-                PhotoWrapper photowrapper = new PhotoWrapper();
-                Stream input = files[i].InputStream;
-                int len = files[i].ContentLength;
-                byte[] buf = new byte[len];
-                input.Read(buf, 0, buf.Length);
-                photo.Data = buf;
-                photowrapper.addAClassRecord(photo);
-                int pid = helper.getIdent("Photo");
-                pidlist.Add(pid);
+                if (files[i].FileName.Length > 0)
+                {
+                    CommenHelper helper = CommenHelper.GetInstance();
+                    PHOTO photo = new PHOTO();
+                    PhotoWrapper photowrapper = new PhotoWrapper();
+                    Stream input = files[i].InputStream;
+                    int len = files[i].ContentLength;
+                    byte[] buf = new byte[len];
+                    input.Read(buf, 0, buf.Length);
+                    photo.Data = buf;
+                    photowrapper.addAClassRecord(photo);
+                    int pid = helper.getIdent("Photo");
+                    pidlist.Add(pid);
+                }
             }
             secondhandmarket.PIDList = pidlist;
             wrapper.addAClassRecord(secondhandmarket);
