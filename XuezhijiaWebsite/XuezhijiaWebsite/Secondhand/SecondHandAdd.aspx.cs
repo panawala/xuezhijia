@@ -109,9 +109,25 @@ namespace XuezhijiaWebsite.Secondhand
             secondhandmarket.Comment = TextBox_Des.Text;
             secondhandmarket.LookCount = 0;
             secondhandmarket.PublishDate = DateTime.Now;
-            //if()
             HttpFileCollection files = Request.Files;
             int count = files.Count;
+            List<int> pidlist = new List<int>();
+            for (int i = 0; i < files.Count; i++)
+            {
+                CommenHelper helper = CommenHelper.GetInstance();
+                PHOTO photo = new PHOTO();
+                PhotoWrapper photowrapper = new PhotoWrapper();
+                Stream input = files[i].InputStream;
+                int len = files[i].ContentLength;
+                byte[] buf = new byte[len];
+                input.Read(buf, 0, buf.Length);
+                photo.Data = buf;
+                photowrapper.addAClassRecord(photo);
+                int pid = helper.getIdent("Photo");
+                pidlist.Add(pid);
+            }
+            secondhandmarket.PIDList = pidlist;
+            wrapper.addAClassRecord(secondhandmarket);
         }
     }
 }
