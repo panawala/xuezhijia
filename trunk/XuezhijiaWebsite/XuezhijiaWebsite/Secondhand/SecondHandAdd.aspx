@@ -15,14 +15,14 @@
                 if ($(this).val() == undefined || $(this).val() == "") {
                     $(this).removeClass("infoput");
                     $(this).addClass("errinfoput");
-                    alert("beforefalse");
+                    alert($(this).parent().html());
                     return false;
                     alert("false");
                 }
                 else {
                     $(this).removeClass("errinfoput");
                     $(this).addClass("infoput");
-                    alert("beforetrue");
+                    alert($(this).parent().html());
                     return true;
                     alert("true");
                 }
@@ -61,7 +61,7 @@
             });
 
 
-            $("input:not('file')").change(function () {
+            $("input:not('file')").blur(function () {
                 if ($(this).val() == undefined || $(this).val() == "") {
                     $(this).removeClass("infoput");
                     $(this).addClass("errinfoput");
@@ -74,7 +74,7 @@
                 }
             });
 
-            $("input:not('file')").blur(function () {
+            $("input:not('file')").change(function () {
                 if ($(this).val() == undefined || $(this).val() == "") {
                     $(this).removeClass("infoput");
                     $(this).addClass("errinfoput");
