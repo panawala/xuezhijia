@@ -42,6 +42,10 @@
 	overflow:hidden;
 	/*border: 1px dashed Purple;*/
 }
+.carimage img{
+width: 180px;
+height: 120px;
+}
 .cardes
 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
