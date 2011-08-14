@@ -156,6 +156,27 @@ namespace DAL
         public string Comment; 
     }
 
+    public class TEACHER
+    {
+        public int TID;
+        public string ConnectionInformation;
+        public string TName;
+        public string AdvantageSujects;
+        public string Comment; 
+    }
+
+    public class TICKET
+    {
+        public int TicketID;
+        public string TicketName;
+        public string DurationOfService;
+        public double Price;
+        public string WayToPay;
+        public string LinkURL;
+        public int PID;
+        public string Comment;
+    }
+
     public class ARTICLE
     {
         public int ArticleID;

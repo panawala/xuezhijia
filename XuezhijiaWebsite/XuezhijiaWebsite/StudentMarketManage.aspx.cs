@@ -131,6 +131,10 @@ namespace XuezhijiaWebsite
                 {
                     PhotoWrapper photowrapper = new PhotoWrapper();
                     photowrapper.deleteARecord(tmp.PhotoID);
+                    if (commodity.PhotoID.ToString().Length > 0)
+                    {
+                        photowrapper.deleteARecord(commodity.PhotoID);
+                    }
                     addAPhoto();
                     CommenHelper helper = CommenHelper.GetInstance();
                     commodity.PhotoID = helper.getIdent("Photo");

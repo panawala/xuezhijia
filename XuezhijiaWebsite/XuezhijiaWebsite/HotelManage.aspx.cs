@@ -133,6 +133,10 @@ namespace XuezhijiaWebsite
                     PhotoWrapper photowrapper = new PhotoWrapper();
                     photowrapper.deleteARecord(tmp.PID);
                     addAPhoto();
+                    if (hotel.PID.ToString().Length > 0)
+                    {
+                        photowrapper.deleteARecord(hotel.PID);
+                    }
                     CommenHelper helper = CommenHelper.GetInstance();
                     hotel.PID = helper.getIdent("Photo");
                     hotel.PIDList.Add(hotel.PID);
