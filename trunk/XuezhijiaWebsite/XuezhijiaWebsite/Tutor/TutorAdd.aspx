@@ -102,7 +102,7 @@
             <td>
                     <label>
                         标题：</label>
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="infoinput"></asp:TextBox>
+                    <asp:TextBox ID="TextBox_Title" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
                 <td>
                     <label>
