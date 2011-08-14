@@ -30,7 +30,7 @@
                 <asp:BoundField DataField="ComName" HeaderText="名称" SortExpression="ComName" />
                 <asp:BoundField DataField="Type" HeaderText="类型" SortExpression="Type" />
                 <asp:BoundField DataField="Price" HeaderText="价格" SortExpression="Price" />
-                <asp:BoundField DataField="Detail" HeaderText="描述" SortExpression="Detail" />
+                <asp:BoundField DataField="Detail" HeaderText="链接地址" SortExpression="Detail" />
                 <asp:BoundField DataField="Comment" HeaderText="备注" SortExpression="Comment" />
             </Columns>
     </asp:GridView>
@@ -49,7 +49,7 @@
     <asp:TextBox ID="TextBox3" Visible="false" runat="server"></asp:TextBox>
     <br />
     <br />
-    <asp:Label ID="Label5" Visible="false" runat="server" Text="简单描述"></asp:Label>
+    <asp:Label ID="Label5" Visible="false" runat="server" Text="链接地址"></asp:Label>
     &nbsp;&nbsp;
     <asp:TextBox ID="TextBox4" Visible="false" runat="server"></asp:TextBox>
     &nbsp;&nbsp;<br />
