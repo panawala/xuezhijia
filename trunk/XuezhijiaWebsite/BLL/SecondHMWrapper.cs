@@ -15,6 +15,24 @@ namespace BLL
             return GetData();
         }
 
+        public void deleteARecordByID(int id)
+        {
+            string sql = "delete from SecondHandMarket where SID = " + id.ToString();
+            CommenHelper helper = CommenHelper.GetInstance();
+            helper.initOle();
+            helper.delete(sql);
+        }
+
+
+        public SECONDHANDMARKET getResultByID(int id)
+        {
+            string sql = "select * from SecondHandMarket where SID = " + id.ToString();
+            DataTable table = new DataTable();
+            CommenHelper helper = CommenHelper.GetInstance();
+            helper.initOle();
+            table = helper.getResultBySql(sql);
+            return _transfer(table).First();
+        }
 
         public DataTable getAllType()
         {
@@ -86,6 +104,37 @@ namespace BLL
                 idLit = idLit + (row.PIDList[i]).ToString() + ",";
             }
             Insert(row.Tipical, row.Type, row.Comment, row.LookCount, row.Price, Convert.ToDateTime(row.PublishDate), row.Brand, row.Location, row.ContactInformation, row.HasImage, idLit);
+        }
+
+
+        public void updateARecord(SECONDHANDMARKET secondhandmarket)
+        {
+            string idLit = "";
+            for (int i = 0; i < secondhandmarket.PIDList.Count; i++)
+            {
+                idLit = idLit + (secondhandmarket.PIDList[i]).ToString() + ",";
+            }
+            SecondHandMarket.SecondHandMarketDataTable table = new SecondHandMarket.SecondHandMarketDataTable();
+            table = GetData();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(table.Rows[i]["SID"].ToString()) == secondhandmarket.SID)
+                {
+                    table.Rows[i]["Tipical"] = secondhandmarket.Tipical;
+                    table.Rows[i]["Type"] = secondhandmarket.Type;
+                    table.Rows[i]["Comment"] = secondhandmarket.Comment;
+                    table.Rows[i]["LookCount"] = secondhandmarket.LookCount;
+                    table.Rows[i]["Price"] = secondhandmarket.Price;
+                    table.Rows[i]["Brand"] = secondhandmarket.Brand;
+                    table.Rows[i]["Location"] = secondhandmarket.Location;
+                    table.Rows[i]["ContactInformation"] = secondhandmarket.ContactInformation;
+                    table.Rows[i]["HasImage"] = secondhandmarket.HasImage;
+                    table.Rows[i]["Location"] = secondhandmarket.Location;
+                    table.Rows[i]["PhotoList"] = idLit;
+                    break;
+                }
+            }
+            Update(table);
         }
     }
 }

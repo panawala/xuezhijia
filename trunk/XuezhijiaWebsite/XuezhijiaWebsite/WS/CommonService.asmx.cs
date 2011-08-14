@@ -104,6 +104,5 @@ namespace XuezhijiaWebsite.WS
             RentHourseWrapper wrapper = new RentHourseWrapper();
             return wrapper.getAllFormatedResult();
         }
-
     }
 }
