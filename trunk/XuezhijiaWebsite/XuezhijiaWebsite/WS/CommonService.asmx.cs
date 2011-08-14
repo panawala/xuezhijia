@@ -113,6 +113,12 @@ namespace XuezhijiaWebsite.WS
             return wrapper.getResultByID(id);
         }
 
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public HOTEL getFormatedHotelById(int id)
+        {
+            return (new HotelWrapper()).getResultByID(id);
+        }
 
     }
 }
