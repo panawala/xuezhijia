@@ -104,5 +104,15 @@ namespace XuezhijiaWebsite.WS
             RentHourseWrapper wrapper = new RentHourseWrapper();
             return wrapper.getAllFormatedResult();
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public RENTHOURSE getResultById(int id)
+        {
+            RentHourseWrapper wrapper = new RentHourseWrapper();
+            return wrapper.getResultByID(id);
+        }
+
+
     }
 }
