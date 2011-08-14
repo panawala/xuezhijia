@@ -12,25 +12,35 @@
             <td style="width: 90px;">
                 查看次数
             </td>
+             <td style="text-align: left;">
+              房型
+            </td>
             <td style="text-align: left;">
-                二手出售
+               租赁方式
+            </td>
+            <td style="text-align: left;">
+               查看
             </td>
         </tr>
-         {#foreach $T as SECONDHANDMARKET}
+         {#foreach $T as RentHourse}
         <tr class="ding">
             <td style="text-align: left; width: 80px;">
-                {$T.SECONDHANDMARKET.PublishDate}
-                
+                {$T.RentHourse.DistributeTime}
             </td>
             <td>
-               { $T.SECONDHANDMARKET.Price }  万元
+               { $T.RentHourse.Price }  万元
             </td>
             <td>
-                { $T.SECONDHANDMARKET.LookCount }
+                { $T.RentHourse.ClickCount }
+            </td>
+             <td>
+                { $T.RentHourse.HourseType }
             </td>
             <td style="text-align: left; white-space: normal;">
-                <a href="/Secondhand/shcommodity.aspx?id={ $T.SECONDHANDMARKET.SID }"> { $T.SECONDHANDMARKET.Tipical }</a>
-                {#if $T.SECONDHANDMARKET.HasImage}<i>图</i> {#/if}
+                { $T.RentHourse.RentType }
+            </td>
+            <td style="text-align: left; white-space: normal;">
+                <a href="/House/HouseCheck.aspx?id={ $T.RentHourse.HourseID }"> { $T.RentHourse.HourseName }</a>
             </td>
         </tr>
           {#/for}
