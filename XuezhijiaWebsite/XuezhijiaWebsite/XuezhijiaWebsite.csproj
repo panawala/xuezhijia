@@ -339,6 +339,8 @@
     <Content Include="js\user_log.js" />
     <Content Include="News\News.aspx" />
     <Content Include="News\NewsAdd.aspx" />
+    <Content Include="News\NewsList.aspx" />
+    <Content Include="News\newslisttemplate.htm" />
     <Content Include="News\newstemplate.htm" />
     <Content Include="PhotoReview.aspx" />
     <Content Include="PhotoUpload.aspx" />
@@ -547,6 +549,13 @@
     </Compile>
     <Compile Include="News\NewsAdd.aspx.designer.cs">
       <DependentUpon>NewsAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News\NewsList.aspx.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News\NewsList.aspx.designer.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
     </Compile>
     <Compile Include="PhotoReview.aspx.cs">
       <DependentUpon>PhotoReview.aspx</DependentUpon>

@@ -13,31 +13,31 @@ namespace XuezhijiaWebsite.Tutor {
     public partial class TutorAdd {
         
         /// <summary>
-        /// TextBox_Title control.
+        /// TextBox_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Title;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Name;
         
         /// <summary>
-        /// DropDownList_Catalog control.
+        /// TextBox_Subject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Catalog;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Subject;
         
         /// <summary>
-        /// TextBox_Price control.
+        /// TextBox_Grade control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Price;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Grade;
         
         /// <summary>
         /// TextBox_Contact control.
@@ -47,15 +47,6 @@ namespace XuezhijiaWebsite.Tutor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_Contact;
-        
-        /// <summary>
-        /// TextBox_Des control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Des;
         
         /// <summary>
         /// Btn_Submit control.
