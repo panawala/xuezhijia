@@ -103,7 +103,7 @@ namespace DAL
         public double Area;
         public string Configuration;
         public int ClickCount;
-        public DateTime DistributeTime;
+        public string DistributeTime;
     }
 
     public class ROOM

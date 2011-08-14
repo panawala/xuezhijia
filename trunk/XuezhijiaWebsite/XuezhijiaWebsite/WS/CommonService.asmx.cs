@@ -97,5 +97,13 @@ namespace XuezhijiaWebsite.WS
             return wrapper.getAllFormatedResult();
         }
 
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<RENTHOURSE> getALLFormatedHourse()
+        {
+            RentHourseWrapper wrapper = new RentHourseWrapper();
+            return wrapper.getAllFormatedResult();
+        }
+
     }
 }
