@@ -1,110 +1,205 @@
-﻿#index_content {
-background: url(../Imadge/index_body.jpg) no-repeat;
-width: 100%;
-height: 468px;
-margin: 0;
-text-align: center;
-border: 1px solid #85AFEC;
+﻿#index_content
+{
+	background: url(../Imadge/index_body.jpg) no-repeat;
+	width: 100%;
+	height: 400px;
+	margin: 0;
+	text-align: center;
+	/*border: 1px solid #85AFEC;*/
 }
 
-.index_center {
-height: 380px;
-width: 100%;
+.index_center
+{
+	height: 400px;
+	width: 100%;
 }
 
-.img_space {
-width: 400px;
-height: 380px;
-float: left;
-padding:10px;
-border: 1px solid #85AFEC;
+.img_space
+{
+	width: 460px;
+	height: 400px;
+	float: left;
+	padding: 0px;
+	/*border: 1px solid #85AFEC;*/
 }
+
+.img_space_mark {
+width: 450px;
+height: 98px;
+border: 1px solid #85AFEC;
+margin-top:2px;
+margin-bottom:3px;
+text-align:left;
+padding:5px;
+}
+
 .imgg
 {
 	width: 400px;
-	height: 380px;
+	height: 290px;
 }
 
- .tab_space {
-width: 470px;
-height: 380px;
-float: left;
-margin-left:10px;
-border: 1px solid #85AFEC;
+.tab_space
+{
+	width: 440px;
+	height: 400px;
+	float: left;
+	margin-left: 10px;
+	/*border: 1px solid #85AFEC;*/
 }
- .tab_space_title {
-width: 100%;
-height: 30px;
-border: 1px solid #85AFEC;
-margin-bottom:10px;
-line-height:30px;
-}
-
-.channel_space {
-width: 100px;
-float: left;
-margin-left:10px;
-border: 1px solid #85AFEC;
+.tab_space_title
+{
+	width: 98%;
+	height: 30px;
+	border: 1px solid #85AFEC;
+	margin-bottom: 0px;
+	line-height: 30px;
 }
 
-
+.channel_space
+{
+	width: 100px;
+	float: left;
+	margin-left: 10px;
+	/*border: 1px solid #85AFEC;*/
+}
 
 
 .newsindex
 {
 	margin-bottom: 10px;
-	min-height: 380px;
+	height: 150px;
 	overflow: hidden;
-	margin-left:0px;
-	padding:0;
-	border: 1px solid #85AFEC;
+	margin-left: 10px;
+	padding: 0;
+	margin-top:10px;
+	/*border: 1px solid #85AFEC;*/
 }
-.newsindex li {
-background: url("../Image/bg_warn.gif") no-repeat scroll 1px -253px transparent;
-line-height: 24px;
-font-size: 14px;
-height: 24px;
-overflow: hidden;
-text-align:left;
-}
-.newsindex li a:link,.newsindex li a:visited
+.newsindex li
 {
-	margin-left:10px;
-	padding:0;
+	background: url("../Image/bg_warn.gif") no-repeat scroll 1px -253px transparent;
+	line-height: 24px;
+	font-size: 14px;
+	height: 24px;
+	overflow: hidden;
+	text-align: left;
+}
+.newsindex li a:link, .newsindex li a:visited
+{
+	margin-left: 10px;
+	padding: 0;
 }
 .newsindex li a:hover
 {
-	font-weight:bold;
-	color:Red;
+	font-weight: bold;
+	color: Red;
 	text-decoration: underline;
 }
-
 
 
 .linklist
 {
-	margin-bottom: 10px;
-	min-height: 380px;
+	margin-bottom: 5px;
+	height: 380px;
 	overflow: hidden;
-	margin-left:10px;
-	padding:0;
+	margin-left: 10px;
+	padding: 0;
 }
-.linklist li {
-background: url("../Image/bg_warn.gif") no-repeat scroll 1px -253px transparent;
-line-height: 24px;
-font-size: 14px;
-height: 24px;
-overflow: hidden;
-text-align:left;
-}
-.linklist li a:link,.linklist li a:visited
+.linklist li
 {
-	margin-left:10px;
-	padding:0;
+	background: url("../Image/bg_warn.gif") no-repeat scroll 1px -253px transparent;
+	line-height: 24px;
+	font-size: 14px;
+	height: 24px;
+	overflow: hidden;
+	text-align: left;
+}
+.linklist li a:link, .linklist li a:visited
+{
+	margin-left: 10px;
+	padding: 0;
 }
 .linklist li a:hover
 {
-	font-weight:bold;
-	color:Red;
+	font-weight: bold;
+	color: Red;
 	text-decoration: underline;
+}
+
+
+
+
+
+#banner
+{
+	position: relative;
+	width: 100%;
+	height: 286px;
+	border: 1px solid #666;
+	overflow: hidden;
+}
+#banner_list img
+{
+	border: 0px;
+}
+#banner_bg
+{
+	position: absolute;
+	bottom: 0;
+	background-color: #000;
+	height: 30px;
+	filter: Alpha(Opacity=30);
+	opacity: 0.3;
+	z-index: 1000;
+	/*cursor: pointer;*/
+	width: 100%;
+}
+#banner_info
+{
+	position: absolute;
+	bottom: 0;
+	left: 5px;
+	height: 22px;
+	color: #fff;
+	z-index: 1001;
+	/*cursor: pointer;*/
+}
+#banner_text
+{
+	position: absolute;
+	width: 120px;
+	z-index: 1002;
+	right: 3px;
+	bottom: 3px;
+}
+#banner ul
+{
+	position: absolute;
+	list-style-type: none;
+	filter: Alpha(Opacity=80);
+	opacity: 0.8;
+	border: 1px solid #fff;
+	z-index: 1002;
+	margin: 0;
+	padding: 0;
+	bottom: 3px;
+	right: 5px;
+}
+#banner ul li
+{
+	padding: 0px 8px;
+	float: left;
+	display: block;
+	color: #FFF;
+	border: #e5eaff 1px solid;
+	background: #6f4f67;
+	cursor: pointer;
+}
+#banner ul li.on
+{
+	background: #900;
+}
+#banner_list a
+{
+	position: absolute;
 }

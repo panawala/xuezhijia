@@ -46,7 +46,6 @@
 
 
     <script type="text/javascript">
-
         $.ajax({
             type: "POST",
             url: "/WS/CommonService.asmx/getArticleByID",
