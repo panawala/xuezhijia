@@ -13,7 +13,7 @@
 	width:810px;
 	height:inherit;
 	border: 1px solid #85AFEC;
-	background: #E4EDFA;
+	background: White;
 	overflow:hidden;
 	min-height:600px;
 	float:left;
@@ -85,4 +85,115 @@ a.order:hover
 {
 	text-decoration:underline;
 	color:Red;
+}
+
+.second_right_nav 
+{
+border: 0px solid #85AFEC;
+background: White;
+padding: 2px;
+overflow: hidden;
+width: 200px;
+float:right;
+min-height:600px;
+}
+
+
+.block {
+background: #F5FFF1;
+border: 1px solid #D0DBB8;
+}
+.block .title {
+border-bottom: 1px solid #D0DBB8;
+padding: 5px 10px;
+font-weight: bold;
+}
+.block .b {
+border: 1px solid white;
+padding: 5px 10px;
+}
+
+.block .b p  a:link, a:visited {
+color: #06C;
+text-decoration: none;
+}
+
+.block .b p {
+line-height: 28px;
+}
+
+.blank, .blank5, .blank10 {
+height: 10px;
+clear: both;
+overflow: hidden;
+clear: both;
+}
+
+
+
+
+
+#subheader {
+border-bottom: 1px solid #E1E1E1;
+margin:5px 0;
+padding: 10px 20px;
+}
+h1 {
+font-size: 20px;
+font-family: Arial,微软雅黑,黑体;
+font-weight: normal;
+margin: 0;
+padding: 0;
+}
+#content {
+width: 770px;
+padding: 10px 20px;
+border-top: none;
+border-bottom: none;
+border-right: 1px solid #E1E1E1;
+}
+
+#left {
+float: left;
+width: 810px;
+
+border-right: 1px solid #E1E1E1;
+overflow: hidden;
+}
+#metaTable {
+border-collapse: collapse;
+padding-bottom: 10px;
+margin-bottom: 10px;
+width: 100%;
+border-bottom: 1px dotted #CCC;
+}
+
+#metaTable td.short {
+width: 50%;
+}
+#metaTable td {
+padding: 2px 0px;
+text-align:left;
+}
+
+#metaTable td label {
+width: 85px;
+white-space: nowrap;
+}
+
+
+#content p {
+line-height: 28px;
+text-align:left;
+}
+
+#content  a:link, a:visited {
+color: #06C;
+text-decoration: none;
+}
+
+
+.hotel a img {
+width:200px;
+height:200px;
 }
