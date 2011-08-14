@@ -168,6 +168,7 @@ namespace XuezhijiaWebsite
 
         public void addAPhoto()
         {
+            PostInit();
             PhotoWrapper photowrapper = new PhotoWrapper();
             Photo.PhotoRow row = new Photo.PhotoDataTable().NewPhotoRow(); ;
             row.Comment = Comment.Text;
