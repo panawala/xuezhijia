@@ -106,6 +106,11 @@ namespace BLL
             Insert(row.Tipical, row.Type, row.Comment, row.LookCount, row.Price, Convert.ToDateTime(row.PublishDate), row.Brand, row.Location, row.ContactInformation, row.HasImage, idLit);
         }
 
+        public void addAClick(int id)
+        {
+            string sql = "update SecondHandMarket set LookCount = LookCount + 1 where SID =  " + id.ToString();
+            CommenHelper.GetInstance().update(sql);
+        }
 
         public void updateARecord(SECONDHANDMARKET secondhandmarket)
         {
