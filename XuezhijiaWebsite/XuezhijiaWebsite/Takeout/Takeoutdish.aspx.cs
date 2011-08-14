@@ -12,6 +12,11 @@ namespace XuezhijiaWebsite.Takeout
         protected void Page_Load(object sender, EventArgs e)
         {
             ((MasterPage)Master).CurrentMenu = "sell";
+            if (!IsPostBack)
+            {
+                //点击次数增加
+ 
+            }
         }
     }
 }

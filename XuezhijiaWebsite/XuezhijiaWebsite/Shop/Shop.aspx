@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
- <div class="shopnav">考研培训</div>
+ <div class="shopnav">学生商城</div>
 <div id="shopcontent" class="shop">
 
 </div>
@@ -19,7 +19,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getALLFormatedShop",
+        url: "/WS/CommonService.asmx/getALLFormatedCommodity",
         data: "{}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",

@@ -42,6 +42,11 @@
 	overflow:hidden;
 	/*border: 1px dashed Purple;*/
 }
+
+.trainimage img{
+width: 230px;
+height: 220px;
+}
 .traindes
 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;

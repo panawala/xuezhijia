@@ -42,6 +42,11 @@
 	overflow:hidden;
 	/*border: 1px dashed Purple;*/
 }
+
+.hotelimage img{
+width: 260px;
+height: 220px;
+}
 .hoteldes
 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;

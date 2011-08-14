@@ -1,22 +1,22 @@
 ﻿
 <ul>
-  {#foreach $T as SHOP}
+  {#foreach $T as COURSE}
 <li>
-<div class="trainimage"><img src="/Common/ShowPhoto.ashx?id={ $T.SHOP.PID }" alt="{ $T.SHOP.ShopName }"/></div>
+<div class="trainimage"><img src="/Common/ShowPhoto.ashx?id={ $T.COURSE.PID }" alt="{ $T.COURSE.ShopName }"/></div>
 <div class="traindes" align="left">
-<strong>{ $T.SHOP.ShopName }</strong>
+<strong>{ $T.COURSE.CourseName }</strong>
 <br />
-费用：{ $T.SHOP.ShopContactWay } 元/日
+课时：{ $T.COURSE.Lessons }
 <br />
- 房间类型：{ $T.SHOP.ShopClickedCount }
+ 上课地点：{ $T.COURSE.Location }
  <br />
-联系方式：{ $T.SHOP.ShopContactWay }
+上课时间：{ $T.COURSE.Time }
  <br />
-地点：{ $T.SHOP.ShopAddress }
+最大容量：{ $T.COURSE.MaxNumber }
 <br />
- 评价： { $T.SHOP.Comment }
+ 备注： { $T.COURSE.Comment }
  <br />
- <a href="" class="pub_btn">进入店面</a>
+ <a href="" class="pub_btn">查看详情</a>
  </div>
 </li>
   {#/for}

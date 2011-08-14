@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace XuezhijiaWebsite.Tutor
 {
-    public partial class Tutor : System.Web.UI.Page
+    public partial class Student : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

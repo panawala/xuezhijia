@@ -1,15 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Tutor.aspx.cs" Inherits="XuezhijiaWebsite.Tutor.Tutor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Student.aspx.cs" Inherits="XuezhijiaWebsite.Tutor.Student" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../css/tutor.css" rel="stylesheet" type="text/css" />
+    <link href="../css/student.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="tutornav">二手市场</div>
-<div id="tutorcontent" class="tutor">
+<div class="studentnav">二手市场</div>
+<div id="studentcontent" class="student">
 
 </div>
 <div class="second_right_nav">
@@ -19,7 +19,9 @@
 选择百姓网付费推广，投入少
 效果好。超过50万商家已使用
 付费推广。
-<p style="text-align:right;margin-right:2px;"><a href="/Secondhand/SecondHandAdd.aspx">我要发布</a></p>
+<p style="text-align:right;margin-right:2px;"><a href="/Secondhand/SecondHandAdd.aspx">我要当老师</a></p>
+<p style="text-align:right;margin-right:2px;"><a href="/Tutor/tutor.aspx">我要找老师</a></p>
+
 </div>
 </div>
 
@@ -48,16 +50,16 @@
 
     //加载中的状态
     function Loading() {
-        $('#tutorcontent').html('<img src="/Image/loader.gif"/>');
+        $('#studentcontent').html('<img src="/Image/loader.gif"/>');
     }
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#tutorcontent").fadeTo(0.001, 0);
-        $("#tutorcontent").setTemplateURL('../tutor/tutortemplate.htm');
-        $('#tutorcontent').processTemplate(data.d);
+        $("#studentcontent").fadeTo(0.001, 0);
+        $("#studentcontent").setTemplateURL('../Tutor/studenttemplate.htm');
+        $('#studentcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#tutorcontent").fadeTo(1000, 1);
+        $("#studentcontent").fadeTo(1000, 1);
 
     }
     </script>
