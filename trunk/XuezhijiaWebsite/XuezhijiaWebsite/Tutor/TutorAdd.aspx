@@ -42,10 +42,6 @@
 
 
 
-        function addFile() {
-            var str = $('<div class="fileframe"><input type="file" class="filediv" name="File" /><a class="aclose" href="javascript:void(0);" /></div>');
-            $("#MyFile").append(str);
-        }
 
         $(document).ready(function () {
 
@@ -85,38 +81,36 @@
                 }
             });
 
-            addFile();
 
         })
     </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="carnav">
+    <div class="tutornav">
         <h2 id="H1">
-            免费发布信息</h2>
+            提交家教信息</h2>
     </div>
     <div id="shcontent" class="shadd">
         <table>
             <tr>
             <td>
                     <label>
-                        标题：</label>
-                    <asp:TextBox ID="TextBox_Title" runat="server" CssClass="infoinput"></asp:TextBox>
+                        姓名：</label>
+                    <asp:TextBox ID="TextBox_Name" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
                 <td>
                     <label>
-                        商品分类：</label>
-                    <asp:DropDownList ID="DropDownList_Catalog" runat="server" CssClass="infoinput" Width="202px">
-                    </asp:DropDownList>
+                        擅长科目：</label>
+                    <asp:TextBox ID="TextBox_Subject" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
                 
             </tr>
             <tr>
                 <td>
                     <label>
-                        价格：</label>
-                    <asp:TextBox ID="TextBox_Price" runat="server" CssClass="infoinput"></asp:TextBox>
+                        年级：</label>
+                    <asp:TextBox ID="TextBox_Grade" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
                 <td>
                     <label>
@@ -124,41 +118,11 @@
                     <asp:TextBox ID="TextBox_Contact" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
             </tr>
-           <%-- <tr>
-                <td>
-                    <label>
-                        品牌：</label>
-                    <asp:TextBox ID="TextBox_Brand" runat="server" CssClass="infoinput"></asp:TextBox>
-                </td>
-                <td>
-                    <label>
-                        醒目标题：</label>
-                    <asp:TextBox ID="TextBox_Title" runat="server" CssClass="infoinput"></asp:TextBox>
-                </td>
-            </tr>--%>
-            <tr>
-                <td colspan="2">
-                    <label>
-                        描述：</label>
-                    <asp:TextBox ID="TextBox_Des" runat="server" TextMode="MultiLine" Height="100px"
-                        Width="100%" CssClass="des"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <label>
-                        文件上传:</label>
-                    <div id="MyFile">
-                        <%--<div class="fileframe"><input type="file" class="filediv" name="File" /><a class="aclose" href="javascript:void(0);" /></div>--%>
-                    </div>
-                </td>
-            </tr>
         </table>
         <div style="clear: both;">
         </div>
-        <input type="button" value="增加文件" onclick="javascript:addFile();" />
-        <input onclick="this.form.reset()" type="button" value="重置(ReSet)" />
-        <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" OnClientClick="javascript:return CheckForm();"
+        <input onclick="this.form.reset()" type="button" value="重置" />
+        <asp:Button runat="server" Text="提交" ID="Btn_Submit" OnClientClick="javascript:return CheckForm();"
             OnClick="Btn_Submit_Click"></asp:Button>
     </div>
     <div id="right_nav" class="right_nav">
