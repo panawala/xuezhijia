@@ -130,7 +130,7 @@ namespace DAL
         public string Location;
         public string ContactInformation;
         public bool HasImage;
-        public List<int> PIDList;
+        public List<int> PIDList = new List<int>();
     }
 
     public class SHOP
