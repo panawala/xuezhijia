@@ -70,6 +70,13 @@ namespace BLL
             return _transfer(table).First();
         }
 
+
+        public void addAClick(int id)
+        {
+            string sql = "update RentHourse set ClickCount = ClickCount + 1 where HourseID =  " + id.ToString();
+            CommenHelper.GetInstance().update(sql);
+        }
+
         public void updateARecord(RENTHOURSE renthourse)
         {
             RentHourse.RentHourseDataTable table = new RentHourse.RentHourseDataTable();
