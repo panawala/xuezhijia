@@ -88,5 +88,14 @@ namespace XuezhijiaWebsite.WS
             CommodityWrapper wrapper = new CommodityWrapper();
             return wrapper.getAllFormatedResult();
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<TICKET> getALLFormatedTicket()
+        {
+            TicketWrapper wrapper = new TicketWrapper();
+            return wrapper.getAllFormatedResult();
+        }
+
     }
 }

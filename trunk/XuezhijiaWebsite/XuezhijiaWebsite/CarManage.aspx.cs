@@ -137,6 +137,10 @@ namespace XuezhijiaWebsite
                     PhotoWrapper photowrapper = new PhotoWrapper();
                     photowrapper.deleteARecord(tmp.PID);
                     addAPhoto();
+                    if (car.PID.ToString().Length > 0)
+                    {
+                        photowrapper.deleteARecord(car.PID);
+                    }
                     CommenHelper helper = CommenHelper.GetInstance();
                     car.PID = helper.getIdent("Photo");
                 }
