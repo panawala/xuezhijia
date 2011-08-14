@@ -37,7 +37,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getAllSecondHandMarketList",
+        url: "/WS/CommonService.asmx/getALLFormatedHourse",
         data: "{}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",

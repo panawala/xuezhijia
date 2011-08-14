@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="shcommodity.aspx.cs" Inherits="XuezhijiaWebsite.Secondhand.shcommodity" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="HouseCheck.aspx.cs" Inherits="XuezhijiaWebsite.House.HouseCheck" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   <link href="../css/sencondhand.css" rel="stylesheet" type="text/css" />
+
+    <link href="../css/house.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -24,8 +25,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="secondhandnav">二手市场</div>
-<div id="secondhandcontent" class="secondhand">
+<div class="housenav">二手市场</div>
+<div id="housecontent" class="house">
 </div>
 
 
@@ -62,8 +63,8 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getSecondHandMarketByID",
-        data: "{id:"+request("id")+"}",
+        url: "/WS/CommonService.asmx/getResultById",
+        data: "{id:" + request("id") + "}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         beforeSend: Loading, //执行ajax前执行loading函数.直到success 
@@ -73,18 +74,19 @@
 
     //加载中的状态
     function Loading() {
-        $('#secondhandcontent').html('<img src="/Image/loader.gif"/>');
+        $('#housecontent').html('<img src="/Image/loader.gif"/>');
     }
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#secondhandcontent").fadeTo(0.001, 0);
-        $("#secondhandcontent").setTemplateURL('../secondhand/shcommoditytemlate.htm');
-        $('#secondhandcontent').processTemplate(data.d);
+        $("#housecontent").fadeTo(0.001, 0);
+        $("#housecontent").setTemplateURL('../House/housechecktemplate.htm');
+        $('#housecontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#secondhandcontent").fadeTo(1000, 1);
+        $("#housecontent").fadeTo(1000, 1);
 
     }
     </script>
 
 </asp:Content>
+

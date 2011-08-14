@@ -316,6 +316,8 @@
     <Content Include="HourseManage.aspx" />
     <Content Include="House\House.aspx" />
     <Content Include="House\HouseAdd.aspx" />
+    <Content Include="House\HouseCheck.aspx" />
+    <Content Include="House\housechecktemplate.htm" />
     <Content Include="House\housetemplate.htm" />
     <Content Include="Image\bg_warn.gif" />
     <Content Include="Image\head_bg.jpg" />
@@ -501,6 +503,13 @@
     </Compile>
     <Compile Include="House\HouseAdd.aspx.designer.cs">
       <DependentUpon>HouseAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="House\HouseCheck.aspx.cs">
+      <DependentUpon>HouseCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="House\HouseCheck.aspx.designer.cs">
+      <DependentUpon>HouseCheck.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

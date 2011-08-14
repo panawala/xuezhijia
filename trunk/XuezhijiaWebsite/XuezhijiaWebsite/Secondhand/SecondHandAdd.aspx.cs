@@ -43,7 +43,7 @@ namespace XuezhijiaWebsite.Secondhand
             //secondhandmarket.Brand = TextBox_Brand.Text;
             secondhandmarket.Comment = TextBox_Des.Text;
             secondhandmarket.LookCount = 0;
-            //secondhandmarket.Tipical = TextBox_Title.Text;
+            secondhandmarket.Tipical = TextBox_Title.Text;
             secondhandmarket.PublishDate = DateTime.Now.ToString();
             secondhandmarket.HasImage = false;
             HttpFileCollection files = Request.Files;

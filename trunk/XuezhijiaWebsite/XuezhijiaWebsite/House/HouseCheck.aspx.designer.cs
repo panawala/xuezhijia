@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace XuezhijiaWebsite.Secondhand {
+namespace XuezhijiaWebsite.House {
     
     
-    public partial class shcommodity {
+    public partial class HouseCheck {
         
         /// <summary>
         /// Master property.
