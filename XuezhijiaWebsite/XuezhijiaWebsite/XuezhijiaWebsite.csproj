@@ -323,9 +323,14 @@
     <Content Include="Image\index_body.jpg" />
     <Content Include="Image\menu.gif" />
     <Content Include="Image\menu.jpg" />
+    <Content Include="Image\p2.jpg" />
+    <Content Include="Image\p3.jpg" />
+    <Content Include="Image\p4.jpg" />
+    <Content Include="Image\p5.jpg" />
     <Content Include="Image\test.jpg" />
     <Content Include="Image\topbg.gif" />
     <Content Include="index.aspx" />
+    <Content Include="Index\indextemplate.htm" />
     <Content Include="js\print.js" />
     <Content Include="js\user_log.js" />
     <Content Include="News\News.aspx" />
