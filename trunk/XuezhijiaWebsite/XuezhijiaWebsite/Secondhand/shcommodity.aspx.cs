@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL;
 
 namespace XuezhijiaWebsite.Secondhand
 {
@@ -12,6 +13,7 @@ namespace XuezhijiaWebsite.Secondhand
         protected void Page_Load(object sender, EventArgs e)
         {
             ((MasterPage)Master).CurrentMenu = "market";
+            (new SecondHMWrapper()).addAClick(Convert.ToInt32(Request.QueryString["id"].ToString()));
         }
     }
 }

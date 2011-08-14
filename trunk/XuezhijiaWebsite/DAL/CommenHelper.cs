@@ -38,6 +38,7 @@ namespace DAL
                 }
             }
 
+
             public DataTable getResultBySql(string sql)
             {
                 myConn = new SqlConnection(_connectionString);
@@ -67,6 +68,8 @@ namespace DAL
                 adapter.DeleteCommand.ExecuteNonQuery();
                 myConn.Close();
             }
+
+          
 
             public void update(string sql)
             {
