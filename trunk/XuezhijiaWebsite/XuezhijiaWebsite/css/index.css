@@ -62,6 +62,7 @@ padding:5px;
 	float: left;
 	margin-left: 10px;
 	/*border: 1px solid #85AFEC;*/
+	border-left:1px solid #85AFEC;
 }
 
 
@@ -104,6 +105,7 @@ padding:5px;
 	overflow: hidden;
 	margin-left: 10px;
 	padding: 0;
+
 }
 .linklist li
 {
