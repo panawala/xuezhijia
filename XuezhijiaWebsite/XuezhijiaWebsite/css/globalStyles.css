@@ -134,9 +134,22 @@ padding-left: 3px;
 /* FEET */
 .pagefeet {
 	width: 100%;
-	border: 1px solid #85AFEC;
-	background: #E4EDFA;
+	/*border: 1px solid #85AFEC;*/
+	/*background: #E4EDFA;*/
+clear: both;
+border-top: #7AA9DF 1px solid;
+font-size: 12px;
+color: #737573;
+text-align: center;
+padding-top: 2px;
+margin: auto;
+line-height: 24px;
 }
+.pagefeet p{
+margin: 0;
+padding: 0;
+}
+
 
 /* MASK */
 .shade {

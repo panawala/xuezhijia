@@ -1,22 +1,20 @@
 ﻿
 <ul>
-  {#foreach $T as SHOP}
+  {#foreach $T as TICKET}
 <li>
-<div class="ticketimage"><img src="/Common/ShowPhoto.ashx?id={ $T.SHOP.PID }" alt="{ $T.SHOP.ShopName }"/></div>
+<div class="ticketimage"><img src="/Common/ShowPhoto.ashx?id={ $T.TICKET.PID }" alt="{ $T.TICKET.TicketName }"/></div>
 <div class="ticketdes" align="left">
-<strong>{ $T.SHOP.ShopName }</strong>
+<strong>{ $T.TICKET.TicketName }</strong>
 <br />
-费用：{ $T.SHOP.ShopContactWay } 元/日
+有效期：{ $T.TICKET.DurationOfService } 
 <br />
- 房间类型：{ $T.SHOP.ShopClickedCount }
+ 价格：{ $T.TICKET.Price }
  <br />
-联系方式：{ $T.SHOP.ShopContactWay }
- <br />
-地点：{ $T.SHOP.ShopAddress }
+支付方式：{ $T.TICKET.WayToPay }
 <br />
- 评价： { $T.SHOP.Comment }
+ 评价： { $T.TICKET.Comment }
  <br />
- <a href="" class="pub_btn">进入店面</a>
+ <a href="{ $T.TICKET.LinkURL }" class="pub_btn">查看详情</a>
  </div>
 </li>
   {#/for}

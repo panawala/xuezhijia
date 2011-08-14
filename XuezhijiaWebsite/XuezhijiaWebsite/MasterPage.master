@@ -100,7 +100,7 @@
 	<div class="pageneck">
 		<div id="menubar" name="menubar">
 			<ul class="menu-list">
-				<li class="<%=CurrentMenu=="index"?"cu":"ncu" %>"><a href="">首页</a></li>
+				<li class="<%=CurrentMenu=="index"?"cu":"ncu" %>"><a href="/index.aspx">首页</a></li>
 				<li class="<%=CurrentMenu=="print"?"cu":"ncu" %>"><a href="">免费打印</a></li>
 				<li class="<%=CurrentMenu=="car"?"cu":"ncu" %>"><a href="/Car/Carrental.aspx">汽车租赁</a></li>
 				<li class="<%=CurrentMenu=="hotel"?"cu":"ncu" %>"><a href="/Hotel/Hotelorder.aspx">宾馆预定</a></li>
@@ -108,7 +108,7 @@
 				<li class="<%=CurrentMenu=="train"?"cu":"ncu" %>"><a href="/Train/Train.aspx">考研培训</a></li>
 				<li class="<%=CurrentMenu=="shop"?"cu":"ncu" %>"><a href="/Shop/Shop.aspx">学生商城</a></li>
 				<li class="<%=CurrentMenu=="ticket"?"cu":"ncu" %>"><a href="/Ticket/Ticket.aspx">门票服务</a></li>
-				<li class="<%=CurrentMenu=="tutor"?"cu":"ncu" %>"><a href="/Tutor/Tutor.aspx">家教服务</a></li>
+				<li class="<%=CurrentMenu=="tutor"?"cu":"ncu" %>"><a href="/Tutor/Student.aspx">家教服务</a></li>
 				<li class="<%=CurrentMenu=="house"?"cu":"ncu" %>"><a href="/House/House.aspx">房屋租赁</a></li>
 				<li class="<%=CurrentMenu=="market"?"cu":"ncu" %>"><a href="/Secondhand/Secondhand.aspx">二手市场</a></li>
 			</ul>
@@ -123,8 +123,12 @@
 	</div>
 	
 	<div class="pagefeet">
-		页脚
-	</div>
+		<p>文明办网举报电话：010-59922822 &nbsp;<a href="http://tousu.baidu.com/news/add" target="_blank" class="cy">投诉中心</a></p>
+<p>百度新闻搜索源于互联网新闻网站和频道，系自动分类排列，百度不刊登或转载任何完整的新闻内容</p>
+<p>京公网安备110000000001号</p>	
+<font style="color:#7777CC;">©2011 Baidu</font>
+<a href="http://www.baidu.com/duty/" class="cy">使用百度前必读</a>
+    </div>
 
     </form>
     </div>
