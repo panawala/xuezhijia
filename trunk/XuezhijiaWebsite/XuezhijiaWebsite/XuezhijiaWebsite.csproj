@@ -294,6 +294,8 @@
     <Content Include="css\hotel.css" />
     <Content Include="css\house.css" />
     <Content Include="css\houseadd.css" />
+    <Content Include="css\index.css" />
+    <Content Include="css\news.css" />
     <Content Include="css\printStyles.css" />
     <Content Include="css\sample.css" />
     <Content Include="css\secondhandadd.css" />
@@ -315,14 +317,20 @@
     <Content Include="House\House.aspx" />
     <Content Include="House\HouseAdd.aspx" />
     <Content Include="House\housetemplate.htm" />
+    <Content Include="Image\bg_warn.gif" />
     <Content Include="Image\head_bg.jpg" />
     <Content Include="Image\home_icon.png" />
+    <Content Include="Image\index_body.jpg" />
     <Content Include="Image\menu.gif" />
     <Content Include="Image\menu.jpg" />
     <Content Include="Image\test.jpg" />
     <Content Include="Image\topbg.gif" />
+    <Content Include="index.aspx" />
     <Content Include="js\print.js" />
     <Content Include="js\user_log.js" />
+    <Content Include="News\News.aspx" />
+    <Content Include="News\NewsAdd.aspx" />
+    <Content Include="News\newstemplate.htm" />
     <Content Include="PhotoReview.aspx" />
     <Content Include="PhotoUpload.aspx" />
     <Content Include="Print.aspx" />
@@ -489,12 +497,33 @@
     <Compile Include="House\HouseAdd.aspx.designer.cs">
       <DependentUpon>HouseAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="News\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News\NewsAdd.aspx.cs">
+      <DependentUpon>NewsAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News\NewsAdd.aspx.designer.cs">
+      <DependentUpon>NewsAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="PhotoReview.aspx.cs">
       <DependentUpon>PhotoReview.aspx</DependentUpon>

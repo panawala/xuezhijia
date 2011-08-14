@@ -1,0 +1,110 @@
+﻿#index_content {
+background: url(../Imadge/index_body.jpg) no-repeat;
+width: 100%;
+height: 468px;
+margin: 0;
+text-align: center;
+border: 1px solid #85AFEC;
+}
+
+.index_center {
+height: 380px;
+width: 100%;
+}
+
+.img_space {
+width: 400px;
+height: 380px;
+float: left;
+padding:10px;
+border: 1px solid #85AFEC;
+}
+.imgg
+{
+	width: 400px;
+	height: 380px;
+}
+
+ .tab_space {
+width: 470px;
+height: 380px;
+float: left;
+margin-left:10px;
+border: 1px solid #85AFEC;
+}
+ .tab_space_title {
+width: 100%;
+height: 30px;
+border: 1px solid #85AFEC;
+margin-bottom:10px;
+line-height:30px;
+}
+
+.channel_space {
+width: 100px;
+float: left;
+margin-left:10px;
+border: 1px solid #85AFEC;
+}
+
+
+
+
+.newsindex
+{
+	margin-bottom: 10px;
+	min-height: 380px;
+	overflow: hidden;
+	margin-left:0px;
+	padding:0;
+	border: 1px solid #85AFEC;
+}
+.newsindex li {
+background: url("../Image/bg_warn.gif") no-repeat scroll 1px -253px transparent;
+line-height: 24px;
+font-size: 14px;
+height: 24px;
+overflow: hidden;
+text-align:left;
+}
+.newsindex li a:link,.newsindex li a:visited
+{
+	margin-left:10px;
+	padding:0;
+}
+.newsindex li a:hover
+{
+	font-weight:bold;
+	color:Red;
+	text-decoration: underline;
+}
+
+
+
+.linklist
+{
+	margin-bottom: 10px;
+	min-height: 380px;
+	overflow: hidden;
+	margin-left:10px;
+	padding:0;
+}
+.linklist li {
+background: url("../Image/bg_warn.gif") no-repeat scroll 1px -253px transparent;
+line-height: 24px;
+font-size: 14px;
+height: 24px;
+overflow: hidden;
+text-align:left;
+}
+.linklist li a:link,.linklist li a:visited
+{
+	margin-left:10px;
+	padding:0;
+}
+.linklist li a:hover
+{
+	font-weight:bold;
+	color:Red;
+	text-decoration: underline;
+}

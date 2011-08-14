@@ -19,7 +19,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getALLFormatedShop",
+        url: "/WS/CommonService.asmx/getALLFormatedTicket",
         data: "{}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -50,7 +50,7 @@
         $.ajax({
             type: "POST",
             url: "/WS/CommonService.asmx/getArticleByID",
-            data: "{id:'5'}",
+            data: "{id:'8'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             beforeSend: Loadingnav, //执行ajax前执行loading函数.直到success 
