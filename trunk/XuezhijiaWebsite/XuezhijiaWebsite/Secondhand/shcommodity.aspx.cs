@@ -11,7 +11,7 @@ namespace XuezhijiaWebsite.Secondhand
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ((MasterPage)Master).CurrentMenu = "market";
         }
     }
 }

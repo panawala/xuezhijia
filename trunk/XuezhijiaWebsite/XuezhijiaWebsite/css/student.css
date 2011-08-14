@@ -1,4 +1,4 @@
-﻿.secondhandnav
+﻿.studentnav
 {
 	width:1022px;
 	height:80px;
@@ -8,7 +8,7 @@
 	margin-bottom:5px;
 	line-height:80px;
 }
-.secondhand
+.student
 {
 	width:810px;
 	height:inherit;
@@ -61,7 +61,7 @@ color: red;
 text-decoration: underline;
 }
 
- .secondhand a {
+ .student a {
 padding-left: 5px;
 font-style: normal;
 font-weight: normal;
@@ -113,7 +113,6 @@ clear: both;
 #subheader {
 border-bottom: 1px solid #E1E1E1;
 margin:5px 0;
-padding: 10px 20px;
 }
 h1 {
 font-size: 20px;
@@ -169,8 +168,3 @@ color: #06C;
 text-decoration: none;
 }
 
-
-.secondhand a img {
-width:200px;
-height:200px;
-}

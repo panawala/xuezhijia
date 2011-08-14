@@ -47,7 +47,7 @@
 	font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 15px;
 	width:220px;
-	height:150px;
+	height:160px;
 	color:Black;
 	background-color:#A9CBEE;
 	margin:5px 0px;
@@ -80,4 +80,9 @@ a.pub_btn:hover
 {
 	text-decoration:underline;
 	color:Red;
+}
+
+.takeoutimage img{
+width: 230px;
+height: 220px;
 }

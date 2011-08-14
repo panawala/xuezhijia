@@ -288,6 +288,7 @@
     <Content Include="ckeditor\skins\v2\templates.css" />
     <Content Include="ckeditor\themes\default\theme.js" />
     <Content Include="css\car.css" />
+    <Content Include="css\dish.css" />
     <Content Include="css\globalStyles.css" />
     <Content Include="css\home.css" />
     <Content Include="css\hotel.css" />
@@ -298,11 +299,13 @@
     <Content Include="css\secondhandadd.css" />
     <Content Include="css\sencondhand.css" />
     <Content Include="css\shop.css" />
+    <Content Include="css\student.css" />
     <Content Include="css\takeout.css" />
     <Content Include="css\takeoutdish.css" />
     <Content Include="css\ticket.css" />
     <Content Include="css\train.css" />
     <Content Include="css\tutor.css" />
+    <Content Include="css\tutoradd.css" />
     <Content Include="EditAds.aspx" />
     <Content Include="GREManage.aspx" />
     <Content Include="HotelManage.aspx" />
@@ -349,7 +352,10 @@
     <Content Include="Ticket\tickettemplate.htm" />
     <Content Include="Train\Train.aspx" />
     <Content Include="Train\traintemplate.htm" />
+    <Content Include="Tutor\Student.aspx" />
+    <Content Include="Tutor\studenttemplate.htm" />
     <Content Include="Tutor\Tutor.aspx" />
+    <Content Include="Tutor\TutorAdd.aspx" />
     <Content Include="Tutor\tutortemplate.htm" />
     <Content Include="TakeOutManage.aspx" />
     <Content Include="TicketManage.aspx" />
@@ -610,12 +616,12 @@
     <Compile Include="Train\Train.aspx.designer.cs">
       <DependentUpon>Train.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tutor\Tutor.aspx.cs">
-      <DependentUpon>Tutor.aspx</DependentUpon>
+    <Compile Include="Tutor\Student.aspx.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tutor\Tutor.aspx.designer.cs">
-      <DependentUpon>Tutor.aspx</DependentUpon>
+    <Compile Include="Tutor\Student.aspx.designer.cs">
+      <DependentUpon>Student.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentMarketManage.aspx.cs">
       <DependentUpon>StudentMarketManage.aspx</DependentUpon>
@@ -644,6 +650,20 @@
     </Compile>
     <Compile Include="TutorManage.aspx.designer.cs">
       <DependentUpon>TutorManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tutor\Tutor.aspx.cs">
+      <DependentUpon>Tutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutor\Tutor.aspx.designer.cs">
+      <DependentUpon>Tutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tutor\TutorAdd.aspx.cs">
+      <DependentUpon>TutorAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutor\TutorAdd.aspx.designer.cs">
+      <DependentUpon>TutorAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Uploadfile.Master.cs">
       <DependentUpon>Uploadfile.Master</DependentUpon>

@@ -10,7 +10,7 @@
 namespace XuezhijiaWebsite.Tutor {
     
     
-    public partial class Tutor {
+    public partial class Student {
         
         /// <summary>
         /// Master property.

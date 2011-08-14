@@ -42,6 +42,12 @@
 	overflow:hidden;
 	/*border: 1px dashed Purple;*/
 }
+
+.ticketimage img{
+width: 230px;
+height: 220px;
+}
+
 .ticketdes
 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -54,6 +60,7 @@
 	padding-left:10px;
 	/*border: 1px dashed Purple;*/
 }
+
 
 strong, b {
 font-weight: bolder;

@@ -55,6 +55,11 @@
 	/*border: 1px dashed Purple;*/
 }
 
+.shopimage img{
+width: 230px;
+height: 220px;
+}
+
 strong, b {
 font-weight: bolder;
 margin:20px 0;

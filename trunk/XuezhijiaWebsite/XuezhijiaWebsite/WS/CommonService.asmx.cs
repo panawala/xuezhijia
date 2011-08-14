@@ -27,9 +27,17 @@ namespace XuezhijiaWebsite.WS
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<CAR> getAllCourseList()
+        public List<CAR> getAllCarList()
         {
             CarWrapper wrapper = new CarWrapper();
+            return wrapper.getAllFormatedResult();
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<COURSE> getAllCourseList()
+        {
+            CourseWrapper wrapper = new CourseWrapper();
             return wrapper.getAllFormatedResult();
         }
 
