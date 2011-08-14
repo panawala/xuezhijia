@@ -11,7 +11,7 @@ namespace XuezhijiaWebsite.House
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ((MasterPage)Master).CurrentMenu = "house";
         }
     }
 }
