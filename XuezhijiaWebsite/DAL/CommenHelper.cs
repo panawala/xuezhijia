@@ -73,6 +73,7 @@ namespace DAL
 
             public void update(string sql)
             {
+                initOle();
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.UpdateCommand = new SqlCommand(sql, myConn);
                 adapter.UpdateCommand.ExecuteNonQuery();
