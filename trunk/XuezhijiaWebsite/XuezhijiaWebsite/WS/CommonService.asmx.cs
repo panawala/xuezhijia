@@ -122,7 +122,7 @@ namespace XuezhijiaWebsite.WS
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<STUDENT> getFormatedStudentById()
+        public List<STUDENT> getFormatedStudent()
         {
             return (new StudentWrapper()).getAllFormatedResult();
         }

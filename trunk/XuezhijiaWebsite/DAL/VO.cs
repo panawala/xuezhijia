@@ -199,8 +199,21 @@ namespace DAL
             ImageTitle = imgtitle;
             ImageAlt = imgalt;
         }
-
     }
+
+
+    public class NEWS
+    {
+        public int ID;
+        public string NewsID;
+        public string NewsTitle;
+        public string NewsContent;
+        public string NewsPublishTime;
+        public int NewsClickCount;
+        public int NewsType;
+    }
+
+
 
 
 }

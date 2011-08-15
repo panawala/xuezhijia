@@ -4,33 +4,39 @@
 <table style="width: 100%; border-collapse: collapse;" class="shlist">
         <tr class="head">
             <td style="width: 65px; text-align: left;">
-                发布时间
+                姓名
             </td>
             <td style="width: 90px;">
-                价格
+                需求
             </td>
             <td style="width: 90px;">
-                查看次数
+                年级
             </td>
             <td style="text-align: left;">
-                二手出售
+                地址
+            </td>
+             <td style="text-align: left;">
+                备注
             </td>
         </tr>
-         {#foreach $T as SECONDHANDMARKET}
+         {#foreach $T as STUDENT}
         <tr class="ding">
             <td style="text-align: left; width: 80px;">
-                {$T.SECONDHANDMARKET.PublishDate}
+                {$T.STUDENT.SName}
                 
             </td>
             <td>
-               { $T.SECONDHANDMARKET.Price }  万元
+               { $T.STUDENT.Requirement }  
             </td>
             <td>
-                { $T.SECONDHANDMARKET.LookCount }
+                { $T.STUDENT.Grade }
             </td>
+            <td>
+                { $T.STUDENT.Address }
+            </td>
+            
             <td style="text-align: left; white-space: normal;">
-                <a href="/Secondhand/shcommodity.aspx?id={ $T.SECONDHANDMARKET.SID }"> { $T.SECONDHANDMARKET.Tipical }</a>
-                {#if $T.SECONDHANDMARKET.HasImage}<i>图</i> {#/if}
+                 { $T.STUDENT.Comment }
             </td>
         </tr>
           {#/for}

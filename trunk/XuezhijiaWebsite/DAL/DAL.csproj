@@ -163,7 +163,6 @@
     <None Include="Car.xss">
       <DependentUpon>Car.xsd</DependentUpon>
     </None>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Commodity.xsc">
       <DependentUpon>Commodity.xsd</DependentUpon>
     </None>
