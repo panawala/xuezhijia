@@ -53,7 +53,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getAllSecondHandMarketList",
+        url: "/WS/CommonService.asmx/getNewsByType",
         data: "{type:" + request("type") + "}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
