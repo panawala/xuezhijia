@@ -133,5 +133,26 @@ namespace XuezhijiaWebsite.WS
         {
             return (new DishWrapper()).getFormatedResultsByOwnerID(id);
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<NEWS> getAllNews()
+        {
+            return (new NewsWrapper()).getAllFormatedResult();
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<NEWS> getNewsByType(int type)
+        {
+            return (new NewsWrapper()).getTopSixFormatedResultByType(type);
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public NEWS getResultByID(int id)
+        {
+            return (new NewsWrapper()).getResultByID(id);
+        }
     }
 }
