@@ -185,20 +185,13 @@ namespace DAL
     }
 
 
-    public class IndexImage
+    public class INDEXIMAGE
     {
         public int ID;
-        public string ImageHref{get;set;}
+        public string ImageHref { get; set; }
         public string ImageSrc { get; set; }
         public string ImageTitle { get; set; }
         public string ImageAlt { get; set; }
-        public IndexImage(string imghref, string imgsrc, string imgtitle, string imgalt)
-        {
-            ImageHref = imghref;
-            ImageSrc = imgsrc;
-            ImageTitle = imgtitle;
-            ImageAlt = imgalt;
-        }
     }
 
 
@@ -212,8 +205,4 @@ namespace DAL
         public int NewsClickCount;
         public int NewsType;
     }
-
-
-
-
 }
