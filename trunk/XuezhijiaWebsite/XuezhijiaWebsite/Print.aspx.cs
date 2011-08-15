@@ -38,8 +38,9 @@ namespace XuezhijiaWebsite
         protected void CommitLoad(object sender, EventArgs e)
         {
             UserInfoWrapper wrapper = new UserInfoWrapper();
-            string username = UserName.Text;
-            string password = Password.Text;
+
+            string username = (Master.FindControl("UserName") as TextBox).Text;
+            string password = (Master.FindControl("Password") as TextBox).Text;
             bool isvalidite = wrapper.IsValidite(username, password);
             if (isvalidite)
             {
@@ -57,8 +58,8 @@ namespace XuezhijiaWebsite
         protected void CommitRegister(object sender, EventArgs e)
         {
             UserInfoWrapper wrapper = new UserInfoWrapper();
-            string username = UserName.Text;
-            string password = Password.Text;
+            string username = (Master.FindControl("UserName") as TextBox).Text;
+            string password = (Master.FindControl("Password") as TextBox).Text;
             bool isvalidite = wrapper.IsValidite(username, password);
             if (isvalidite)
             {

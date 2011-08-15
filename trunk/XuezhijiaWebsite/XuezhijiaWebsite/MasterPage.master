@@ -128,7 +128,7 @@
 <font style="color:#7777CC;">©2011 Baidu</font>
 <a href="http://www.baidu.com/duty/" class="cy">使用百度前必读</a>
     </div>
-
+        <div id="shade" name="shade" class="shade" style="height: 100%" ></div>
     </form>
     </div>
 </body>

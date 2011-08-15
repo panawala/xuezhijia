@@ -34,7 +34,6 @@
 
 
 <script type="text/javascript">
-
     $.ajax({
         type: "POST",
         url: "/WS/CommonService.asmx/getResultByID",
@@ -54,7 +53,7 @@
     function Success(data, status) {
         //在0s内将透明度设为0
         $("#newscontent").fadeTo(0.001, 0);
-        $("#newscontent").setTemplateURL('../News/newstemplate.htm');
+        $("#newscontent").setTemplateURL('../News/newstemplate.htm', null, { filter_data: false });
         $('#newscontent').processTemplate(data.d);
         //在1s内将透明度设为1
         $("#newscontent").fadeTo(1000, 1);

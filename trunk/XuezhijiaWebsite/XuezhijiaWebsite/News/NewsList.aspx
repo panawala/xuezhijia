@@ -70,7 +70,7 @@
     function Success(data, status) {
         //在0s内将透明度设为0
         $("#newslistcontent").fadeTo(0.001, 0);
-        $("#newslistcontent").setTemplateURL('../newslist/newslisttemplate.htm');
+        $("#newslistcontent").setTemplateURL('../News/newslisttemplate.htm');
         $('#newslistcontent').processTemplate(data.d);
         //在1s内将透明度设为1
         $("#newslistcontent").fadeTo(1000, 1);
