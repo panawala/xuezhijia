@@ -296,6 +296,7 @@
     <Content Include="css\houseadd.css" />
     <Content Include="css\index.css" />
     <Content Include="css\news.css" />
+    <Content Include="css\newslist.css" />
     <Content Include="css\printStyles.css" />
     <Content Include="css\sample.css" />
     <Content Include="css\secondhandadd.css" />
@@ -330,10 +331,11 @@
     <Content Include="Image\p2.jpg" />
     <Content Include="Image\p3.jpg" />
     <Content Include="Image\p4.jpg" />
-    <Content Include="Image\p5.jpg" />
+    <Content Include="Image\p1.jpg" />
     <Content Include="Image\test.jpg" />
     <Content Include="Image\topbg.gif" />
     <Content Include="index.aspx" />
+    <Content Include="Index\ImageManage.aspx" />
     <Content Include="Index\indextemplate.htm" />
     <Content Include="js\print.js" />
     <Content Include="js\user_log.js" />
@@ -341,6 +343,7 @@
     <Content Include="News\NewsAdd.aspx" />
     <Content Include="News\NewsList.aspx" />
     <Content Include="News\newslisttemplate.htm" />
+    <Content Include="News\NewsManage.aspx" />
     <Content Include="News\newstemplate.htm" />
     <Content Include="PhotoReview.aspx" />
     <Content Include="PhotoUpload.aspx" />
@@ -529,6 +532,13 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Index\ImageManage.aspx.cs">
+      <DependentUpon>ImageManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\ImageManage.aspx.designer.cs">
+      <DependentUpon>ImageManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -556,6 +566,13 @@
     </Compile>
     <Compile Include="News\NewsList.aspx.designer.cs">
       <DependentUpon>NewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News\NewsManage.aspx.cs">
+      <DependentUpon>NewsManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News\NewsManage.aspx.designer.cs">
+      <DependentUpon>NewsManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="PhotoReview.aspx.cs">
       <DependentUpon>PhotoReview.aspx</DependentUpon>

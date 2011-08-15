@@ -22,13 +22,22 @@ namespace XuezhijiaWebsite.News {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// DropDownList_Area control.
+        /// DropDownList_Type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Area;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Type;
+        
+        /// <summary>
+        /// TextBox_Title control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Title;
         
         /// <summary>
         /// CKEditor1 control.

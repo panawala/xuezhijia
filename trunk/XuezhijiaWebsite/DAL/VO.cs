@@ -108,13 +108,13 @@ namespace DAL
 
     public class ROOM
     {
-       public  int RoomID;
-       public  string Location;
-       public  double Price;
-       public  string Type;
-       public  string DistanceFromTongji;
-       public  string LinkURL;
-       public  string Comment; 
+        public int RoomID;
+        public string Location;
+        public double Price;
+        public string Type;
+        public string DistanceFromTongji;
+        public string LinkURL;
+        public string Comment;
     }
 
     public class SECONDHANDMARKET
@@ -153,7 +153,7 @@ namespace DAL
         public string Address;
         public int Grade;
         public string Requirment;
-        public string Comment; 
+        public string Comment;
     }
 
     public class TEACHER
@@ -162,7 +162,7 @@ namespace DAL
         public string ConnectionInformation;
         public string TName;
         public string AdvantageSujects;
-        public string Comment; 
+        public string Comment;
     }
 
     public class TICKET
@@ -183,4 +183,24 @@ namespace DAL
         public string ArticleArea;
         public string ArticleContent;
     }
+
+
+    public class IndexImage
+    {
+        public int ID;
+        public string ImageHref{get;set;}
+        public string ImageSrc { get; set; }
+        public string ImageTitle { get; set; }
+        public string ImageAlt { get; set; }
+        public IndexImage(string imghref, string imgsrc, string imgtitle, string imgalt)
+        {
+            ImageHref = imghref;
+            ImageSrc = imgsrc;
+            ImageTitle = imgtitle;
+            ImageAlt = imgalt;
+        }
+
+    }
+
+
 }
