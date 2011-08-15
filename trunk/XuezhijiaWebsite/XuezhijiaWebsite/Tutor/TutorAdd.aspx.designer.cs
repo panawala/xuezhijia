@@ -49,6 +49,15 @@ namespace XuezhijiaWebsite.Tutor {
         protected global::System.Web.UI.WebControls.TextBox TextBox_Contact;
         
         /// <summary>
+        /// TextBox_Comment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Comment;
+        
+        /// <summary>
         /// Btn_Submit control.
         /// </summary>
         /// <remarks>
