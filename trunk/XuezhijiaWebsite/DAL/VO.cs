@@ -65,11 +65,11 @@ namespace DAL
         public int DishId;
         public string DishName;
         public int DishOwnerId;
-        public float DishScore;
+        public double DishScore;
         public int DishUpCount;
         public int DishDownCount;
         public string DishCatalog;
-        public int DishClickedCount;
+        public double Price;
     }
 
     public class FILERECORDS
@@ -151,8 +151,8 @@ namespace DAL
         public int SID;
         public string SName;
         public string Address;
-        public int Grade;
-        public string Requirment;
+        public string Grade;
+        public string Requirement;
         public string Comment;
     }
 
@@ -161,7 +161,7 @@ namespace DAL
         public int TID;
         public string ConnectionInformation;
         public string TName;
-        public string AdvantageSujects;
+        public string AdvantageSubjects;
         public string Comment;
     }
 
