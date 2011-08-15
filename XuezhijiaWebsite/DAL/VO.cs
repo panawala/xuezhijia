@@ -197,8 +197,7 @@ namespace DAL
 
     public class NEWS
     {
-        public int ID;
-        public string NewsID;
+        public int NewsID;
         public string NewsTitle;
         public string NewsContent;
         public string NewsPublishTime;
