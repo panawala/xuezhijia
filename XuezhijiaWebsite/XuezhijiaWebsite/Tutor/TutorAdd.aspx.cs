@@ -18,7 +18,6 @@ namespace XuezhijiaWebsite.Tutor
 
         protected void Btn_Submit_Click(object sender, EventArgs e)
         {
-            ((MasterPage)Master).CurrentMenu = "tutor";
             TEACHER teacher = new TEACHER();
             TeacherWrapper wrapper = new TeacherWrapper();
             teacher.TName = TextBox_Name.Text;
