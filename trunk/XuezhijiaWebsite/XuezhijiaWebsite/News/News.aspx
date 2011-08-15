@@ -37,7 +37,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getAllSecondHandMarketList",
+        url: "/WS/CommonService.asmx/getResultByID",
         data: "{id:" + request("id") + "}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -54,7 +54,7 @@
     function Success(data, status) {
         //在0s内将透明度设为0
         $("#newscontent").fadeTo(0.001, 0);
-        $("#newscontent").setTemplateURL('../Car/rightnav.htm');
+        $("#newscontent").setTemplateURL('../News/newstemplate.htm');
         $('#newscontent').processTemplate(data.d);
         //在1s内将透明度设为1
         $("#newscontent").fadeTo(1000, 1);
