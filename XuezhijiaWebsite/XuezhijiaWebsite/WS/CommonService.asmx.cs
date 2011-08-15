@@ -129,9 +129,9 @@ namespace XuezhijiaWebsite.WS
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<DISH> getFormatedDishById()
+        public List<DISH> getFormatedDishByOwnerId(int id)
         {
-            return (new DishWrapper()).getAllFormatedResult();
+            return (new DishWrapper()).getFormatedResultsByOwnerID(id);
         }
     }
 }

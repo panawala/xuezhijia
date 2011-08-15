@@ -21,6 +21,39 @@
           }
       }
     </script>
+    <script type="text/javascript">
+
+        function ding(id) {
+            $.ajax({
+                type: "POST",
+                url: "/WS/CommonService.asmx/getFormatedDishByOwnerId",
+                data: "{id:" + id + "}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                beforeSend: Loading, //执行ajax前执行loading函数.直到success 
+                success: Success,
+                error: Error
+            });
+
+            //加载中的状态
+            function Loading() {
+                $('#dishcontent').html('<img src="/Image/loader.gif"/>');
+            }
+            //加载成功
+            function Success(data, status) {
+                //在0s内将透明度设为0
+                $("#dishcontent").fadeTo(0.001, 0);
+                $("#dishcontent").setTemplateURL('../Takeout/takeoutdishtemplate.htm');
+                $('#dishcontent').processTemplate(data.d);
+                //在1s内将透明度设为1
+                $("#dishcontent").fadeTo(1000, 1);
+
+            }
+
+        }
+
+    
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -54,7 +87,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getAllSecondHandMarketList",
+        url: "/WS/CommonService.asmx/getFormatedDishByOwnerId",
         data: "{id:" + request("id") + "}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -80,7 +113,6 @@
     </script>
 
      <script type="text/javascript">
-
          $.ajax({
              type: "POST",
              url: "/WS/CommonService.asmx/getArticleByID",

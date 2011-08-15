@@ -38,7 +38,7 @@
     $.ajax({
         type: "POST",
         url: "/WS/CommonService.asmx/getAllSecondHandMarketList",
-        data: "{}",
+        data: "{id:" + request("id") + "}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         beforeSend: Loading, //执行ajax前执行loading函数.直到success 
