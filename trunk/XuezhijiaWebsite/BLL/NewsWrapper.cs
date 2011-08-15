@@ -93,13 +93,13 @@ namespace BLL
 
         public List<NEWS> getAllFormatedResultByType(int type)
         {
-            return _transfer(CommenHelper.GetInstance().getResultBySql("select * from News where NewsType = " + type.ToString()));
+            return _transfer(CommenHelper.GetInstance().getResultBySql("select * from News where NewsType = " + type.ToString() + "order by NewsPublishTime desc"));
             
         }
 
         public List<NEWS> getTopSixFormatedResultByType(int type)
         {
-            return _transfer(CommenHelper.GetInstance().getResultBySql("select top 6 * from News where NewsType = " + type.ToString()));
+            return _transfer(CommenHelper.GetInstance().getResultBySql("select top 6 * from News where NewsType = " + type.ToString() + "order by NewsPublishTime desc"));
         }
     }
 }
