@@ -11,7 +11,20 @@ namespace XuezhijiaWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(IsPostBack)
+            {
+                return;
+            }
+        }
 
+        protected void GotoStudent(Object sender, EventArgs e)
+        {
+            Response.Redirect("~/StudentInformation.aspx");
+        }
+
+        protected void GotoTeacher(Object sender, EventArgs e)
+        {
+            Response.Redirect("~/TeacherInformation.aspx");
         }
     }
 }

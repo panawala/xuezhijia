@@ -120,5 +120,18 @@ namespace XuezhijiaWebsite.WS
             return (new HotelWrapper()).getResultByID(id);
         }
 
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<STUDENT> getFormatedStudentById()
+        {
+            return (new StudentWrapper()).getAllFormatedResult();
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<DISH> getFormatedDishById()
+        {
+            return (new DishWrapper()).getAllFormatedResult();
+        }
     }
 }

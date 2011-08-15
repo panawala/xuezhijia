@@ -309,6 +309,7 @@
     <Content Include="css\train.css" />
     <Content Include="css\tutor.css" />
     <Content Include="css\tutoradd.css" />
+    <Content Include="DishManage.aspx" />
     <Content Include="EditAds.aspx" />
     <Content Include="GREManage.aspx" />
     <Content Include="HotelManage.aspx" />
@@ -360,6 +361,7 @@
     <Content Include="Secondhand\shcommoditytemlate.htm" />
     <Content Include="Shop\Shop.aspx" />
     <Content Include="Shop\shoptemplate.htm" />
+    <Content Include="StudentInformation.aspx" />
     <Content Include="StudentMarketManage.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
@@ -370,6 +372,7 @@
     <Content Include="Takeout\Takeoutdish.aspx" />
     <Content Include="Takeout\takeoutdishtemplate.htm" />
     <Content Include="Takeout\takeouttemplate.htm" />
+    <Content Include="TeacherInformation.aspx" />
     <Content Include="Ticket\Ticket.aspx" />
     <Content Include="Ticket\tickettemplate.htm" />
     <Content Include="Train\Train.aspx" />
@@ -458,6 +461,13 @@
     </Compile>
     <Compile Include="Common\ShowPhoto.ashx.cs">
       <DependentUpon>ShowPhoto.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DishManage.aspx.cs">
+      <DependentUpon>DishManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DishManage.aspx.designer.cs">
+      <DependentUpon>DishManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditAds.aspx.cs">
       <DependentUpon>EditAds.aspx</DependentUpon>
@@ -666,6 +676,13 @@
     <Compile Include="Load.aspx.designer.cs">
       <DependentUpon>Load.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StudentInformation.aspx.cs">
+      <DependentUpon>StudentInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentInformation.aspx.designer.cs">
+      <DependentUpon>StudentInformation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Takeout\Takeout.aspx.cs">
       <DependentUpon>Takeout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -679,6 +696,13 @@
     </Compile>
     <Compile Include="Takeout\Takeoutdish.aspx.designer.cs">
       <DependentUpon>Takeoutdish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherInformation.aspx.cs">
+      <DependentUpon>TeacherInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherInformation.aspx.designer.cs">
+      <DependentUpon>TeacherInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ticket\Ticket.aspx.cs">
       <DependentUpon>Ticket.aspx</DependentUpon>

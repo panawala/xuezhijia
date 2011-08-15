@@ -32,17 +32,14 @@ namespace XuezhijiaWebsite
             Shops.DataBind();
         }
 
+
         protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int id = Convert.ToInt32(Shops.DataKeys[e.RowIndex].Value);
-            ShopWrapper wrapper = new ShopWrapper();
-            wrapper.deleteARecordByID(id);
 
         }
 
-        protected void DeleteClick(object sender, EventArgs e)
+        protected void DeleteClick(int id)
         {
-            int id = Convert.ToInt32(Shops.DataKeys[Shops.SelectedIndex + 1].Value);
             ShopWrapper wrapper = new ShopWrapper();
             SHOP shop = new SHOP();
             shop = wrapper.getResultByID(id);
@@ -52,14 +49,26 @@ namespace XuezhijiaWebsite
             InitPage(); 
         }
 
+        protected void DishCheck(int id)
+        {
+            Response.Redirect("/DishManage.aspx?OwnerId=" + id.ToString());
+        }
+
         protected void RowUpdate(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandArgument.ToString().Length < 1)
             {
                 return;
             }
-            string cmd = e.CommandName; //获得name
+            string cmd = e.CommandName;
             int Id = Convert.ToInt32(e.CommandArgument);
+            switch (cmd)
+            {
+                case "Delete": DeleteClick(Id);
+                    return;
+                case "Check": DishCheck(Id);
+                    return;
+            }
             SHOP shop = new SHOP();
             ShopWrapper wrapper = new ShopWrapper();
             shop = wrapper.getResultByID(Id);
@@ -238,6 +247,11 @@ namespace XuezhijiaWebsite
             LabelComment.Visible = true;
             Comment.Visible = true;
             Button1.Visible = true;
+        }
+
+        protected void Shops_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Shops.SelectedIndex = Shops.PageIndex;
         }
     }
 }
