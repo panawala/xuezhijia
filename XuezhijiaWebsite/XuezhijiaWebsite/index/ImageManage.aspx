@@ -42,7 +42,7 @@
     <br />
     <asp:Label ID="Label5"  runat="server" Text="替换文字"></asp:Label>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:TextBox ID="TextBox4" Visible="false" runat="server"></asp:TextBox>
+    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
         &nbsp;</p>
     <p>
         &nbsp;</p>
