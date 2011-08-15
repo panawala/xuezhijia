@@ -118,6 +118,14 @@
                     <asp:TextBox ID="TextBox_Contact" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <label>
+                        备注：</label>
+                    <asp:TextBox ID="TextBox_Comment" runat="server" CssClass="infoinput"></asp:TextBox>
+                </td>
+              
+            </tr>
         </table>
         <div style="clear: both;">
         </div>
