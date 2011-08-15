@@ -92,10 +92,9 @@ namespace BLL
             
         }
 
-        public List<NEWS> getTopTenFormatedResultByType(int type)
+        public List<NEWS> getTopSixFormatedResultByType(int type)
         {
-            return _transfer(CommenHelper.GetInstance().getResultBySql("select top 10 * from News where NewsType = " + type.ToString()));
- 
+            return _transfer(CommenHelper.GetInstance().getResultBySql("select top 6 * from News where NewsType = " + type.ToString()));
         }
     }
 }
