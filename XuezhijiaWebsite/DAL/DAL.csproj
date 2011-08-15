@@ -80,6 +80,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Hotel.xsd</DependentUpon>
     </Compile>
+    <Compile Include="IndexImage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndexImage.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="News.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>News.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Photo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -217,6 +227,28 @@
     </None>
     <None Include="Hotel.xss">
       <DependentUpon>Hotel.xsd</DependentUpon>
+    </None>
+    <None Include="IndexImage.xsc">
+      <DependentUpon>IndexImage.xsd</DependentUpon>
+    </None>
+    <None Include="IndexImage.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IndexImage.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="IndexImage.xss">
+      <DependentUpon>IndexImage.xsd</DependentUpon>
+    </None>
+    <None Include="News.xsc">
+      <DependentUpon>News.xsd</DependentUpon>
+    </None>
+    <None Include="News.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>News.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="News.xss">
+      <DependentUpon>News.xsd</DependentUpon>
     </None>
     <None Include="Photo.xsc">
       <DependentUpon>Photo.xsd</DependentUpon>
