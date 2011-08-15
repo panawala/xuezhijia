@@ -136,16 +136,17 @@ namespace XuezhijiaWebsite.WS
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<NEWS> getAllNews()
+        public List<NEWS> getNewsByType(int type)
         {
-            return (new NewsWrapper()).getAllFormatedResult();
+            return (new NewsWrapper()).getAllFormatedResultByType(type);
         }
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<NEWS> getNewsByType(int type)
+        public List<NEWS> getTopSixNewsByType(int type)
         {
             return (new NewsWrapper()).getTopSixFormatedResultByType(type);
+
         }
 
         [WebMethod]
