@@ -10,13 +10,13 @@ namespace XuezhijiaWebsite
 {
     public partial class index : System.Web.UI.Page
     {
-        protected List<IndexImage> imgList = new List<IndexImage>();
+        protected List<INDEXIMAGE> imgList = new List<INDEXIMAGE>();
         protected void Page_Load(object sender, EventArgs e)
         {
             ((MasterPage)Master).CurrentMenu = "index";
             for (int i = 1; i < 6; i++)
             {
-                imgList.Add(new IndexImage("hello", "hello", "hello", "hello") { });
+                //imgList.Add(new IM("hello", "hello", "hello", "hello") { });
             }
         }
     }
