@@ -47,19 +47,28 @@
                     </div>
                     <!--标题-->
                     <ul>
-                        <li class="on">1</li>
-                        <li>2</li>
-                        <li>3</li>
+                      <li class="on">1</li>
+                        <%for (int i = 2; i < imgList.Count+1;i++ )
+                          {%>
+                        <li><%=i%></li>
+                        <%} %>
+                        <%--<li>3</li>
                         <li>4</li>
+                        <li>5</li>--%>
                     </ul>
                     <div id="banner_list">
-                    <%for (int i = 2; i < 6; i++)
-                      { %>
-                        <a href="javascript:void();" target="_blank"><img src="../Image/p<%=i %>.jpg" title="橡树小屋的blog1" alt="橡树小屋的blog" /></a> 
-                        <%--<a href="#" target="_blank"><img src="../Image/p5.jpg" title="橡树小屋的blog2" alt="橡树小屋的blog" /></a> 
-                        <a href="#" target="_blank"><img src="../Image/p3.jpg" title="橡树小屋的blog3" alt="橡树小屋的blog" /></a>
-                        <a href="#" target="_blank"><img src="../Image/p4.jpg" title="橡树小屋的blog4" alt="橡树小屋的blog" /></a>--%>
-                   <%} %>
+                    <%for(int i = 0; i < imgList.Count;i++)
+                      {
+                          DAL.IndexImage img = imgList[i];
+                          %>
+                    <a href="<%=img.ImageHref %>" target="_self"><img src="../Image/p1.jpg" title="<%=img.ImageTitle %>" alt="<%=img.ImageAlt %>" /></a>
+                    <% }%>
+                        <%--<a href="javascript:void();" target="_self"><img src="../Image/p1.jpg" title="橡树小屋的blog1" alt="橡树小屋的blog" /></a> 
+                        <a href="#" target="_self"><img src="../Image/p2.jpg" title="橡树小屋的blog2" alt="橡树小屋的blog" /></a> 
+                        <a href="#" target="_self"><img src="../Image/p3.jpg" title="橡树小屋的blog3" alt="橡树小屋的blog" /></a>
+                        <a href="#" target="_self"><img src="../Image/p4.jpg" title="橡树小屋的blog4" alt="橡树小屋的blog" /></a>
+                        <a href="#" target="_self"><img src="../Image/p3.jpg" title="橡树小屋的blog5" alt="橡树小屋的blog" /></a>--%>
+                   
                     </div>
                 </div>
                 <div class="img_space_mark">　同济大学创建于1907年，是教育部直属全国重点大学，国家211工程和“985工程”重点建设高校，也是首批经国务院批准成立研究生院的 高校。在百余年的办学历程中，同济大学始终注重“人才培养、科学研究、社会服务、国际交往”四大功能均衡发展，综合实力位居国内高校前列。 

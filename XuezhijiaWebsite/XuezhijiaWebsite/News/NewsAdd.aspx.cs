@@ -14,7 +14,13 @@ namespace XuezhijiaWebsite.News
 
         }
 
-        protected void DropDownList_Area_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DropDownList_Type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        protected void Btn_Submit_Click(object sender, EventArgs e)
         {
 
         }
