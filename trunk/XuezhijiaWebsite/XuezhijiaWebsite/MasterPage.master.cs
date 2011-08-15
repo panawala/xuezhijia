@@ -32,7 +32,7 @@ namespace XuezhijiaWebsite
                 Session["Username"] = username;
                 Session["UserID"] = row.UserID.ToString();
                 Session["PassWord"] = password;
-                Response.Redirect("~/Default.aspx");
+
             }
         }
 
@@ -51,8 +51,11 @@ namespace XuezhijiaWebsite
                 Session["Username"] = username;
                 Session["UserID"] = row.UserID.ToString();
                 Session["PassWord"] = password;
-                Response.Redirect("~/Default.aspx");
+                
             }
         }
+
+
+
     }
 }

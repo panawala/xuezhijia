@@ -15,6 +15,7 @@ namespace XuezhijiaWebsite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ((MasterPage)Master).CurrentMenu = "print";
             if (!IsPostBack)
             {
                 return;
@@ -35,44 +36,44 @@ namespace XuezhijiaWebsite
             }
         }
 
-        protected void CommitLoad(object sender, EventArgs e)
-        {
-            UserInfoWrapper wrapper = new UserInfoWrapper();
+        //protected void CommitLoad(object sender, EventArgs e)
+        //{
+        //    UserInfoWrapper wrapper = new UserInfoWrapper();
 
-            string username = (Master.FindControl("UserName") as TextBox).Text;
-            string password = (Master.FindControl("Password") as TextBox).Text;
-            bool isvalidite = wrapper.IsValidite(username, password);
-            if (isvalidite)
-            {
-                UserInfo.UserInfoRow row;
-                UserInfo.UserInfoDataTable table = new UserInfo.UserInfoDataTable();
-                row = table.NewUserInfoRow();
-                row = wrapper.getRecordByUserNameAndPassWord(username, password);
-                Session.Add("Username", username);
-                Session.Add("UserID", row.UserID.ToString());
-                Session.Add("PassWord", password);
-                InitPage();
-            }
-        }
+        //    string username = (Master.FindControl("UserName") as TextBox).Text;
+        //    string password = (Master.FindControl("Password") as TextBox).Text;
+        //    bool isvalidite = wrapper.IsValidite(username, password);
+        //    if (isvalidite)
+        //    {
+        //        UserInfo.UserInfoRow row;
+        //        UserInfo.UserInfoDataTable table = new UserInfo.UserInfoDataTable();
+        //        row = table.NewUserInfoRow();
+        //        row = wrapper.getRecordByUserNameAndPassWord(username, password);
+        //        Session.Add("Username", username);
+        //        Session.Add("UserID", row.UserID.ToString());
+        //        Session.Add("PassWord", password);
+        //        InitPage();
+        //    }
+        //}
 
-        protected void CommitRegister(object sender, EventArgs e)
-        {
-            UserInfoWrapper wrapper = new UserInfoWrapper();
-            string username = (Master.FindControl("UserName") as TextBox).Text;
-            string password = (Master.FindControl("Password") as TextBox).Text;
-            bool isvalidite = wrapper.IsValidite(username, password);
-            if (isvalidite)
-            {
-                UserInfo.UserInfoRow row;
-                UserInfo.UserInfoDataTable table = new UserInfo.UserInfoDataTable();
-                row = table.NewUserInfoRow();
-                row = wrapper.getRecordByUserNameAndPassWord(username, password);
-                Session.Add("Username", username);
-                Session.Add("UserID", row.UserID.ToString());
-                Session.Add("PassWord", password);
-                InitPage();
-            }
-        }
+        //protected void CommitRegister(object sender, EventArgs e)
+        //{
+        //    UserInfoWrapper wrapper = new UserInfoWrapper();
+        //    string username = (Master.FindControl("UserName") as TextBox).Text;
+        //    string password = (Master.FindControl("Password") as TextBox).Text;
+        //    bool isvalidite = wrapper.IsValidite(username, password);
+        //    if (isvalidite)
+        //    {
+        //        UserInfo.UserInfoRow row;
+        //        UserInfo.UserInfoDataTable table = new UserInfo.UserInfoDataTable();
+        //        row = table.NewUserInfoRow();
+        //        row = wrapper.getRecordByUserNameAndPassWord(username, password);
+        //        Session.Add("Username", username);
+        //        Session.Add("UserID", row.UserID.ToString());
+        //        Session.Add("PassWord", password);
+        //        InitPage();
+        //    }
+        //}
 
         protected void CommitPrint(object sender, EventArgs e)
         {

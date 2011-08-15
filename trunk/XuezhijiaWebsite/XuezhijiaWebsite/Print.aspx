@@ -15,7 +15,7 @@
 
 	<div class="pagebody">
 		<!-- 功能主体 -->
-		<div class="bodycontent">
+		
 		<!-- if has session -->
 		<%
 			if (Session["Username"] != null && Session["Username"] != "") {
@@ -25,7 +25,7 @@
 				<!-- 打印数据 -->
 				<asp:GridView ID="History" runat="server" AutoGenerateColumns="False" DataKeyNames="RecordID" OnRowDeleting="RowDeleting" OnRowCommand="RowUpdate" >
 					<Columns>
-						<asp:TemplateField ItemStyle-Width="60" ItemStyle-HorizontalAlign="Center">
+						<%--<asp:TemplateField ItemStyle-Width="60" ItemStyle-HorizontalAlign="Center">
             				<HeaderTemplate>
                 				<input id="checkAll" type="checkbox" onclick="SelectAll();" />
 								<asp:LinkButton ID="Hello" runat="server" Text="确认已打印" />
@@ -33,14 +33,14 @@
 							<ItemTemplate>
                 				<asp:CheckBox ID="CheckRecord" runat="server" />
             				</ItemTemplate>
-       					</asp:TemplateField>
+       					</asp:TemplateField>--%>
 						<asp:TemplateField HeaderText="取消打印" ShowHeader="False">
 							<ItemTemplate>   
-               					<asp:LinkButton ID="DeleteRecord" CausesValidation="False" CommandName="Delete" Text="删除" OnClientClick='<%#  "if (!confirm(\"你确定要删除" + Eval("FileName").ToString() + "吗?\")) return false;"%>'></asp:LinkButton>
+               					<asp:LinkButton ID="DeleteRecord" runat="server" CausesValidation="False" CommandName="Delete" Text="删除" OnClientClick='<%#  "if (!confirm(\"你确定要删除" + Eval("FileName").ToString() + "吗?\")) return false;"%>'></asp:LinkButton>
 							</ItemTemplate>   
 						</asp:TemplateField>
                 		<asp:BoundField DataField="FileName" HeaderText="文件名" SortExpression="FileName" />
-                		<asp:BoundField DataField="DateTimee" HeaderText="提交时间" SortExpression="DateTimee" />
+                		<asp:BoundField DataField="DateTime" HeaderText="提交时间" SortExpression="DateTimee" />
                 		<asp:BoundField DataField="State" HeaderText="打印状态" SortExpression="State" />
                 		<asp:BoundField DataField="Comment" HeaderText="打印备注" SortExpression="Comment" />
             		</Columns>
@@ -69,7 +69,7 @@
 			<div class="print-intro">
 				print introduction
 			</div>
-		</div>
+		
 		<!-- 功能主体 -->
 	</div>
 	
