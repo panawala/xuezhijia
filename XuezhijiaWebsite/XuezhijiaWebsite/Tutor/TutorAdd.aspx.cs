@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DAL;
+using BLL;
 
 namespace XuezhijiaWebsite.Tutor
 {
@@ -17,6 +19,15 @@ namespace XuezhijiaWebsite.Tutor
         protected void Btn_Submit_Click(object sender, EventArgs e)
         {
             ((MasterPage)Master).CurrentMenu = "tutor";
+            TEACHER teacher = new TEACHER();
+            TeacherWrapper wrapper = new TeacherWrapper();
+            teacher.TName = TextBox_Name.Text;
+            teacher.ConnectionInformation = TextBox_Contact.Text;
+            teacher.AdvantageSubjects = TextBox_Subject.Text;
+            teacher.Comment = TextBox_Comment.Text;
+            wrapper.addAClassRecord(teacher);
+            
+           
         }
     }
 }
