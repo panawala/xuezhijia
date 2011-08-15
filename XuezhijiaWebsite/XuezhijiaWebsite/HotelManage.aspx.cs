@@ -33,15 +33,11 @@ namespace XuezhijiaWebsite
 
         protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int id = Convert.ToInt32(HotelGridview.DataKeys[e.RowIndex].Value);
-            HotelWrapper wrapper = new HotelWrapper();
-            wrapper.deleteARecordByID(id);
 
         }
 
-        protected void DeleteClick(object sender, EventArgs e)
+        protected void DeleteClick(int id)
         {
-            int id = Convert.ToInt32(HotelGridview.DataKeys[HotelGridview.SelectedIndex + 1].Value);
             HotelWrapper wrapper = new HotelWrapper();
             HOTEL hotel = new HOTEL();
             hotel = wrapper.getResultByID(id);
@@ -60,8 +56,14 @@ namespace XuezhijiaWebsite
             {
                 return;
             }
-            string cmd = e.CommandName; //获得name
+            string cmd = e.CommandName;
             int Id = Convert.ToInt32(e.CommandArgument);
+            if (cmd == "Delete")
+            {
+                DeleteClick(Id);
+                return;
+            }
+          
             HOTEL hotel = new HOTEL();
             HotelWrapper wrapper = new HotelWrapper();
             hotel = wrapper.getResultByID(Id);

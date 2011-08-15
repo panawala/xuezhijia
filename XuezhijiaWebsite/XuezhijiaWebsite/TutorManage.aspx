@@ -12,6 +12,20 @@
     
     </div>
     <asp:Label ID="Label1" runat="server" Text="家教信息管理"></asp:Label>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <asp:LinkButton ID="LinkButton1" OnClick="GotoStudent" runat="server">学生信息管理</asp:LinkButton>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <asp:LinkButton ID="LinkButton2" OnClick="GotoTeacher" runat="server">老师信息管理</asp:LinkButton>
     </form>
 </body>
 </html>

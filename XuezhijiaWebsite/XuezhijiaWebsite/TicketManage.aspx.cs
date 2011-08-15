@@ -34,15 +34,11 @@ namespace XuezhijiaWebsite
 
         protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int id = Convert.ToInt32(Tickets.DataKeys[e.RowIndex].Value);
-            TicketWrapper wrapper = new TicketWrapper();
-            wrapper.deleteARecordByID(id);
 
         }
 
-        protected void DeleteClick(object sender, EventArgs e)
+        protected void DeleteClick(int id)
         {
-            int id = Convert.ToInt32(Tickets.DataKeys[Tickets.SelectedIndex + 1].Value);
             TicketWrapper wrapper = new TicketWrapper();
             TICKET ticket = new TICKET();
             ticket = wrapper.getResultByID(id);
@@ -61,6 +57,12 @@ namespace XuezhijiaWebsite
             }
             string cmd = e.CommandName; //获得name
             int Id = Convert.ToInt32(e.CommandArgument);
+            if (cmd == "Delete")
+            {
+                DeleteClick(Id);
+                return;
+            }
+
             TICKET ticket = new TICKET();
             TicketWrapper wrapper = new TicketWrapper();
             ticket = wrapper.getResultByID(Id);
@@ -151,7 +153,10 @@ namespace XuezhijiaWebsite
                 TICKET tmp = new TICKET();
                 TicketWrapper wrapper = new TicketWrapper();
                 TICKET ticket = new TICKET();
-                addAPhoto();
+                if (Upload.FileName.Length > 0)
+                {
+                    addAPhoto();
+                }
                 CommenHelper helper = CommenHelper.GetInstance();
                 ticket.PID = helper.getIdent("Photo");
                 ticket.TicketName = TextBox1.Text ;
@@ -168,7 +173,6 @@ namespace XuezhijiaWebsite
 
         public void addAPhoto()
         {
-            PostInit();
             PhotoWrapper photowrapper = new PhotoWrapper();
             Photo.PhotoRow row = new Photo.PhotoDataTable().NewPhotoRow(); ;
             row.Comment = Comment.Text;

@@ -39,14 +39,8 @@ namespace XuezhijiaWebsite
 
         }
 
-        protected void DeleteClick(object sender, EventArgs e)
+        protected void DeleteClick(int id)
         {
-            int id = Convert.ToInt32(SecondHandMarkets.DataKeys[SecondHandMarkets.SelectedIndex + 1].Value);
-            SecondHMWrapper wrapper = new SecondHMWrapper();
-            SECONDHANDMARKET secondhandmarket = new SECONDHANDMARKET();
-            secondhandmarket = wrapper.getResultByID(id);
-            deletePhoto(secondhandmarket);
-            wrapper.deleteARecordByID(id);
             InitPage();
         }
 
@@ -68,6 +62,12 @@ namespace XuezhijiaWebsite
             }
             string cmd = e.CommandName; //获得name
             int Id = Convert.ToInt32(e.CommandArgument);
+            switch (cmd)
+            {
+                case "Delete": DeleteClick(Id);
+                    return;
+            }
+
             SECONDHANDMARKET secondhandmarket = new SECONDHANDMARKET();
             SecondHMWrapper wrapper = new SecondHMWrapper();
             secondhandmarket = wrapper.getResultByID(Id);

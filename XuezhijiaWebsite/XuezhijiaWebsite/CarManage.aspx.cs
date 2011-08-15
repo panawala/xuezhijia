@@ -34,15 +34,11 @@ namespace XuezhijiaWebsite
 
         protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int id = Convert.ToInt32(Cars.DataKeys[e.RowIndex].Value);
-            CarWrapper wrapper = new CarWrapper();
-            wrapper.deleteARecordByID(id);
 
         }
 
-        protected void DeleteClick(object sender, EventArgs e)
+        protected void DeleteClick(int id)
         {
-            int id = Convert.ToInt32(Cars.DataKeys[Cars.SelectedIndex + 1].Value);
             CarWrapper wrapper = new CarWrapper();
             CAR car = new CAR();
             car = wrapper.getResultByID(id);
@@ -60,6 +56,12 @@ namespace XuezhijiaWebsite
             }
             string cmd = e.CommandName; //获得name
             int Id = Convert.ToInt32(e.CommandArgument);
+            if (cmd == "Delete")
+            {
+                DeleteClick(Id);
+                return;
+            }
+
             CAR car = new CAR();
             CarWrapper wrapper = new CarWrapper();
             car = wrapper.getResultByID(Id);

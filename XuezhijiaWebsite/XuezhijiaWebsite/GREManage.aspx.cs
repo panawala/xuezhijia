@@ -30,7 +30,7 @@ namespace XuezhijiaWebsite
             Courses.DataSource = table;
             Courses.DataBind();
             TeacherWrapper teacherwrapper = new TeacherWrapper();
-            TextBox6.DataSource = teacherwrapper.getAll();
+            TextBox6.DataSource = teacherwrapper.getall();
             TextBox6.DataTextField = "TName";
             TextBox6.DataValueField = "TID";
             TextBox6.DataBind();
@@ -38,15 +38,11 @@ namespace XuezhijiaWebsite
 
         protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int id = Convert.ToInt32(Courses.DataKeys[e.RowIndex].Value);
-            CourseWrapper wrapper = new CourseWrapper();
-            wrapper.deleteARecordByID(id);
-
+    
         }
 
-        protected void DeleteClick(object sender, EventArgs e)
+        protected void DeleteClick(int id)
         {
-            int id = Convert.ToInt32(Courses.DataKeys[Courses.SelectedIndex + 1].Value);
             CourseWrapper wrapper = new CourseWrapper();
             COURSE course = new COURSE();
             course = wrapper.getResultByID(id);
@@ -64,6 +60,13 @@ namespace XuezhijiaWebsite
             }
             string cmd = e.CommandName; //获得name
             int Id = Convert.ToInt32(e.CommandArgument);
+
+            if (cmd == "Delete")
+            {
+                DeleteClick(Id);
+                return;
+            }
+
             COURSE course = new COURSE();
             CourseWrapper wrapper = new CourseWrapper();
             course = wrapper.getResultByID(Id);

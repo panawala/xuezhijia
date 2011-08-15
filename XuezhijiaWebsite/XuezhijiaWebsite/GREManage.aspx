@@ -18,7 +18,7 @@
       <Columns>
             <asp:TemplateField HeaderText="删除" ShowHeader="False">   
             <ItemTemplate>   
-                <asp:LinkButton ID="LinkButton1" OnClick="DeleteClick" CommandName="del" runat="server" CausesValidation="False" CommandArgument='<%# Eval("CourseID") %>'
+                <asp:LinkButton ID="LinkButton1" CommandName="Delete" runat="server" CausesValidation="False" CommandArgument='<%# Eval("CourseID") %>'
                     Text="删除" OnClientClick='<%#  "if (!confirm(\"你确定要删除" + Eval("CourseName").ToString() + "吗?\")) return false;"%>'></asp:LinkButton>   
             </ItemTemplate>   
           </asp:TemplateField>
