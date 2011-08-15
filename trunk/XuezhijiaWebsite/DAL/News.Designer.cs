@@ -279,8 +279,6 @@ namespace DAL {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class NewsDataTable : global::System.Data.TypedTableBase<NewsRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn columnNewsID;
             
             private global::System.Data.DataColumn columnNewsTitle;
@@ -324,14 +322,6 @@ namespace DAL {
             protected NewsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -419,11 +409,10 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NewsRow AddNewsRow(long NewsID, string NewsTitle, string NewsContent, System.DateTime NewsPublishTime, int NewsClickCount, int NewsType) {
+            public NewsRow AddNewsRow(string NewsTitle, string NewsContent, System.DateTime NewsPublishTime, int NewsClickCount, int NewsType) {
                 NewsRow rowNewsRow = ((NewsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        NewsID,
                         NewsTitle,
                         NewsContent,
                         NewsPublishTime,
@@ -432,6 +421,13 @@ namespace DAL {
                 rowNewsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNewsRow);
                 return rowNewsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public NewsRow FindByNewsID(long NewsID) {
+                return ((NewsRow)(this.Rows.Find(new object[] {
+                            NewsID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -451,7 +447,6 @@ namespace DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this.columnNewsID = base.Columns["NewsID"];
                 this.columnNewsTitle = base.Columns["NewsTitle"];
                 this.columnNewsContent = base.Columns["NewsContent"];
@@ -463,8 +458,6 @@ namespace DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this.columnNewsID = new global::System.Data.DataColumn("NewsID", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNewsID);
                 this.columnNewsTitle = new global::System.Data.DataColumn("NewsTitle", typeof(string), null, global::System.Data.MappingType.Element);
@@ -477,11 +470,14 @@ namespace DAL {
                 base.Columns.Add(this.columnNewsClickCount);
                 this.columnNewsType = new global::System.Data.DataColumn("NewsType", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNewsType);
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnNewsID}, true));
+                this.columnNewsID.AutoIncrement = true;
+                this.columnNewsID.AutoIncrementSeed = -1;
+                this.columnNewsID.AutoIncrementStep = -1;
+                this.columnNewsID.AllowDBNull = false;
+                this.columnNewsID.ReadOnly = true;
+                this.columnNewsID.Unique = true;
                 this.columnNewsTitle.MaxLength = 200;
                 this.columnNewsContent.MaxLength = 2147483647;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_News");
@@ -628,25 +624,9 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long ID {
-                get {
-                    return ((long)(this[this.tableNews.IDColumn]));
-                }
-                set {
-                    this[this.tableNews.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public long NewsID {
                 get {
-                    try {
-                        return ((long)(this[this.tableNews.NewsIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NewsID\' in table \'News\' is DBNull.", e);
-                    }
+                    return ((long)(this[this.tableNews.NewsIDColumn]));
                 }
                 set {
                     this[this.tableNews.NewsIDColumn] = value;
@@ -731,18 +711,6 @@ namespace DAL {
                 set {
                     this[this.tableNews.NewsTypeColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNewsIDNull() {
-                return this.IsNull(this.tableNews.NewsIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNewsIDNull() {
-                this[this.tableNews.NewsIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -965,7 +933,6 @@ namespace DAL.NewsTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "News";
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("NewsID", "NewsID");
             tableMapping.ColumnMappings.Add("NewsTitle", "NewsTitle");
             tableMapping.ColumnMappings.Add("NewsContent", "NewsContent");
@@ -973,18 +940,49 @@ namespace DAL.NewsTableAdapters {
             tableMapping.ColumnMappings.Add("NewsClickCount", "NewsClickCount");
             tableMapping.ColumnMappings.Add("NewsType", "NewsType");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[News] WHERE (([NewsID] = @Original_NewsID) AND ((@IsNull_NewsTitle = 1 AND [NewsTitle] IS NULL) OR ([NewsTitle] = @Original_NewsTitle)) AND ((@IsNull_NewsPublishTime = 1 AND [NewsPublishTime] IS NULL) OR ([NewsPublishTime] = @Original_NewsPublishTime)) AND ((@IsNull_NewsClickCount = 1 AND [NewsClickCount] IS NULL) OR ([NewsClickCount] = @Original_NewsClickCount)) AND ((@IsNull_NewsType = 1 AND [NewsType] IS NULL) OR ([NewsType] = @Original_NewsType)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NewsTitle", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsTitle", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsTitle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NewsPublishTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsPublishTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsPublishTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsPublishTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NewsClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsClickCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsClickCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NewsType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[News] ([NewsID], [NewsTitle], [NewsContent], [NewsPublishTime]" +
-                ", [NewsClickCount], [NewsType]) VALUES (@NewsID, @NewsTitle, @NewsContent, @News" +
-                "PublishTime, @NewsClickCount, @NewsType)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[News] ([NewsTitle], [NewsContent], [NewsPublishTime], [NewsClickCount], [NewsType]) VALUES (@NewsTitle, @NewsContent, @NewsPublishTime, @NewsClickCount, @NewsType);
+SELECT NewsID, NewsTitle, NewsContent, NewsPublishTime, NewsClickCount, NewsType FROM News WHERE (NewsID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsTitle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsContent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsContent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsPublishTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsPublishTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsClickCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[News] SET [NewsTitle] = @NewsTitle, [NewsContent] = @NewsContent, [NewsPublishTime] = @NewsPublishTime, [NewsClickCount] = @NewsClickCount, [NewsType] = @NewsType WHERE (([NewsID] = @Original_NewsID) AND ((@IsNull_NewsTitle = 1 AND [NewsTitle] IS NULL) OR ([NewsTitle] = @Original_NewsTitle)) AND ((@IsNull_NewsPublishTime = 1 AND [NewsPublishTime] IS NULL) OR ([NewsPublishTime] = @Original_NewsPublishTime)) AND ((@IsNull_NewsClickCount = 1 AND [NewsClickCount] IS NULL) OR ([NewsClickCount] = @Original_NewsClickCount)) AND ((@IsNull_NewsType = 1 AND [NewsType] IS NULL) OR ([NewsType] = @Original_NewsType)));
+SELECT NewsID, NewsTitle, NewsContent, NewsPublishTime, NewsClickCount, NewsType FROM News WHERE (NewsID = @NewsID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsTitle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsContent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsContent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsPublishTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsPublishTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsClickCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsID", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NewsTitle", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsTitle", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsTitle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NewsPublishTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsPublishTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsPublishTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsPublishTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NewsClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsClickCount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsClickCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsClickCount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NewsType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewsType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewsType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewsID", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 0, 0, "NewsID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1000,8 +998,8 @@ namespace DAL.NewsTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, NewsID, NewsTitle, NewsContent, NewsPublishTime, NewsClickCount, NewsT" +
-                "ype FROM dbo.News";
+            this._commandCollection[0].CommandText = "SELECT NewsID, NewsTitle, NewsContent, NewsPublishTime, NewsClickCount, NewsType " +
+                "FROM dbo.News";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1061,43 +1059,91 @@ namespace DAL.NewsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<long> NewsID, string NewsTitle, string NewsContent, global::System.Nullable<global::System.DateTime> NewsPublishTime, global::System.Nullable<int> NewsClickCount, global::System.Nullable<int> NewsType) {
-            if ((NewsID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((long)(NewsID.Value));
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(long Original_NewsID, string Original_NewsTitle, global::System.Nullable<global::System.DateTime> Original_NewsPublishTime, global::System.Nullable<int> Original_NewsClickCount, global::System.Nullable<int> Original_NewsType) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_NewsID));
+            if ((Original_NewsTitle == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_NewsTitle));
+            }
+            if ((Original_NewsPublishTime.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_NewsPublishTime.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NewsClickCount.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_NewsClickCount.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NewsType.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_NewsType.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string NewsTitle, string NewsContent, global::System.Nullable<global::System.DateTime> NewsPublishTime, global::System.Nullable<int> NewsClickCount, global::System.Nullable<int> NewsType) {
+            if ((NewsTitle == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((NewsTitle == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(NewsTitle));
+            }
+            if ((NewsContent == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NewsTitle));
-            }
-            if ((NewsContent == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(NewsContent));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NewsContent));
             }
             if ((NewsPublishTime.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(NewsPublishTime.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(NewsPublishTime.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((NewsClickCount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(NewsClickCount.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((NewsClickCount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(NewsClickCount.Value));
+            if ((NewsType.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(NewsType.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((NewsType.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(NewsType.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1113,6 +1159,99 @@ namespace DAL.NewsTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string NewsTitle, string NewsContent, global::System.Nullable<global::System.DateTime> NewsPublishTime, global::System.Nullable<int> NewsClickCount, global::System.Nullable<int> NewsType, long Original_NewsID, string Original_NewsTitle, global::System.Nullable<global::System.DateTime> Original_NewsPublishTime, global::System.Nullable<int> Original_NewsClickCount, global::System.Nullable<int> Original_NewsType, long NewsID) {
+            if ((NewsTitle == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(NewsTitle));
+            }
+            if ((NewsContent == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NewsContent));
+            }
+            if ((NewsPublishTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(NewsPublishTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((NewsClickCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(NewsClickCount.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((NewsType.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(NewsType.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_NewsID));
+            if ((Original_NewsTitle == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_NewsTitle));
+            }
+            if ((Original_NewsPublishTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_NewsPublishTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NewsClickCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_NewsClickCount.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NewsType.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_NewsType.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(NewsID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string NewsTitle, string NewsContent, global::System.Nullable<global::System.DateTime> NewsPublishTime, global::System.Nullable<int> NewsClickCount, global::System.Nullable<int> NewsType, long Original_NewsID, string Original_NewsTitle, global::System.Nullable<global::System.DateTime> Original_NewsPublishTime, global::System.Nullable<int> Original_NewsClickCount, global::System.Nullable<int> Original_NewsType) {
+            return this.Update(NewsTitle, NewsContent, NewsPublishTime, NewsClickCount, NewsType, Original_NewsID, Original_NewsTitle, Original_NewsPublishTime, Original_NewsClickCount, Original_NewsType, Original_NewsID);
         }
     }
     
