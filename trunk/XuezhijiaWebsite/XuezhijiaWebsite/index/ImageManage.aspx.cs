@@ -49,5 +49,19 @@ namespace XuezhijiaWebsite.Index
         {
             GridView_Image.EditIndex = -1;
         }
+
+        protected void CommitClick(object sender, EventArgs e)
+        {
+            INDEXIMAGE image = new INDEXIMAGE();
+            image.ImageHref = TextBox1.Text;
+            image.ImageSrc = TextBox2.Text;
+            image.ImageTitle = TextBox3.Text;
+            image.ImageAlt = TextBox4.Text;
+            (new IndexImageWrapper()).addAClassRecord(image);
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+        }
     }
 }
