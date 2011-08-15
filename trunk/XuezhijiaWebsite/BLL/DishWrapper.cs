@@ -86,12 +86,16 @@ namespace BLL
             return CommenHelper.GetInstance().getResultBySql(sql);
         }
 
+        public List<DISH> getFormatedResultByOwnerID(int id)
+        {
+            string sql = "select * from Dish where DishOwnerId = " + id.ToString();
+            return _transfer(CommenHelper.GetInstance().getResultBySql(sql));
+        }
         public List<DISH> getFormatedResultsByOwnerID(int id)
         {
             string sql = "select * from Dish where DishOwnerId = " + id.ToString();
             return _transfer(CommenHelper.GetInstance().getResultBySql(sql));
         }
-
         public void updateARecord(DISH dish)
         {
             Dish.DishDataTable table = new Dish.DishDataTable();

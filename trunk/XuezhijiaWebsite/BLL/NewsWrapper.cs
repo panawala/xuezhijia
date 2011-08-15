@@ -67,6 +67,11 @@ namespace BLL
             return _transfer(table).First();
         }
 
+        public void addLookCountByID(int id)
+        {
+            CommenHelper.GetInstance().update("update News set NewsClickCount = NewsClickCount + 1 where NewsID = " + id.ToString());
+        }
+
         public void updateARecord(NEWS news)
         {
             News.NewsDataTable table = new News.NewsDataTable();
