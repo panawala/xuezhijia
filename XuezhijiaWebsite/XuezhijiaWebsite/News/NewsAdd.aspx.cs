@@ -13,12 +13,10 @@ namespace XuezhijiaWebsite.News
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Add("type", 1);
         }
 
         protected void DropDownList_Type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["type"] = DropDownList_Type.SelectedIndex;
         }
 
 
@@ -29,7 +27,8 @@ namespace XuezhijiaWebsite.News
             news.NewsTitle = TextBox_Title.Text;
             news.NewsContent = CKEditor1.Text;
             news.NewsClickCount = 0;
-            news.NewsType = Convert.ToInt32(Session["type"].ToString());
+            news.NewsType = Convert.ToInt32(DropDownList_Type.SelectedValue);
+            (new NewsWrapper()).addAClassRecord(news);
         }
     }
 }

@@ -13,8 +13,8 @@
     新闻类型：
      <asp:DropDownList ID="DropDownList_Type" runat="server" AutoPostBack="True" 
             onselectedindexchanged="DropDownList_Type_SelectedIndexChanged">
-         <asp:ListItem>同济新闻</asp:ListItem>
-         <asp:ListItem>站内新闻</asp:ListItem>
+         <asp:ListItem Value="1">同济新闻</asp:ListItem>
+         <asp:ListItem Value="2">站内新闻</asp:ListItem>
         </asp:DropDownList>
         <br />
         新闻标题：
