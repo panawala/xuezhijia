@@ -127,6 +127,7 @@
 	</div>
 
     </form>
+        <div id="shade" name="shade" class="shade" style="height: 100%" ></div>
     </div>
 </body>
 </html>

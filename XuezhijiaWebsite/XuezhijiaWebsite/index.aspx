@@ -110,7 +110,7 @@
         $.ajax({
             type: "POST",
             url: "/WS/CommonService.asmx/getTopSixNewsByType",
-            data: "{id:'2'}",
+            data: "{type:'2'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             beforeSend: Loading, //执行ajax前执行loading函数.直到success 
@@ -138,7 +138,7 @@
         $.ajax({
             type: "POST",
             url: "/WS/CommonService.asmx/getTopSixNewsByType",
-            data: "{id:'1'}",
+            data: "{type:'1'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             beforeSend: Loading, //执行ajax前执行loading函数.直到success 
