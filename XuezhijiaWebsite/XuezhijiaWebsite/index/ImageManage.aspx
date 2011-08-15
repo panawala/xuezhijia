@@ -26,6 +26,29 @@
             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
         </asp:GridView>
     </div>
+    <p>
+    <asp:Label ID="Label2" runat="server" Text="图片连接"></asp:Label>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+    <asp:Label ID="Label3" runat="server" Text="图片地址"></asp:Label>
+    &nbsp;&nbsp;
+    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+&nbsp;&nbsp;
+    <asp:Label ID="Label4" runat="server" Text="标题"></asp:Label>
+    &nbsp;&nbsp;&nbsp;
+    <asp:TextBox ID="TextBox3"  runat="server"></asp:TextBox>
+    <br />
+    <br />
+    <asp:Label ID="Label5"  runat="server" Text="替换文字"></asp:Label>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:TextBox ID="TextBox4" Visible="false" runat="server"></asp:TextBox>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+    <asp:Button ID="Button1" runat="server" Text="提交" OnClick="CommitClick" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
     </form>
 </body>
 </html>
