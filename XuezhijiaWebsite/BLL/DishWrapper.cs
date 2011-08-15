@@ -60,6 +60,16 @@ namespace BLL
             helper.delete(sql);
         }
 
+        public void donwById(int id)
+        {
+            CommenHelper.GetInstance().update("update Dish set DishDownCount = DishDownCount + 1 where DishId = " + id.ToString());
+        }
+
+        public void upById(int id)
+        {
+            CommenHelper.GetInstance().update("update Dish set DishUpCount = DishUpCount + 1 where DishId = " + id.ToString());
+        }
+
         public DISH getResultByID(int id)
         {
             string sql = "select * from Dish where DishId = " + id.ToString();

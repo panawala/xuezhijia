@@ -64,6 +64,9 @@
     <Compile Include="IndexImageWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="NewsWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PhotoWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
