@@ -22,7 +22,7 @@
 			%>
 			<%="用户【"+Session["Username"]+"】"
 			%>
-				<a href="javascript:logout()">注销</a>
+				<a href="javascript:cancel_register()">注销</a>
 			<!-- else -->
 			<%
 				}else{
@@ -101,7 +101,7 @@
 		<div id="menubar" name="menubar">
 			<ul class="menu-list">
 				<li class="<%=CurrentMenu=="index"?"cu":"ncu" %>"><a href="/index.aspx">首页</a></li>
-				<li class="<%=CurrentMenu=="print"?"cu":"ncu" %>"><a href="">免费打印</a></li>
+				<li class="<%=CurrentMenu=="print"?"cu":"ncu" %>"><a href="/Print.aspx">免费打印</a></li>
 				<li class="<%=CurrentMenu=="car"?"cu":"ncu" %>"><a href="/Car/Carrental.aspx">汽车租赁</a></li>
 				<li class="<%=CurrentMenu=="hotel"?"cu":"ncu" %>"><a href="/Hotel/Hotelorder.aspx">宾馆预定</a></li>
 				<li class="<%=CurrentMenu=="sell"?"cu":"ncu" %>"><a href="/Takeout/Takeout.aspx">外卖信息</a></li>
