@@ -4,33 +4,43 @@
 <table style="width: 100%; border-collapse: collapse;" class="shlist">
         <tr class="head">
             <td style="width: 65px; text-align: left;">
-                发布时间
+                菜名
+            </td>
+            <td style="width: 90px;">
+                种类
             </td>
             <td style="width: 90px;">
                 价格
             </td>
-            <td style="width: 90px;">
-                查看次数
+            <td style="text-align: left;">
+                分数
             </td>
             <td style="text-align: left;">
-                二手出售
+            顶
+            </td>
+            <td style="text-align: left;">
+            踩
             </td>
         </tr>
-         {#foreach $T as SECONDHANDMARKET}
+         {#foreach $T as DISH}
         <tr class="ding">
             <td style="text-align: left; width: 80px;">
-                {$T.SECONDHANDMARKET.PublishDate}
-                
+                {$T.DISH.DishName}
             </td>
             <td>
-               { $T.SECONDHANDMARKET.Price }  万元
+               { $T.DISH.DishCatalog } 
             </td>
             <td>
-                { $T.SECONDHANDMARKET.LookCount }
+                { $T.DISH.Price }元
             </td>
-            <td style="text-align: left; white-space: normal;">
-                <a href="/Secondhand/shcommodity.aspx?id={ $T.SECONDHANDMARKET.SID }"> { $T.SECONDHANDMARKET.Tipical }</a>
-                {#if $T.SECONDHANDMARKET.HasImage}<i>图</i> {#/if}
+             <td>
+               { $T.DISH.DishScore } 
+            </td>
+            <td>
+                <a href="javascript:ding( {$T.DISH.DishId})">顶</a> ({ $T.DISH.DishUpCount })
+            </td>
+              <td>
+                <a href="javascript:cai( {$T.DISH.DishId})">踩</a>({ $T.DISH.DishDownCount })
             </td>
         </tr>
           {#/for}

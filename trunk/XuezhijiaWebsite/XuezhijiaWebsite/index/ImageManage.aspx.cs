@@ -15,21 +15,26 @@ namespace XuezhijiaWebsite.Index
         {
             if (!IsPostBack)
             {
-                GridView_Image.DataSource = (new IndexImageWrapper()).getall();
-                GridView_Image.DataBind();
+                Bind();
             }
         }
 
+        private void Bind()
+        {
+            GridView_Image.DataSource = (new IndexImageWrapper()).getall();
+            GridView_Image.DataKeyNames = new string[] { "ID" };//主键
+            GridView_Image.DataBind();
+        }
         protected void GridView_Image_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             (new IndexImageWrapper()).deleteARecordByID(Convert.ToInt32(GridView_Image.DataKeys[e.RowIndex].Value.ToString()));
-            GridView_Image.DataBind();
+            Bind();
         }
 
         protected void GridView_Image_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView_Image.EditIndex = e.NewEditIndex;
-
+            Bind();
         }
 
         protected void GridView_Image_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -37,17 +42,19 @@ namespace XuezhijiaWebsite.Index
          
             INDEXIMAGE indeximage = new INDEXIMAGE();
             indeximage.ID = Convert.ToInt32(GridView_Image.DataKeys[e.RowIndex].Value.ToString());
+            indeximage.ImageHref = ((TextBox)(GridView_Image.Rows[e.RowIndex].Cells[0].Controls[0])).Text.ToString().Trim();
             indeximage.ImageSrc = ((TextBox)(GridView_Image.Rows[e.RowIndex].Cells[1].Controls[0])).Text.ToString().Trim();
             indeximage.ImageTitle = ((TextBox)(GridView_Image.Rows[e.RowIndex].Cells[2].Controls[0])).Text.ToString().Trim();
-            indeximage.ImageTitle = ((TextBox)(GridView_Image.Rows[e.RowIndex].Cells[3].Controls[0])).Text.ToString().Trim();
-            (new IndexImageWrapper()).addAClassRecord(indeximage);
-            GridView_Image.DataSource = (new IndexImageWrapper()).getall();
-            GridView_Image.DataBind();
+            indeximage.ImageAlt = ((TextBox)(GridView_Image.Rows[e.RowIndex].Cells[3].Controls[0])).Text.ToString().Trim();
+            (new IndexImageWrapper()).updateARecord(indeximage);
+            GridView_Image.EditIndex = -1;
+            Bind();
         }
 
         protected void GridView_Image_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GridView_Image.EditIndex = -1;
+            Bind();
         }
 
         protected void CommitClick(object sender, EventArgs e)
@@ -62,6 +69,7 @@ namespace XuezhijiaWebsite.Index
             TextBox2.Text = "";
             TextBox3.Text = "";
             TextBox4.Text = "";
+            Bind();
         }
     }
 }

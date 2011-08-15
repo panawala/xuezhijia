@@ -1,0 +1,8 @@
+﻿<ul class="newsindex">
+    {#if $T.length==0}
+    <div>
+        No Data.</div>
+    {#else} {#foreach $T as NEWS}
+    <li><a href="/News/NewsList.aspx?id={ $T.NEWS.NewsID }" target="_self">{ $T.NEWS.NewsTitle}</a><i>{ $T.NEWS.NewsPublishTime }</i></li>
+    {#/for}
+</ul>
