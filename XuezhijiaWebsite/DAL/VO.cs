@@ -81,7 +81,7 @@ namespace DAL
         public int PageCount;
         public Guid Pseudonym;
         public string DateTime;
-        public string state;
+        public string State;
         public string Comment;
     }
 

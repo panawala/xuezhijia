@@ -30,7 +30,7 @@
                 <asp:BoundField DataField="TName" HeaderText="姓名" SortExpression="TName" />
                 <asp:BoundField DataField="ConnectionInformation" HeaderText="联系方式" SortExpression="ConnectionInformation" />
                 <asp:BoundField DataField="AdvantageSubjects" HeaderText="擅长科目" SortExpression="AdvantageSubjects" />
-                <asp:BoundField DataField="Comment" HeaderText="包车价格" SortExpression="Comment" />
+                <asp:BoundField DataField="Comment" HeaderText="备注" SortExpression="Comment" />
             </Columns>
     </asp:GridView>
     <br />

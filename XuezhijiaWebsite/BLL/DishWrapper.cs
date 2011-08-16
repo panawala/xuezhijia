@@ -116,5 +116,10 @@ namespace BLL
             }
             Update(table);
         }
+
+        public void deleResultByOwnerID(int id)
+        {
+            CommenHelper.GetInstance().delete("delete from Dish where DishOwnerId = " + id.ToString());
+        }
     }
 }

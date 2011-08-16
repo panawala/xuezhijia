@@ -130,6 +130,7 @@ namespace XuezhijiaWebsite
                 hotel.Price = TextBox5.Text;
                 hotel.HotelID = id;
                 hotel.PID = tmp.PID;
+                hotel.PIDList = tmp.PIDList;
                 if (Upload.FileName.Length > 0)
                 {
                     PhotoWrapper photowrapper = new PhotoWrapper();

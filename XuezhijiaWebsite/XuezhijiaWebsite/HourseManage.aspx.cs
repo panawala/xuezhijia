@@ -40,6 +40,7 @@ namespace XuezhijiaWebsite
         {
             RentHourseWrapper wrapper = new RentHourseWrapper();
             wrapper.deleteARecordByID(id);
+            PostInit();
             InitPage();
         }
 

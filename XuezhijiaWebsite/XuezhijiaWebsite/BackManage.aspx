@@ -44,6 +44,11 @@
     <br />
     <asp:LinkButton ID="LinkButton10" Text="二手市场管理" runat="server" OnClick="SecondHandMarktClick"></asp:LinkButton>
     <br />
+
+     <br />
+    <asp:LinkButton ID="LinkButton11" Text="右边栏内容编辑" runat="server" OnClick="RightEditClick"></asp:LinkButton>
+    <br />
+
     </form>
 </body>
 </html>

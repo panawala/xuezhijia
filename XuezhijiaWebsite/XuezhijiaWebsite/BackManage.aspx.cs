@@ -16,7 +16,7 @@ namespace XuezhijiaWebsite
 
         protected void PrintClick(object sender, EventArgs e)
         {
-            Response.Redirect("PrintManage.aspx");
+            Response.Redirect("Print.aspx");
         }
 
         protected void CarClick(object sender, EventArgs e)
@@ -62,6 +62,11 @@ namespace XuezhijiaWebsite
         protected void SecondHandMarktClick(object sender, EventArgs e)
         {
             Response.Redirect("SecondHandMarketManage.aspx");
+        }
+
+        protected void RightEditClick(object sender, EventArgs e)
+        {
+            Response.Redirect("EditAds.aspx");
         }
     }
 }

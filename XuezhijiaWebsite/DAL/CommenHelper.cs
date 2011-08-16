@@ -62,7 +62,7 @@ namespace DAL
 
             public void delete(string sql)
             {
-
+                initOle();
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.DeleteCommand = new SqlCommand(sql, myConn);
                 adapter.DeleteCommand.ExecuteNonQuery();
