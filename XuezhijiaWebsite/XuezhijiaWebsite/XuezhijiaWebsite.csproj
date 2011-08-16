@@ -324,8 +324,12 @@
     <Content Include="House\HouseCheck.aspx" />
     <Content Include="House\housechecktemplate.htm" />
     <Content Include="House\housetemplate.htm" />
+    <Content Include="Image\22.jpg" />
+    <Content Include="Image\3333.jpg" />
+    <Content Include="Image\backg.jpg" />
     <Content Include="Image\bg_warn.gif" />
     <Content Include="Image\head_bg.jpg" />
+    <Content Include="Image\head_bgq.jpg" />
     <Content Include="Image\home_icon.png" />
     <Content Include="Image\index_body.jpg" />
     <Content Include="Image\menu.gif" />

@@ -66,7 +66,7 @@
          $.ajax({
              type: "POST",
              url: "/WS/CommonService.asmx/getArticleByID",
-             data: "{id:'11'}",
+             data: "{id:'10'}",
              contentType: "application/json; charset=utf-8",
              dataType: "json",
              beforeSend: Loadingnav, //执行ajax前执行loading函数.直到success 
