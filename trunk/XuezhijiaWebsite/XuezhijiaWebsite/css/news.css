@@ -13,9 +13,27 @@
 	width:810px;
 	height:inherit;
 	border: 1px solid #85AFEC;
-	background: #E4EDFA;
+	background: White;
 	overflow:hidden;
 	min-height:600px;
 	float:left;
 	margin-bottom:20px;
+}
+
+h1 {
+font-size: 22px;
+font-weight: bold;
+margin: 35px auto 20px;
+text-align: center;
+clear: both;
+display: block;
+}
+
+#msg {
+font-size: 12px;
+text-align: center;
+background: #F1F1F1;
+color: #919191;
+width:90%;
+margin: 0 auto;
 }

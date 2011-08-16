@@ -4,7 +4,7 @@
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/index.css" rel="stylesheet" type="text/css" />
-    <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+
     <script src="Scripts/jtemplates.js" type="text/javascript"></script>
     <script type="text/javascript">
         var t = n = 0, count;

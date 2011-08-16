@@ -59,3 +59,16 @@
 	color:Green;
 	text-decoration: underline;
 }*/
+
+.infoinput
+{
+	width:200px;
+	border:1px solid #85AFEC;
+}
+
+.errinfoput
+{
+	width:200px;
+	border:1px solid Red;
+	background:#C5EC83;
+}

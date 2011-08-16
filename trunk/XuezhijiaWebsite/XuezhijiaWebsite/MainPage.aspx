@@ -10,6 +10,30 @@
 <link type="text/css" rel="stylesheet" href="css/globalStyles.css" />
 <script src="js/user_log.js" language="javascript"></script>
 
+<script type="text/javascript">
+    var checkcount = true;
+    function CheckForm() {
+        $(".must").each(function () {
+            if ($(this).val() == undefined || $(this).val() == "") {
+                $(this).removeClass("infoinput");
+                $(this).addClass("errinfoput");
+                checkcount = false;
+                return false;
+            }
+            else {
+                $(this).removeClass("errinfoput");
+                $(this).addClass("infoinput");
+                checkcount = true;
+                return true;
+            }
+
+        });
+        return checkcount;
+    }
+
+
+</script>
+
 </head>
 
 <body>
@@ -50,7 +74,7 @@
 				<ul class="register-info">
 					<li>
 						<label>用户名：</label>
-						<asp:TextBox ID="NewName" runat="server"></asp:TextBox>
+						<asp:TextBox ID="NewName" runat="server"  CssClass="must"></asp:TextBox>
 						<span></span>
 					</li>
 					<li>
@@ -70,12 +94,12 @@
 					</li>
 					<li>
 						<label>邮箱：</label>
-						<asp:TextBox ID="NewEmail" runat="server"></asp:TextBox>
+						<asp:TextBox ID="NewEmail" runat="server"  CssClass="must"></asp:TextBox>
 						<span></span>
 					</li>
 					<li>
 						<label>手机：</label>
-						<asp:TextBox ID="NewTel" runat="server"></asp:TextBox>
+						<asp:TextBox ID="NewTel" runat="server"  CssClass="must"></asp:TextBox>
 						<span></span>
 					</li>
 					<li>
@@ -89,7 +113,7 @@
 						<span></span>
 					</li>
 					<li>
-						<asp:LinkButton ID="ConfirmRegister" runat="server" Text="确认" OnClick="CommitRegister" />
+						<asp:LinkButton ID="ConfirmRegister" runat="server" Text="确认" OnClick="CommitRegister" OnClientClick="javascript:CheckForm();"/>
 						<a href="javascript:cancel_register()">取消</a>
 					</li>
 				</ul>
