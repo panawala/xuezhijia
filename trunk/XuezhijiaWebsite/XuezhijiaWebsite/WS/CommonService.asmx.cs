@@ -155,5 +155,19 @@ namespace XuezhijiaWebsite.WS
         {
             return (new NewsWrapper()).getResultByID(id);
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void dishDownByID(int id)
+        {
+            (new DishWrapper()).donwById(id);
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void dishUByID(int id)
+        {
+            (new DishWrapper()).upById(id);
+        }
     }
 }
