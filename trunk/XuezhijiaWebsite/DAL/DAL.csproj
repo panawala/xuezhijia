@@ -70,7 +70,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dish.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FileRecords.Designer.cs">
+    <Compile Include="FileRecords1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FileRecords.xsd</DependentUpon>
@@ -210,9 +210,9 @@
       <DependentUpon>FileRecords.xsd</DependentUpon>
     </None>
     <None Include="FileRecords.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FileRecords.Designer.cs</LastGenOutput>
+      <LastGenOutput>FileRecords1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="FileRecords.xss">
       <DependentUpon>FileRecords.xsd</DependentUpon>
@@ -302,9 +302,9 @@
       <DependentUpon>Shop.xsd</DependentUpon>
     </None>
     <None Include="Shop.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Shop.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Shop.xss">
       <DependentUpon>Shop.xsd</DependentUpon>

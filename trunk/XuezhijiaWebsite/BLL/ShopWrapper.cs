@@ -70,24 +70,10 @@ namespace BLL
 
         public void updateARecord(SHOP shop)
         {
-            Shop.ShopDataTable table = new Shop.ShopDataTable();
-            table = GetData();
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                if (Convert.ToInt32(table.Rows[i]["ShopId"].ToString()) == shop.ShopId)
-                {
-                    table.Rows[i]["ShopName"] = shop.ShopName;
-                    table.Rows[i]["ShopContactWay"] = shop.ShopContactWay;
-                    table.Rows[i]["ShopAddress"] = shop.ShopAddress;
-                    table.Rows[i]["ShopScore"] = shop.ShopScore;
-                    table.Rows[i]["ShopDistrictId"] = shop.ShopDistrictId;
-                    table.Rows[i]["ShopClickedCount"] = shop.ShopClickedCount;
-                    table.Rows[i]["Comment"] = shop.Comment;
-                    table.Rows[i]["PID"] = shop.PID;
-                    break;
-                }
-            }
-            Update(table);
+            string sql = "update Shop set ShopName = '" + shop.ShopName + "', ShopContactWay = '" + shop.ShopContactWay + "', ShopAddress = '" +
+                         shop.ShopAddress + "', ShopScore = " +  shop.ShopScore.ToString() + ", ShopDistrictId = '" + shop.ShopDistrictId + "', ShopClickedCount = " + shop.ShopClickedCount.ToString() +
+                         ", Comment = '" + shop.Comment + "', PID = " + shop.PID.ToString() + " where ShopId = " + shop.ShopId.ToString();
+            CommenHelper.GetInstance().update(sql);
         }
     }
 }

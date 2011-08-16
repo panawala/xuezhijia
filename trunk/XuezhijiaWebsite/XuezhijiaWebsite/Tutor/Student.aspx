@@ -20,7 +20,7 @@
 效果好。超过50万商家已使用
 付费推广。
 <p style="text-align:right;margin-right:2px;"><a href="/Tutor/TutorAdd.aspx">我要当老师</a></p>
-<p style="text-align:right;margin-right:2px;"><a href="/Tutor/Tutor.aspx">我要找老师</a></p>
+
 
 </div>
 </div>

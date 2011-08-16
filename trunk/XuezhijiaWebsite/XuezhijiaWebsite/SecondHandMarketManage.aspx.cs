@@ -86,6 +86,8 @@ namespace XuezhijiaWebsite
             TextBox4.Visible = true;
             TextBox5.Visible = true;
             TextBox7.Visible = true;
+            TextBox8.Visible = true;
+            TextBox9.Visible = true;
 
             Button1.Visible = true;
 
@@ -104,7 +106,11 @@ namespace XuezhijiaWebsite
         {
             SecondHMWrapper wrapper = new SecondHMWrapper();
             SECONDHANDMARKET secondhandmarket = new SECONDHANDMARKET();
-            secondhandmarket.SID = Convert.ToInt32(Session["SID"].ToString());
+            int sid = Convert.ToInt32(Session["SID"].ToString());
+            SECONDHANDMARKET secondhandmarkettmp = new SECONDHANDMARKET();
+            secondhandmarkettmp = wrapper.getRecordByID(sid);
+
+            secondhandmarket.SID = sid;
             secondhandmarket.Tipical = TextBox1.Text;
             secondhandmarket.Type = TextBox2.Text;
             secondhandmarket.LookCount = Convert.ToInt32(TextBox3.Text);
@@ -113,7 +119,11 @@ namespace XuezhijiaWebsite
             secondhandmarket.Comment = TextBox7.Text;
             secondhandmarket.Location = TextBox8.Text;
             secondhandmarket.ContactInformation = TextBox9.Text;
+            secondhandmarket.HasImage = secondhandmarkettmp.HasImage;
+            secondhandmarket.PIDList = secondhandmarkettmp.PIDList;
+            secondhandmarket.Brand = secondhandmarkettmp.Brand;
             wrapper.updateARecord(secondhandmarket);
+            Session.Remove("SID");
             PostInit();
             InitPage();
         }

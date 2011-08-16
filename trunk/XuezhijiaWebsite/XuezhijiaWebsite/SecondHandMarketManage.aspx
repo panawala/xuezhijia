@@ -33,7 +33,7 @@
                 <asp:BoundField DataField="PublishDate" HeaderText="发布时间" SortExpression="PublishDate" />
                 <asp:BoundField DataField="Location" HeaderText="交易地点" SortExpression="Location" />
                 <asp:BoundField DataField="Price" HeaderText="价格" SortExpression="Price" />
-               <asp:BoundField DataField="PhotoList" HeaderText="图片列表" SortExpression="PIDList" />
+               <asp:BoundField DataField="ContactInformation" HeaderText="联系信息" SortExpression="ContactInformation" />
             </Columns>
     </asp:GridView>
     <br />

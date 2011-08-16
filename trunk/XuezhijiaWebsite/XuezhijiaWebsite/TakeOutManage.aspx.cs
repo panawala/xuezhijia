@@ -32,12 +32,6 @@ namespace XuezhijiaWebsite
             Shops.DataBind();
         }
 
-
-        protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-
-        }
-
         protected void DeleteClick(int id)
         {
             ShopWrapper wrapper = new ShopWrapper();
@@ -45,8 +39,16 @@ namespace XuezhijiaWebsite
             shop = wrapper.getResultByID(id);
             PhotoWrapper photowrpper = new PhotoWrapper();
             photowrpper.deleteARecord(shop.PID);
+            DishWrapper dishwrapper = new DishWrapper();
+            dishwrapper.deleResultByOwnerID(id);
             wrapper.deleteARecordByID(id);
+            PostInit();
             InitPage(); 
+        }
+
+        protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
         }
 
         protected void DishCheck(int id)
@@ -247,6 +249,14 @@ namespace XuezhijiaWebsite
             LabelComment.Visible = true;
             Comment.Visible = true;
             Button1.Visible = true;
+
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox5.Text = "";
+            TextBox6.Text = "";
+            TextBox7.Text = "";
         }
 
         protected void Shops_SelectedIndexChanged(object sender, EventArgs e)

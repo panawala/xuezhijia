@@ -93,7 +93,6 @@ namespace XuezhijiaWebsite
             row.FileName = filename;
             row.Size = "";
             row.PageCount = 6;
-            row.Pseudonym = new Guid();
             FileRecordWrapper wrapper = new FileRecordWrapper();
             int Rid = helper.getIdent("FileRecords");
             filename = Server.MapPath("UploadFile") + "\\" + Session["Username"].ToString() + Rid.ToString() + LoadFile.FileName;
