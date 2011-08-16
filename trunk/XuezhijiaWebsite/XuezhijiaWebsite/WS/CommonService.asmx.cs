@@ -165,7 +165,7 @@ namespace XuezhijiaWebsite.WS
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public void dishUByID(int id)
+        public void dishUpByID(int id)
         {
             (new DishWrapper()).upById(id);
         }

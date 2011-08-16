@@ -3,28 +3,28 @@
 {#else}
 <table style="width: 100%; border-collapse: collapse;" class="shlist">
         <tr class="head">
-            <td style="width: 65px; text-align: left;">
+             <td style="text-align: left;">
                 菜名
             </td>
-            <td style="width: 90px;">
+            <td style="text-align: left;">
                 种类
             </td>
-            <td style="width: 90px;">
+            <td style="text-align: left;">
                 价格
             </td>
             <td style="text-align: left;">
                 分数
             </td>
-            <td style="text-align: left;">
+            <td style="text-align: left;width:50px;">
             顶
             </td>
-            <td style="text-align: left;">
+           <td style="text-align: left;width:50px;">
             踩
             </td>
         </tr>
          {#foreach $T as DISH}
         <tr class="ding">
-            <td style="text-align: left; width: 80px;">
+            <td style="text-align: left;">
                 {$T.DISH.DishName}
             </td>
             <td>
@@ -36,11 +36,11 @@
              <td>
                { $T.DISH.DishScore } 
             </td>
-            <td>
-                <a href="javascript:ding( {$T.DISH.DishId})">顶</a> ({ $T.DISH.DishUpCount })
+            <td style="text-align: left;width:50px;">
+                <a href="javascript:ding( {$T.DISH.DishId})">顶</a> <div style="float:right;">({ $T.DISH.DishUpCount })</div>
             </td>
-              <td>
-                <a href="javascript:cai( {$T.DISH.DishId})">踩</a>({ $T.DISH.DishDownCount })
+            <td style="text-align: left;width:50px;">
+                <a href="javascript:cai( {$T.DISH.DishId})">踩</a><div style="float:right;">({ $T.DISH.DishDownCount })</div>
             </td>
         </tr>
           {#/for}

@@ -302,6 +302,7 @@
     <Content Include="css\secondhandadd.css" />
     <Content Include="css\sencondhand.css" />
     <Content Include="css\shop.css" />
+    <Content Include="css\star.css" />
     <Content Include="css\student.css" />
     <Content Include="css\takeout.css" />
     <Content Include="css\takeoutdish.css" />
@@ -333,6 +334,7 @@
     <Content Include="Image\p3.jpg" />
     <Content Include="Image\p4.jpg" />
     <Content Include="Image\p1.jpg" />
+    <Content Include="Image\star_rating.gif" />
     <Content Include="Image\test.jpg" />
     <Content Include="Image\topbg.gif" />
     <Content Include="index.aspx" />
