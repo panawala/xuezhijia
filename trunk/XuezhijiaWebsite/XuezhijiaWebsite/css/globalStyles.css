@@ -4,8 +4,13 @@
 body, form, h1, h2, h3, h4 {
 margin: 0px;
 padding: 0px;
+background: RGB(243,250,255);
 }
 
+h3
+{ 
+	background: #A9CBEE;
+}
 /* WHOLE PAGE */
 .pageframe {
 	width: 1024px;
@@ -26,7 +31,8 @@ padding: 0px;
 .pagehead {
 	width: 100%;
 	height: 110px;
-	background:url(../Image/head_bg.jpg);
+	/*background:url(../Image/head_bg.jpg);*/
+	background:url(../Image/head_bgq.jpg);
 	/*border: 1px black solid; */
 }
 
@@ -169,7 +175,7 @@ padding: 0;
 .right_nav 
 {
 border: 1px solid #85AFEC;
-background: #E4EDFA;
+background: #FAFAFA;
 padding: 0px;
 overflow: hidden;
 width: 200px;
