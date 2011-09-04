@@ -34,6 +34,7 @@
                 <asp:BoundField DataField="MaxNumber" HeaderText="最大上课人数" SortExpression="MaxNumber" />
                 <asp:BoundField DataField="Comment" HeaderText="备注" SortExpression="Comment" />
                 <asp:BoundField DataField="TName" HeaderText="上课老师" SortExpression="TName" />
+                <asp:BoundField DataField="Price" HeaderText="价格" SortExpression="Price" />
             </Columns>
     </asp:GridView>
     <br />
@@ -58,6 +59,11 @@
     <asp:Label ID="Label6" Visible="false" runat="server" Text="最大上课人数"></asp:Label>
     &nbsp;&nbsp;
     <asp:TextBox ID="TextBox5" Visible="false" runat="server"></asp:TextBox>
+&nbsp;&nbsp;<br />
+    <br />
+    <asp:Label ID="Label11" Visible="false" runat="server" Text="价格"></asp:Label>
+    &nbsp;&nbsp;
+    <asp:TextBox ID="TextBox8" Visible="false" runat="server"></asp:TextBox>
 &nbsp;&nbsp;<br />
     <br />
     <asp:Label ID="Label7" Visible="false" runat="server" Text="老师"></asp:Label>

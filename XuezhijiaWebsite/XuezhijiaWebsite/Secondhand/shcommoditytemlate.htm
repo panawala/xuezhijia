@@ -19,7 +19,7 @@
 <td class="short"><label>查看次数：</label><span id="counter">  { $T.LookCount }</span></td>
 </tr>
 <tr>
-<td class="short"><label>类目：</label><a target="_blank" href="http://xuchang.baixing.com/ershouqiche/">{ $T.Type }</a></td>
+<td class="short"><label>类目：</label>{ $T.Type }</td>
 <td class="short"><label>价格：</label>{ $T.Price }万元<div id="barginBtn" style="display:inline"><label id="expsFollow" class="actBtn Off" style="font-size:14px;padding: 2px 6px;border: none;"></label></div></td>
 </tr>
 
@@ -31,11 +31,11 @@
 <br />
 <br />
 联系方式：<span id="callmeBtn" class="followMob">{ $T.ContactInformation }</span><br>
-打电话给我时，请一定说明在百姓网看到的，谢谢！</p>
+
 
 
 {#foreach $T.PIDList as int}
- <a><img src="/Common/ShowPhoto.ashx?id={$T.int}" alt="转让单位99年黑色普桑 - 1.8万元的图片" class="img" /></a>
+ <a><img src="/Common/ShowPhoto.ashx?id={$T.int}" alt="{$T.Tipical} " class="img" /></a>
    {#/for}
    <div style="clear:both;"></div>
 </div>

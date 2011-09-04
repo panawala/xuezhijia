@@ -30,31 +30,7 @@
 </div>
 
 
-<div class="second_right_nav">
-<div class="block">
-<div class="title">商家推广</div>
-<div class="b">
-11付费推广，投入少
-效果好。超过50万商家已使用
-付费推广。
-<p style="text-align:right;margin-right:2px;"><a href="http://www.baixing.com/pay/entrance/?src=listing">我要推广</a></p>
-</div>
-</div>
-
-<div class="blank10"></div>
-<div class="blank10"></div>
-
-<div class="block">
-<div class="b">
-<a href="http://www.baixing.com/mkt/spread/intro/?src=listing" target="_blank">百姓联盟，实实在在赚点钱</a>
-
-<a href="http://www.baixing.com/pay/?city=xuchang&amp;serviceType=53&amp;src=listSide" target="_blank" style="color:red">开通车商店铺，免费刷新！</a>
-<p><a href="http://bbs.baixing.com/viewthread.php?tid=967171&amp;extra=page%3D1&amp;frombbs=1" target="_blank"><span style="color:red;">"二手车团购"活动招商啦</span></a></p>
-<p><a href="http://shanghai.baixing.com/ershouqiche/?query=%E4%B8%8B%E7%BA%BF%E8%BD%A6" target="_blank"><span style="color:red;">上海低价下线车</span></a></p>
-<p>提醒：不要提前转账或汇款！ </p>
-</div>
-</div>
-
+<div class="right_nav" id="right_nav">
 
 </div>
 <div style="clear:both;"></div>
@@ -87,5 +63,41 @@
 
     }
     </script>
+
+
+     <script type="text/javascript">
+
+         $.ajax({
+             type: "POST",
+             url: "/WS/CommonService.asmx/getArticleByID",
+             data: "{id:'13'}",
+             contentType: "application/json; charset=utf-8",
+             dataType: "json",
+             beforeSend: Loadingnav, //执行ajax前执行loading函数.直到success 
+             success: Successnav,
+             error: Error
+         });
+
+         function Error() {
+             alert("error");
+         }
+         //加载中的状态
+         function Loadingnav() {
+             $('#right_nav').html('<img src="/Image/loader.gif"/>');
+         }
+         //加载成功
+         function Successnav(data, status) {
+             //在0s内将透明度设为0
+             $("#right_nav").fadeTo(0.001, 0);
+             $("#right_nav").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
+
+             $("#right_nav").processTemplate(data.d);
+             //在1s内将透明度设为1
+             $("#right_nav").fadeTo(1000, 1);
+
+         }
+    </script>
+
+
 
 </asp:Content>
