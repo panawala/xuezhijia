@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL;
 
 namespace XuezhijiaWebsite.House
 {
@@ -12,6 +13,8 @@ namespace XuezhijiaWebsite.House
         protected void Page_Load(object sender, EventArgs e)
         {
             ((MasterPage)Master).CurrentMenu = "house";
+            (new RentHourseWrapper()).CheckARecordByID(Convert.ToInt32(Request.QueryString["id"]));
+
         }
     }
 }

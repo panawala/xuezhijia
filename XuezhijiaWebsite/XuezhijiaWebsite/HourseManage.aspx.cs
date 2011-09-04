@@ -126,7 +126,7 @@ namespace XuezhijiaWebsite
                 renthourse.Area = Convert.ToDouble(TextBox5.Text);
                 renthourse.Configuration = TextBox6.Text;
                 renthourse.ClickCount = Convert.ToInt32(TextBox7.Text);
-                renthourse.DistributeTime = TextBox7.Text;
+                renthourse.DistributeTime = TextBox8.Text;
                 wrapper.addAClassRecord(renthourse);
             }
             PostInit();
