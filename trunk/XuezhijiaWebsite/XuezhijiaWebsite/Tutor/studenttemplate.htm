@@ -2,7 +2,7 @@
 <div>No Data.</div>
 {#else}
 <table style="width: 810px; border-collapse: collapse;" class="shlist">
-        <tr class="head">
+        <tr class="head" >
             <td style="width: 30px; text-align: left;">
                 性别
             </td>
@@ -20,7 +20,7 @@
             </td>
         </tr>
          {#foreach $T as STUDENT}
-        <tr class="ding">
+        <tr class="ding" bgcolor="{#cycle values=['#AAAAEE','#CCCCFF']}">
             <td style="text-align: left; width: 80px;">
                 {$T.STUDENT.SName}
                 
