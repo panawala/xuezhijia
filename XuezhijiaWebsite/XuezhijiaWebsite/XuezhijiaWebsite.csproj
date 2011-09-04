@@ -346,6 +346,7 @@
     <Content Include="IndexImage\p2.jpg" />
     <Content Include="IndexImage\p3.jpg" />
     <Content Include="IndexImage\p4.jpg" />
+    <Content Include="IndexImage\zuche.jpg" />
     <Content Include="Index\ImageManage.aspx" />
     <Content Include="Index\schooltemplate.htm" />
     <Content Include="Index\webtemplate.htm" />

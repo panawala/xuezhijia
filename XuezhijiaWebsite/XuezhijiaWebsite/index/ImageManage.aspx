@@ -47,7 +47,7 @@
     <p>
         &nbsp;</p>
     <p>
-    <asp:Button ID="Button1" runat="server" Text="提交" OnClick="CommitClick" />
+    <asp:Button ID="Button1" runat="server" Text="增加" OnClick="CommitClick" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
     </form>
 </body>
