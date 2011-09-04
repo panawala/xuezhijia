@@ -16,7 +16,7 @@ namespace XuezhijiaWebsite
 
         protected void PrintClick(object sender, EventArgs e)
         {
-            Response.Redirect("Print.aspx");
+            Response.Redirect("PrintManage.aspx");
         }
 
         protected void CarClick(object sender, EventArgs e)
