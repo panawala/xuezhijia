@@ -8,23 +8,52 @@
     <script src="/js/user_log.js" type="text/javascript"></script>
     <script src="/Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script type="text/javascript">
-        var checkcount = true;
-        function CheckForm() {
-            $(".register-info input").each(function () {
-                if ($(this).val() == undefined || $(this).val() == "") {
-                    $(this).removeClass("infoinput");
-                    $(this).addClass("errinfoput");
-                    checkcount = false;
-                    return false;
-                }
-                else {
-                    $(this).removeClass("errinfoput");
-                    $(this).addClass("infoinput");
-                    checkcount = true;
-                    return true;
+
+        function checkUser(username) {
+            $.ajax({
+                type: "POST",
+                url: "/WS/CommonService.asmx/UserExist",
+                data: "{user:'" + username + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    if (result.d == "success")
+                        return true;
+                    else
+                        return false;
                 }
             });
-            return checkcount;
+            return false;
+        }
+
+        var checkcount = true;
+        function CheckForm() {
+            var username = $("#NewName").attr("value");
+            alert(username);
+            if (checkUser(username)) {
+                $(".register-info input").each(function () {
+                    if ($(this).val() == undefined || $(this).val() == "") {
+                        $(this).removeClass("infoinput");
+                        $(this).addClass("errinfoput");
+                        checkcount = false;
+                        return false;
+                    }
+                    else {
+                        $(this).removeClass("errinfoput");
+                        $(this).addClass("infoinput");
+                        checkcount = true;
+                        return true;
+                    }
+                });
+                return checkcount;
+            }
+            else {
+                alert("用户名已存在");
+                return false;
+            }
+
+
+            
         }
 
 

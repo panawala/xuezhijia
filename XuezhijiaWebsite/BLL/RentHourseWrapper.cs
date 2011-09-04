@@ -60,7 +60,7 @@ namespace BLL
             helper.delete(sql);
         }
 
-        public RENTHOURSE getResultByID(int id)
+        public RENTHOURSE getRentHouseByID(int id)
         {
             string sql = "select * from RentHourse where HourseID = " + id.ToString();
             DataTable table = new DataTable();

@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Hotelcommodity.aspx.cs" Inherits="XuezhijiaWebsite.Hotel.Hotelcommodity" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="TrainCourse.aspx.cs" Inherits="XuezhijiaWebsite.Train.TrainCourse" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   <link href="../css/hotel.css" rel="stylesheet" type="text/css" />
+<link href="../css/train.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -21,11 +21,12 @@
             }
         }
     </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="hotelnav">二手市场</div>
-<div id="hotelcontent" class="hotel">
+<div class="trainnav">二手市场</div>
+<div id="traincontent" class="train">
 </div>
 
 
@@ -62,8 +63,8 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getResultByID",
-        data: "{id:" + request("id") + "}",
+        url: "/WS/CommonService.asmx/getCourseById",
+        data: "{id:" + $.trim(request("id")) + "}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         beforeSend: Loading, //执行ajax前执行loading函数.直到success 
@@ -73,19 +74,18 @@
 
     //加载中的状态
     function Loading() {
-        $('#hotelcontent').html('<img src="/Image/loader.gif"/>');
+        $('#traincontent').html('<img src="/Image/loader.gif"/>');
     }
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#hotelcontent").fadeTo(0.001, 0);
-        $("#hotelcontent").setTemplateURL('../hotel/hotelcommoditytemplate.htm');
-        $('#hotelcontent').processTemplate(data.d);
+        $("#traincontent").fadeTo(0.001, 0);
+        $("#traincontent").setTemplateURL('../Train/traincoursetemplate.htm');
+        $('#traincontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#hotelcontent").fadeTo(1000, 1);
+        $("#traincontent").fadeTo(1000, 1);
 
     }
     </script>
 
 </asp:Content>
-

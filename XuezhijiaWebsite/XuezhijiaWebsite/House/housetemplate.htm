@@ -4,7 +4,7 @@
 <table style="width: 100%; border-collapse: collapse;" class="shlist">
         <tr class="head">
             <td style="width: 65px; text-align: left;">
-                发布时间
+                名称
             </td>
             <td style="width: 90px;">
                 价格
@@ -19,13 +19,13 @@
                租赁方式
             </td>
             <td style="text-align: left;">
-               查看
+               发布时间
             </td>
         </tr>
          {#foreach $T as RentHourse}
         <tr class="ding">
             <td style="text-align: left; width: 80px;">
-                {$T.RentHourse.DistributeTime}
+                 <a href="/House/HouseCheck.aspx?id={$T.RentHourse.HourseID}"> { $T.RentHourse.HourseName }</a>
             </td>
             <td>
                { $T.RentHourse.Price }  万元
@@ -40,7 +40,7 @@
                 { $T.RentHourse.RentType }
             </td>
             <td style="text-align: left; white-space: normal;">
-                <a href="/House/HouseCheck.aspx?id={ $T.RentHourse.HourseID }"> { $T.RentHourse.HourseName }</a>
+                 { $T.RentHourse.DistributeTime }
             </td>
         </tr>
           {#/for}

@@ -58,6 +58,7 @@ namespace DAL
         public int MaxNumber;
         public int PID;
         public string Comment;
+        public string Price;
     }
 
     public class DISH

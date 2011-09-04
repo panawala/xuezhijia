@@ -63,7 +63,7 @@
 
     $.ajax({
         type: "POST",
-        url: "/WS/CommonService.asmx/getResultById",
+        url: "/WS/CommonService.asmx/getRentHouseById",
         data: "{id:" + request("id") + "}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
