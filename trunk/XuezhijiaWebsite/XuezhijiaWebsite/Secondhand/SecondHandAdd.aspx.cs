@@ -17,6 +17,7 @@ namespace XuezhijiaWebsite.Secondhand
         //public string pic = "/Common/ShowPhoto.ashx?id=2";
         protected void Page_Load(object sender, EventArgs e)
         {
+            ((Uploadfile)Master).CurrentMenu = "market";
             if (!IsPostBack)
             {
                 ((Uploadfile)Master).CurrentMenu = "market";

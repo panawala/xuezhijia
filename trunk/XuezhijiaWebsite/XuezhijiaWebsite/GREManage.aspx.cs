@@ -79,6 +79,7 @@ namespace XuezhijiaWebsite
             Label8.Visible = true;
             Label9.Visible = true;
             Label10.Visible = true;
+            Label11.Visible = true;
 
             TextBox1.Visible = true;
             TextBox2.Visible = true;
@@ -87,6 +88,7 @@ namespace XuezhijiaWebsite
             TextBox5.Visible = true;
             TextBox6.Visible = true;
             TextBox7.Visible = true;
+            TextBox8.Visible = true;
 
             Upload.Visible = true;
             LabelComment.Visible = true;
@@ -102,7 +104,7 @@ namespace XuezhijiaWebsite
             TextBox5.Text = course.MaxNumber.ToString();
             //TextBox6.SelectedIndex = teacher ;
             TextBox7.Text = course.Comment;
-
+            TextBox8.Text = course.Price;
             Image1.ImageUrl = "/Common/ShowPhoto.ashx?id=" + course.PID.ToString();
             Image1.Visible = true;
             Session.Add("CourseID", Id);
@@ -141,6 +143,7 @@ namespace XuezhijiaWebsite
                 course.Comment = TextBox7.Text;
                 course.CourseID = id;
                 course.PID = tmp.PID;
+                course.Price = TextBox8.Text;
                 if (Upload.FileName.Length > 0)
                 {
                     PhotoWrapper photowrapper = new PhotoWrapper();
