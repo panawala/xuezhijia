@@ -28,7 +28,6 @@
         var checkcount = true;
         function CheckForm() {
             var username = $("#NewName").attr("value");
-            alert(username);
             if (checkUser(username)) {
                 $(".register-info input").each(function () {
                     if ($(this).val() == undefined || $(this).val() == "") {
@@ -184,5 +183,8 @@
     </form>
         
     </div>
+       <!-- ShareTo Button BEGIN -->
+<script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_float.js#color=0&align=right&move=0" charset="utf-8"></script> 
+<!-- ShareTo Button END -->
 </body>
 </html>
