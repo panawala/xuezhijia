@@ -32,6 +32,7 @@ margin-bottom:3px;
 text-align:left;
 padding:5px;
 font-size:14px;
+text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*/
 }
 
 .imgg

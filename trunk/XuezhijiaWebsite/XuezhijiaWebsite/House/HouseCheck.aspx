@@ -25,7 +25,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="housenav">二手市场</div>
+<div class="housenav">房屋租赁</div>
 <div id="housecontent" class="house">
 </div>
 
