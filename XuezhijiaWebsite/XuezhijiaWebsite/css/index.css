@@ -161,6 +161,8 @@ text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*/
 #banner_list img
 {
 	border: 0px;
+	width:460px;
+	height:286px;
 }
 #banner_bg
 {
