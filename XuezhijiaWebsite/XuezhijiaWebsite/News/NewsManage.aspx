@@ -19,7 +19,7 @@
                 <asp:CommandField HeaderText="删除" ShowDeleteButton="True" />
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:LinkButton runat="server" ID="check" CommandName="Check" Text="查看" CommandArgument='<%#Eval("RowIndex") %>'
+                        <asp:LinkButton runat="server" ID="check" CommandName="Check" Text="查看" CommandArgument='<%#Eval("NewsID") %>'
                             OnCommand="Check_Command" CausesValidation="false"></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>

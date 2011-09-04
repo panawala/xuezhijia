@@ -29,7 +29,7 @@
 				用户名：
 				 <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
 				密码：
-				<asp:TextBox ID="Password" runat="server"></asp:TextBox>
+				<asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
 				<asp:LinkButton ID="Log" runat="server" Text="登陆" OnClick="CommitLoad" />
                 
 				<a href="javascript:pop_register()">注册</a>

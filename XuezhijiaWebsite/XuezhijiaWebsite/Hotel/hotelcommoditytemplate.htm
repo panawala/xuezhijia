@@ -28,12 +28,10 @@
 <br />
 <br />
 <br />
-联系方式：<span id="callmeBtn" class="followMob">{ $T.ContactWay }</span><br>
-打电话给我时，请一定说明在百姓网看到的，谢谢！</p>
 
 
-{#foreach $T.PIDList as int}
- <a><img src="/Common/ShowPhoto.ashx?id={$T.int}" alt="转让单位99年黑色普桑 - 1.8万元的图片" class="img" /></a>
-   {#/for}
+
+ <a><img src="/Common/ShowPhoto.ashx?id={$T.PID}" alt="{$T.HotelName} " class="img" /></a>
+
    <div style="clear:both;"></div>
 </div>

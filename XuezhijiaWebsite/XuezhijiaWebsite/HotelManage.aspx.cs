@@ -128,6 +128,7 @@ namespace XuezhijiaWebsite
                 hotel.ContactWay = TextBox3.Text;
                 hotel.Type = TextBox4.Text;
                 hotel.Price = TextBox5.Text;
+                hotel.Comment = TextBox7.Text;
                 hotel.HotelID = id;
                 hotel.PID = tmp.PID;
                 hotel.PIDList = tmp.PIDList;

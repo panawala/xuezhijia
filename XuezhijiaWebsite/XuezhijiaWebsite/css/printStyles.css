@@ -22,7 +22,7 @@
 	z-index:1002;
 	left: 50%;
 	top: 30%;
-	width: 400px;
+	width: 300px;
 	margin-left: -200px;
 	padding: 10px;
 	font-size: 14px;
@@ -30,3 +30,7 @@
 	
 	border: 1px black solid; /*指示位置*/
 }
+.print-comment
+{
+    width:260px;
+    }

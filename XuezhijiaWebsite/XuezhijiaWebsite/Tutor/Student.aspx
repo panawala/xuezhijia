@@ -8,17 +8,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="studentnav">二手市场</div>
+<div class="studentnav">家教信息</div>
 <div id="studentcontent" class="student">
 
 </div>
 <div class="second_right_nav">
 <div class="block">
-<div class="title">商家推广</div>
+<div class="title">友情提醒</div>
 <div class="b">
-选择百姓网付费推广，投入少
-效果好。超过50万商家已使用
-付费推广。
+本板块完全免费，有需要的同学请在网上在线登记信息，我们一旦有适合您的的学生信息我们将第一时间与您联系！
 <p style="text-align:right;margin-right:2px;"><a href="/Tutor/TutorAdd.aspx">我要当老师</a></p>
 
 

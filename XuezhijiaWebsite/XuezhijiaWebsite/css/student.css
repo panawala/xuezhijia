@@ -43,7 +43,7 @@ padding: 0 0 0 10px;
 
 .shlist td {
 line-height: 35px;
-white-space: nowrap;
+/*white-space: nowrap;*/
 border-bottom: 1px solid #EBEBEB;
 padding: 5px 0 5px 5px;
 }
