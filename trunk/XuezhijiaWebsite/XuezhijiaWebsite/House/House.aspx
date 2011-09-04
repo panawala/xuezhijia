@@ -8,17 +8,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="housenav">二手市场</div>
+<div class="housenav">房屋租赁</div>
 <div id="housecontent" class="house">
 
 </div>
 <div class="second_right_nav">
 <div class="block">
-<div class="title">商家推广</div>
+<div class="title">友情提醒</div>
 <div class="b">
-选择百姓网付费推广，投入少
-效果好。超过50万商家已使用
-付费推广。
+选择学之家免费推广，零投入
+效果好。您可以免费发布房源，中介请联系电话：021-60486650
 <p style="text-align:right;margin-right:2px;"><a href="/House/HouseAdd.aspx">我要发布</a></p>
 </div>
 </div>

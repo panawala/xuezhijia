@@ -46,5 +46,12 @@ namespace BLL
             }
             return row; 
         }
+
+
+        public DataTable getall()
+        {
+            return GetData();
+        }
+
     }
 }

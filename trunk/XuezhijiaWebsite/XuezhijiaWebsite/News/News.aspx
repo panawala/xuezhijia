@@ -62,4 +62,38 @@
     </script>
 
 
+    <script type="text/javascript">
+
+        $.ajax({
+            type: "POST",
+            url: "/WS/CommonService.asmx/getArticleByID",
+            data: "{id:'1'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            beforeSend: Loadingnav, //执行ajax前执行loading函数.直到success 
+            success: Successnav,
+            error: Error
+        });
+
+        function Error() {
+            alert("error");
+        }
+        //加载中的状态
+        function Loadingnav() {
+            $('#right_nav').html('<img src="/Image/loader.gif"/>');
+        }
+        //加载成功
+        function Successnav(data, status) {
+            //在0s内将透明度设为0
+            $("#right_nav").fadeTo(0.001, 0);
+            $("#right_nav").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
+
+            $("#right_nav").processTemplate(data.d);
+            //在1s内将透明度设为1
+            $("#right_nav").fadeTo(1000, 1);
+
+        }
+    </script>
+
+
 </asp:Content>

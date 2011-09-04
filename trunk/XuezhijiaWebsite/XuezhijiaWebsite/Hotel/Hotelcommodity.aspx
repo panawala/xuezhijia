@@ -33,7 +33,7 @@
 <div class="block">
 <div class="title">商家推广</div>
 <div class="b">
-选择百姓网付费推广，投入少
+11付费推广，投入少
 效果好。超过50万商家已使用
 付费推广。
 <p style="text-align:right;margin-right:2px;"><a href="http://www.baixing.com/pay/entrance/?src=listing">我要推广</a></p>

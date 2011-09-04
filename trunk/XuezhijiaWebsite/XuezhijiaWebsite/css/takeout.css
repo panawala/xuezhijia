@@ -50,7 +50,7 @@
 	height:160px;
 	color:Black;
 	background-color:#A9CBEE;
-	margin:5px 0px;
+	margin:1px 0px;
 	padding-left:10px;
 	/*border: 1px dashed Purple;*/
 }
@@ -69,10 +69,10 @@ text-align: center;
 background: #F6A244;
 color: white;
 display: inline-block;
-width: 132px;
+width: 230px;
 height: 34px;
 line-height: 34px;
-margin-top:5px;
+margin-top:0px;
 margin-bottom: 5px;
 border: 1px solid #EBEBEB;
 }
@@ -86,3 +86,6 @@ a.pub_btn:hover
 width: 230px;
 height: 220px;
 }
+
+
+.enterdes{	font-family: Verdana, Arial, Helvetica, sans-serif;    font-size: 15px;	width:220px;	height:60px;	color:Black;	/*background-color:#A9CBEE;*/	margin:1px 0px;	padding-left:0px;	/*border: 1px dashed Purple;*/}

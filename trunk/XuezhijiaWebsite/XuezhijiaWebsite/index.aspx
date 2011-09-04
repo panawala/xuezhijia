@@ -65,19 +65,19 @@
                     </div>
                 </div>
                 <div class="img_space_mark">
-                    同济大学创建于1907年，是教育部直属全国重点大学，国家211工程和“985工程”重点建设高校，也是首批经国务院批准成立研究生院的 高校。在百余年的办学历程中，同济大学始终注重“人才培养、科学研究、社会服务、国际交往”四大功能均衡发展，综合实力位居国内高校前列。
+                       学之家网站是一个专门为学生提供服务与产品的新型创业型网站，网站始终以学生的需求为核心。我们希望能够通过去壮大自己来获得与社会上一些资源谈判的筹码。我们希望能通过这种方式能让学生在踏上社会之前尽量保护自己的权利，避免因为信息不对称而遭受不必要的损失，如果同学们对某一项资源需求很大欢迎拨打60486650，我们力争将该项资源价格水平推向最低！
                 </div>
             </div>
             <div class="tab_space" id="newscontent">
                 <div class="tab_space_title">
-                    新闻列表
+                    同济NEWS
                     <div class="more">
                         <a href="/News/NewsList.aspx?type=1">更多...</a></div>
                 </div>
                 <div id="webcontent">
                 </div>
                 <div class="tab_space_title">
-                    新闻列表
+                    学之家NEWS
                     <div class="more">
                         <a href="/News/NewsList.aspx?type=2">更多...</a></div>
                 </div>
@@ -86,21 +86,26 @@
             </div>
             <div class="channel_space">
                 <ul class="linklist">
-                    <li><a href="http://news.tongji.edu.cn/newscenter/" target="_blank">信息报送</a></li>
-                    <li><a href="http://mail.tongji.edu.cn/" target="_blank">同济邮局</a></li>
-                    <li><a href="mailto:xzxx@mail.tongji.edu.cn">校长信箱</a></li>
+
+
+                    <li><a href="http://xuanke.tongji.edu.cn/" target="_blank">本科生选课</a></li>
+                    <li><a href="http://gsinfo.tongji.edu.cn/"target="_blank">研究生信息</a></li>
+                    <li><a href="http://news.tongji.edu.cn/classid-1.html/"target="_blank"/>同济新闻网</a></li>
+                    <li><a href="http://bbs.tongji.edu.cn/" target="_blank">同舟共济站</a></li>
+                    <li><a href="http://bbs.tongji.net/" target="_blank">同济网bbs</a></li>
+                    <li><a href="http://vpn.tongji.cn/" target="_blank">同济VPN</a></li>
+                    <li><a href="http://www.tongji.edu.cn/" target="_blank">同济大学</a></li>
+                    <li><a href="http://jiading.tongji.edu.cn/" target="_blank">嘉定校区</a></li>
                     <li><a href="http://urp.tongji.edu.cn" target="_blank">信息门户</a></li>
-                    <li><a href="./other/public.html" target="_blank">校务公开</a></li>
-                    <li><a href="http://xxgk.tongji.edu.cn/" target="_blank">信息公开</a></li>
-                    <li><a href="./other/index.html" target="_blank">站点链接</a></li>
-                    <li><a href="./other/index.html" target="_blank">常用服务</a></li>
+                    <li><a href="http://nyglzx.tongji.edu.cn/web/datastat.aspx" target="_blank">电量查询</a></li>
+                    <li><a href="http://mail.tongji.edu.cn/" target="_blank">同济邮局</a></li>
+                    <li><a href="mailto://xzxx@mail.tongji.edu.cn/" target="_blank">校长信箱</a></li>
+                    <li><a href="http://lib.tongji.edu.cn/" target="_blank">图书馆</a></li>
+                    <li><a href="http://hq.tongji.edu.cn/" target="_blank">后勤网</a></li>
+                    <li><a href="http://yz.tongji.edu.cn/" target="_blank">研招网</a></li>
+                    <li><a href="http://cwc.tongji.edu.cn/" target="_blank">财务处</a></li>                    
                     <li><a href="http://www.tongjiren.org/" target="_blank">校友会</a></li>
-                    <li><a href="http://fund.tongji.edu.cn/" target="_blank">基金会</a></li>
-                    <li><a href="http://xxgk.tongji.edu.cn/" target="_blank">信息公开</a></li>
-                    <li><a href="./other/index.html" target="_blank">站点链接</a></li>
-                    <li><a href="./other/index.html" target="_blank">常用服务</a></li>
-                    <li><a href="http://www.tongjiren.org/" target="_blank">校友会</a></li>
-                    <li><a href="http://fund.tongji.edu.cn/" target="_blank">基金会</a></li>
+                    
                 </ul>
             </div>
         </div>

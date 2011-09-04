@@ -14,11 +14,9 @@
 </div>
 <div class="second_right_nav">
 <div class="block">
-<div class="title">商家推广</div>
+<div class="title">友情提醒</div>
 <div class="b">
-选择百姓网付费推广，投入少
-效果好。超过50万商家已使用
-付费推广。
+本板块完全免费，您可以自由发布闲置物品，本网站主要浏览对象为学生，请保证所发物品跟学生用品有关，谢谢配合！
 <p style="text-align:right;margin-right:2px;"><a href="/Secondhand/SecondHandAdd.aspx">我要发布</a></p>
 </div>
 </div>

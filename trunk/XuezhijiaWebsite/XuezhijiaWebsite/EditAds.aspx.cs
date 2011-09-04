@@ -34,7 +34,7 @@ namespace XuezhijiaWebsite
             ArticalWrapper wrapper = new ArticalWrapper();
             Artical.ArticleRow row = (new Artical.ArticleDataTable()).NewArticleRow();
             row.ArticleID = Convert.ToInt32(DropDownList_Area.SelectedValue);
-            row.ArticleArea=DropDownList_Area.Text;
+            row.ArticleArea = DropDownList_Area.SelectedItem.Text;
             row.ArticleContent=CKEditor1.Text;
             wrapper.updateARecord(row);
             //preCKEditorData.InnerText = CKEditor1.Text;
