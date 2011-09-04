@@ -25,7 +25,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="trainnav">二手市场</div>
+<div class="trainnav">考研培训</div>
 <div id="traincontent" class="train">
 </div>
 
