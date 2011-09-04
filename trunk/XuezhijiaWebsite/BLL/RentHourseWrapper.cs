@@ -60,6 +60,14 @@ namespace BLL
             helper.delete(sql);
         }
 
+        public void CheckARecordByID(int id)
+        {
+            string sql = "Update RentHourse set ClickCount = ClickCount +1 where HourseID=" + id.ToString();
+            CommenHelper helper = CommenHelper.GetInstance();
+            helper.initOle();
+            helper.update(sql);
+        }
+
         public RENTHOURSE getRentHouseByID(int id)
         {
             string sql = "select * from RentHourse where HourseID = " + id.ToString();
