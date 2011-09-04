@@ -175,11 +175,14 @@
 	</div>
 	
 	<div class="pagefeet">
-		页脚
-	</div>
-
+<p>版权所有 上海学之家网络科技有限责任公司</p>
+<p>上海市四平路1147号 021-60486650</p>	
+<font style="color:#7777CC;">沪ICP备11034113号</font>
+<a href="mailto:admin@xuezj.com" class="cy">E-mail:admin@xuezj.com</a>
+    </div>
+    <div id="shade" name="shade" class="shade" style="height: 100%" ></div>
     </form>
-        <div id="shade" name="shade" class="shade" style="height: 100%" ></div>
+        
     </div>
 </body>
 </html>
