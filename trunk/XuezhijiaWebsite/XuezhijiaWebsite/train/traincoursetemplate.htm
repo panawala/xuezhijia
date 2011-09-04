@@ -1,0 +1,37 @@
+﻿<div id="subheader">
+
+<h1 style="display: inline;">{$T.CourseName} 
+
+</h1>
+<span id="jifenBox">&nbsp;</span>
+　<small>编号: { $T.CourseID }</small>
+
+</div>
+
+<div id="content" style="height: auto; ">
+
+<table id="metaTable">
+
+<tr>
+<td class="short"><label>地点：</label>{$T.Location}</td>
+<td class="short"><label>课时：</label><span id="counter">  { $T.Lessons }</span></td>
+</tr>
+<tr>
+<td class="short"><label>价格：</label>{ $T.Price }</td>
+<td class="short"><label>时间：</label>{ $T.Time }<div id="barginBtn" style="display:inline"><label id="expsFollow" class="actBtn Off" style="font-size:14px;padding: 2px 6px;border: none;"></label></div></td>
+</tr>
+
+
+</table>
+<p>
+{ $T.Comment }
+<br />
+<br />
+<br />
+
+
+
+ <a><img src="/Common/ShowPhoto.ashx?id={$T.PID}" alt="{$T.CourseName} " class="img" /></a>
+
+   <div style="clear:both;"></div>
+</div>

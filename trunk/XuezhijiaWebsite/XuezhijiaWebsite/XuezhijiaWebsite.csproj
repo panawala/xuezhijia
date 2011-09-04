@@ -387,6 +387,8 @@
     <Content Include="Ticket\Ticket.aspx" />
     <Content Include="Ticket\tickettemplate.htm" />
     <Content Include="Train\Train.aspx" />
+    <Content Include="Train\TrainCourse.aspx" />
+    <Content Include="Train\traincoursetemplate.htm" />
     <Content Include="Train\traintemplate.htm" />
     <Content Include="Tutor\Student.aspx" />
     <Content Include="Tutor\studenttemplate.htm" />
@@ -729,6 +731,13 @@
     </Compile>
     <Compile Include="Train\Train.aspx.designer.cs">
       <DependentUpon>Train.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Train\TrainCourse.aspx.cs">
+      <DependentUpon>TrainCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Train\TrainCourse.aspx.designer.cs">
+      <DependentUpon>TrainCourse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tutor\Student.aspx.cs">
       <DependentUpon>Student.aspx</DependentUpon>

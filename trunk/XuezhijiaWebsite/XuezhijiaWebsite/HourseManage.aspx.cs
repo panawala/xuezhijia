@@ -61,7 +61,7 @@ namespace XuezhijiaWebsite
 
             RENTHOURSE renthourse = new RENTHOURSE();
             RentHourseWrapper wrapper = new RentHourseWrapper();
-            renthourse = wrapper.getResultByID(Id);
+            renthourse = wrapper.getRentHouseByID(Id);
             Label2.Visible = true;
             Label3.Visible = true;
             Label4.Visible = true;
@@ -100,7 +100,7 @@ namespace XuezhijiaWebsite
                 int id = Convert.ToInt32(Session["RentHourseID"].ToString());
                 RENTHOURSE tmp = new RENTHOURSE();
                 RentHourseWrapper wrapper = new RentHourseWrapper();
-                tmp = wrapper.getResultByID(id);
+                tmp = wrapper.getRentHouseByID(id);
                 RENTHOURSE renthourse = new RENTHOURSE();
                 renthourse.Price = Convert.ToDouble(TextBox1.Text);
                 renthourse.RentType = TextBox2.Text;

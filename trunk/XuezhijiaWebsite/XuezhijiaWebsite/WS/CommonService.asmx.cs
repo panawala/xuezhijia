@@ -26,6 +26,17 @@ namespace XuezhijiaWebsite.WS
         }
 
         [WebMethod]
+        public string UserExist(string user)
+        {
+            UserInfoWrapper wrapper = new UserInfoWrapper();
+            if (wrapper.IsExists(user))
+            {
+                return "success";
+            }
+            return "fail";
+        }
+
+        [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public List<CAR> getAllCarList()
         {
@@ -39,6 +50,14 @@ namespace XuezhijiaWebsite.WS
         {
             CourseWrapper wrapper = new CourseWrapper();
             return wrapper.getAllFormatedResult();
+        }
+
+         [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public COURSE getCourseById(int id)
+        {
+            CourseWrapper wrapper = new CourseWrapper();
+            return wrapper.getResultByID(id);
         }
 
         [WebMethod]
@@ -107,10 +126,10 @@ namespace XuezhijiaWebsite.WS
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public RENTHOURSE getResultById(int id)
+        public RENTHOURSE getRentHouseById(int id)
         {
             RentHourseWrapper wrapper = new RentHourseWrapper();
-            return wrapper.getResultByID(id);
+            return wrapper.getRentHouseByID(id);
         }
 
         [WebMethod]

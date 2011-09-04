@@ -28,6 +28,19 @@ namespace BLL
             return false;
         }
 
+        public bool IsExists(string username)
+        {
+            string sql = "select * from UserInfo where UserName = '" + username + "'";
+            CommenHelper helper = CommenHelper.GetInstance();
+            DataTable table = new DataTable();
+            table = helper.getResultBySql(sql);
+            if (table.Rows.Count > 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public UserInfo.UserInfoRow getRecordByUserNameAndPassWord(string username, string password)
         {
             UserInfo.UserInfoRow row;

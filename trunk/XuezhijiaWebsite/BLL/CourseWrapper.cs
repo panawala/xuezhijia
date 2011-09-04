@@ -36,6 +36,7 @@ namespace BLL
                 Course.PID = Convert.ToInt32(table.Rows[i]["PID"].ToString());
                 Course.Comment = table.Rows[i]["Comment"].ToString();
                 Course.TID = Convert.ToInt32(table.Rows[i]["TID"].ToString());
+                Course.Price = table.Rows[i]["Price"].ToString();
                 list.Add(Course);
             }
             return list;
@@ -43,12 +44,12 @@ namespace BLL
 
         public void addARecord(Course.CourseRow row)
         {
-            Insert(row.TID, row.CourseName, row.Lessons, row.Location, row.Time, row.MaxNumber, row.PID, row.Comment);
+            Insert(row.TID, row.CourseName, row.Lessons, row.Location, row.Time, row.MaxNumber, row.PID, row.Comment,row.Price);
         }
 
         public void addAClassRecord(COURSE row)
         {
-            Insert(row.TID, row.CourseName, row.Lessons, row.Location, row.Time, row.MaxNumber, row.PID, row.Comment);
+            Insert(row.TID, row.CourseName, row.Lessons, row.Location, row.Time, row.MaxNumber, row.PID, row.Comment,row.Price);
         }
 
         public void deleteARecordByID(int id)
@@ -85,6 +86,7 @@ namespace BLL
                     table.Rows[i]["PID"] = Course.PID;
                     table.Rows[i]["Comment"] = Course.Comment;
                     table.Rows[i]["TID"] = Course.TID;
+                    table.Rows[i]["Price"] = Course.Price;
                     break;
                 }
             }
