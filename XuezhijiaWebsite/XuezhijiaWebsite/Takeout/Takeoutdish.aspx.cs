@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL;
 
 namespace XuezhijiaWebsite.Takeout
 {
@@ -15,7 +16,7 @@ namespace XuezhijiaWebsite.Takeout
             if (!IsPostBack)
             {
                 //点击次数增加
- 
+                (new ShopWrapper()).AddClickCountByID(Convert.ToInt32(Request.QueryString["id"]));
             }
         }
     }
