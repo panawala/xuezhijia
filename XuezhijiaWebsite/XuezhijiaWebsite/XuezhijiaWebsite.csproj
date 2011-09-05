@@ -62,6 +62,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="bin\CKEditor.NET.dll" />
     <Content Include="bin\CKEditor.NET.pdb" />
+    <Content Include="css\gotop.css" />
     <Content Include="fweqhdj.aspx" />
     <Content Include="CarManage.aspx" />
     <Content Include="Car\Carrental.aspx" />
