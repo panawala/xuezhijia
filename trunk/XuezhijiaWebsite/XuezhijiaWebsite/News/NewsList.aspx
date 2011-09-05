@@ -24,23 +24,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="newslistnav">二手市场</div>
+<div class="newslistnav">新闻列表</div>
 <div id="newslistcontent" class="newslist">
 
 </div>
 <div class="newslist_right_nav">
-<div class="block">
-<div class="title">商家推广</div>
-<div class="b">
-选择百姓网付费推广，投入少
-效果好。超过50万商家已使用
-付费推广。
-<p style="text-align:right;margin-right:2px;"><a href="/Secondhand/SecondHandAdd.aspx">我要发布</a></p>
-</div>
-</div>
 
-<div class="blank10"></div>
-<div class="blank10"></div>
 
 <div class="block" id="rightblock">
 

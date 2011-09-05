@@ -34,6 +34,7 @@ namespace DAL
         public List<int> PIDList = new List<int>();
         public string Comment;
         public int PID;
+        public int OrderID;
     }
 
     public class COMMODITY
