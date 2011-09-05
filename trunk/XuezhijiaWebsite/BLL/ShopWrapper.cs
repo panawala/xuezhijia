@@ -58,6 +58,14 @@ namespace BLL
             helper.delete(sql);
         }
 
+        public void AddClickCountByID(int id)
+        {
+            string sql = "update Shop set ShopClickedCount =ShopClickedCount +1 where ShopID = " + id.ToString();
+            CommenHelper helper = CommenHelper.GetInstance();
+            helper.initOle();
+            helper.delete(sql);
+        }
+
         public SHOP getResultByID(int id)
         {
             string sql = "select * from Shop where ShopID = " + id.ToString();
