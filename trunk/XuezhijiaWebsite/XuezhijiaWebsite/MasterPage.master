@@ -4,6 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
+ <meta name="Author" content="panawala"/>
+  <meta name="Keywords" content="学之家"/>
+  <meta name="Description" content="学之家网站是一个专门为学生提供服务与产品的新型创业型网站，网站始终以学生的需求为核心。我们希望能够通过去壮大自己来获得与社会上一些资源谈判的筹码。我们希望能通过这种方式能让学生在踏上社会之前尽量保护自己的权利，避免因为信息不对称而遭受不必要的损失，如果同学们对某一项资源需求很大欢迎拨打60486650，我们力争将该项资源价格水平推向最低！"/>
     <title>学之家</title>
     <link href="css/gotop.css" rel="stylesheet" type="text/css" />
     <script src="/js/user_log.js" type="text/javascript"></script>
