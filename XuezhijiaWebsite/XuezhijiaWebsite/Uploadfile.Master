@@ -1,12 +1,13 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Uploadfile.master.cs" Inherits="XuezhijiaWebsite.Uploadfile" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Uploadfile.master.cs"
+    Inherits="XuezhijiaWebsite.Uploadfile" %>
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>学之家</title>
     <link href="css/gotop.css" rel="stylesheet" type="text/css" />
-    <script src="js/user_log.js" type="text/javascript"></script>
-        <script src="/Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <script src="/js/user_log.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script type="text/javascript">
 
         function checkUser(username) {
@@ -56,164 +57,163 @@
         }
 
 
-</script>
+    </script>
     <link href="css/globalStyles.css" rel="stylesheet" type="text/css" />
     <link href="css/home.css" rel="stylesheet" type="text/css" />
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-<div class="pageframe">
-    <form id="form1" runat="server" enctype="multipart/form-data" method="post">
-    <div class="nav_top">
-    <div class="logon-area">
-			<!-- if has session -->
-			<%
-				if(Session["Username"] != null){
-			%>
-			<%="用户【"+Session["Username"]+"】"
-			%>
-				<a href="javascript:logout()">注销</a>
-			<!-- else -->
-			<%
-				}else{
-			%>
-				用户名：
-				 <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
-				密码：
-				<asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
-				<asp:LinkButton ID="Log" runat="server" Text="登陆" OnClick="CommitLoad" />
-                
-				<a href="javascript:pop_register()">注册</a>
-			<!-- end -->
-			<%
-				}
-			%>
-			</div>
+    <div class="pageframe">
+        <form id="form1" runat="server" enctype="multipart/form-data" method="post">
+        <div class="nav_top">
+            <div class="logon-area">
+                <!-- if has session -->
+                <%
+                    if (Session["Username"] != null)
+                    {
+                %>
+                <%="用户【"+Session["Username"]+"】"
+                %>
+                <a href="javascript:logout()">注销</a>
+                <!-- else -->
+                <%
+                }
+                else
+                {
+                %>
+                用户名：
+                <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                密码：
+                <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:LinkButton ID="Log" runat="server" Text="登陆" OnClick="CommitLoad" />
+                <a href="javascript:pop_register()">注册</a>
+                <!-- end -->
+                <%
+                }
+                %>
             </div>
-    <div class="pagehead">
-    
-		<div class="headbox">
-			<div class="logo">
-				logo
-			</div>
-			
-			<div id="register-area" class="register-area">
-				<ul class="register-info">
-					<li>
-						<label>用户名：</label>
-						<asp:TextBox ID="NewName" runat="server"></asp:TextBox>
-						<span></span>
-					</li>
-					<li>
-						<label>年级：</label>
-						<asp:DropDownList ID="NewGrade" runat="server" >
-							<asp:ListItem>大一</asp:ListItem>
-							<asp:ListItem>大二</asp:ListItem>
-							<asp:ListItem>大三</asp:ListItem>
-							<asp:ListItem>大四</asp:ListItem>
-							<asp:ListItem>研一</asp:ListItem>
-							<asp:ListItem>研二</asp:ListItem>
-							<asp:ListItem>研三</asp:ListItem>
-							<asp:ListItem>博一</asp:ListItem>
-							<asp:ListItem>博二</asp:ListItem>
-							<asp:ListItem>博三</asp:ListItem>
-						</asp:DropDownList>
-					</li>
-					<li>
-						<label>邮箱：</label>
-						<asp:TextBox ID="NewEmail" runat="server"></asp:TextBox>
-						<span></span>
-					</li>
-					<li>
-						<label>手机：</label>
-						<asp:TextBox ID="NewTel" runat="server"></asp:TextBox>
-						<span></span>
-					</li>
-					<li>
-						<label>密码：</label>
-						<asp:TextBox ID="NewPassword" TextMode="Password" runat="server"></asp:TextBox>
-						<span></span>
-					</li>
-					<li>
-						<label>密码确认：</label>
-						<asp:TextBox ID="ConfirmPassword" TextMode="Password" runat="server"></asp:TextBox>
-						<span></span>
-					</li>
-					<li>
-						<asp:LinkButton ID="ConfirmRegister" runat="server" Text="确认" OnClick="CommitRegister" />
-						<a href="javascript:cancel_register()">取消</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	
-	<div class="pageneck">
-		<div id="menubar" name="menubar">
-			<ul class="menu-list">
-				<li class="<%=CurrentMenu=="index"?"cu":"ncu" %>"><a href="/index.aspx">首页</a></li>
-				<li class="<%=CurrentMenu=="print"?"cu":"ncu" %>"><a href="/Print.aspx">免费打印</a></li>
-				<li class="<%=CurrentMenu=="car"?"cu":"ncu" %>"><a href="/Car/Carrental.aspx">汽车租赁</a></li>
-				<li class="<%=CurrentMenu=="hotel"?"cu":"ncu" %>"><a href="/Hotel/Hotelorder.aspx">宾馆预定</a></li>
-				<li class="<%=CurrentMenu=="sell"?"cu":"ncu" %>"><a href="/Takeout/Takeout.aspx">外卖信息</a></li>
-				<li class="<%=CurrentMenu=="train"?"cu":"ncu" %>"><a href="/Train/Train.aspx">考研培训</a></li>
-				<li class="<%=CurrentMenu=="shop"?"cu":"ncu" %>"><a href="/Shop/Shop.aspx">学生商城</a></li>
-				<li class="<%=CurrentMenu=="ticket"?"cu":"ncu" %>"><a href="/Ticket/Ticket.aspx">门票服务</a></li>
-				<li class="<%=CurrentMenu=="tutor"?"cu":"ncu" %>"><a href="/Tutor/Student.aspx">家教服务</a></li>
-				<li class="<%=CurrentMenu=="house"?"cu":"ncu" %>"><a href="/House/House.aspx">房屋租赁</a></li>
-				<li class="<%=CurrentMenu=="market"?"cu":"ncu" %>"><a href="/Secondhand/Secondhand.aspx">二手市场</a></li>
-			</ul>
-		</div>
-	</div>
-	
-	<div class="pagebody">
-		<!-- 功能主体 -->
-            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-		<!-- 功能主体 -->
-	</div>
-	
-	<div class="pagefeet">
-<p>版权所有 上海学之家网络科技有限责任公司</p>
-<p>上海市四平路1147号 021-60486650</p>	
-<font style="color:#7777CC;">沪ICP备11034113号</font>
-<a href="mailto:admin@xuezj.com" class="cy">E-mail:admin@xuezj.com</a>
+        </div>
+        <div class="pagehead">
+            <div class="headbox">
+                <div class="logo">
+                   
+                </div>
+                <div id="register-area" class="register-area">
+                    <ul class="register-info">
+                        <li>
+                            <label>
+                                用户名：</label>
+                            <asp:TextBox ID="NewName" runat="server"></asp:TextBox>
+                            <span></span></li>
+                        <li>
+                            <label>
+                                年级：</label>
+                            <asp:DropDownList ID="NewGrade" runat="server">
+                                <asp:ListItem>大一</asp:ListItem>
+                                <asp:ListItem>大二</asp:ListItem>
+                                <asp:ListItem>大三</asp:ListItem>
+                                <asp:ListItem>大四</asp:ListItem>
+                                <asp:ListItem>研一</asp:ListItem>
+                                <asp:ListItem>研二</asp:ListItem>
+                                <asp:ListItem>研三</asp:ListItem>
+                                <asp:ListItem>博一</asp:ListItem>
+                                <asp:ListItem>博二</asp:ListItem>
+                                <asp:ListItem>博三</asp:ListItem>
+                            </asp:DropDownList>
+                        </li>
+                        <li>
+                            <label>
+                                邮箱：</label>
+                            <asp:TextBox ID="NewEmail" runat="server"></asp:TextBox>
+                            <span></span></li>
+                        <li>
+                            <label>
+                                手机：</label>
+                            <asp:TextBox ID="NewTel" runat="server"></asp:TextBox>
+                            <span></span></li>
+                        <li>
+                            <label>
+                                密码：</label>
+                            <asp:TextBox ID="NewPassword" TextMode="Password" runat="server"></asp:TextBox>
+                            <span></span></li>
+                        <li>
+                            <label>
+                                密码确认：</label>
+                            <asp:TextBox ID="ConfirmPassword" TextMode="Password" runat="server"></asp:TextBox>
+                            <span></span></li>
+                        <li>
+                            <asp:LinkButton ID="ConfirmRegister" runat="server" Text="确认" OnClick="CommitRegister" />
+                            <a href="javascript:cancel_register()">取消</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="pageneck">
+            <div id="menubar" name="menubar">
+                <ul class="menu-list">
+                    <li class="<%=CurrentMenu=="index"?"cu":"ncu" %>"><a href="/index.aspx">首页</a></li>
+                    <li class="<%=CurrentMenu=="print"?"cu":"ncu" %>"><a href="/Print.aspx">免费打印</a></li>
+                    <li class="<%=CurrentMenu=="car"?"cu":"ncu" %>"><a href="/Car/Carrental.aspx">汽车租赁</a></li>
+                    <li class="<%=CurrentMenu=="hotel"?"cu":"ncu" %>"><a href="/Hotel/Hotelorder.aspx">宾馆预定</a></li>
+                    <li class="<%=CurrentMenu=="sell"?"cu":"ncu" %>"><a href="/Takeout/Takeout.aspx">外卖信息</a></li>
+                    <li class="<%=CurrentMenu=="train"?"cu":"ncu" %>"><a href="/Train/Train.aspx">考研培训</a></li>
+                    <li class="<%=CurrentMenu=="shop"?"cu":"ncu" %>"><a href="/Shop/Shop.aspx">学生商城</a></li>
+                    <li class="<%=CurrentMenu=="ticket"?"cu":"ncu" %>"><a href="/Ticket/Ticket.aspx">门票服务</a></li>
+                    <li class="<%=CurrentMenu=="tutor"?"cu":"ncu" %>"><a href="/Tutor/Student.aspx">家教服务</a></li>
+                    <li class="<%=CurrentMenu=="house"?"cu":"ncu" %>"><a href="/House/House.aspx">房屋租赁</a></li>
+                    <li class="<%=CurrentMenu=="market"?"cu":"ncu" %>"><a href="/Secondhand/Secondhand.aspx">
+                        二手市场</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pagebody">
+            <!-- 功能主体 -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- 功能主体 -->
+        </div>
+        <div class="pagefeet">
+            <p>
+                版权所有 上海学之家网络科技有限责任公司</p>
+            <p>
+                上海市四平路1147号 021-60486650</p>
+            <font style="color: #7777CC;">沪ICP备11034113号</font> <a href="mailto:admin@xuezj.com"
+                class="cy">E-mail:admin@xuezj.com</a>
+        </div>
+        <div id="shade" name="shade" class="shade" style="height: 100%">
+        </div>
+        </form>
     </div>
-    <div id="shade" name="shade" class="shade" style="height: 100%" ></div>
-    </form>
-        
+    <div id="toolBackTo" class="back-to" style="display: none;">
+        <a class="back-top" href="javascript:void(0);" onclick="window.scrollTo(0,0);return false;"
+            title="返回顶部">返回顶部</a>
     </div>
-         <div id="toolBackTo" class="back-to" style="display:none;">
-<a class="back-top" href="javascript:void(0);" onclick="window.scrollTo(0,0);return false;" title="返回顶部">返回顶部</a>
-</div>
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        //首先将#toolBackTo隐藏
-        $("#toolBackTo").hide();
-        //当滚动条的位置处于距顶部10像素以下时，跳转链接出现，否则消失
-        $(function () {
-            $(window).scroll(function () {
-                if ($(window).scrollTop() > 10) {
-                    $("#toolBackTo").fadeIn(500);
-                }
-                else {
-                    $("#toolBackTo").fadeOut(500);
-                }
-            });
-            //当点击跳转链接后，回到页面顶部位置
-            $("#toolBackTo").click(function () {
-                $('body,html').animate({ scrollTop: 0 }, 1000);
-                return false;
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //首先将#toolBackTo隐藏
+            $("#toolBackTo").hide();
+            //当滚动条的位置处于距顶部10像素以下时，跳转链接出现，否则消失
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() > 10) {
+                        $("#toolBackTo").fadeIn(500);
+                    }
+                    else {
+                        $("#toolBackTo").fadeOut(500);
+                    }
+                });
+                //当点击跳转链接后，回到页面顶部位置
+                $("#toolBackTo").click(function () {
+                    $('body,html').animate({ scrollTop: 0 }, 1000);
+                    return false;
+                });
             });
         });
-    });
-</script>
-
-       <!-- ShareTo Button BEGIN -->
-<script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_float.js#color=0&align=right&move=0" charset="utf-8"></script> 
-<!-- ShareTo Button END -->
+    </script>
+    <!-- ShareTo Button BEGIN -->
+    <script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_float.js#color=0&align=right&move=0"
+        charset="utf-8"></script>
+    <!-- ShareTo Button END -->
 </body>
 </html>

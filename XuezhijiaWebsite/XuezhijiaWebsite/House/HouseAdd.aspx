@@ -7,38 +7,38 @@
     <script language="javascript" type="text/javascript">
 
         var formcheck = false;
-        var checkcount = true;
-        function CheckForm() {
+        var checkcount1 = true;
+        function CheckForm1() {
             $("table input:not(:file)").each(function () {
                 if ($(this).val() == undefined || $(this).val() == "") {
                     $(this).removeClass("infoinput");
                     $(this).addClass("errinfoput");
-                    checkcount = false;
+                    checkcount1 = false;
                     return false;
                 }
                 else {
                     $(this).removeClass("errinfoput");
                     $(this).addClass("infoinput");
-                    checkcount = true;
+                    checkcount1 = true;
                     return true;
                 }
 
             });
-            return checkcount;
+            return checkcount1;
         }
 
 
 
-        function CheckImgCss(o, img) {
-            if (!/\.((jpg)|(bmp)|(gif)|(png))$/ig.test(o.value)) {
-                alert('只能上传jpg,bmp,gif,png格式图片!');
-                o.outerHTML = o.outerHTML;
-            }
-            else {
-                $(img).filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = o.value;
-                //$('Image1').src = o.value;//这里IE7已经不支持了。所以才有上面的方法。
-            }
-        }
+//        function CheckImgCss(o, img) {
+//            if (!/\.((jpg)|(bmp)|(gif)|(png))$/ig.test(o.value)) {
+//                alert('只能上传jpg,bmp,gif,png格式图片!');
+//                o.outerHTML = o.outerHTML;
+//            }
+//            else {
+//                $(img).filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = o.value;
+//                //$('Image1').src = o.value;//这里IE7已经不支持了。所以才有上面的方法。
+//            }
+//        }
 
 
 
@@ -148,7 +148,7 @@
                     <label>
                         文件上传:</label>
                     <div id="MyFile">
-                        <%--<div class="fileframe"><input type="file" class="filediv" name="File" /><a class="aclose" href="javascript:void(0);" /></div>--%>
+                        
                     </div>
                 </td>
             </tr>
@@ -157,7 +157,7 @@
         </div>
         <input type="button" value="增加文件" onclick="javascript:addFile();" />
         <input onclick="this.form.reset()" type="button" value="重置(ReSet)" />
-        <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" OnClientClick="javascript:return CheckForm();"
+        <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" OnClientClick="javascript:return CheckForm1();"
             OnClick="Btn_Submit_Click"></asp:Button>
     </div>
     <div id="right_nav" class="right_nav">
