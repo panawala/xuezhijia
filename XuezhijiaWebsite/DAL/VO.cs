@@ -42,7 +42,7 @@ namespace DAL
         public int ComID;
         public string ComName;
         public string Type;
-        public double Price;
+        public string Price;
         public string Detail;
         public string Comment;
         public int PhotoID;
