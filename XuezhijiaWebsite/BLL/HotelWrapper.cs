@@ -13,12 +13,12 @@ namespace BLL
         
         public void addARecord(Hotel.HotelRow row)
         {
-            Insert(row.HotelName, row.Location, row.ContactWay, row.Type, row.Price, row.PIDList, row.Comment, row.PID);
+            Insert(row.HotelName, row.Location, row.ContactWay, row.Type, row.Price, row.PIDList, row.Comment, row.PID,row.OrderId);
         }
 
         public DataTable getAll()
         {
-            return GetData();
+            return GetDataByOrder();
         }
 
         public List<HOTEL> getAllFormatedResult()
@@ -41,6 +41,7 @@ namespace BLL
                 hotel.Price = table.Rows[i]["Price"].ToString();
                 hotel.Comment = table.Rows[i]["Comment"].ToString();
                 hotel.PID = Convert.ToInt32(table.Rows[i]["PID"].ToString());
+                hotel.OrderID = Convert.ToInt32(table.Rows[i]["OrderId"].ToString());
                 string pidlist = table.Rows[i]["PIDList"].ToString();
                 string[] sArray = pidlist.Split(',');
                 List<int> photolist = new List<int>();
@@ -64,7 +65,7 @@ namespace BLL
             {
                 idLit = (row.PIDList[i]).ToString() + ",";
             }
-            Insert(row.HotelName, row.Location, row.ContactWay, row.Type, row.Price, idLit, row.Comment, row.PID);
+            Insert(row.HotelName, row.Location, row.ContactWay, row.Type, row.Price, idLit, row.Comment, row.PID, row.OrderID);
         }
 
         public void deleteARecordByID(int id)
