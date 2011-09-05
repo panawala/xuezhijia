@@ -184,9 +184,33 @@
     </form>
         
     </div>
-      <div id="toolBackTo" class="back-to" style="">
+         <div id="toolBackTo" class="back-to" style="display:none;">
 <a class="back-top" href="javascript:void(0);" onclick="window.scrollTo(0,0);return false;" title="返回顶部">返回顶部</a>
 </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //首先将#toolBackTo隐藏
+        $("#toolBackTo").hide();
+        //当滚动条的位置处于距顶部10像素以下时，跳转链接出现，否则消失
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 10) {
+                    $("#toolBackTo").fadeIn(500);
+                }
+                else {
+                    $("#toolBackTo").fadeOut(500);
+                }
+            });
+            //当点击跳转链接后，回到页面顶部位置
+            $("#toolBackTo").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 1000);
+                return false;
+            });
+        });
+    });
+</script>
 
        <!-- ShareTo Button BEGIN -->
 <script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_float.js#color=0&align=right&move=0" charset="utf-8"></script> 
