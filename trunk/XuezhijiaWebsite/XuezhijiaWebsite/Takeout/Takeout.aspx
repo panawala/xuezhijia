@@ -35,11 +35,11 @@
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#takeoutcontent").fadeTo(0.001, 0);
+        //$("#takeoutcontent").fadeTo(0.001, 0);
         $("#takeoutcontent").setTemplateURL('../Takeout/takeouttemplate.htm');
         $('#takeoutcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#takeoutcontent").fadeTo(1000, 1);
+        //$("#takeoutcontent").fadeTo(1000, 1);
 
     }
     </script>

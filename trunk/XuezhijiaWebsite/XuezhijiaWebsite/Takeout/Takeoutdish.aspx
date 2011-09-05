@@ -82,23 +82,8 @@
 <div id="dishcontent" class="dish">
 
 </div>
-<div class="second_right_nav">
-<div class="block">
-<div class="title">商家推广</div>
-<div class="b">
-选择百姓网付费推广，投入少
-效果好。超过50万商家已使用
-付费推广。
-<p style="text-align:right;margin-right:2px;"><a href="/Secondhand/SecondHandAdd.aspx">我要发布</a></p>
-</div>
-</div>
+<div class="right_nav" id="right_nav">
 
-<div class="blank10"></div>
-<div class="blank10"></div>
-
-<div class="block" id="rightblock">
-
-</div>
 
 
 </div>
@@ -136,7 +121,7 @@
          $.ajax({
              type: "POST",
              url: "/WS/CommonService.asmx/getArticleByID",
-             data: "{id:'11'}",
+             data: "{id:'15'}",
              contentType: "application/json; charset=utf-8",
              dataType: "json",
              beforeSend: Loadingnav, //执行ajax前执行loading函数.直到success 
@@ -149,17 +134,17 @@
          }
          //加载中的状态
          function Loadingnav() {
-             $('#rightblock').html('<img src="/Image/loader.gif"/>');
+             $('#right_nav').html('<img src="/Image/loader.gif"/>');
          }
          //加载成功
          function Successnav(data, status) {
              //在0s内将透明度设为0
-             $("#rightblock").fadeTo(0.001, 0);
-             $("#rightblock").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
+             //$("#right_nav").fadeTo(0.001, 0);
+             $("#right_nav").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
 
-             $("#rightblock").processTemplate(data.d);
+             $("#right_nav").processTemplate(data.d);
              //在1s内将透明度设为1
-             $("#rightblock").fadeTo(1000, 1);
+             //$("#right_nav").fadeTo(1000, 1);
 
          }
     </script>

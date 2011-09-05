@@ -67,11 +67,11 @@
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#secondhandcontent").fadeTo(0.001, 0);
+        //$("#secondhandcontent").fadeTo(0.001, 0);
         $("#secondhandcontent").setTemplateURL('../secondhand/shcommoditytemlate.htm');
         $('#secondhandcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#secondhandcontent").fadeTo(1000, 1);
+        //$("#secondhandcontent").fadeTo(1000, 1);
 
     }
     </script>

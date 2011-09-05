@@ -53,11 +53,11 @@
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#studentcontent").fadeTo(0.001, 0);
+        //$("#studentcontent").fadeTo(0.001, 0);
         $("#studentcontent").setTemplateURL('../Tutor/studenttemplate.htm');
         $('#studentcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#studentcontent").fadeTo(1000, 1);
+        //$("#studentcontent").fadeTo(1000, 1);
 
     }
     </script>
@@ -85,12 +85,12 @@
          //加载成功
          function Successnav(data, status) {
              //在0s内将透明度设为0
-             $("#rightblock").fadeTo(0.001, 0);
+             //$("#rightblock").fadeTo(0.001, 0);
              $("#rightblock").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
 
              $("#rightblock").processTemplate(data.d);
              //在1s内将透明度设为1
-             $("#rightblock").fadeTo(1000, 1);
+             //$("#rightblock").fadeTo(1000, 1);
 
          }
     </script>

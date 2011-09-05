@@ -130,11 +130,11 @@
         //加载成功
         function Success(data, status) {
             //在0s内将透明度设为0
-            $("#webcontent").fadeTo(0.001, 0);
+            //$("#webcontent").fadeTo(0.001, 0);
             $("#webcontent").setTemplateURL('../Index/webtemplate.htm');
             $('#webcontent').processTemplate(data.d);
             //在1s内将透明度设为1
-            $("#webcontent").fadeTo(1000, 1);
+            //$("#webcontent").fadeTo(1000, 1);
 
         }
     </script>
@@ -158,11 +158,11 @@
         //加载成功
         function Success(data, status) {
             //在0s内将透明度设为0
-            $("#schoolcontent").fadeTo(0.001, 0);
+            //$("#schoolcontent").fadeTo(0.001, 0);
             $("#schoolcontent").setTemplateURL('../Index/schooltemplate.htm');
             $('#schoolcontent').processTemplate(data.d);
             //在1s内将透明度设为1
-            $("#schoolcontent").fadeTo(1000, 1);
+            //$("#schoolcontent").fadeTo(1000, 1);
 
         }
     </script>

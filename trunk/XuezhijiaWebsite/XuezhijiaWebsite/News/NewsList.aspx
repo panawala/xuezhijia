@@ -28,7 +28,7 @@
 <div id="newslistcontent" class="newslist">
 
 </div>
-<div class="newslist_right_nav">
+<div class="right_nav" id="right_nav">
 
 
 <div class="block" id="rightblock">
@@ -58,11 +58,11 @@
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#newslistcontent").fadeTo(0.001, 0);
+        //$("#newslistcontent").fadeTo(0.001, 0);
         $("#newslistcontent").setTemplateURL('../News/newslisttemplate.htm');
         $('#newslistcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#newslistcontent").fadeTo(1000, 1);
+        //$("#newslistcontent").fadeTo(1000, 1);
 
     }
     </script>
@@ -72,7 +72,7 @@
          $.ajax({
              type: "POST",
              url: "/WS/CommonService.asmx/getArticleByID",
-             data: "{id:'11'}",
+             data: "{id:'16'}",
              contentType: "application/json; charset=utf-8",
              dataType: "json",
              beforeSend: Loadingnav, //执行ajax前执行loading函数.直到success 
@@ -85,17 +85,17 @@
          }
          //加载中的状态
          function Loadingnav() {
-             $('#rightblock').html('<img src="/Image/loader.gif"/>');
+             $('#right_nav').html('<img src="/Image/loader.gif"/>');
          }
          //加载成功
          function Successnav(data, status) {
              //在0s内将透明度设为0
-             $("#rightblock").fadeTo(0.001, 0);
-             $("#rightblock").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
+             //$("#right_nav").fadeTo(0.001, 0);
+             $("#right_nav").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
 
-             $("#rightblock").processTemplate(data.d);
+             $("#right_nav").processTemplate(data.d);
              //在1s内将透明度设为1
-             $("#rightblock").fadeTo(1000, 1);
+            // $("#right_nav").fadeTo(1000, 1);
 
          }
     </script>
