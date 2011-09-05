@@ -29,16 +29,16 @@
 
 
 
-        function CheckImgCss(o, img) {
-            if (!/\.((jpg)|(bmp)|(gif)|(png))$/ig.test(o.value)) {
-                alert('只能上传jpg,bmp,gif,png格式图片!');
-                o.outerHTML = o.outerHTML;
-            }
-            else {
-                $(img).filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = o.value;
-                //$('Image1').src = o.value;//这里IE7已经不支持了。所以才有上面的方法。
-            }
-        }
+//        function CheckImgCss(o, img) {
+//            if (!/\.((jpg)|(bmp)|(gif)|(png))$/ig.test(o.value)) {
+//                alert('只能上传jpg,bmp,gif,png格式图片!');
+//                o.outerHTML = o.outerHTML;
+//            }
+//            else {
+//                $(img).filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = o.value;
+//                //$('Image1').src = o.value;//这里IE7已经不支持了。所以才有上面的方法。
+//            }
+//        }
 
 
 
