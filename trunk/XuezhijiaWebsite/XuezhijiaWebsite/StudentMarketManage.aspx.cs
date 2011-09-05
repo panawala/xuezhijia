@@ -123,7 +123,7 @@ namespace XuezhijiaWebsite
                 COMMODITY commodity = new COMMODITY();
                 commodity.ComName = TextBox1.Text;
                 commodity.Type = TextBox2.Text;
-                commodity.Price = Convert.ToDouble(TextBox3.Text);
+                commodity.Price = TextBox3.Text;
                 commodity.Detail = TextBox4.Text;
                 commodity.Comment = TextBox7.Text;
                 commodity.ComID = id;
@@ -155,7 +155,7 @@ namespace XuezhijiaWebsite
                 COMMODITY commoditynew = new COMMODITY();
                 commoditynew.ComName = TextBox1.Text;
                 commoditynew.Type = TextBox2.Text;
-                commoditynew.Price = Convert.ToDouble(TextBox3.Text);
+                commoditynew.Price = TextBox3.Text;
                 commoditynew.Detail = TextBox4.Text;
                 commoditynew.Comment = TextBox7.Text;
                 commoditynew.PhotoID = helper.getIdent("Photo");

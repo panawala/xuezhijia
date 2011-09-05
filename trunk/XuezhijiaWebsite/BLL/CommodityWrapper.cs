@@ -31,7 +31,7 @@ namespace BLL
                 commodity.ComID = Convert.ToInt32(table.Rows[i]["ComID"].ToString());
                 commodity.ComName = table.Rows[i]["ComName"].ToString();
                 commodity.Type = table.Rows[i]["Type"].ToString();
-                commodity.Price = Convert.ToDouble(table.Rows[i]["Price"].ToString());
+                commodity.Price = table.Rows[i]["Price"].ToString();
                 commodity.Detail = table.Rows[i]["Detail"].ToString();
                 commodity.Comment = table.Rows[i]["Comment"].ToString();
                 commodity.PhotoID = Convert.ToInt32(table.Rows[i]["PhotoID"].ToString());
