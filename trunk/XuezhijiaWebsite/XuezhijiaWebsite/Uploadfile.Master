@@ -219,5 +219,10 @@
     <script type="text/javascript" src="http://s.shareto.com.cn/js/shareto_float.js#color=0&align=right&move=0"
         charset="utf-8"></script>
     <!-- ShareTo Button END -->
+
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F21c9b8dd9b90f78fe27316514a618649' type='text/javascript'%3E%3C/script%3E"));
+</script>
 </body>
 </html>
