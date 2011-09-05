@@ -16,11 +16,9 @@
 <div class="block">
 <div class="title">商家推广</div>
 <div class="b">
-选择百姓网付费推广，投入少
-效果好。超过50万商家已使用
-付费推广。
-<p style="text-align:right;margin-right:2px;"><a href="/Secondhand/SecondHandAdd.aspx">我要当老师</a></p>
-<p style="text-align:right;margin-right:2px;"><a href="/Tutor/Tutor.aspx">我要找老师</a></p>
+选择学之家付费推广，投入少
+效果好。
+<p style="text-align:right;margin-right:2px;"><a href="/Tutor/TutorAdd.aspx">我要当老师</a></p>
 </div>
 </div>
 
@@ -54,11 +52,11 @@
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#tutorcontent").fadeTo(0.001, 0);
+        //$("#tutorcontent").fadeTo(0.001, 0);
         $("#tutorcontent").setTemplateURL('../Tutor/tutortemplate.htm');
         $('#tutorcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#tutorcontent").fadeTo(1000, 1);
+        //$("#tutorcontent").fadeTo(1000, 1);
 
     }
     </script>
@@ -86,12 +84,12 @@
          //加载成功
          function Successnav(data, status) {
              //在0s内将透明度设为0
-             $("#rightblock").fadeTo(0.001, 0);
+             //$("#rightblock").fadeTo(0.001, 0);
              $("#rightblock").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
 
              $("#rightblock").processTemplate(data.d);
              //在1s内将透明度设为1
-             $("#rightblock").fadeTo(1000, 1);
+             //$("#rightblock").fadeTo(1000, 1);
 
          }
     </script>

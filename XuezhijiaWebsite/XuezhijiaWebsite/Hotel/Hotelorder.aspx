@@ -35,11 +35,11 @@
     //加载成功
     function Success(data, status) {
         //在0s内将透明度设为0
-        $("#hotelcontent").fadeTo(0.001, 0);
+        //$("#hotelcontent").fadeTo(0.001, 0);
         $("#hotelcontent").setTemplateURL('../Hotel/hotelordertemplate.htm');
         $('#hotelcontent').processTemplate(data.d);
         //在1s内将透明度设为1
-        $("#hotelcontent").fadeTo(1000, 1);
+        //$("#hotelcontent").fadeTo(1000, 1);
 
     }
     </script>
@@ -68,12 +68,12 @@
         //加载成功
         function Successnav(data, status) {
             //在0s内将透明度设为0
-            $("#right_nav").fadeTo(0.001, 0);
+            //$("#right_nav").fadeTo(0.001, 0);
             $("#right_nav").setTemplateURL('../Car/rightnav.htm', null, { filter_data: false });
 
             $("#right_nav").processTemplate(data.d);
             //在1s内将透明度设为1
-            $("#right_nav").fadeTo(1000, 1);
+            //$("#right_nav").fadeTo(1000, 1);
 
         }
     </script>
