@@ -106,8 +106,7 @@
                     <asp:TextBox ID="TextBox_Title" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
                 <td>
-                    <label>
-                        商品分类：</label>
+                    <label>商品分类：</label>
                     <asp:DropDownList ID="DropDownList_Catalog" runat="server" CssClass="infoinput" Width="202px">
                         <asp:ListItem>数码通讯</asp:ListItem>
                         <asp:ListItem>生活资料</asp:ListItem>

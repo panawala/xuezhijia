@@ -55,7 +55,7 @@ namespace BLL
                 seconhandmarket.Type = table.Rows[i]["Type"].ToString();
                 seconhandmarket.Comment = table.Rows[i]["Comment"].ToString();
                 seconhandmarket.LookCount = Convert.ToInt32(table.Rows[i]["LookCount"].ToString());
-                seconhandmarket.Price = Convert.ToDouble(table.Rows[i]["Price"].ToString());
+                seconhandmarket.Price = table.Rows[i]["Price"].ToString();
                 seconhandmarket.PublishDate = table.Rows[i]["PublishDate"].ToString();
                 seconhandmarket.Brand = table.Rows[i]["Brand"].ToString();
                 seconhandmarket.Location = table.Rows[i]["Location"].ToString();
