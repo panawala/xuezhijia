@@ -21,6 +21,7 @@ namespace XuezhijiaWebsite.Secondhand
             if (!IsPostBack)
             {
                 ((Uploadfile)Master).CurrentMenu = "market";
+                
                 //DropDownList_Catalog.DataSource = (new SecondHMWrapper()).getAllType();
                 //DropDownList_Catalog.DataTextField = "Type";
                 //DropDownList_Catalog.DataValueField = "Type";
@@ -39,7 +40,7 @@ namespace XuezhijiaWebsite.Secondhand
             SECONDHANDMARKET secondhandmarket = new SECONDHANDMARKET();
             secondhandmarket.Type = DropDownList_Catalog.SelectedValue;
             secondhandmarket.ContactInformation = TextBox_Contact.Text;
-            secondhandmarket.Price = Convert.ToDouble(TextBox_Price.Text);
+            secondhandmarket.Price = TextBox_Price.Text;
             //secondhandmarket.Location = TextBox_Address.Text;
             //secondhandmarket.Brand = TextBox_Brand.Text;
             secondhandmarket.Comment = TextBox_Des.Text;

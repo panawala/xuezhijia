@@ -115,7 +115,7 @@ namespace XuezhijiaWebsite
             secondhandmarket.Tipical = TextBox1.Text;
             secondhandmarket.Type = TextBox2.Text;
             secondhandmarket.LookCount = Convert.ToInt32(TextBox3.Text);
-            secondhandmarket.Price = Convert.ToDouble(TextBox4.Text);
+            secondhandmarket.Price = TextBox4.Text;
             secondhandmarket.PublishDate = TextBox5.Text;
             secondhandmarket.Comment = TextBox7.Text;
             secondhandmarket.Location = TextBox8.Text;
