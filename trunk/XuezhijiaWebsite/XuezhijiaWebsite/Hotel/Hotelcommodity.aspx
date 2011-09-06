@@ -56,7 +56,7 @@
     function Success(data, status) {
         //在0s内将透明度设为0
         //$("#hotelcontent").fadeTo(0.001, 0);
-        $("#hotelcontent").setTemplateURL('../hotel/hotelcommoditytemplate.htm');
+        $("#hotelcontent").setTemplateURL('../hotel/hotelcommoditytemplate.htm' ,null, { filter_data: false });
         $('#hotelcontent').processTemplate(data.d);
         //在1s内将透明度设为1
         //$("#hotelcontent").fadeTo(1000, 1);

@@ -31,7 +31,8 @@
 
 <div class="second_right_nav">
 <div class="block">
-<div class="title">学之家友情提醒：</div>
+<div class="title">学之家友情提醒：
+</div>
 <div class="b">
 不要提前转账或汇款！
 <p style="text-align:right;margin-right:2px;"></p>
@@ -68,7 +69,7 @@
     function Success(data, status) {
         //在0s内将透明度设为0
         //$("#secondhandcontent").fadeTo(0.001, 0);
-        $("#secondhandcontent").setTemplateURL('../secondhand/shcommoditytemlate.htm');
+        $("#secondhandcontent").setTemplateURL('../secondhand/shcommoditytemlate.htm', null, { filter_data: false });
         $('#secondhandcontent').processTemplate(data.d);
         //在1s内将透明度设为1
         //$("#secondhandcontent").fadeTo(1000, 1);

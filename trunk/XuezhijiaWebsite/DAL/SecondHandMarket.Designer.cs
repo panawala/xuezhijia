@@ -564,7 +564,7 @@ namespace DAL {
                 this.columnSID.Unique = true;
                 this.columnTipical.MaxLength = 200;
                 this.columnType.MaxLength = 50;
-                this.columnComment.MaxLength = 800;
+                this.columnComment.MaxLength = 2147483647;
                 this.columnBrand.MaxLength = 50;
                 this.columnLocation.MaxLength = 300;
                 this.columnContactInformation.MaxLength = 50;

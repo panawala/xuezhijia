@@ -540,7 +540,7 @@ namespace DAL {
                 this.columnType.MaxLength = 50;
                 this.columnPrice.MaxLength = 50;
                 this.columnPIDList.MaxLength = 2147483647;
-                this.columnComment.MaxLength = 500;
+                this.columnComment.MaxLength = 2147483647;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_Hotel");
                 this.ExtendedProperties.Add("Generator_UserTableName", "Hotel");
             }

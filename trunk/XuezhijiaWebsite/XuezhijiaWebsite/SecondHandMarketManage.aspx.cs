@@ -12,6 +12,7 @@ namespace XuezhijiaWebsite
 {
     public partial class SecondHandMarketManage : System.Web.UI.Page
     {
+        private static int Id = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack)
@@ -61,7 +62,7 @@ namespace XuezhijiaWebsite
                 return;
             }
             string cmd = e.CommandName; //获得name
-            int Id = Convert.ToInt32(e.CommandArgument);
+            Id = Convert.ToInt32(e.CommandArgument);
             switch (cmd)
             {
                 case "Delete": DeleteClick(Id);
@@ -99,18 +100,18 @@ namespace XuezhijiaWebsite
             TextBox8.Text = secondhandmarket.Location.ToString();
             TextBox9.Text = secondhandmarket.ContactInformation;
             TextBox7.Text = secondhandmarket.Comment;
-            Session.Add("SID", Id);
+            //Session.Add("SID", Id);
         }
 
         protected void CommitClick(object sender, EventArgs e)
         {
             SecondHMWrapper wrapper = new SecondHMWrapper();
             SECONDHANDMARKET secondhandmarket = new SECONDHANDMARKET();
-            int sid = Convert.ToInt32(Session["SID"].ToString());
+            //int sid = Convert.ToInt32(Session["SID"].ToString());
             SECONDHANDMARKET secondhandmarkettmp = new SECONDHANDMARKET();
-            secondhandmarkettmp = wrapper.getRecordByID(sid);
+            secondhandmarkettmp = wrapper.getRecordByID(Id);
 
-            secondhandmarket.SID = sid;
+            secondhandmarket.SID = Id;
             secondhandmarket.Tipical = TextBox1.Text;
             secondhandmarket.Type = TextBox2.Text;
             secondhandmarket.LookCount = Convert.ToInt32(TextBox3.Text);
@@ -123,7 +124,7 @@ namespace XuezhijiaWebsite
             secondhandmarket.PIDList = secondhandmarkettmp.PIDList;
             secondhandmarket.Brand = secondhandmarkettmp.Brand;
             wrapper.updateARecord(secondhandmarket);
-            Session.Remove("SID");
+            //Session.Remove("SID");
             PostInit();
             InitPage();
         }
