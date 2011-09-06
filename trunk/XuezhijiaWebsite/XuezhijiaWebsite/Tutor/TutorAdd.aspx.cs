@@ -25,8 +25,8 @@ namespace XuezhijiaWebsite.Tutor
             teacher.AdvantageSubjects = TextBox_Subject.Text;
             teacher.Comment = TextBox_Comment.Text;
             wrapper.addAClassRecord(teacher);
-            
-           
+
+            Response.Write("<script>alert('发布成功！');window.location='/Tutor/TutorAdd.aspx';</script>");
         }
     }
 }

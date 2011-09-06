@@ -21,10 +21,10 @@ namespace XuezhijiaWebsite.Secondhand
             if (!IsPostBack)
             {
                 ((Uploadfile)Master).CurrentMenu = "market";
-                DropDownList_Catalog.DataSource = (new SecondHMWrapper()).getAllType();
-                DropDownList_Catalog.DataTextField = "Type";
-                DropDownList_Catalog.DataValueField = "Type";
-                DropDownList_Catalog.DataBind();
+                //DropDownList_Catalog.DataSource = (new SecondHMWrapper()).getAllType();
+                //DropDownList_Catalog.DataTextField = "Type";
+                //DropDownList_Catalog.DataValueField = "Type";
+                //DropDownList_Catalog.DataBind();
             }
 
             /// 在此处放置用户代码以初始化页面
@@ -70,6 +70,8 @@ namespace XuezhijiaWebsite.Secondhand
             }
             secondhandmarket.PIDList = pidlist;
             wrapper.addAClassRecord(secondhandmarket);
+
+            Response.Write("<script>alert('发布成功！');window.location='/Secondhand/Secondhand.aspx';</script>");
         }
     }
 }
