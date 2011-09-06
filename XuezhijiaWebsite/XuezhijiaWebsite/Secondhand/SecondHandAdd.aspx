@@ -109,6 +109,10 @@
                     <label>
                         商品分类：</label>
                     <asp:DropDownList ID="DropDownList_Catalog" runat="server" CssClass="infoinput" Width="202px">
+                        <asp:ListItem>数码通讯</asp:ListItem>
+                        <asp:ListItem>生活资料</asp:ListItem>
+                        <asp:ListItem>学习资料</asp:ListItem>
+                        <asp:ListItem>其它</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 
@@ -148,7 +152,7 @@
             <tr>
                 <td colspan="2">
                     <label>
-                        文件上传:</label>
+                        图片上传:</label>
                     <div id="MyFile">
                         <%--<div class="fileframe"><input type="file" class="filediv" name="File" /><a class="aclose" href="javascript:void(0);" /></div>--%>
                     </div>
@@ -159,7 +163,7 @@
         </div>
         <input type="button" value="增加文件" onclick="javascript:addFile();" />
         <input onclick="this.form.reset()" type="button" value="重置(ReSet)" />
-        <asp:Button runat="server" Text="开始上传" ID="Btn_Submit" OnClientClick="javascript:return CheckForm();"
+        <asp:Button runat="server" Text="开始发布" ID="Btn_Submit" OnClientClick="javascript:return CheckForm();"
             OnClick="Btn_Submit_Click"></asp:Button>
     </div>
     <div id="right_nav" class="right_nav">
