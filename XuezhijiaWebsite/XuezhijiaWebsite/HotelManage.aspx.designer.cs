@@ -154,7 +154,7 @@ namespace XuezhijiaWebsite {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::CKEditor.NET.CKEditorControl TextBox7;
         
         /// <summary>
         /// Label9 control.

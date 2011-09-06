@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SecondHandMarketManage.aspx.cs" Inherits="XuezhijiaWebsite.SecondHandMarketManage" %>
-
+<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -73,8 +73,10 @@
     <asp:Label ID="Label8" Visible="false" runat="server" Text="备注"></asp:Label>
     &nbsp;<br />
 &nbsp;&nbsp;&nbsp;
-    <asp:TextBox ID="TextBox7" Visible="false" runat="server" TextMode="MultiLine" 
-        Height="423px" Width="477px"></asp:TextBox>
+    <%--<asp:TextBox ID="TextBox7" Visible="false" runat="server" TextMode="MultiLine" 
+        Height="423px" Width="477px"></asp:TextBox>--%>
+        <CKEditor:CKEditorControl ID="TextBox7" runat="server" Height="300" Width="770">
+</CKEditor:CKEditorControl>
     &nbsp;&nbsp;&nbsp;
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
