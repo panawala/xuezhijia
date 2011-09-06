@@ -116,7 +116,16 @@ SELECT SID, Tipical, Type, Comment, LookCount, Price, PublishDate, Brand, Locati
               <Mapping SourceColumn="HasImage" DataSetColumn="HasImage" />
               <Mapping SourceColumn="PhotoList" DataSetColumn="PhotoList" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="XuezhijiaConnectionString (Settings)" DbObjectName="xuezj.dbo.SecondHandMarket" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByOrder" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataOrder" GeneratorSourceName="FillByOrder" GetMethodModifier="Public" GetMethodName="GetDataOrder" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataOrder" UserSourceName="FillByOrder">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT SID, Tipical, Type, Comment, LookCount, Price, PublishDate, Brand, Location, ContactInformation, HasImage, PhotoList FROM dbo.SecondHandMarket ORDER BY PublishDate DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />

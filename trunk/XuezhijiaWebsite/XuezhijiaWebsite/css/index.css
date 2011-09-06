@@ -26,13 +26,17 @@
 .img_space_mark {
 width: 450px;
 height: 98px;
-border: 1px solid #85AFEC;
+border-left: 1px solid #85AFEC;
 margin-top:2px;
 margin-bottom:3px;
 text-align:left;
 padding:5px;
 font-size:14px;
 text-indent: 2em; /*em是相对单位，2em即现在一个字大小的两倍*/
+color: #8F8F8F;
+font-family: 宋体, Arial, Helvetica, sans-serif;
+
+
 }
 
 .imgg
