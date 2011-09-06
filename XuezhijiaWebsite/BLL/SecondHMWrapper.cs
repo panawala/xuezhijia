@@ -12,7 +12,7 @@ namespace BLL
     {
         public DataTable getAll()
         {
-            return GetData();
+            return GetDataOrder();
         }
 
         public void deleteARecordByID(int id)
