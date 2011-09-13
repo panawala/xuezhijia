@@ -103,7 +103,16 @@ SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, C
               <Mapping SourceColumn="ClickCount" DataSetColumn="ClickCount" />
               <Mapping SourceColumn="DistributeTime" DataSetColumn="DistributeTime" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="XuezhijiaConnectionString (Settings)" DbObjectName="xuezj.dbo.RentHourse" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillOrderBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataOrderBy" GeneratorSourceName="FillOrderBy" GetMethodModifier="Public" GetMethodName="GetDataOrderBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataOrderBy" UserSourceName="FillOrderBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT HourseID, Price, RentType, HourseType, HourseName, Area, Configuration, ClickCount, DistributeTime FROM dbo.RentHourse ORDER BY DistributeTime DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />

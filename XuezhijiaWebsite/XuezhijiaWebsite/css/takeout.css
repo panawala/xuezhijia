@@ -88,4 +88,15 @@ height: 220px;
 }
 
 
-.enterdes{	font-family: Verdana, Arial, Helvetica, sans-serif;    font-size: 15px;	width:220px;	height:60px;	color:Black;	/*background-color:#A9CBEE;*/	margin:1px 0px;	padding-left:0px;	/*border: 1px dashed Purple;*/}
+.enterdes
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+	width:220px;
+	height:60px;
+	color:Black;
+	/*background-color:#A9CBEE;*/
+	margin:1px 0px;
+	padding-left:0px;
+	/*border: 1px dashed Purple;*/
+}

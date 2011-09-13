@@ -18,7 +18,7 @@ namespace BLL
 
         public List<RENTHOURSE> getAllFormatedResult()
         {
-            return _transfer(getall());
+            return _transfer(GetDataOrderBy());
 
         }
 
