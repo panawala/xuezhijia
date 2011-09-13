@@ -32,9 +32,14 @@ namespace XuezhijiaWebsite.News
             int news_id = Convert.ToInt32(e.CommandArgument);
             //int new_id = Convert.ToInt32(GridView_News.DataKeys[rowIndex].Value);
             Response.Redirect("/News/News.aspx?id=" + news_id);
-
         }
 
+        protected void Edit_Command(object sender, CommandEventArgs e)
+        {
+            int news_id = Convert.ToInt32(e.CommandArgument);
+            //int new_id = Convert.ToInt32(GridView_News.DataKeys[rowIndex].Value);
+            Response.Redirect("/News/NewsItemManage.aspx?id=" + news_id);
+        }
         private void Bind()
         {
             GridView_News.DataSource = (new NewsWrapper()).getall();

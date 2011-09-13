@@ -355,6 +355,7 @@
     <Content Include="js\user_log.js" />
     <Content Include="News\News.aspx" />
     <Content Include="News\NewsAdd.aspx" />
+    <Content Include="News\NewsItemManage.aspx" />
     <Content Include="News\NewsList.aspx" />
     <Content Include="News\newslisttemplate.htm" />
     <Content Include="News\NewsManage.aspx" />
@@ -585,6 +586,13 @@
     </Compile>
     <Compile Include="News\NewsAdd.aspx.designer.cs">
       <DependentUpon>NewsAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News\NewsItemManage.aspx.cs">
+      <DependentUpon>NewsItemManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News\NewsItemManage.aspx.designer.cs">
+      <DependentUpon>NewsItemManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="News\NewsList.aspx.cs">
       <DependentUpon>NewsList.aspx</DependentUpon>

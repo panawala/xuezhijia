@@ -126,7 +126,7 @@
             <tr>
                 <td>
                     <label>
-                        品牌：</label>
+                        小区名称：</label>
                     <asp:TextBox ID="TextBox_Brand" runat="server" CssClass="infoinput"></asp:TextBox>
                 </td>
                 <td>

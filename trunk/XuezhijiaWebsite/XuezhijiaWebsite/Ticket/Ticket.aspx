@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
- <div class="ticketnav">考研培训</div>
+ <div class="ticketnav">门票服务</div>
 <div id="ticketcontent" class="ticket">
 
 </div>

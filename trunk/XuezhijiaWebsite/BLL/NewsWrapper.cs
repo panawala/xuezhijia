@@ -72,6 +72,11 @@ namespace BLL
             CommenHelper.GetInstance().update("update News set NewsClickCount = NewsClickCount + 1 where NewsID = " + id.ToString());
         }
 
+        public void updateRecord(int newId, string newsTitle, string newsContent)
+        {
+            UpdateQuery(newsTitle, newsContent, newId);
+        }
+
         public void updateARecord(NEWS news)
         {
             News.NewsDataTable table = new News.NewsDataTable();

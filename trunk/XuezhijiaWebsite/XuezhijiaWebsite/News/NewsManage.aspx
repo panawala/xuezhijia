@@ -23,6 +23,12 @@
                             OnCommand="Check_Command" CausesValidation="false"></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:LinkButton runat="server" ID="edit" CommandName="Check" Text="编辑" CommandArgument='<%#Eval("NewsID") %>'
+                            OnCommand="Edit_Command" CausesValidation="false"></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
     </div>

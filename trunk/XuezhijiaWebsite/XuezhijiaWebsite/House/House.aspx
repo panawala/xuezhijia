@@ -18,7 +18,7 @@
 <div class="b">
 选择学之家免费推广，零投入
 效果好。您可以免费发布房源，中介请联系电话：021-60486650
-<p style="text-align:right;margin-right:2px;"><a href="/House/HouseAdd.aspx">我要发布</a></p>
+<p style="text-align:right;margin-right:2px;"></p>
 </div>
 </div>
 
