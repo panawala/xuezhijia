@@ -14,20 +14,23 @@
     <script type="text/javascript">
 
         function checkUser(username) {
+            var bol = false;
             $.ajax({
                 type: "POST",
                 url: "/WS/CommonService.asmx/UserExist",
                 data: "{user:'" + username + "'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
+                async: false,
                 success: function (result) {
-                    if (result.d == "success")
-                        return true;
+                    if (result.d == "success") {
+                        bol = true;
+                    }
                     else
-                        return false;
+                        bol = false;
                 }
             });
-            return false;
+            return bol;
         }
 
         var checkcount = true;
