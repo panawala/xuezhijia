@@ -55,14 +55,7 @@
 				<asp:TextBox ID="PrintComment" TextMode="MultiLine" Rows="3" CssClass="print-comment" runat="server" />
                 <br />
                 如果首次打印请写上学号
-                如果首次打印请写上学号
-                 如果首次打印请写上学号
-                如果首次打印请写上学号
-                如果首次打印请写上学号
-                 如果首次打印请写上学号
-                如果首次打印请写上学号
-                如果首次打印请写上学号
-                如果首次打印请写上学号
+          
 				<br/>
                 <br/>
 				<asp:LinkButton ID="PrintFile" runat="server" Text="确定打印" OnClick="CommitPrint" />
