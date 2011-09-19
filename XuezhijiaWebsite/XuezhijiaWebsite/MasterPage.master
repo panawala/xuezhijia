@@ -161,7 +161,7 @@
 				<li class="<%=CurrentMenu=="hotel"?"cu":"ncu" %>"><a href="/Hotel/Hotelorder.aspx">宾馆预定</a></li>
 				<li class="<%=CurrentMenu=="sell"?"cu":"ncu" %>"><a href="/Takeout/Takeout.aspx">外卖信息</a></li>
 				<li class="<%=CurrentMenu=="train"?"cu":"ncu" %>"><a href="/Train/Train.aspx">考研培训</a></li>
-				<li class="<%=CurrentMenu=="shop"?"cu":"ncu" %>"><a href="/Shop/Shop.aspx">学生商城</a></li>
+				<li class="<%=CurrentMenu=="shop"?"cu":"ncu" %>"><a href="http://www.tongzhout.com">校园团购</a></li>
 				<li class="<%=CurrentMenu=="ticket"?"cu":"ncu" %>"><a href="/Ticket/Ticket.aspx">门票服务</a></li>
 				<li class="<%=CurrentMenu=="tutor"?"cu":"ncu" %>"><a href="/Tutor/Student.aspx">家教服务</a></li>
 				<li class="<%=CurrentMenu=="house"?"cu":"ncu" %>"><a href="/House/House.aspx">房屋租赁</a></li>
