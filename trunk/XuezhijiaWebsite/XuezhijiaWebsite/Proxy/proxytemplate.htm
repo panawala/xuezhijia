@@ -1,0 +1,18 @@
+﻿
+<ul>
+  {#foreach $T as PROXY}
+<li>
+<div class="proxyimage"><img src="/Common/ShowPhoto.ashx?id={ $T.PROXY.ImageID }" alt="{ $T.PROXY.Name }"/></div>
+<div class="proxydes" align="left">
+<strong>{ $T.PROXY.Name }</strong>
+
+ 
+ </div>
+ <div class="enterdes">
+ <a href="/Proxy/ProxyItem.aspx?id={ $T.PROXY.ProID }" class="order">查看详情</a>
+ </div>
+</li>
+  {#/for}
+
+</ul>
+

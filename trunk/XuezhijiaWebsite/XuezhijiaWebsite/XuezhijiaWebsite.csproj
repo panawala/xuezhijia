@@ -63,6 +63,8 @@
     <Content Include="bin\CKEditor.NET.dll" />
     <Content Include="bin\CKEditor.NET.pdb" />
     <Content Include="css\gotop.css" />
+    <Content Include="css\proxy.css" />
+    <Content Include="css\proxyitem.css" />
     <Content Include="fweqhdj.aspx" />
     <Content Include="CarManage.aspx" />
     <Content Include="Car\Carrental.aspx" />
@@ -333,6 +335,7 @@
     <Content Include="Image\head_bgq.jpg" />
     <Content Include="Image\home_icon.png" />
     <Content Include="Image\index_body.jpg" />
+    <Content Include="Image\m2_btns.png" />
     <Content Include="Image\menu.gif" />
     <Content Include="Image\menu.jpg" />
     <Content Include="Image\p2.jpg" />
@@ -353,6 +356,7 @@
     <Content Include="Index\webtemplate.htm" />
     <Content Include="js\print.js" />
     <Content Include="js\user_log.js" />
+    <Content Include="MemberManage.aspx" />
     <Content Include="News\News.aspx" />
     <Content Include="News\NewsAdd.aspx" />
     <Content Include="News\NewsItemManage.aspx" />
@@ -364,6 +368,12 @@
     <Content Include="PhotoUpload.aspx" />
     <Content Include="Print.aspx" />
     <Content Include="PrintManage.aspx" />
+    <Content Include="ProxyManage.aspx" />
+    <Content Include="Proxy\InsertMember.aspx" />
+    <Content Include="Proxy\Proxy.aspx" />
+    <Content Include="Proxy\ProxyItem.aspx" />
+    <Content Include="Proxy\proxyitemtemplate.htm" />
+    <Content Include="Proxy\proxytemplate.htm" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\jquery.livequery.js" />
     <Content Include="Scripts\jtemplates.js" />
@@ -382,6 +392,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Success.htm" />
     <Content Include="Takeout\Takeout.aspx" />
     <Content Include="Takeout\Takeoutdish.aspx" />
     <Content Include="Takeout\takeoutdishtemplate.htm" />
@@ -573,6 +584,13 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="MemberManage.aspx.cs">
+      <DependentUpon>MemberManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberManage.aspx.designer.cs">
+      <DependentUpon>MemberManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="News\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -637,6 +655,34 @@
       <DependentUpon>PrintManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProxyManage.aspx.cs">
+      <DependentUpon>ProxyManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProxyManage.aspx.designer.cs">
+      <DependentUpon>ProxyManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\InsertMember.aspx.cs">
+      <DependentUpon>InsertMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Proxy\InsertMember.aspx.designer.cs">
+      <DependentUpon>InsertMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\Proxy.aspx.cs">
+      <DependentUpon>Proxy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Proxy\Proxy.aspx.designer.cs">
+      <DependentUpon>Proxy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\ProxyItem.aspx.cs">
+      <DependentUpon>ProxyItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Proxy\ProxyItem.aspx.designer.cs">
+      <DependentUpon>ProxyItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

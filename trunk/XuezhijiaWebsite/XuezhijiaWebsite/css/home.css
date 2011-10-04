@@ -72,3 +72,16 @@
 	border:1px solid Red;
 	background:#C5EC83;
 }
+
+.rightinfoinput
+{
+	width:170px;
+	border:1px solid #85AFEC;
+}
+
+.righterrinfoput
+{
+	width:170px;
+	border:1px solid Red;
+	background:#C5EC83;
+}

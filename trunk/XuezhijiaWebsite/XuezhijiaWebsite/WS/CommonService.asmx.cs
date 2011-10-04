@@ -188,5 +188,42 @@ namespace XuezhijiaWebsite.WS
         {
             (new DishWrapper()).upById(id);
         }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<PROXY> getProxyByType(int type)
+        {
+            if (type == 1)
+            {
+                return (new ProxyWrapper()).GetFormatedResultByType("考研");
+            }
+            else if (type == 2)
+            {
+                return (new ProxyWrapper()).GetFormatedResultByType("驾校");
+            }
+            else 
+            {
+                return null;
+            }
+
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public PROXY getProxyByID(int id)
+        {
+            return (new ProxyWrapper()).getResultByID(id);
+        }
+
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void addMember(MEMBER member)
+        {
+            (new MemberWrapper()).addAClassRecord(member);
+        }
+
+
+
     }
 }

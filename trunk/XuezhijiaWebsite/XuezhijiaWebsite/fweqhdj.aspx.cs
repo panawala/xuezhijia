@@ -88,5 +88,16 @@ namespace XuezhijiaWebsite
         {
             Response.Redirect("/News/NewsAdd.aspx");
         }
+
+        protected void ProxyClick(object sender, EventArgs e)
+        {
+            Response.Redirect("/ProxyManage.aspx");
+        }
+        protected void StudentsClick(object sender, EventArgs e)
+        {
+            Response.Redirect("/MemberManage.aspx");
+        }
+
+        
     }
 }

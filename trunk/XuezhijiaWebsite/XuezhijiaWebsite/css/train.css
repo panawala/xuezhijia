@@ -88,7 +88,23 @@ a.pub_btn:hover
 }
 
 
-.enterdes{	font-family: Verdana, Arial, Helvetica, sans-serif;    font-size: 15px;	width:220px;	height:60px;	color:Black;	/*background-color:#A9CBEE;*/	margin:1px 0px;	padding-left:0px;	/*border: 1px dashed Purple;*/}.second_right_nav 
+.enterdes
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+	width:220px;
+	height:60px;
+	color:Black;
+	/*background-color:#A9CBEE;*/
+	margin:1px 0px;
+	padding-left:0px;
+	/*border: 1px dashed Purple;*/
+}
+
+
+
+
+.second_right_nav 
 {
 border: 0px solid #85AFEC;
 background: White;
@@ -194,7 +210,7 @@ text-decoration: none;
 }
 
 
-.hotel a img {
+.proxy a img {
 width:200px;
 height:200px;
 }

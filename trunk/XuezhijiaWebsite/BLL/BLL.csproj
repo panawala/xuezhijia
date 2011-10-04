@@ -64,6 +64,9 @@
     <Compile Include="IndexImageWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MemberWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NewsWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -71,6 +74,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProxyWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RentHourseWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
