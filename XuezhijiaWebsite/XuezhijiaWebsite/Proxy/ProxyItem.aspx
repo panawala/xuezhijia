@@ -81,10 +81,10 @@
 <input type="radio"  name="hukou" value = "no" />否<br />
 <p style="text-align:right;margin:5px;"></p>
 居住地址：
-<textarea id="address" name="address" rows="3" cols="4" class="must rightinfoinput"></textarea>
+<textarea id="address" name="address" rows="3" class="must rightinfoinput"></textarea>
 <p style="text-align:right;margin:5px;"></p>
 备注：
-<textarea id="remark" name="remark" rows="3" cols="4" class="must rightinfoinput"></textarea>
+<textarea id="remark" name="remark" rows="3" class="must rightinfoinput"></textarea>
 <p style="text-align:right;margin:5px;"></p>
 <a target="_blank" class="m2-btn" href="javascript:void(0);" onclick="MyFormSubmit();return false;"><span class="">现在报名</span></a>
 </div>
