@@ -9,9 +9,9 @@
             <td style="width: 90px;">
                 价格
             </td>
-            <td style="width: 90px;">
+            <!--<td style="width: 90px;">
                 查看次数
-            </td>
+            </td>-->
              <td style="text-align: left;">
               房型
             </td>
@@ -25,14 +25,15 @@
          {#foreach $T as RentHourse}
         <tr class="ding">
             <td style="text-align: left; width: 80px;">
-                 <a href="/House/HouseCheck.aspx?id={$T.RentHourse.HourseID}"> { $T.RentHourse.HourseName }</a>
+                 <!--<a href="/House/HouseCheck.aspx?id={$T.RentHourse.HourseID}"> { $T.RentHourse.HourseName }</a>-->
+                  { $T.RentHourse.HourseName }
             </td>
             <td>
                { $T.RentHourse.Price }  元
             </td>
-            <td>
+            <!--<td>
                 { $T.RentHourse.ClickCount }
-            </td>
+            </td>-->
              <td>
                 { $T.RentHourse.HourseType }
             </td>
