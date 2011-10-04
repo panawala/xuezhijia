@@ -1,4 +1,4 @@
-﻿.hotelnav
+﻿.proxynav
 {
 	width:1022px;
 	height:30px;
@@ -8,7 +8,7 @@
 	margin-bottom:5px;
 	line-height:30px;
 }
-.hotel
+.proxy
 {
 	width:810px;
 	height:inherit;
@@ -19,14 +19,14 @@
 	float:left;
 	margin-bottom:20px;
 }
-.hotel ul
+.proxy ul
 {
 	padding: 15px 0;
     list-style :none;
     margin:0;
 /*ul在主流浏览器中幽默缩进问题！！！！！！！！！*/
 }
-.hotel ul li
+.proxy ul li
 {
 	margin:10px 0px 10px 10px;
 	padding: 0px 5px 0px 5px;
@@ -34,7 +34,7 @@
     float : left;
     /*width:25%;*/
 }
-.hotelimage
+.proxyimage
 {
 	width:240px;
 	height:220px;
@@ -43,16 +43,16 @@
 	/*border: 1px dashed Purple;*/
 }
 
-.hotelimage img{
+.proxyimage img{
 width: 240px;
 height: 220px;
 }
-.hoteldes
+.proxydes
 {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 15px;
 	width:230px;
-	height:150px;
+	height:30px;
 	color:Black;
 	background-color:#A9CBEE;
 	margin:1px 0px;
@@ -208,7 +208,42 @@ text-decoration: none;
 }
 
 
-.hotel a img {
+.proxy a img {
 width:200px;
 height:200px;
+}
+
+.hotsale-nav {
+height: 30px;
+border: 1px solid #D8D8D8;
+border-bottom-color: #F2F2F2;
+background-color: #F6F6F6;
+margin-bottom:3px;
+}
+
+.hotsale-nav ul {
+display: inline;
+height: 30px;
+line-height: 30px;
+}
+
+.hotsale-nav ul li {
+float: left;
+padding-left: 16px;
+padding-right: 6px;
+list-style:none;
+}
+/*.hotsale-nav ul li a {
+color: #057BD2;
+font-weight: bold;
+font-size: 14px;
+}*/
+.hotsale-nav ul li a:link, a:visited {
+color: #057BD2;
+text-decoration: none;
+font-size: 18px;
+}
+.hotsale-nav ul li a:hover {
+color: red;
+text-decoration: underline;
 }

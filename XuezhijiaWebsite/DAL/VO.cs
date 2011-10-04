@@ -206,4 +206,25 @@ namespace DAL
         public int NewsClickCount;
         public int NewsType;
     }
+
+
+    public class PROXY
+    {
+        public int ProID;
+        public string Name;
+        public string Type;
+        public string Comment;
+        public int ImageID;
+    }
+
+    public class MEMBER
+    {
+        public int MemberID;
+        public string Name;
+        public string IsNative;
+        public string Address;
+        public string ContactInformation;
+        public string Type;
+        public string Comment;
+    }
 }

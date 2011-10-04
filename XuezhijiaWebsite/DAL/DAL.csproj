@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IndexImage.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Member.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Member.xsd</DependentUpon>
+    </Compile>
     <Compile Include="News.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +105,11 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proxy.xsd</DependentUpon>
     </Compile>
     <Compile Include="RentHourse.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -235,6 +245,17 @@
     <None Include="IndexImage.xss">
       <DependentUpon>IndexImage.xsd</DependentUpon>
     </None>
+    <None Include="Member.xsc">
+      <DependentUpon>Member.xsd</DependentUpon>
+    </None>
+    <None Include="Member.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Member.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Member.xss">
+      <DependentUpon>Member.xsd</DependentUpon>
+    </None>
     <None Include="News.xsc">
       <DependentUpon>News.xsd</DependentUpon>
     </None>
@@ -260,6 +281,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Proxy.xsc">
+      <DependentUpon>Proxy.xsd</DependentUpon>
+    </None>
+    <None Include="Proxy.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Proxy.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Proxy.xss">
+      <DependentUpon>Proxy.xsd</DependentUpon>
     </None>
     <None Include="RentHourse.xsc">
       <DependentUpon>RentHourse.xsd</DependentUpon>

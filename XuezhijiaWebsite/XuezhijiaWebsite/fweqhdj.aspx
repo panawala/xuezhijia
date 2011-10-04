@@ -60,7 +60,11 @@
 
     <asp:LinkButton ID="LinkButton15" Text="新闻添加" runat="server" OnClick="NewsAddClick"></asp:LinkButton>
     <br />
+     <asp:LinkButton ID="LinkButton16" Text="学员管理" runat="server" OnClick="StudentsClick"></asp:LinkButton>
+    <br />
 
+    <asp:LinkButton ID="LinkButton17" Text="代理管理" runat="server" OnClick="ProxyClick"></asp:LinkButton>
+    <br />
     </form>
 </body>
 </html>

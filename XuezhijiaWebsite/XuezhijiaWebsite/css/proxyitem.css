@@ -1,105 +1,70 @@
-﻿.hotelnav
+﻿.proxyitemnav
 {
 	width:1022px;
-	height:30px;
-	border: 1px solid #85AFEC;
-	background: #E4EDFA;
+	height:80px;
+	border: 1px solid #D0DBB8;
+	background: #F5FFF1;
 	overflow:hidden;
 	margin-bottom:5px;
-	line-height:30px;
+	line-height:80px;
 }
-.hotel
+.proxyitem
 {
 	width:810px;
 	height:inherit;
-	border: 1px solid #85AFEC;
+	border: 0px solid #85AFEC;
 	background: White;
 	overflow:hidden;
 	min-height:600px;
 	float:left;
 	margin-bottom:20px;
 }
-.hotel ul
-{
-	padding: 15px 0;
-    list-style :none;
-    margin:0;
-/*ul在主流浏览器中幽默缩进问题！！！！！！！！！*/
-}
-.hotel ul li
-{
-	margin:10px 0px 10px 10px;
-	padding: 0px 5px 0px 5px;
-    border-right : 1px dashed #E5E5E5;
-    float : left;
-    /*width:25%;*/
-}
-.hotelimage
-{
-	width:240px;
-	height:220px;
-	background-color:Aqua;
-	overflow:hidden;
-	/*border: 1px dashed Purple;*/
-}
-
-.hotelimage img{
-width: 240px;
-height: 220px;
-}
-.hoteldes
-{
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 15px;
-	width:230px;
-	height:150px;
-	color:Black;
-	background-color:#A9CBEE;
-	margin:1px 0px;
-	padding-left:10px;
-	/*border: 1px dashed Purple;*/
-}
 
 strong, b {
 font-weight: bolder;
-margin:20px 0;
 }
 
 
-
-.enterdes
-{
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 15px;
-	width:220px;
-	height:60px;
-	color:Black;
-	/*background-color:#A9CBEE;*/
-	margin:1px 0px;
-	padding-left:0px;
-	/*border: 1px dashed Purple;*/
+tbody {
+display: table-row-group;
+vertical-align: middle;
+border-color: inherit;
 }
 
-
-
-a.order {
-font-size: 14px;
+.head {
+background: #C5EC83;
 font-weight: bold;
-text-align: center;
-background: #F6A244;
-color: white;
-display: inline-block;
-width: 240px;
-height: 34px;
-line-height: 34px;
-margin-top:0px;
-margin-bottom: 0px;
-border: 1px solid #EBEBEB;
+padding: 0 0 0 5px;
 }
-a.order:hover
-{
-	text-decoration:underline;
-	color:Red;
+
+tr.head td {
+padding: 0 0 0 10px;
+}
+
+.shlist td {
+line-height: 35px;
+white-space: nowrap;
+border-bottom: 1px solid #EBEBEB;
+padding: 5px 0 5px 5px;
+}
+
+
+i {
+padding-left: 5px;
+font-style: normal;
+font-weight: normal;
+color: olive;
+}
+
+.ding a:hover , a:visited{
+color: red;
+text-decoration: underline;
+}
+
+ .proxyitem a {
+padding-left: 5px;
+font-style: normal;
+font-weight: normal;
 }
 
 .second_right_nav 
@@ -112,7 +77,6 @@ width: 200px;
 float:right;
 min-height:600px;
 }
-
 
 .block {
 background: #F5FFF1;
@@ -143,8 +107,6 @@ clear: both;
 overflow: hidden;
 clear: both;
 }
-
-
 
 
 
@@ -208,7 +170,42 @@ text-decoration: none;
 }
 
 
-.hotel a img {
+.proxyitem a img {
 width:200px;
 height:200px;
+}
+
+
+a.m2-btn, a.m2-btn:hover {
+text-decoration: none;
+}
+.m2-btn,  .m2-btn span {
+background: transparent url("/Image/m2_btns.png") no-repeat;
+border: none;
+cursor: pointer;
+display: inline-block;
+}
+
+.m2-btn span 
+{
+	padding: 0 10px 0 9px;
+border: none;
+overflow: visible;
+font-weight: bold;
+background-position: right -57px;
+height: 31px;
+line-height: 31px;
+color: white;
+font-size: 14px;
+}
+
+.m2-btn 
+{
+background-position: 0 -57px;
+display: inline-block;
+line-height: 100%;
+text-align: left;
+font-size: 12px;
+padding-left: 2px;
+vertical-align: middle;
 }
