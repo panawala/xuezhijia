@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL;
 using BLL;
+using System.Web.Security;
 
 namespace XuezhijiaWebsite.Proxy
 {
@@ -39,6 +40,14 @@ namespace XuezhijiaWebsite.Proxy
             member.Type = StrType;
             member.Name = Name;
             wrapper.addAClassRecord(member);
+
+
+            //List<string> mobiles = new List<string>();
+            //mobiles.Add("18801796521");
+            //mobiles.Add("18651691978");
+            //string Pwd = FormsAuthentication.HashPasswordForStoringInConfigFile("123123", "MD5"); //密码进行MD5加密
+            //Response.Write(SmsWrapper.SendSms(mobiles, "hello", "521641", Pwd));
+
 
             Response.Redirect("/Success.htm");
         }
