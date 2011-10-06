@@ -25,7 +25,7 @@ namespace XuezhijiaWebsite
 
         private void InitPage()
         {
-            MemberWrapper wrapper = new MemberWrapper();
+            HotelOrderWrapper wrapper = new HotelOrderWrapper();
             DataTable table = new DataTable();
             table = wrapper.getall();
             Order.DataSource = table;

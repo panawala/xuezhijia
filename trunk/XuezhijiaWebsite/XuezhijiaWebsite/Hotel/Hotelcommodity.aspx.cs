@@ -14,11 +14,11 @@ namespace XuezhijiaWebsite.Hotel
         {
             ((MasterPage)Master).CurrentMenu = "hotel";
             int HotelId=Convert.ToInt32(Request.QueryString["id"]);
-            var types=(new HotelWrapper()).getDicByID(HotelId);
-            DropDownList_RoomTypes.DataSource = types;
-            DropDownList_RoomTypes.DataTextField = "Type";
-            DropDownList_RoomTypes.DataValueField = "Price";
-            DropDownList_RoomTypes.DataBind();
+            //var types=(new HotelWrapper()).getDicByID(HotelId);
+            //DropDownList_RoomTypes.DataSource = types;
+            //DropDownList_RoomTypes.DataTextField = "Type";
+            //DropDownList_RoomTypes.DataValueField = "Price";
+            //DropDownList_RoomTypes.DataBind();
 
             /*List<string> types = new List<string>();
             types.Add("单人间");
