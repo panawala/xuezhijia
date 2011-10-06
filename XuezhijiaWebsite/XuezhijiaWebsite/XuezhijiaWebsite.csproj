@@ -336,6 +336,7 @@
     <Content Include="Image\3333.jpg" />
     <Content Include="Image\backg.jpg" />
     <Content Include="Image\bg_warn.gif" />
+    <Content Include="Image\calendar.png" />
     <Content Include="Image\head_bg.jpg" />
     <Content Include="Image\head_bgq.jpg" />
     <Content Include="Image\home_icon.png" />
