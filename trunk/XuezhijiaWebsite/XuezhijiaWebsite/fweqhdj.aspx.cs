@@ -101,7 +101,5 @@ namespace XuezhijiaWebsite
         {
             Response.Redirect("/HotelOrderManage.aspx");
         }
-
-        
     }
 }
