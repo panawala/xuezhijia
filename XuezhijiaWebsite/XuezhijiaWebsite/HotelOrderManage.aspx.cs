@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DAL;
-using BLL;
 using System.Data;
+using BLL;
+using DAL;
 
 namespace XuezhijiaWebsite
 {
-    public partial class MemberManage : System.Web.UI.Page
+    public partial class HotelOrderManage : System.Web.UI.Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,14 +28,14 @@ namespace XuezhijiaWebsite
             MemberWrapper wrapper = new MemberWrapper();
             DataTable table = new DataTable();
             table = wrapper.getall();
-            Member.DataSource = table;
-            Member.DataBind();
+            Order.DataSource = table;
+            Order.DataBind();
         }
 
         protected void DeleteClick(int id)
         {
-            MemberWrapper wrapper = new MemberWrapper();
-            MEMBER member = new MEMBER();
+            HotelOrderWrapper wrapper = new HotelOrderWrapper();
+            HOTELORDER hotelorder = new HOTELORDER();
             wrapper.deleteARecordByID(id);
             InitPage();
         }
@@ -58,13 +58,13 @@ namespace XuezhijiaWebsite
                 case "Delete": DeleteClick(Id);
                     return;
             }
-            MEMBER member = new MEMBER();
-            MemberWrapper wrapper = new MemberWrapper();
-            member = wrapper.getResultByID(Id);
+            HOTELORDER hotelorder = new HOTELORDER();
+            HotelOrderWrapper wrapper = new HotelOrderWrapper();
+            hotelorder = wrapper.getResultByID(Id);
         }
         protected void Shops_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Member.SelectedIndex = Member.PageIndex;
+            Order.SelectedIndex = Order.PageIndex;
         }
     }
 }

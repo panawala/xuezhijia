@@ -317,6 +317,7 @@
     <Content Include="EditAds.aspx" />
     <Content Include="GREManage.aspx" />
     <Content Include="HotelManage.aspx" />
+    <Content Include="HotelOrderManage.aspx" />
     <Content Include="Hotel\Hotelcommodity.aspx" />
     <Content Include="Hotel\hotelcommoditytemplate.htm" />
     <Content Include="Hotel\Hotelorder.aspx" />
@@ -520,6 +521,13 @@
     </Compile>
     <Compile Include="HotelManage.aspx.designer.cs">
       <DependentUpon>HotelManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelOrderManage.aspx.cs">
+      <DependentUpon>HotelOrderManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelOrderManage.aspx.designer.cs">
+      <DependentUpon>HotelOrderManage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Hotel\Hotelcommodity.aspx.cs">
       <DependentUpon>Hotelcommodity.aspx</DependentUpon>
