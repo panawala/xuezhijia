@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Hotel.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HotelOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelOrder.xsd</DependentUpon>
+    </Compile>
     <Compile Include="IndexImage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -233,6 +238,17 @@
     </None>
     <None Include="Hotel.xss">
       <DependentUpon>Hotel.xsd</DependentUpon>
+    </None>
+    <None Include="HotelOrder.xsc">
+      <DependentUpon>HotelOrder.xsd</DependentUpon>
+    </None>
+    <None Include="HotelOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelOrder.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="HotelOrder.xss">
+      <DependentUpon>HotelOrder.xsd</DependentUpon>
     </None>
     <None Include="IndexImage.xsc">
       <DependentUpon>IndexImage.xsd</DependentUpon>

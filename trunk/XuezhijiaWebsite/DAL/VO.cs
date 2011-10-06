@@ -29,8 +29,8 @@ namespace DAL
         public string HotelName;
         public string Location;
         public string ContactWay;
-        public string Type;
-        public string Price;
+        public List<string> Type;
+        public List<string> Price;
         public List<int> PIDList = new List<int>();
         public string Comment;
         public int PID;
@@ -226,5 +226,19 @@ namespace DAL
         public string ContactInformation;
         public string Type;
         public string Comment;
-    }
+    }
+
+    public class HOTELORDER
+    {
+        public int OrderID;
+        public string CustomName;
+        public string ConnectionMethods;
+        public string Type;
+        public DateTime EnterDateTime;
+        public DateTime LeaveDateTime;
+        public string Comment;
+        public string Gender;
+        public int RoomCount;
+        public double SumPrice;
+        public int HotelID;    }
 }
