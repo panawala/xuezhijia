@@ -29,8 +29,8 @@ namespace DAL
         public string HotelName;
         public string Location;
         public string ContactWay;
-        public List<string> Type;
-        public List<string> Price;
+        public string Type;
+        public string Price;
         public List<int> PIDList = new List<int>();
         public string Comment;
         public int PID;
