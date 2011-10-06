@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DAL;
+using BLL;
 
 namespace XuezhijiaWebsite.Hotel
 {
@@ -21,10 +23,22 @@ namespace XuezhijiaWebsite.Hotel
             string Gender = Request.QueryString["Gender"];
             string Conact = Request.QueryString["Conact"];
             string Remark = Request.QueryString["Remark"];
-            
 
-           
+            HOTELORDER hotelorder = new HOTELORDER();
+            hotelorder.HotelID = Convert.ToInt32(HotelId);
+            hotelorder.Type = RoomType;
+            hotelorder.RoomCount = Convert.ToInt32(RoomCount);
+            hotelorder.EnterDateTime = Convert.ToDateTime(StartDate);
 
+            hotelorder.LeaveDateTime = Convert.ToDateTime(EndDate);
+            hotelorder.SumPrice = Convert.ToDouble(SumPrice);
+            hotelorder.CustomName = CusName;
+            hotelorder.Gender = Gender;
+            hotelorder.ConnectionMethods = Conact;
+            hotelorder.Comment = Remark;
+
+            HotelOrderWrapper wrapper = new HotelOrderWrapper();
+            wrapper.addAClassRecord(hotelorder);
         }
     }
 }
