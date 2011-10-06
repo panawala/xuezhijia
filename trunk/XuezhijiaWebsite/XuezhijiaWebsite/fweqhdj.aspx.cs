@@ -97,6 +97,10 @@ namespace XuezhijiaWebsite
         {
             Response.Redirect("/MemberManage.aspx");
         }
+        protected void HotelOrderClick(object sender, EventArgs e)
+        {
+            Response.Redirect("/HotelOrderManage.aspx");
+        }
 
         
     }
