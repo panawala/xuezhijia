@@ -13,12 +13,14 @@ namespace BLL
     {
         public DataTable getall()
         {
-            return GetData();
+            DataTable table = new DataTable();
+            string sql = " select * from HotelOrder left join Hotel on HotelOrder.HotelID = Hotel.HotelID ";
+            return  CommenHelper.GetInstance().getResultBySql(sql);
         }
 
         public List<MEMBER> getAllFormatedResult()
         {
-            return _transfer(getall());
+            return _transfer(GetData());
 
         }
 
