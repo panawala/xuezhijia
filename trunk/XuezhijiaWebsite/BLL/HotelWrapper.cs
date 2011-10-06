@@ -41,6 +41,18 @@ namespace BLL
             return list;
         }
 
+        public Dictionary<string, string> getDicByID(int id)
+        {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            HOTEL hotel = new HOTEL();
+            hotel = getResultByID(id);
+            for (int i = 0; i < hotel.Type.Count; i++)
+            {
+                dict.Add(hotel.Price[i], hotel.Type[i]);
+            }
+            return dict; 
+        }
+
         private List<HOTEL> _transfer(DataTable table)
         {
             List<HOTEL> list = new List<HOTEL>();
