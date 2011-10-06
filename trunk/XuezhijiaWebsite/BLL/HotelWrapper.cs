@@ -27,6 +27,20 @@ namespace BLL
 
         }
 
+        private List<string>_getStringList(string str)
+        {
+            List<string> list = new List<string>();
+            string[] lt = str.Split('、');
+            for (int i = 0; i < lt.Length; i++)
+            {
+                if (lt[i].Length > 0)
+                {
+                    list.Add(lt[i]);
+                }
+            }
+            return list;
+        }
+
         private List<HOTEL> _transfer(DataTable table)
         {
             List<HOTEL> list = new List<HOTEL>();
@@ -36,9 +50,9 @@ namespace BLL
                 hotel.HotelID = Convert.ToInt32(table.Rows[i]["HotelID"].ToString());
                 hotel.HotelName = table.Rows[i]["HotelName"].ToString();
                 hotel.ContactWay = table.Rows[i]["ContactWay"].ToString();
-                hotel.Type = table.Rows[i]["Type"].ToString();
+                hotel.Type = _getStringList(table.Rows[i]["Type"].ToString());
                 hotel.Location = table.Rows[i]["Location"].ToString();
-                hotel.Price = table.Rows[i]["Price"].ToString();
+                hotel.Price = _getStringList(table.Rows[i]["Price"].ToString());
                 hotel.Comment = table.Rows[i]["Comment"].ToString();
                 hotel.PID = Convert.ToInt32(table.Rows[i]["PID"].ToString());
                 hotel.OrderID = Convert.ToInt32(table.Rows[i]["OrderId"].ToString());
@@ -63,9 +77,37 @@ namespace BLL
             string idLit = "";
             for (int i = 0; i < row.PIDList.Count; i++)
             {
-                idLit = (row.PIDList[i]).ToString() + ",";
+                idLit = idLit + (row.PIDList[i]).ToString() + "、";
             }
-            Insert(row.HotelName, row.Location, row.ContactWay, row.Type, row.Price, idLit, row.Comment, row.PID, row.OrderID);
+
+            string typelist = "";
+            for (int i = 0; i < row.Type.Count; i++)
+            {
+                typelist = typelist + (row.Type[i]).ToString() + "、";
+            }
+
+            string pricelist = "";
+            for (int i = 0; i < row.Price.Count; i++)
+            {
+                pricelist = pricelist + (row.Price[i]).ToString() + "、";
+            }
+
+            Insert(row.HotelName, row.Location, row.ContactWay, typelist, pricelist, idLit, row.Comment, row.PID, row.OrderID);
+        }
+
+        public double getPriceByTypeAndID(int id, string type)
+        {
+            double price = 0.0;
+            HOTEL hotel = getResultByID(id);
+            for (int i = 0; i < hotel.Type.Count; i++)
+            {
+                if (type == hotel.Type[i])
+                {
+                    price = Convert.ToDouble(hotel.Price[i]);
+                    break;
+                }
+            }
+            return price; 
         }
 
         public void deleteARecordByID(int id)
