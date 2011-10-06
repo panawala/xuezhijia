@@ -92,6 +92,7 @@
     <Compile Include="ShopWrapper.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SmsWrapper.cs" />
     <Compile Include="StudentWrapper.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -13,6 +13,15 @@ namespace XuezhijiaWebsite.Hotel {
     public partial class Hotelcommodity {
         
         /// <summary>
+        /// DropDownList_RoomTypes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_RoomTypes;
+        
+        /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>
