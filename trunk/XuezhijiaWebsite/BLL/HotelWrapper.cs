@@ -41,16 +41,32 @@ namespace BLL
             return list;
         }
 
-        public Dictionary<string, string> getDicByID(int id)
+        public DataTable getDicByID(int id)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
             HOTEL hotel = new HOTEL();
             hotel = getResultByID(id);
+            //for (int i = 0; i < hotel.Type.Count; i++)
+            //{
+            //    dict.Add(hotel.Price[i], hotel.Type[i]);
+            //}
+
+            DataTable dataTable = new DataTable();
+            dataTable.TableName = "dataTable";
+            DataColumn strPhoneNum = dataTable.Columns.Add("Price", typeof(string));
+            DataColumn dtCallDate = dataTable.Columns.Add("Type", typeof(string));
+            DataRow row;
+            // Create new DataRow objects and add to DataTable.  
             for (int i = 0; i < hotel.Type.Count; i++)
             {
-                dict.Add(hotel.Price[i], hotel.Type[i]);
+                row = dataTable.NewRow();
+                row["Price"] = hotel.Price[i];
+                row["Type"] = hotel.Type[i];
+                dataTable.Rows.Add(row);
             }
-            return dict; 
+
+
+            return dataTable; 
         }
 
         private List<HOTEL> _transfer(DataTable table)

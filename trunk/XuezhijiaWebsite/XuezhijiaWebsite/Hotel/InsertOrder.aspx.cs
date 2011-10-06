@@ -18,7 +18,7 @@ namespace XuezhijiaWebsite.Hotel
             string RoomCount = Request.QueryString["RoomCount"];
             string StartDate = Request.QueryString["StartDate"];
             string EndDate = Request.QueryString["EndDate"];
-            string SumPrice = Request.QueryString["EndDate"];
+            string SumPrice = Request.QueryString["SumPrice"];
             string CusName = Request.QueryString["CusName"];
             string Gender = Request.QueryString["Gender"];
             string Conact = Request.QueryString["Conact"];
@@ -39,6 +39,9 @@ namespace XuezhijiaWebsite.Hotel
 
             HotelOrderWrapper wrapper = new HotelOrderWrapper();
             wrapper.addAClassRecord(hotelorder);
+
+
+            Response.Redirect("/hotelordersuccess.htm");
         }
     }
 }

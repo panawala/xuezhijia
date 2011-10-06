@@ -164,7 +164,7 @@
                 <li class="<%=CurrentMenu=="shop"?"cu":"ncu" %>"><a href="http://liao880124.idc88.youngyu.cn/">同舟团购</a></li>
 				<li class="<%=CurrentMenu=="hotel"?"cu":"ncu" %>"><a href="/Hotel/Hotelorder.aspx">宾馆预定</a></li>
                 <li class="<%=CurrentMenu=="ticket"?"cu":"ncu" %>"><a href="/Ticket/Ticket.aspx">门票服务</a></li>
-                <li class="<%=CurrentMenu=="proxy"?"cu":"ncu" %>"><a href="/Proxy/Proxy.aspx?type=1">校园代理</a></li>
+                <li class="<%=CurrentMenu=="proxy"?"cu":"ncu" %>"><a href="/Proxy/Proxy.aspx?type=2">校园代理</a></li>
                 <li class="<%=CurrentMenu=="tutor"?"cu":"ncu" %>"><a href="/Tutor/Student.aspx">家教服务</a></li>
                 <li class="<%=CurrentMenu=="house"?"cu":"ncu" %>"><a href="/House/House.aspx">房屋租赁</a></li>
                 

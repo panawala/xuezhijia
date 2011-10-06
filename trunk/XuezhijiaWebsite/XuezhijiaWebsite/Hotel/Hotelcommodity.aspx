@@ -14,8 +14,10 @@
       <!-- page specific scripts -->
 
 		<script type="text/javascript" charset="utf-8">
+		    Date.format = 'yyyy-mm-dd';
 		    $(function () {
 		        $('.date-pick').datePicker({ autoFocusNextInput: true });
+		        
 		    });
 
 		</script>
@@ -35,45 +37,89 @@
                 return returnValue;
             }
         }
+
+
     </script>
+
+      <script type="text/javascript">
+          var sumPrice = 0;
+          var sumDays = 0;
+          var checkCountValue =0;
+          var checkTypeValue = 0;
+          var typeText = "";
+          var check = false;
+          function CheckMyForm() {
+              $(".must").each(function () {
+                  if ($(this).val() == undefined || $(this).val() == "") {
+                      $(this).removeClass("rightinfoinput");
+                      $(this).addClass("righterrinfoput");
+                      check = false;
+                      return false;
+                  }
+                  else {
+                      $(this).removeClass("righterrinfoput");
+                      $(this).addClass("rightinfoinput");
+                      check = true;
+                      return true;
+                  }
+              });
+              return check;
+          }
+
+          function MyFormSubmit() {
+              if (CheckMyForm()) {
+                  location.href = "/Hotel/InsertOrder.aspx?HotelId=" + request("id") + "&RoomType=" +
+                $("#ContentPlaceHolder1_DropDownList_RoomTypes").find("option:selected").text() + "&RoomCount=" + $("#RoomCount").val() + "&StartDate=" +
+                $("#startdate").attr("value") + "&EndDate=" + $("#enddate").attr("value") + "&SumPrice=" + sumPrice+ "&CusName=" +
+                 $("#name").attr("value") + "&Gender=" + $("input[type=radio]:checked").attr("value") + "&Conact=" + $("#contact").attr("value")
+                  + "&Remark=" + $("#remark").attr("value");
+              }
+              else {
+                  //alert($("input[type=radio]:checked").attr("value"));
+                  return false;
+              }
+          }
+
+
+          function compareDate(first, second, sign) {
+              fArray = first.split(sign);
+              sArray = second.split(sign);
+              var fDate = new Date(fArray[0], fArray[1], fArray[2]);
+              var sDate = new Date(sArray[0], sArray[1], sArray[2]);
+
+              var t = Math.abs(fDate.getTime() - sDate.getTime());
+              var days = t / (1000 * 60 * 60 * 24);
+              return days;
+          }
+
+          function calSumFee() {
+              typeText = $("#ContentPlaceHolder1_DropDownList_RoomTypes").find("option:selected").text();
+              checkCountValue = $("#RoomCount").val();
+              checkTypeValue = $("#ContentPlaceHolder1_DropDownList_RoomTypes").val();
+              sumDays = compareDate($("#startdate").attr("value"), $("#enddate").attr("value"), "-");
+              sumPrice = checkCountValue * checkTypeValue * sumDays;
+              $("#SumPriceCal").html("您的房间总价为：<br/>" + typeText + "*" + checkCountValue + "间*" + sumDays + "天；<br />共" + sumPrice + "元");
+          }
+
+    </script>
+
 
     <script type="text/javascript">
         $(document).ready(function () {
-            var typeText = $("#ContentPlaceHolder1_DropDownList_RoomTypes").find("option:selected").text();
-            //获取Select选择的Text
-            var checkCountValue = $("#RoomCount").val();
-            var checkTypeValue = $("#ContentPlaceHolder1_DropDownList_RoomTypes").val();
-            //获取Select选择的Value
-            //alert(checkText);
-            //alert(checkCountValue * checkTypeValue);
-            $("#SumPriceCal").html("您的房间总价为：" + typeText + "*" + checkCountValue + "间；共" + checkCountValue * checkTypeValue + "元");
+            //初始化日期
+            $("#startdate").val((new Date()).asString("yyyy-mm-dd"));
+            $("#enddate").val((new Date()).addDays(1).asString("yyyy-mm-dd"));
+            //计算初始化总价
+            calSumFee();
 
-
+           
             $("#RoomCount").change(function () {
-                //var checkText = $("#RoomCount").find("option:selected").text();
-                typeText = $("#ContentPlaceHolder1_DropDownList_RoomTypes").find("option:selected").text();
-                //获取Select选择的Text
-                checkCountValue = $("#RoomCount").val();
-                checkTypeValue = $("#ContentPlaceHolder1_DropDownList_RoomTypes").val();
-                //获取Select选择的Value
-                //alert(checkText);
-                //alert(checkCountValue * checkTypeValue);
-                $("#SumPriceCal").html("您的房间总价为：<br/>" + typeText + "*" + checkCountValue + "间；共" + checkCountValue * checkTypeValue + "元");
+                calSumFee();
             });
-            //为Select添加事件，当选择其中一项时触发
 
             $("#ContentPlaceHolder1_DropDownList_RoomTypes").change(function () {
-                typeText = $("#ContentPlaceHolder1_DropDownList_RoomTypes").find("option:selected").text();
-                //获取Select选择的Text
-                checkCountValue = $("#RoomCount").val();
-               checkTypeValue = $("#ContentPlaceHolder1_DropDownList_RoomTypes").val();
-                //获取Select选择的Value
-                //alert(checkText);
-                //alert(checkCountValue * checkTypeValue);
-                $("#SumPriceCal").html("您的房间总价为：<br/>" + typeText + "*" + checkCountValue + "间；共" + checkCountValue * checkTypeValue + "元");
-
+                calSumFee();
             });
-            //为Select添加事件，当选择其中一项时触发
         })
        
     </script>
@@ -120,10 +166,10 @@
     间
     <br />
     <label for="startdate">入住日期：</label>
-<input type="text" name="startdate" id="startdate"  class="must date-pick rightinfoinput"/>
+<input type="text" name="startdate" id="startdate"  class="must date-pick rightinfoinput" onchange="calSumFee()"/>
 <div style="clear:both;"></div>
 <label for="enddate">结束日期：</label>
-<input type="text" name="enddate" id="enddate"  class="must date-pick rightinfoinput"/>
+<input type="text" name="enddate" id="enddate"  class="must date-pick rightinfoinput" onchange="calSumFee()"/>
 <div style="clear:both;"></div>
     <div id="SumPriceCal"></div>
     
@@ -146,7 +192,7 @@
 <p style="text-align:right;margin:5px;"></p>
 
 备注：
-<textarea id="remark" name="remark" rows="3" class="must rightinfoinput"></textarea>
+<textarea id="remark" name="remark" rows="3" class="rightinfoinput"></textarea>
 <p style="text-align:right;margin:5px;"></p>
 <p style="text-align:right;margin:5px;"></p>
 <a target="_blank" class="m2-btn" href="javascript:void(0);" onclick="MyFormSubmit();return false;"><span class="">现在预订</span></a>
