@@ -31,10 +31,6 @@
                 <asp:BoundField DataField="Location" HeaderText="位置" SortExpression="Location" />
                 <asp:BoundField DataField="Price" HeaderText="价格" SortExpression="Price" />
                 <asp:BoundField DataField="ContactWay" HeaderText="联系方式" SortExpression="ContactWay" />
-                <asp:BoundField DataField="Type" HeaderText="价格" SortExpression="Type" />
-                <asp:BoundField DataField="ContactWay" HeaderText="联系方式" SortExpression="ContactWay" />
-                <asp:BoundField DataField="Price" HeaderText="价格" SortExpression="Price" />
-               <asp:BoundField DataField="PIDList" HeaderText="图片列表" SortExpression="PIDList" />
             </Columns>
     </asp:GridView>
     <br />
