@@ -65,6 +65,9 @@
 
     <asp:LinkButton ID="LinkButton17" Text="代理管理" runat="server" OnClick="ProxyClick"></asp:LinkButton>
     <br />
+
+    <asp:LinkButton ID="LinkButton18" Text="宾馆订单管理" runat="server" OnClick="HotelOrderClick"></asp:LinkButton>
+    <br />
     </form>
 </body>
 </html>
