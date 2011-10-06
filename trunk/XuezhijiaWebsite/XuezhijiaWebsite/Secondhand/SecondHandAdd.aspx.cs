@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL;
 using BLL;
-using DAL;
 using System.IO;
 
 namespace XuezhijiaWebsite.Secondhand

@@ -27,7 +27,7 @@ namespace XuezhijiaWebsite
         {
             FileRecordWrapper wrapper = new FileRecordWrapper();
             DataTable table = new DataTable();
-            if (Session["UserID"] != null && Session["UserID"] != "")
+            if (Session["UserID"] != null && Session["UserID"].ToString() != "")
             {
                 string uid = Session["UserID"].ToString();
                 table = wrapper.getResultByUserID(Convert.ToInt16(uid));
