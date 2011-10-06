@@ -104,19 +104,29 @@ a.order:hover
 
 .second_right_nav 
 {
-border: 0px solid #85AFEC;
-background: White;
-padding: 2px;
+	margin-top:5px;
+border: 1px solid #85AFEC;
+background: #FAFAFA;
+padding: 0px;
 overflow: hidden;
 width: 200px;
 float:right;
-min-height:600px;
+min-height:400px;
 }
 
+.hotel_right_nav {
+border: 1px solid #85AFEC;
+background: #FAFAFA;
+padding: 0px;
+overflow: hidden;
+width: 200px;
+float: right;
+min-height: 200px;
+}
 
 .block {
-background: #F5FFF1;
-border: 1px solid #D0DBB8;
+background: #FAFAFA;
+border: 0px solid #D0DBB8;
 }
 .block .title {
 border-bottom: 1px solid #D0DBB8;
@@ -211,4 +221,38 @@ text-decoration: none;
 .hotel a img {
 width:200px;
 height:200px;
+}
+
+a.m2-btn, a.m2-btn:hover {
+text-decoration: none;
+}
+.m2-btn,  .m2-btn span {
+background: transparent url("/Image/m2_btns.png") no-repeat;
+border: none;
+cursor: pointer;
+display: inline-block;
+}
+
+.m2-btn span 
+{
+	padding: 0 10px 0 9px;
+border: none;
+overflow: visible;
+font-weight: bold;
+background-position: right -57px;
+height: 31px;
+line-height: 31px;
+color: white;
+font-size: 14px;
+}
+
+.m2-btn 
+{
+background-position: 0 -57px;
+display: inline-block;
+line-height: 100%;
+text-align: left;
+font-size: 12px;
+padding-left: 2px;
+vertical-align: middle;
 }

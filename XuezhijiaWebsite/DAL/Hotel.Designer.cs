@@ -537,8 +537,8 @@ namespace DAL {
                 this.columnHotelName.MaxLength = 50;
                 this.columnLocation.MaxLength = 200;
                 this.columnContactWay.MaxLength = 50;
-                this.columnType.MaxLength = 50;
-                this.columnPrice.MaxLength = 50;
+                this.columnType.MaxLength = 500;
+                this.columnPrice.MaxLength = 500;
                 this.columnPIDList.MaxLength = 2147483647;
                 this.columnComment.MaxLength = 2147483647;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_Hotel");

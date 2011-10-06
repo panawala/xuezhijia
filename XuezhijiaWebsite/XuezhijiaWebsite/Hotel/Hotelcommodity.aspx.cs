@@ -12,6 +12,11 @@ namespace XuezhijiaWebsite.Hotel
         protected void Page_Load(object sender, EventArgs e)
         {
             ((MasterPage)Master).CurrentMenu = "hotel";
+            /*List<string> types = new List<string>();
+            types.Add("单人间");
+            types.Add("双人间");
+            DropDownList_RoomTypes.DataSource = types;
+            DropDownList_RoomTypes.DataBind();*/
         }
     }
 }

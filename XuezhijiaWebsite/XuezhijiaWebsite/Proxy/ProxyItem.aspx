@@ -4,6 +4,7 @@
  <link href="../css/proxyitem.css" rel="stylesheet" type="text/css" />
     <script src="../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../Scripts/jtemplates.js" type="text/javascript"></script>
+
     <script type="text/javascript">
         /*--获取网页传递的参数--*/
         function request(paras) {
@@ -76,7 +77,7 @@
 <input type="text" name="contact" id="contact"  class="must rightinfoinput"/>
 <br />
 <p style="text-align:right;margin:5px;"></p>
-本地户口：
+上海户口：
 <input type="radio"  name="hukou" value = "yes" checked="checked"/>是
 <input type="radio"  name="hukou" value = "no" />否<br />
 <p style="text-align:right;margin:5px;"></p>

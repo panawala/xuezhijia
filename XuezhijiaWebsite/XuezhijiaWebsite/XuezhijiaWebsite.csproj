@@ -62,6 +62,8 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="bin\CKEditor.NET.dll" />
     <Content Include="bin\CKEditor.NET.pdb" />
+    <Content Include="css\calender.css" />
+    <Content Include="css\datePicker.css" />
     <Content Include="css\gotop.css" />
     <Content Include="css\proxy.css" />
     <Content Include="css\proxyitem.css" />
@@ -322,6 +324,7 @@
     <Content Include="Hotel\hotelcommoditytemplate.htm" />
     <Content Include="Hotel\Hotelorder.aspx" />
     <Content Include="Hotel\hotelordertemplate.htm" />
+    <Content Include="Hotel\InsertOrder.aspx" />
     <Content Include="HourseManage.aspx" />
     <Content Include="House\House.aspx" />
     <Content Include="House\HouseAdd.aspx" />
@@ -376,6 +379,8 @@
     <Content Include="Proxy\proxyitemtemplate.htm" />
     <Content Include="Proxy\proxytemplate.htm" />
     <Content Include="Register.aspx" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\jquery.datePicker.js" />
     <Content Include="Scripts\jquery.livequery.js" />
     <Content Include="Scripts\jtemplates.js" />
     <Content Include="SecondHandMarketManage.aspx" />
@@ -542,6 +547,13 @@
     </Compile>
     <Compile Include="Hotel\Hotelorder.aspx.designer.cs">
       <DependentUpon>Hotelorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel\InsertOrder.aspx.cs">
+      <DependentUpon>InsertOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hotel\InsertOrder.aspx.designer.cs">
+      <DependentUpon>InsertOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="HourseManage.aspx.cs">
       <DependentUpon>HourseManage.aspx</DependentUpon>
