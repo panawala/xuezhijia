@@ -41,6 +41,7 @@ namespace BLL
             return list;
         }
 
+        /*
         public DataTable getDicByID(int id)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
@@ -68,6 +69,32 @@ namespace BLL
 
             return dataTable; 
         }
+         * */
+
+        public DataTable getPriceAndTypeByID(int id)
+        {
+            HOTEL hotel = new HOTEL();
+            hotel = getResultByID(id);
+
+            List<string> type = new List<string>();
+            type = _getStringList(hotel.Type);
+            List<string> price = new List<string>();
+            type = _getStringList(hotel.Price);
+
+            DataTable table = new DataTable(); //声明一个DataTable
+            DataColumn Type = new DataColumn("Type");//声明列标
+            DataColumn Price = new DataColumn("Price");
+            table.Columns.Add(Type);
+            table.Columns.Add(Price);
+            for (int i = 0; i < type.Count; i++)
+            {
+                DataRow dr = table.NewRow();
+                dr["Type"] = type[i];
+                dr["Price"] = price[i];
+                table.Rows.Add(dr);
+            }
+            return table;
+        }
 
         private List<HOTEL> _transfer(DataTable table)
         {
@@ -78,9 +105,9 @@ namespace BLL
                 hotel.HotelID = Convert.ToInt32(table.Rows[i]["HotelID"].ToString());
                 hotel.HotelName = table.Rows[i]["HotelName"].ToString();
                 hotel.ContactWay = table.Rows[i]["ContactWay"].ToString();
-                hotel.Type = _getStringList(table.Rows[i]["Type"].ToString());
+                hotel.Type = table.Rows[i]["Type"].ToString();
                 hotel.Location = table.Rows[i]["Location"].ToString();
-                hotel.Price = _getStringList(table.Rows[i]["Price"].ToString());
+                hotel.Price = table.Rows[i]["Price"].ToString();
                 hotel.Comment = table.Rows[i]["Comment"].ToString();
                 hotel.PID = Convert.ToInt32(table.Rows[i]["PID"].ToString());
                 hotel.OrderID = Convert.ToInt32(table.Rows[i]["OrderId"].ToString());
@@ -108,6 +135,7 @@ namespace BLL
                 idLit = idLit + (row.PIDList[i]).ToString() + "、";
             }
 
+            /*
             string typelist = "";
             for (int i = 0; i < row.Type.Count; i++)
             {
@@ -119,10 +147,12 @@ namespace BLL
             {
                 pricelist = pricelist + (row.Price[i]).ToString() + "、";
             }
+             * */
 
-            Insert(row.HotelName, row.Location, row.ContactWay, typelist, pricelist, idLit, row.Comment, row.PID, row.OrderID);
+            Insert(row.HotelName, row.Location, row.ContactWay, row.Type, row.Price, idLit, row.Comment, row.PID, row.OrderID);
         }
 
+        /*
         public double getPriceByTypeAndID(int id, string type)
         {
             double price = 0.0;
@@ -137,6 +167,7 @@ namespace BLL
             }
             return price; 
         }
+        */
 
         public void deleteARecordByID(int id)
         {
