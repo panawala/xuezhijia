@@ -26,8 +26,8 @@
 
  <div class="hotsale-nav">
  <ul>
- <li><a href="/Proxy/Proxy.aspx?type=1">考研代理</a></li>
   <li><a href="/Proxy/Proxy.aspx?type=2">驾校代理</a></li>
+ <li><a href="/Proxy/Proxy.aspx?type=1">考研代理</a></li>
  </ul>
  </div>
 <div style="clear:both;"></div>

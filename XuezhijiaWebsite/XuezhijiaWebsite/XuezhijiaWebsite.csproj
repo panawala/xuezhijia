@@ -320,6 +320,7 @@
     <Content Include="GREManage.aspx" />
     <Content Include="HotelManage.aspx" />
     <Content Include="HotelOrderManage.aspx" />
+    <Content Include="hotelordersuccess.htm" />
     <Content Include="Hotel\Hotelcommodity.aspx" />
     <Content Include="Hotel\hotelcommoditytemplate.htm" />
     <Content Include="Hotel\Hotelorder.aspx" />

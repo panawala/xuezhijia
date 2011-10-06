@@ -70,16 +70,16 @@
             </div>
             <div class="tab_space" id="newscontent">
                 <div class="tab_space_title">
-                    同济NEWS
+                    校园NEWS
                     <div class="more">
-                        <a href="/News/NewsList.aspx?type=1">更多...</a></div>
+                        <a href="/News/NewsList.aspx?type=2">更多...</a></div>
                 </div>
                 <div id="webcontent">
                 </div>
                 <div class="tab_space_title">
                     学之家NEWS
                     <div class="more">
-                        <a href="/News/NewsList.aspx?type=2">更多...</a></div>
+                        <a href="/News/NewsList.aspx?type=1">更多...</a></div>
                 </div>
                 <div id="schoolcontent">
                 </div>
