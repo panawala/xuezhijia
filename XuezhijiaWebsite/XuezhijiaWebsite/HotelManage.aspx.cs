@@ -140,8 +140,8 @@ namespace XuezhijiaWebsite
                 hotel.HotelName = TextBox1.Text ;
                 hotel.Location = TextBox2.Text; 
                 hotel.ContactWay = TextBox3.Text;
-                hotel.Type = _getStringList(TextBox4.Text);
-                hotel.Price = _getStringList(TextBox5.Text);
+                hotel.Type = TextBox4.Text;
+                hotel.Price = TextBox5.Text;
                 hotel.Comment = TextBox7.Text;
                 hotel.HotelID = id;
                 hotel.PID = tmp.PID;
@@ -174,8 +174,8 @@ namespace XuezhijiaWebsite
                 hotel.HotelName = TextBox1.Text;
                 hotel.Location = TextBox2.Text;
                 hotel.ContactWay = TextBox3.Text;
-                hotel.Type = _getStringList(TextBox4.Text);
-                hotel.Price = _getStringList(TextBox5.Text);
+                hotel.Type = TextBox4.Text;
+                hotel.Price = TextBox5.Text;
                 hotel.PIDList.Add( hotel.PID);
                 hotel.Comment = TextBox7.Text;
                 wrapper.addAClassRecord(hotel);
