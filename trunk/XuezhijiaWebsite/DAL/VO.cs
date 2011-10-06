@@ -240,5 +240,6 @@ namespace DAL
         public string Gender;
         public int RoomCount;
         public double SumPrice;
-        public int HotelID;    }
+        public int HotelID;
+    }
 }

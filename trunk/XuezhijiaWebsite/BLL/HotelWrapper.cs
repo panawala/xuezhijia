@@ -79,7 +79,7 @@ namespace BLL
             List<string> type = new List<string>();
             type = _getStringList(hotel.Type);
             List<string> price = new List<string>();
-            type = _getStringList(hotel.Price);
+            price = _getStringList(hotel.Price);
 
             DataTable table = new DataTable(); //声明一个DataTable
             DataColumn Type = new DataColumn("Type");//声明列标
