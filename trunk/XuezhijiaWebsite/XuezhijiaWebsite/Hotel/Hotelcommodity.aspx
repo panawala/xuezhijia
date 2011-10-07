@@ -67,12 +67,26 @@
           }
 
           function MyFormSubmit() {
+
               if (CheckMyForm()) {
-                  location.href = "/Hotel/InsertOrder.aspx?HotelId=" + request("id") + "&RoomType=" +
-                $("#ContentPlaceHolder1_DropDownList_RoomTypes").find("option:selected").text() + "&RoomCount=" + $("#RoomCount").val() + "&StartDate=" +
-                $("#startdate").attr("value") + "&EndDate=" + $("#enddate").attr("value") + "&SumPrice=" + sumPrice+ "&CusName=" +
-                 $("#name").attr("value") + "&Gender=" + $("input[type=radio]:checked").attr("value") + "&Conact=" + $("#contact").attr("value")
-                  + "&Remark=" + $("#remark").attr("value");
+
+                  var roomType = $("#ContentPlaceHolder1_DropDownList_RoomTypes").find("option:selected").text();
+                  var roomCount = $("#RoomCount").val();
+                  var startdate = $("#startdate").attr("value");
+                  var enddate = $("#enddate").attr("value");
+                  var cusName = $("#name").attr("value");
+                  var gender = $("input[type=radio]:checked").attr("value");
+                  var contact = $("#contact").attr("value");
+                  var remark = $("#remark").attr("value");
+                  var url = "/Hotel/InsertOrder.aspx?HotelId=" + request("id") + "&RoomType=" +
+                roomType + "&RoomCount=" + roomCount + "&StartDate=" + startdate
+                + "&EndDate=" + enddate + "&SumPrice=" + sumPrice + "&CusName=" + cusName
+                 + "&Gender=" + gender + "&Conact=" + contact
+                  + "&Remark=" + remark;
+                  //alert(url);
+                  //alert(roomType + roomCount + startdate + enddate + gender + contact + remark);
+                  location.href = url;
+                  //alert(location.href);
               }
               else {
                   //alert($("input[type=radio]:checked").attr("value"));
