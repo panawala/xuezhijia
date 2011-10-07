@@ -111,17 +111,17 @@ namespace BLL
                 hotel.Comment = table.Rows[i]["Comment"].ToString();
                 hotel.PID = Convert.ToInt32(table.Rows[i]["PID"].ToString());
                 hotel.OrderID = Convert.ToInt32(table.Rows[i]["OrderId"].ToString());
-                string pidlist = table.Rows[i]["PIDList"].ToString();
-                string[] sArray = pidlist.Split(',');
-                List<int> photolist = new List<int>();
-                for (int j = 0; j < sArray.Length; j++)
-                {
-                    if (sArray[j].ToString().Length > 0)
-                    {
-                        photolist.Add(Convert.ToInt32(sArray[j].ToString()));
-                    }
-                }
-                hotel.PIDList = photolist;
+                //string pidlist = table.Rows[i]["PIDList"].ToString();
+                //string[] sArray = pidlist.Split(',');
+                //List<int> photolist = new List<int>();
+                //for (int j = 0; j < sArray.Length; j++)
+                //{
+                //    if (sArray[j].ToString().Length > 0)
+                //    {
+                //        photolist.Add(Convert.ToInt32(sArray[j].ToString()));
+                //    }
+                //}
+                //hotel.PIDList = photolist;
                 list.Add(hotel);
             }
             return list;

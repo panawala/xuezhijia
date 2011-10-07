@@ -30,6 +30,7 @@
                 <asp:BoundField DataField="HotelName" HeaderText="宾馆名" SortExpression="Name" />
                 <asp:BoundField DataField="Location" HeaderText="位置" SortExpression="Location" />
                 <asp:BoundField DataField="Price" HeaderText="价格" SortExpression="Price" />
+                <asp:BoundField DataField="Type" HeaderText="类型" SortExpression="Type" />
                 <asp:BoundField DataField="ContactWay" HeaderText="联系方式" SortExpression="ContactWay" />
             </Columns>
     </asp:GridView>
