@@ -12,7 +12,8 @@ namespace BLL
     {
         public DataTable getall()
         {
-            string sql = " select * from Hotel left join HotelOrder on Hotel.HotelID = HotelOrder.HotelID "; 
+            //string sql = " select * from Hotel left join HotelOrder on Hotel.HotelID = HotelOrder.HotelID "; 
+            string sql = "select HotelOrder.*,Hotel.HotelName from Hotel left join HotelOrder on Hotel.HotelID = HotelOrder.HotelID";
             return CommenHelper.GetInstance().getResultBySql(sql);
         }
 
