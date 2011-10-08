@@ -19,8 +19,14 @@ namespace XuezhijiaWebsite
             {
                 return;
             }
-
-            InitPage();
+            if (Request.QueryString["HotelId"] == null)
+                InitPage();
+            else
+            {
+                int HotelId = Convert.ToInt32(Request.QueryString["HotelId"]);
+                InitPage(HotelId);
+            }
+           
         }
 
         private void InitPage()
@@ -32,6 +38,14 @@ namespace XuezhijiaWebsite
             Order.DataBind();
         }
 
+        private void InitPage(int hotelId)
+        {
+            HotelOrderWrapper wrapper = new HotelOrderWrapper();
+            DataTable table = new DataTable();
+            table = wrapper.getallById(hotelId);
+            Order.DataSource = table;
+            Order.DataBind();
+        }
         protected void DeleteClick(int id)
         {
             HotelOrderWrapper wrapper = new HotelOrderWrapper();
