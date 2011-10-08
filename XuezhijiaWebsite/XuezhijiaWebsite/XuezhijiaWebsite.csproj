@@ -341,6 +341,7 @@
     <Content Include="Image\head_bgq.jpg" />
     <Content Include="Image\home_icon.png" />
     <Content Include="Image\index_body.jpg" />
+    <Content Include="Image\loader.gif" />
     <Content Include="Image\m2_btns.png" />
     <Content Include="Image\menu.gif" />
     <Content Include="Image\menu.jpg" />
