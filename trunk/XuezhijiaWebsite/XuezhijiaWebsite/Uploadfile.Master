@@ -58,10 +58,45 @@
                 alert("用户名已存在");
                 return false;
             }
-
-
-
         }
+
+
+
+        $(document).ready(function () {
+            $("#addcollect").click(function () {
+                var ctrl = (navigator.userAgent.toLowerCase()).indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL';
+                if (document.all) {
+                    window.external.addFavorite('http://www.xuezj.com', '学之家')
+                } else if (window.sidebar) {
+                    window.sidebar.addPanel('学之家', 'http://www.xuezj.com', "")
+                } else {
+                    alert('您可以尝试通过快捷键' + ctrl + ' + D 加入到收藏夹~')
+                }
+            })
+
+
+            //Set Homepage and add favorite link
+            $("#sethomepage").click(function () {
+                var url = this.href;
+                try {
+                    this.style.behavior = "url(#default#homepage)";
+                    this.setHomePage(url);
+                } catch (e) {
+                    if (window.netscape) {
+                        try {
+                            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                        } catch (e) {
+                            alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                            return false;
+                        }
+                        var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+                        prefs.setCharPref('browser.startup.homepage', url);
+                    }
+                }
+                return false;
+            });
+
+        });
 
 
     </script>
@@ -74,6 +109,10 @@
     <div class="pageframe">
         <form id="form1" runat="server" enctype="multipart/form-data" method="post">
         <div class="nav_top">
+        <div class="function-area">
+<a target="_top" id="addcollect" href="javascript:window.external.AddFavorite('http://www.xuezj.com,'收藏夹')">加入收藏</a>
+<a href="#" id="sethomepage">设为首页</a>
+    </div>
             <div class="logon-area">
                 <!-- if has session -->
                 <%
