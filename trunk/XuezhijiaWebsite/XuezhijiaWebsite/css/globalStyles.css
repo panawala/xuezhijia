@@ -19,12 +19,15 @@ h3
 
 .nav_top
 {
-   width:100%;
+   width:1024px;
    border-top: 2px solid #FDFFFE;
    border-bottom: 2px solid #FDFFFE;
    height: 20px;
    line-height: 20px;
-   background:#FDFFFE url(../Image/topbg.gif) center top repeat-x;
+   /*background:#FDFFFE url(../Image/topbg.gif) center top repeat-x;*/
+   background: rgba(169, 203, 238, 0.85);
+   position:fixed;
+   top:0;
 }
 
 /* HEAD */
