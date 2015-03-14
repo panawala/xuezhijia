@@ -1,0 +1,1 @@
+xuezhijia is the perfect website for students to get some informations that is most important in there daily life and study career. By providing the attractive opportunities and the most convienence to all the students both in shanghai and all over the china, xuezhijia has become the words that stand for convienence, wonderful, and reciprocal.
